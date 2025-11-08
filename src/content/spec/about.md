@@ -2,9 +2,22 @@
 
 最后更新日期：2025年8月
 
+## 联系站长
+
+<script src="https://kit.fontawesome.com/d2f72f27ba.js" crossorigin="anonymous"></script>
+- <i class="fa-brands fa-qq"></i> 3451860760 <br>
+- <i class="fa-brands fa-weixin"></i> chuzouX520 <br>
+- <i class="fa-solid fa-envelope"></i> chuzou2163265631@outlook.com <br>
+- <i class="fa-brands fa-bilibili"></i> [@一只离开出走世界](https://space.bilibili.com/491761768) <br>
+- <i class="fa-solid fa-hand-holding-dollar"></i> [@chuzouX](https://afdian.com/a/chuzoux)（爱发电）
+
+
+
 ## 概述
 
 本网站是一个静态网站，采用Fuwari框架，并使用MIT协议开源于Github，我们非常重视您的隐私。本隐私政策说明了当您访问我们的网站时，可能收集、使用和披露您信息的方式。
+
+目前本网站已开源，魔改作者二叉树树
 
 ::github{repo="afoim/fuwari"}
 
@@ -21,19 +34,12 @@
 
 ### CDN 和托管服务
 
-本网站由以下服务提供商托管：
+根据您访问的节点不同，以下服务提供商可能会收集您的信息：
 
-**Tencent EdgeOne Pages**
+**Cloudflare**
 - 可能收集的信息：IP 地址、访问时间、请求的页面、浏览器信息
-- 用途：提供 CDN 服务、网站托管、安全防护、性能优化
-- 主域名：`blog.2b2x.cn`
-
-**Vercel**
-- 可能收集的信息：IP 地址、访问日志、性能数据
-- 用途：域名重定向服务
-- 重定向域名：`2x.nz`
-
-为了提供更好的访问体验，无论您通过哪个域名访问本网站，最终都会被重定向到 `blog.2b2x.cn` 。
+- 用途：提供 CDN 服务、安全防护、性能优化
+- 隐私政策：[Cloudflare 隐私政策](https://www.cloudflare.com/privacypolicy/)
 
 ### 分析和统计服务
 
@@ -96,8 +102,8 @@
 ## 滥用与版权举报
 
 如果您发现网站内容存在滥用、侵权或其他违法违规行为，请通过以下方式联系我们：
-- **邮箱**：i@2x.nz
-- **Telegram**：https://t.me/acofork
+- **邮箱**：chuzou2163265631@outlook.com
+- **QQ**：3451860760
 
 我们将认真对待每一个举报，并在收到举报后及时处理相关问题。
 
@@ -108,3 +114,21 @@
 ---
 
 *本隐私政策旨在透明地说明我们的数据处理实践。我们建议您定期查看本政策以了解任何更新。*
+
+<!-- Giscus 评论区 -->
+<!-- <script src="https://giscus.app/client.js"
+        data-repo="chuzouX/chuzouX_blog_giscus"
+        data-repo-id="R_kgDOPnFyCg"
+        data-category="Show and tell"
+        data-category-id="DIC_kwDOPnFyCs4Cux58"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="noborder_gray"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script> -->

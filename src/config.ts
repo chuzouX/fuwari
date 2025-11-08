@@ -11,10 +11,10 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "AcoFork Blog",
+	title: "chuzouX Blog",
 	subtitle: "技术分享与实践",
 	description:
-		"分享网络技术、服务器部署、内网穿透、静态网站搭建、CDN优化、容器化部署等技术教程与实践经验的个人技术博客，专注于云原生、无服务器架构和前后端开发，作者为afoim/二叉树树",
+		"分享网络技术、服务器部署、内网穿透、静态网站搭建、CDN优化、容器化部署等技术教程与日常生活的个人技术博客，作者为chuzouX/一只离开出走世界",
 
 	keywords: [],
 	lang: "zh_CN", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
@@ -51,7 +51,7 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// Leave this array empty to use the default favicon
 		{
-			src: "https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=0", // Path of the favicon, relative to the /public directory
+			src: "https://q2.qlogo.cn/headimg_dl?dst_uin=3451860760&spec=0", // Path of the favicon, relative to the /public directory
 			//   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
 			//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
 		},
@@ -75,31 +75,50 @@ export const navBarConfig: NavBarConfig = {
 		},
 		{
 			name: "统计",
-			url: "https://cloud.umami.is/share/hN3l7PGcxsUCBHfU", // Internal links should not include the base path, as it is automatically added
+			url: "https://cloud.umami.is/analytics/us/share/F6AVMTwKHSx6YnN4", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
 		},
 		{
 			name: "状态",
-			url: "https://stats.uptimerobot.com/VAtAH0mzPN", // Internal links should not include the base path, as it is automatically added
+			url: "https://status.funxlink.fun/status/main", // Internal links should not include the base path, as it is automatically added
+			external: true, // Show an external link icon and will open in a new tab
+		},
+		{
+			name: "Bilibili",
+			url: "https://space.bilibili.com/491761768", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
 		},
 	],
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "https://q2.qlogo.cn/headimg_dl?dst_uin=2726730791&spec=0", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "二叉树树",
-	bio: "Protect What You Love.",
+	avatar: "https://q2.qlogo.cn/headimg_dl?dst_uin=3451860760&spec=0", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	name: "chuzouX",
+	bio: "欢迎大家光临本站，希望大家在这里可以找到自己想要的东西，祝大家玩的开心！！",
 	links: [
 		{
-			name: "Bilibli",
-			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/325903362",
+			name: "BiliBili",
+			icon: "fa6-brands:bilibili", // Visit https://icones.js.org/ for icon codes
+			// You will need to install the corresponding icon set if it's not already included
+			// `pnpm add @iconify-json/<icon-set-name>`
+			url: "https://space.bilibili.com/491761768",
 		},
 		{
-			name: "GitHub",
-			icon: "fa6-brands:github",
-			url: "https://github.com/afoim",
+			name: "Steam",
+			icon: "fa6-brands:steam",
+			url: "https://steamcommunity.com/id/chuzouX",
+		},
+		{
+			name: "DouYin",
+			icon: "fa6-brands:tiktok",
+			url: "https://www.douyin.com/user/MS4wLjABAAAA0YDtxbis0aoxKq49HubOhJOYLKVu2OoEWornJzQ0wCpi5GezVRlB822yct8HXj8k",
+		},
+		{
+			name: "qq",
+			icon: "fa6-solid:address-book", // Visit https://icones.js.org/ for icon codes
+			// You will need to install the corresponding icon set if it's not already included
+			// `pnpm add @iconify-json/<icon-set-name>`
+			url: "https://chuzoux.top/about/#联系站长",
 		},
 	],
 };
@@ -118,8 +137,8 @@ export const imageFallbackConfig: ImageFallbackConfig = {
 
 export const umamiConfig: UmamiConfig = {
 	enable: true,
-	baseUrl: "https://umami.2b2x.cn",
-	shareId: "hN3l7PGcxsUCBHfU",
+	baseUrl: "cloud.umami.is",
+	shareId: "F6AVMTwKHSx6YnN4",
 	timezone: "Asia/Shanghai",
 };
 
@@ -129,7 +148,7 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 
 export const gitHubEditConfig: GitHubEditConfig = {
 	enable: true,
-	baseUrl: "https://github.com/afoim/fuwari/blob/main/src/content/posts",
+	baseUrl: "https://github.com/chuzouX/fuwari/tree/main/src/content/posts",
 };
 
 
@@ -137,6 +156,6 @@ export const statsConfig = {
 	viewsText: "浏览",
 	visitsText: "访客",
 	loadingText: "统计加载中...",
-	unavailableText: "统计不可用。请检查是否屏蔽了Umami域名，如AdGuard和AdBlock等插件",
+	unavailableText: "统计不可用",
 	getStatsText: (pageViews: number, visits: number) => `${statsConfig.viewsText} ${pageViews} · ${statsConfig.visitsText} ${visits}`,
 };
