@@ -1,0 +1,624 @@
+<!DOCTYPE html><html lang="zh-CN" class="bg-[var(--page-bg)] transition text-[14px] md:text-[16px]" data-overlayscrollbars-initialize data-astro-cid-sckkx6r4 style="--bannerOffset: 15vh;--banner-height-home: 65vh;--banner-height: 35vh;--configHue: 361;--page-width: 75rem;--bg-url: url(https://eopfapi.2b2x.cn/pic?img=ua);--bg-enable: 1;--bg-position: center;--bg-size: cover;--bg-repeat: no-repeat;--bg-attachment: fixed;--bg-opacity: 0.5;"> <head><title>学习笔记丨网课第十一天 - chuzouX Blog</title><meta charset="UTF-8"><meta name="description" content="学习笔记"><meta name="author" content="chuzouX"><meta name="keywords" content><meta property="og:site_name" content="chuzouX Blog"><meta property="og:url" content="https://blog.2b2x.cn/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%80%E5%A4%A9/"><meta property="og:title" content="学习笔记丨网课第十一天 - chuzouX Blog"><meta property="og:description" content="学习笔记"><meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://blog.2b2x.cn/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%80%E5%A4%A9/"><meta name="twitter:title" content="学习笔记丨网课第十一天 - chuzouX Blog"><meta name="twitter:description" content="学习笔记"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v5.7.9"><script src="/js/umami-share.js" defer></script><link rel="icon" href="https://q2.qlogo.cn/headimg_dl?dst_uin=3451860760&spec=0"><!-- Set the theme before the page is rendered to avoid a flash --><script>(function(){const DEFAULT_THEME = "auto";
+const LIGHT_MODE = "light";
+const DARK_MODE = "dark";
+const AUTO_MODE = "auto";
+const BANNER_HEIGHT_EXTEND = 30;
+const PAGE_WIDTH = 75;
+const configHue = 361;
+const forceDarkMode = true;
+
+			// Force dark mode if configured
+			if (forceDarkMode) {
+				document.documentElement.classList.add('dark');
+				localStorage.setItem('theme', DARK_MODE);
+			} else {
+				// Load the theme from local storage
+				const theme = localStorage.getItem('theme') || DEFAULT_THEME;
+				switch (theme) {
+					case LIGHT_MODE:
+						document.documentElement.classList.remove('dark');
+						break
+					case DARK_MODE:
+						document.documentElement.classList.add('dark');
+						break
+					case AUTO_MODE:
+						if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+							document.documentElement.classList.add('dark');
+						} else {
+							document.documentElement.classList.remove('dark');
+						}
+				}
+			}
+
+			// Load the hue from local storage
+			const hue = localStorage.getItem('hue') || configHue;
+			document.documentElement.style.setProperty('--hue', hue);
+
+			// calculate the --banner-height-extend, which needs to be a multiple of 4 to avoid blurry text
+			let offset = Math.floor(window.innerHeight * (BANNER_HEIGHT_EXTEND / 100));
+			offset = offset - offset % 4;
+			document.documentElement.style.setProperty('--banner-height-extend', `${offset}px`);
+
+			// Background image loading detection
+			const bgUrl = getComputedStyle(document.documentElement).getPropertyValue('--bg-url').trim();
+			const bgEnable = getComputedStyle(document.documentElement).getPropertyValue('--bg-enable').trim();
+			
+			if (bgUrl && bgUrl !== 'none' && bgEnable === '1') {
+				const img = new Image();
+				const urlMatch = bgUrl.match(/url\(["']?([^"')]+)["']?\)/);
+				if (urlMatch) {
+					img.onload = function() {
+						// 背景图片完全加载后，显示背景并启用卡片透明效果
+						document.body.classList.add('bg-loaded');
+						document.documentElement.style.setProperty('--card-bg', 'var(--card-bg-transparent)');
+						document.documentElement.style.setProperty('--float-panel-bg', 'var(--float-panel-bg-transparent)');
+					};
+					img.onerror = function() {
+						// Keep cards opaque if background image fails to load
+						console.warn('Background image failed to load, keeping cards opaque');
+					};
+					img.src = urlMatch[1];
+				}
+			}
+		})();</script><!-- defines global css variables. This will be applied to <html> <body> and some other elements idk why --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"学习笔记丨网课第十一天","description":"学习笔记","keywords":["学习","笔记","高中","网课"],"author":{"@type":"Person","name":"chuzouX","url":"https://blog.2b2x.cn/"},"datePublished":"2022-09-14","inLanguage":"zh-CN"}</script><link rel="alternate" type="application/rss+xml" title="chuzouX" href="https://blog.2b2x.cn/rss.xml"><!-- Umami分析（云-备用） --><script defer src="https://cloud.umami.is/script.js" data-website-id="57b6be0b-8d59-45b2-a1bc-fe73210b2c71"></script><!-- 百度统计 --><script type="module" src="/_astro/Layout.astro_astro_type_script_index_0_lang.BoB-OW5-.js"></script><!-- clarity 分析 --><script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "u2t1qd6p8q");
+</script><!-- gad --><!-- 谷歌分析 --><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X2JXDXE3TT"></script><script type="module" src="/_astro/Layout.astro_astro_type_script_index_1_lang.D6GiW-PE.js"></script><!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;504ba9e0828e492e85cdadc1a4b082c3&quot;}"></script><!-- End Cloudflare Web Analytics --><!-- End Cloudflare Web Analytics --><link rel="stylesheet" href="/_astro/Layout.BuewHHUq.css">
+<link rel="stylesheet" href="/_astro/Layout.Ds13mcav.css">
+<link rel="stylesheet" href="/_astro/_page_.Cpx2OF_-.css">
+<link rel="stylesheet" href="/_astro/_page_.O86Xa_GO.css">
+<link rel="stylesheet" href="/_astro/_page_.BgcusSe2.css">
+<link rel="stylesheet" href="/_astro/about.BtniRLn_.css">
+<style>.friend-card[data-astro-cid-spp2p3no]{display:flex;flex-direction:column;gap:.25rem;border-radius:.5rem;background-color:var(--card-bg);padding:1rem}.friend-card[data-astro-cid-spp2p3no]:hover{background-color:#0000000d}.friend-card[data-astro-cid-spp2p3no]:hover:is(.dark *){background-color:#ffffff0d}.friend-card[data-astro-cid-spp2p3no]{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.friend-card[data-astro-cid-spp2p3no]:active{scale:.98;background-color:var(--btn-regular-bg-active)}.friend-card[data-astro-cid-spp2p3no]:hover{background-color:var(--btn-regular-bg-hover)}.friend-card[data-astro-cid-spp2p3no]:hover .font-bold[data-astro-cid-spp2p3no]{color:var(--btn-content)}.friend-card[data-astro-cid-spp2p3no]:hover .text-sm[data-astro-cid-spp2p3no]{--tw-text-opacity: 1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.friend-card[data-astro-cid-spp2p3no]:hover .text-sm[data-astro-cid-spp2p3no]:is(.dark *){--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.friend-card[data-astro-cid-spp2p3no] .font-bold[data-astro-cid-spp2p3no],.friend-card[data-astro-cid-spp2p3no] .text-sm[data-astro-cid-spp2p3no]{transition-property:color;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
+.donate-card[data-astro-cid-3z6uernf]{display:flex;flex-direction:column;border-radius:.5rem;border-width:1px;border-color:#0000001a;background-color:var(--card-bg);padding:1rem;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.donate-card[data-astro-cid-3z6uernf]:hover{border-color:#0003}.donate-card[data-astro-cid-3z6uernf]:is(.dark *){border-color:#ffffff1a}.donate-card[data-astro-cid-3z6uernf]:hover:is(.dark *){border-color:#fff3}.support-card[data-astro-cid-3z6uernf]{border-radius:.5rem;background-color:var(--card-bg);padding:1rem;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.support-card[data-astro-cid-3z6uernf]:hover{background-color:#0000000d}.support-card[data-astro-cid-3z6uernf]:hover:is(.dark *){background-color:#ffffff0d}.qr-code-placeholder[data-astro-cid-3z6uernf]{text-align:center}.sponsors-section[data-astro-cid-3z6uernf]{margin-top:1.5rem}.sponsors-grid[data-astro-cid-3z6uernf]{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:1rem}@media (min-width: 768px){.sponsors-grid[data-astro-cid-3z6uernf]{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width: 1024px){.sponsors-grid[data-astro-cid-3z6uernf]{grid-template-columns:repeat(3,minmax(0,1fr))}}.sponsor-placeholder[data-astro-cid-3z6uernf]{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.2s}.sponsor-placeholder[data-astro-cid-3z6uernf]:hover{--tw-scale-x: 1.05;--tw-scale-y: 1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.sponsor-card[data-astro-cid-3z6uernf]{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.2s}.sponsor-card[data-astro-cid-3z6uernf]:hover{--tw-scale-x: 1.05;--tw-scale-y: 1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));--tw-shadow: 0 4px 6px -1px rgb(0 0 0 / .1), 0 2px 4px -2px rgb(0 0 0 / .1);--tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.crypto-info[data-astro-cid-3z6uernf]>:not([hidden])[data-astro-cid-3z6uernf]~:not([hidden])[data-astro-cid-3z6uernf]{--tw-space-y-reverse: 0;margin-top:calc(.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.75rem * var(--tw-space-y-reverse))}.wallet-address[data-astro-cid-3z6uernf],.bybit-uid[data-astro-cid-3z6uernf]{text-align:center}.copy-btn[data-astro-cid-3z6uernf]{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.2s}.copy-btn[data-astro-cid-3z6uernf]:hover{color:var(--primary);opacity:.8}
+input.svelte-1adkdfv:focus{outline:0}.search-panel.svelte-1adkdfv{max-height:calc(100vh - 100px);overflow-y:auto}#display-setting.svelte-1s19bex input[type=range]:where(.svelte-1s19bex){-webkit-appearance:none;height:1.5rem;background-image:var(--color-selection-bar);transition:background-image .15s ease-in-out}#display-setting.svelte-1s19bex input[type=range]:where(.svelte-1s19bex)::-webkit-slider-thumb{-webkit-appearance:none;height:1rem;width:.5rem;border-radius:.125rem;background:#ffffffb3;box-shadow:none}#display-setting.svelte-1s19bex input[type=range]:where(.svelte-1s19bex)::-webkit-slider-thumb:hover{background:#fffc}#display-setting.svelte-1s19bex input[type=range]:where(.svelte-1s19bex)::-webkit-slider-thumb:active{background:#fff9}#display-setting.svelte-1s19bex input[type=range]:where(.svelte-1s19bex)::-moz-range-thumb{-webkit-appearance:none;height:1rem;width:.5rem;border-radius:.125rem;border-width:0;background:#ffffffb3;box-shadow:none}#display-setting.svelte-1s19bex input[type=range]:where(.svelte-1s19bex)::-moz-range-thumb:hover{background:#fffc}#display-setting.svelte-1s19bex input[type=range]:where(.svelte-1s19bex)::-moz-range-thumb:active{background:#fff9}#display-setting.svelte-1s19bex input[type=range]:where(.svelte-1s19bex)::-ms-thumb{-webkit-appearance:none;height:1rem;width:.5rem;border-radius:.125rem;background:#ffffffb3;box-shadow:none}#display-setting.svelte-1s19bex input[type=range]:where(.svelte-1s19bex)::-ms-thumb:hover{background:#fffc}#display-setting.svelte-1s19bex input[type=range]:where(.svelte-1s19bex)::-ms-thumb:active{background:#fff9}
+</style><script type="module" src="/_astro/page.D2KCJz2L.js"></script></head> <body class=" min-h-screen transition " data-overlayscrollbars-initialize data-astro-cid-sckkx6r4 style="--bannerOffset: 15vh;--banner-height-home: 65vh;--banner-height: 35vh;--configHue: 361;--page-width: 75rem;--bg-url: url(https://eopfapi.2b2x.cn/pic?img=ua);--bg-enable: 1;--bg-position: center;--bg-size: cover;--bg-repeat: no-repeat;--bg-attachment: fixed;--bg-opacity: 0.5;"> <div id="config-carrier" data-hue="361"></div>    <div id="top-row" class="z-50 pointer-events-none relative transition-all duration-700 max-w-[var(--page-width)] px-0 md:px-4 mx-auto"> <div id="navbar-wrapper" class="pointer-events-auto sticky top-0 transition-all"> <div id="navbar" class="z-50 onload-animation"> <div class="absolute h-8 left-0 right-0 -top-8 bg-[var(--card-bg)] transition"></div> <!-- used for onload animation --> <div class="card-base !overflow-visible max-w-[var(--page-width)] h-[4.5rem] !rounded-t-none mx-auto flex items-center justify-between px-4"> <a href="/" class="btn-plain scale-animation rounded-lg h-[3.25rem] px-5 font-bold active:scale-95"> <div class="flex flex-row text-[var(--primary)] items-center text-md"> <svg width="1em" height="1em" class="text-[1.75rem] mb-1 mr-2" data-icon="material-symbols:home-outline-rounded">   <symbol id="ai:material-symbols:home-outline-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19h3v-5q0-.425.288-.712T10 13h4q.425 0 .713.288T15 14v5h3v-9l-6-4.5L6 10zm-2 0v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-4q-.425 0-.712-.288T13 20v-5h-2v5q0 .425-.288.713T10 21H6q-.825 0-1.412-.587T4 19m8-6.75"/></symbol><use href="#ai:material-symbols:home-outline-rounded"></use>  </svg> chuzouX Blog </div> </a> <div class="hidden md:flex"> <a aria-label="首页" href="/" class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"> <div class="flex items-center"> 首页  </div> </a><a aria-label="归档" href="/archive/" class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"> <div class="flex items-center"> 归档  </div> </a><a aria-label="关于" href="/about/" class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"> <div class="flex items-center"> 关于  </div> </a><a aria-label="友链" href="/friends/" class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"> <div class="flex items-center"> 友链  </div> </a><a aria-label="赞助" href="/donate/" class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"> <div class="flex items-center"> 赞助  </div> </a><a aria-label="统计" href="https://cloud.umami.is/analytics/us/share/F6AVMTwKHSx6YnN4" target="_blank" class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"> <div class="flex items-center"> 统计 <svg width="1em" height="1em" class="text-[0.875rem] transition -translate-y-[1px] ml-1 text-black/[0.2] dark:text-white/[0.2]" data-icon="fa6-solid:arrow-up-right-from-square">   <symbol id="ai:fa6-solid:arrow-up-right-from-square" viewBox="0 0 512 512"><path fill="currentColor" d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32zM80 32C35.8 32 0 67.8 0 112v320c0 44.2 35.8 80 80 80h320c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v112c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h112c17.7 0 32-14.3 32-32s-14.3-32-32-32z"/></symbol><use href="#ai:fa6-solid:arrow-up-right-from-square"></use>  </svg> </div> </a><a aria-label="状态" href="https://status.funxlink.fun/status/main" target="_blank" class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"> <div class="flex items-center"> 状态 <svg width="1em" height="1em" viewBox="0 0 512 512" class="text-[0.875rem] transition -translate-y-[1px] ml-1 text-black/[0.2] dark:text-white/[0.2]" data-icon="fa6-solid:arrow-up-right-from-square">   <use href="#ai:fa6-solid:arrow-up-right-from-square"></use>  </svg> </div> </a><a aria-label="Bilibili" href="https://space.bilibili.com/491761768" target="_blank" class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"> <div class="flex items-center"> Bilibili <svg width="1em" height="1em" viewBox="0 0 512 512" class="text-[0.875rem] transition -translate-y-[1px] ml-1 text-black/[0.2] dark:text-white/[0.2]" data-icon="fa6-solid:arrow-up-right-from-square">   <use href="#ai:fa6-solid:arrow-up-right-from-square"></use>  </svg> </div> </a> </div> <div class="flex"> <!--<SearchPanel client:load>--> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();;(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="Z2bEFjp" component-url="/_astro/Search.DUEOlsB5.js" component-export="default" renderer-url="/_astro/client.svelte.BeWI92MQ.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;Search&quot;,&quot;value&quot;:&quot;svelte&quot;}"></astro-island>  <button aria-label="Menu" name="Nav Menu" class="btn-plain scale-animation rounded-lg w-11 h-11 active:scale-90 md:!hidden" id="nav-menu-switch"> <svg width="1em" height="1em" class="text-[1.25rem]" data-icon="material-symbols:menu-rounded">   <symbol id="ai:material-symbols:menu-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/></symbol><use href="#ai:material-symbols:menu-rounded"></use>  </svg> </button> </div> <div id="nav-menu-panel" class="float-panel float-panel-closed absolute transition-all fixed right-4 px-2 py-2"> <a href="/" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
+            hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
+        "> <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"> 首页 </div> <svg width="1em" height="1em" class="transition text-[1.25rem] text-[var(--primary)]" data-icon="material-symbols:chevron-right-rounded">   <symbol id="ai:material-symbols:chevron-right-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z"/></symbol><use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg>  </a><a href="/archive/" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
+            hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
+        "> <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"> 归档 </div> <svg width="1em" height="1em" viewBox="0 0 24 24" class="transition text-[1.25rem] text-[var(--primary)]" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg>  </a><a href="/about/" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
+            hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
+        "> <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"> 关于 </div> <svg width="1em" height="1em" viewBox="0 0 24 24" class="transition text-[1.25rem] text-[var(--primary)]" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg>  </a><a href="/friends/" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
+            hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
+        "> <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"> 友链 </div> <svg width="1em" height="1em" viewBox="0 0 24 24" class="transition text-[1.25rem] text-[var(--primary)]" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg>  </a><a href="/donate/" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
+            hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
+        "> <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"> 赞助 </div> <svg width="1em" height="1em" viewBox="0 0 24 24" class="transition text-[1.25rem] text-[var(--primary)]" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg>  </a><a href="https://cloud.umami.is/analytics/us/share/F6AVMTwKHSx6YnN4" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
+            hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
+        " target="_blank"> <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"> 统计 </div>  <svg width="1em" height="1em" viewBox="0 0 512 512" class="transition text-[0.75rem] text-black/25 dark:text-white/25 -translate-x-1" data-icon="fa6-solid:arrow-up-right-from-square">   <use href="#ai:fa6-solid:arrow-up-right-from-square"></use>  </svg> </a><a href="https://status.funxlink.fun/status/main" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
+            hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
+        " target="_blank"> <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"> 状态 </div>  <svg width="1em" height="1em" viewBox="0 0 512 512" class="transition text-[0.75rem] text-black/25 dark:text-white/25 -translate-x-1" data-icon="fa6-solid:arrow-up-right-from-square">   <use href="#ai:fa6-solid:arrow-up-right-from-square"></use>  </svg> </a><a href="https://space.bilibili.com/491761768" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
+            hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
+        " target="_blank"> <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"> Bilibili </div>  <svg width="1em" height="1em" viewBox="0 0 512 512" class="transition text-[0.75rem] text-black/25 dark:text-white/25 -translate-x-1" data-icon="fa6-solid:arrow-up-right-from-square">   <use href="#ai:fa6-solid:arrow-up-right-from-square"></use>  </svg> </a> </div> <astro-island uid="2iTMBA" component-url="/_astro/DisplaySettings.Cfa4P1LX.js" component-export="default" renderer-url="/_astro/client.svelte.BeWI92MQ.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;DisplaySettings&quot;,&quot;value&quot;:&quot;svelte&quot;}"></astro-island> </div> </div> <script type="module">function l(){let e=document.getElementById("display-settings-switch");e&&(e.onclick=function(){let t=document.getElementById("display-setting");t&&t.classList.toggle("float-panel-closed")});let n=document.getElementById("nav-menu-switch");n&&(n.onclick=function(){let t=document.getElementById("nav-menu-panel");t&&t.classList.toggle("float-panel-closed")})}l();</script> </div> </div>   <div class="absolute w-full z-30 pointer-events-none" style="top: 5.5rem"> <!-- The pointer-events-none here prevent blocking the click event of the TOC --> <div class="relative max-w-[var(--page-width)] mx-auto pointer-events-auto"> <div id="main-grid" class="transition duration-700 w-full left-0 right-0 grid grid-cols-[17.5rem_auto] grid-rows-[auto_1fr_auto] lg:grid-rows-[auto]
+    mx-auto gap-4 px-0 md:px-4"> <!-- Banner image credit -->  <div id="sidebar" class="mb-4 row-start-2 row-end-3 col-span-2 lg:row-start-1 lg:row-end-2 lg:col-span-1 lg:max-w-[17.5rem] onload-animation w-full"> <div class="flex flex-col w-full gap-4 mb-4"> <div class="card-base p-3"> <a aria-label="Go to About Page" href="/about/" class="group block relative mx-auto mt-1 lg:mx-0 lg:mt-0 mb-3
+       max-w-[12rem] lg:max-w-none overflow-hidden rounded-xl active:scale-95"> <div class="absolute transition pointer-events-none group-hover:bg-black/30 group-active:bg-black/50
+        w-full h-full z-50 flex items-center justify-center"> <svg width="1.13em" height="1em" class="transition opacity-0 scale-90 group-hover:scale-100 group-hover:opacity-100 text-white text-5xl" data-icon="fa6-regular:address-card">   <symbol id="ai:fa6-regular:address-card" viewBox="0 0 576 512"><path fill="currentColor" d="M512 80c8.8 0 16 7.2 16 16v320c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm144 224a64 64 0 1 0 0-128a64 64 0 1 0 0 128m-32 32c-44.2 0-80 35.8-80 80c0 8.8 7.2 16 16 16h192c8.8 0 16-7.2 16-16c0-44.2-35.8-80-80-80zm200-144c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24z"/></symbol><use href="#ai:fa6-regular:address-card"></use>  </svg> </div> <div class="mx-auto lg:w-full h-full lg:mt-0  overflow-hidden relative image-wrapper" style="--theme-hue: 361" data-astro-cid-i2xmscho> <!-- 加载条 --> <div class="loading-bar absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-1 bg-gray-200 dark:bg-gray-700 z-10 rounded-full overflow-hidden" data-astro-cid-i2xmscho> <div class="loading-progress h-full w-8 bg-[oklch(0.70_0.14_var(--theme-hue))] animate-loading-progress rounded-full" data-astro-cid-i2xmscho></div> </div> <!-- 图片内容 -->  <img src="https://q2.qlogo.cn/headimg_dl?dst_uin=3451860760&spec=0" alt="Profile Image of the Author" class="w-full h-full object-cover image-content opacity-0 transition-opacity duration-500" style="object-position: center" onload="this.style.opacity='1'; this.parentElement.querySelector('.loading-bar').style.opacity='0';" data-astro-cid-i2xmscho> </div>  </a> <div class="px-2"> <div class="font-bold text-xl text-center mb-1 dark:text-neutral-50 transition">chuzouX</div> <div class="h-1 w-5 bg-[var(--primary)] mx-auto rounded-full mb-2 transition"></div> <div class="text-center text-neutral-400 mb-2.5 transition">欢迎大家光临本站，希望大家在这里可以找到自己想要的东西，祝大家玩的开心！！</div> <div class="flex flex-wrap gap-2 justify-center mb-1"> <a rel="me" aria-label="BiliBili" href="https://space.bilibili.com/491761768" target="_blank" class="btn-regular rounded-lg h-10 w-10 active:scale-90"> <svg width="1em" height="1em" class="text-[1.5rem]" data-icon="fa6-brands:bilibili">   <symbol id="ai:fa6-brands:bilibili" viewBox="0 0 512 512"><path fill="currentColor" d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1c-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79c0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797c0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5c-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8c-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2c-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5s-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5s-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></symbol><use href="#ai:fa6-brands:bilibili"></use>  </svg> </a><a rel="me" aria-label="Steam" href="https://steamcommunity.com/id/chuzouX" target="_blank" class="btn-regular rounded-lg h-10 w-10 active:scale-90"> <svg width="0.97em" height="1em" class="text-[1.5rem]" data-icon="fa6-brands:steam">   <symbol id="ai:fa6-brands:steam" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111.2 248-248.4 248c-113.8 0-209.6-76.3-239-180.4l95.2 39.3c6.4 32.1 34.9 56.4 68.9 56.4c39.2 0 71.9-32.4 70.2-73.5l84.5-60.2c52.1 1.3 95.8-40.9 95.8-93.5c0-51.6-42-93.5-93.7-93.5s-93.7 42-93.7 93.5v1.2L176.6 279c-15.5-.9-30.7 3.4-43.5 12.1L0 236.1C10.2 108.4 117.1 8 247.6 8C384.8 8 496 119 496 256M155.7 384.3l-30.5-12.6a52.8 52.8 0 0 0 27.2 25.8c26.9 11.2 57.8-1.6 69-28.4c5.4-13 5.5-27.3.1-40.3S206 305.6 193 300.2c-12.9-5.4-26.7-5.2-38.9-.6l31.5 13c19.8 8.2 29.2 30.9 20.9 50.7c-8.3 19.9-31 29.2-50.8 21m173.8-129.9c-34.4 0-62.4-28-62.4-62.3s28-62.3 62.4-62.3s62.4 28 62.4 62.3s-27.9 62.3-62.4 62.3m.1-15.6c25.9 0 46.9-21 46.9-46.8c0-25.9-21-46.8-46.9-46.8s-46.9 21-46.9 46.8c.1 25.8 21.1 46.8 46.9 46.8"/></symbol><use href="#ai:fa6-brands:steam"></use>  </svg> </a><a rel="me" aria-label="DouYin" href="https://www.douyin.com/user/MS4wLjABAAAA0YDtxbis0aoxKq49HubOhJOYLKVu2OoEWornJzQ0wCpi5GezVRlB822yct8HXj8k" target="_blank" class="btn-regular rounded-lg h-10 w-10 active:scale-90"> <svg width="0.88em" height="1em" class="text-[1.5rem]" data-icon="fa6-brands:tiktok">   <symbol id="ai:fa6-brands:tiktok" viewBox="0 0 448 512"><path fill="currentColor" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121 121 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z"/></symbol><use href="#ai:fa6-brands:tiktok"></use>  </svg> </a><a rel="me" aria-label="qq" href="https://chuzoux.top/about/#联系站长" target="_blank" class="btn-regular rounded-lg h-10 w-10 active:scale-90"> <svg width="1em" height="1em" class="text-[1.5rem]" data-icon="fa6-solid:address-book">   <symbol id="ai:fa6-solid:address-book" viewBox="0 0 512 512"><path fill="currentColor" d="M96 0C60.7 0 32 28.7 32 64v384c0 35.3 28.7 64 64 64h288c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64zm112 288h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H144c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80m-32-96a64 64 0 1 1 128 0a64 64 0 1 1-128 0M512 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16zm-16 112c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16v-64c0-8.8-7.2-16-16-16m16 144c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16z"/></symbol><use href="#ai:fa6-solid:address-book"></use>  </svg> </a>  </div> <!-- 全站访问量统计 --> <div class="text-center text-sm text-neutral-500 dark:text-neutral-400 mt-3 pt-3 border-t border-neutral-200 dark:border-neutral-700"> <div class="flex items-center justify-center gap-1"> <svg width="1em" height="1em" class="text-base" data-icon="material-symbols:visibility-outline">   <symbol id="ai:material-symbols:visibility-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M12 16q1.875 0 3.188-1.312T16.5 11.5t-1.312-3.187T12 7T8.813 8.313T7.5 11.5t1.313 3.188T12 16m0-1.8q-1.125 0-1.912-.788T9.3 11.5t.788-1.912T12 8.8t1.913.788t.787 1.912t-.787 1.913T12 14.2m0 4.8q-3.65 0-6.65-2.037T1 11.5q1.35-3.425 4.35-5.462T12 4t6.65 2.038T23 11.5q-1.35 3.425-4.35 5.463T12 19m0-2q2.825 0 5.188-1.487T20.8 11.5q-1.25-2.525-3.613-4.012T12 6T6.813 7.488T3.2 11.5q1.25 2.525 3.613 4.013T12 17"/></symbol><use href="#ai:material-symbols:visibility-outline"></use>  </svg> <span id="site-stats">统计加载中...</span> </div> </div> </div> </div> <script>(function(){const umamiConfig = {"enable":true,"baseUrl":"cloud.umami.is","shareId":"F6AVMTwKHSx6YnN4","timezone":"Asia/Shanghai"};
+const unavailableText = "统计不可用";
+const viewsText = "浏览";
+const visitsText = "访客";
+
+    // 获取全站访问量统计
+    // 客户端统计文案生成函数
+    function generateStatsText(pageViews, visits) {
+        return `${viewsText} ${pageViews} · ${visitsText} ${visits}`;
+    }
+    
+    async function loadSiteStats() {
+        if (!umamiConfig.enable) {
+            return;
+        }
+        
+        try {
+            // 调用全局工具获取 Umami 分享数据
+            const { websiteId, token } = await getUmamiShareData(umamiConfig.baseUrl, umamiConfig.shareId);
+            
+            // 第二步：获取全站统计数据（不指定url参数获取全站数据）
+            const currentTimestamp = Date.now();
+            const statsUrl = `${umamiConfig.baseUrl}/analytics/us/api/websites/${websiteId}/stats?startAt=0&endAt=${currentTimestamp}&unit=hour&timezone=${encodeURIComponent(umamiConfig.timezone)}&compare=false`;
+            
+            const statsResponse = await fetch(statsUrl, {
+                 headers: {
+                     'x-umami-share-token': token
+                 }
+             });
+            
+            if (statsResponse.status === 401) {
+                // token 失效，清理缓存后重新获取一次
+                clearUmamiShareCache();
+                return await loadSiteStats();
+            }
+            
+            if (!statsResponse.ok) {
+                throw new Error('获取统计数据失败');
+            }
+            
+            const statsData = await statsResponse.json();
+            const pageviews = statsData.pageviews || 0;
+            const visitors = statsData.visitors || 0;
+            
+            const statsElement = document.getElementById('site-stats');
+            if (statsElement) {
+                statsElement.textContent = generateStatsText(pageviews, visitors);
+            }
+        } catch (error) {
+            console.error('获取全站统计失败:', error);
+            const statsElement = document.getElementById('site-stats');
+            if (statsElement) {
+                statsElement.textContent = unavailableText;
+            }
+        }
+    }
+
+    // 页面加载完成后获取统计数据
+    document.addEventListener('DOMContentLoaded', loadSiteStats);
+})();</script> </div> <div id="sidebar-sticky" class="transition-all duration-700 flex flex-col w-full gap-4 top-4 sticky top-4"> <widget-layout data-id="tags" data-is-collapsed="true" class="pb-4 card-base onload-animation" style="animation-delay: 200ms; --collapsedHeight: 7.5rem;" data-astro-cid-ucso7hve="true"> <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+        before:w-1 before:h-4 before:rounded-md before:bg-[var(--primary)]
+        before:absolute before:left-[-16px] before:top-[5.5px]" data-astro-cid-ucso7hve style="--collapsedHeight: 7.5rem;">标签</div> <div id="tags" class="collapse-wrapper px-4 overflow-hidden collapsed" data-astro-cid-ucso7hve style="--collapsedHeight: 7.5rem;">  <div class="flex gap-2 flex-wrap"> <a href="/archive/tag/笔记/" aria-label="View all posts with the 笔记 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  笔记 </a><a href="/archive/tag/高中/" aria-label="View all posts with the 高中 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  高中 </a><a href="/archive/tag/合集/" aria-label="View all posts with the 合集 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  合集 </a><a href="/archive/tag/建站/" aria-label="View all posts with the 建站 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  建站 </a><a href="/archive/tag/教程/" aria-label="View all posts with the 教程 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  教程 </a><a href="/archive/tag/科技/" aria-label="View all posts with the 科技 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  科技 </a><a href="/archive/tag/逆向/" aria-label="View all posts with the 逆向 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  逆向 </a><a href="/archive/tag/朋友/" aria-label="View all posts with the 朋友 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  朋友 </a><a href="/archive/tag/日常/" aria-label="View all posts with the 日常 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  日常 </a><a href="/archive/tag/软件/" aria-label="View all posts with the 软件 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  软件 </a><a href="/archive/tag/生活/" aria-label="View all posts with the 生活 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  生活 </a><a href="/archive/tag/生日/" aria-label="View all posts with the 生日 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  生日 </a><a href="/archive/tag/手环/" aria-label="View all posts with the 手环 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  手环 </a><a href="/archive/tag/网课/" aria-label="View all posts with the 网课 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  网课 </a><a href="/archive/tag/小米/" aria-label="View all posts with the 小米 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  小米 </a><a href="/archive/tag/学习/" aria-label="View all posts with the 学习 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  学习 </a><a href="/archive/tag/音游/" aria-label="View all posts with the 音游 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  音游 </a><a href="/archive/tag/游戏/" aria-label="View all posts with the 游戏 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  游戏 </a><a href="/archive/tag/域名/" aria-label="View all posts with the 域名 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  域名 </a><a href="/archive/tag/真寻机器人/" aria-label="View all posts with the 真寻机器人 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  真寻机器人 </a><a href="/archive/tag/go-cqhttp/" aria-label="View all posts with the go-cqhttp tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  go-cqhttp </a><a href="/archive/tag/nonebot2/" aria-label="View all posts with the nonebot2 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  nonebot2 </a><a href="/archive/tag/QQ机器人/" aria-label="View all posts with the QQ机器人 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  QQ机器人 </a> </div>  </div> <div class="expand-btn px-4 -mb-2" data-astro-cid-ucso7hve style="--collapsedHeight: 7.5rem;"> <button class="btn-plain rounded-lg w-full h-9" data-astro-cid-ucso7hve style="--collapsedHeight: 7.5rem;"> <div class="text-[var(--primary)] flex items-center justify-center gap-2 -translate-x-2" data-astro-cid-ucso7hve style="--collapsedHeight: 7.5rem;"> <svg width="1em" height="1em" class="text-[1.75rem]" data-astro-cid-ucso7hve="true" data-icon="material-symbols:more-horiz">   <symbol id="ai:material-symbols:more-horiz" viewBox="0 0 24 24"><path fill="currentColor" d="M6 14q-.825 0-1.412-.587T4 12t.588-1.412T6 10t1.413.588T8 12t-.587 1.413T6 14m6 0q-.825 0-1.412-.587T10 12t.588-1.412T12 10t1.413.588T14 12t-.587 1.413T12 14m6 0q-.825 0-1.412-.587T16 12t.588-1.412T18 10t1.413.588T20 12t-.587 1.413T18 14"/></symbol><use href="#ai:material-symbols:more-horiz"></use>  </svg> 更多
+</div> </button> </div> </widget-layout>  <script type="module">class d extends HTMLElement{constructor(){if(super(),this.dataset.isCollapsed!=="true")return;const e=this.dataset.id,t=this.querySelector(".expand-btn"),s=this.querySelector(`#${e}`);t.addEventListener("click",()=>{s.classList.remove("collapsed"),t.classList.add("hidden")})}}customElements.get("widget-layout")||customElements.define("widget-layout",d);</script> <!-- 赞助标 --> <!-- <div class="overflow-hidden flex justify-center">
+            <a href="https://secbit.ai/" target="_blank" rel="noopener noreferrer">
+                <img src="/aff/secbit-banner-1.gif" alt="Secbit" class="w-full max-w-[280px] rounded-lg hover:opacity-90 transition-opacity" />
+            </a>
+        </div> --> <!-- <div class="overflow-hidden flex justify-center">
+            <iframe
+                src="https://support.nodeget.com/page/promotion?id=316"
+                style="border:none; border-radius:8px; height:270px; width:100%; max-width:280px;
+                transform: scale(1.0); transform-origin: center top;"
+            ></iframe>
+        </div> --> </div> </div> <main id="swup-container" class="transition-swup-fade col-span-2 lg:col-span-1 overflow-hidden"> <div id="content-wrapper" class="onload-animation"> <!-- the overflow-hidden here prevent long text break the layout--> <!-- make id different from windows.swup global property -->   <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative mb-4"> <div id="post-container" class="card-base z-10 px-6 md:px-9 pt-6 pb-4 relative w-full "> <!-- word count and reading time --> <div class="flex flex-row text-black/30 dark:text-white/30 gap-5 mb-3 transition onload-animation"> <div class="flex flex-row items-center"> <div class="transition h-6 w-6 rounded-md bg-black/5 dark:bg-white/10 text-black/50 dark:text-white/50 flex items-center justify-center mr-2"> <svg width="1em" height="1em" data-icon="material-symbols:notes-rounded">   <symbol id="ai:material-symbols:notes-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h10q.425 0 .713.288T15 17t-.288.713T14 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/></symbol><use href="#ai:material-symbols:notes-rounded"></use>  </svg> </div> <div class="text-sm">5434 字</div> </div> <div class="flex flex-row items-center"> <div class="transition h-6 w-6 rounded-md bg-black/5 dark:bg-white/10 text-black/50 dark:text-white/50 flex items-center justify-center mr-2"> <svg width="1em" height="1em" data-icon="material-symbols:schedule-outline-rounded">   <symbol id="ai:material-symbols:schedule-outline-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M13 11.6V8q0-.425-.288-.712T12 7t-.712.288T11 8v3.975q0 .2.075.388t.225.337l3.3 3.3q.275.275.7.275T16 16t.275-.7t-.275-.7zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.325 0 5.663-2.337T20 12t-2.337-5.663T12 4T6.337 6.338T4 12t2.338 5.663T12 20"/></symbol><use href="#ai:material-symbols:schedule-outline-rounded"></use>  </svg> </div> <div class="text-sm">27 分钟</div> </div> </div> <!-- title --> <div class="relative onload-animation"> <div data-pagefind-body data-pagefind-weight="10" data-pagefind-meta="title" class="transition w-full flex items-center font-bold mb-3
+                    text-3xl md:text-[2.25rem]/[2.75rem]
+                    text-black/90 dark:text-white/90
+                    md:before:w-1 before:h-5 before:rounded-md before:bg-[var(--primary)]
+                    before:absolute before:top-[0.75rem] before:left-[-1.125rem]
+                ">  <span>学习笔记丨网课第十一天</span> </div> </div> <!-- description/excerpt --> <div class="onload-animation mb-4"> <div class="text-black/75 dark:text-white/75 text-sm leading-relaxed"> 学习笔记 </div> </div> <!-- metadata --> <div class="onload-animation"> <div class="flex flex-wrap text-neutral-500 dark:text-neutral-400 items-center gap-4 gap-x-4 gap-y-2 mb-5"> <!-- publish date --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" class="text-xl" data-icon="material-symbols:calendar-today-outline-rounded">   <symbol id="ai:material-symbols:calendar-today-outline-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6z"/></symbol><use href="#ai:material-symbols:calendar-today-outline-rounded"></use>  </svg> </div> <span class="text-50 text-sm font-medium">2022-09-14</span> </div> <!-- update date -->  <!-- tags --> <div class="items-center flex"> <div class="meta-icon"> <svg width="1em" height="1em" class="text-xl" data-icon="material-symbols:tag-rounded">   <symbol id="ai:material-symbols:tag-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="m9 16l-.825 3.275q-.075.325-.325.525t-.6.2q-.475 0-.775-.375T6.3 18.8L7 16H4.275q-.5 0-.8-.387T3.3 14.75q.075-.35.35-.55t.625-.2H7.5l1-4H5.775q-.5 0-.8-.387T4.8 8.75q.075-.35.35-.55t.625-.2H9l.825-3.275Q9.9 4.4 10.15 4.2t.6-.2q.475 0 .775.375t.175.825L11 8h4l.825-3.275q.075-.325.325-.525t.6-.2q.475 0 .775.375t.175.825L17 8h2.725q.5 0 .8.387t.175.863q-.075.35-.35.55t-.625.2H16.5l-1 4h2.725q.5 0 .8.388t.175.862q-.075.35-.35.55t-.625.2H15l-.825 3.275q-.075.325-.325.525t-.6.2q-.475 0-.775-.375T12.3 18.8L13 16zm.5-2h4l1-4h-4z"/></symbol><use href="#ai:material-symbols:tag-rounded"></use>  </svg> </div> <div class="flex flex-row flex-nowrap items-center"> <div class="hidden mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/tag/学习/" aria-label="View all posts with the 学习 tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> 学习 </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/tag/笔记/" aria-label="View all posts with the 笔记 tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> 笔记 </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/tag/高中/" aria-label="View all posts with the 高中 tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> 高中 </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/tag/网课/" aria-label="View all posts with the 网课 tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> 网课 </a>  </div> </div> <!-- page views --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" class="text-xl" data-icon="material-symbols:visibility-outline-rounded">   <symbol id="ai:material-symbols:visibility-outline-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M12 16q1.875 0 3.188-1.312T16.5 11.5t-1.312-3.187T12 7T8.813 8.313T7.5 11.5t1.313 3.188T12 16m0-1.8q-1.125 0-1.912-.788T9.3 11.5t.788-1.912T12 8.8t1.913.788t.787 1.912t-.787 1.913T12 14.2m0 4.8q-3.35 0-6.113-1.8t-4.362-4.75q-.125-.225-.187-.462t-.063-.488t.063-.488t.187-.462q1.6-2.95 4.363-4.75T12 4t6.113 1.8t4.362 4.75q.125.225.188.463t.062.487t-.062.488t-.188.462q-1.6 2.95-4.362 4.75T12 19m0-2q2.825 0 5.188-1.487T20.8 11.5q-1.25-2.525-3.613-4.012T12 6T6.813 7.488T3.2 11.5q1.25 2.525 3.613 4.013T12 17"/></symbol><use href="#ai:material-symbols:visibility-outline-rounded"></use>  </svg> </div> <span class="text-50 text-sm font-medium" id="page-views-display">统计加载中...</span> </div> </div> <script>(function(){const slug = "学习笔记丨网课第十一天";
+const umamiConfig = {"enable":true,"baseUrl":"cloud.umami.is","shareId":"F6AVMTwKHSx6YnN4","timezone":"Asia/Shanghai"};
+const unavailableText = "统计不可用";
+const viewsText = "浏览";
+const visitsText = "访客";
+
+        // 客户端统计文案生成函数
+        function generateStatsText(pageViews, visits) {
+            return `${viewsText} ${pageViews} · ${visitsText} ${visits}`;
+        }
+        
+        // 获取访问量统计
+        async function fetchPageViews(isRetry = false) {
+            if (!umamiConfig.enable) {
+                return;
+            }
+            
+            try {
+                // 调用全局工具获取 Umami 分享数据
+                const { websiteId, token } = await getUmamiShareData(umamiConfig.baseUrl, umamiConfig.shareId);
+                
+                // 第二步：获取统计数据
+                const currentTimestamp = Date.now();
+                const statsUrl = `${umamiConfig.baseUrl}/analytics/us/api/websites/${websiteId}/stats?startAt=0&endAt=${currentTimestamp}&unit=hour&timezone=${encodeURIComponent(umamiConfig.timezone)}&path=eq.%2Fposts%2F${slug}%2F&compare=false`;
+                
+                const statsResponse = await fetch(statsUrl, {
+                    headers: {
+                        'x-umami-share-token': token
+                    }
+                });
+                
+                if (!statsResponse.ok) {
+                    if (statsResponse.status === 401 && !isRetry) {
+                        clearUmamiShareCache();
+                        return fetchPageViews(true);
+                    }
+                    throw new Error('获取统计数据失败');
+                }
+                
+                const statsData = await statsResponse.json();
+            const pageViews = statsData.pageviews || 0;
+            const visits = statsData.visitors || 0;
+                
+                const displayElement = document.getElementById('page-views-display');
+                if (displayElement) {
+                    displayElement.textContent = generateStatsText(pageViews, visits);
+                }
+            } catch (error) {
+                console.error('Error fetching page views:', error);
+                const displayElement = document.getElementById('page-views-display');
+                if (displayElement) {
+                    displayElement.textContent = unavailableText;
+                }
+            }
+        }
+
+        // 页面加载完成后获取统计数据
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fetchPageViews);
+        } else {
+            fetchPageViews();
+        }
+    })();</script>  </div> <!-- always show cover as long as it has one --> <div id="post-cover" class="mb-8 rounded-xl banner-container onload-animation overflow-hidden relative image-wrapper" style="--theme-hue: 361" data-astro-cid-i2xmscho> <!-- 加载条 --> <div class="loading-bar absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-1 bg-gray-200 dark:bg-gray-700 z-10 rounded-full overflow-hidden" data-astro-cid-i2xmscho> <div class="loading-progress h-full w-8 bg-[oklch(0.70_0.14_var(--theme-hue))] animate-loading-progress rounded-full" data-astro-cid-i2xmscho></div> </div> <!-- 图片内容 --> <img src="/_astro/6312d83416f2c2beb191ff93.DJRsHcj9.jpg" alt style="object-position: center" onload="this.style.opacity='1'; this.parentElement.querySelector('.loading-bar').style.opacity='0';" data-astro-cid-i2xmscho="true" width="5760" height="3840" loading="lazy" decoding="async" class="w-full h-full object-cover image-content opacity-0 transition-opacity duration-500">  </div>  <div data-pagefind-body class="prose dark:prose-invert prose-base !max-w-none custom-md mb-6 markdown-content onload-animation"> <!--<div class="prose dark:prose-invert max-w-none custom-md">--> <!--<div class="max-w-none custom-md">-->  <section><h1 id="开学第十一课">开学第十一课<a class="anchor" href="#开学第十一课"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h1><hr><section><h2 id="英语">英语<a class="anchor" href="#英语"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h2><section><h3 id="welcome-unit">welcome unit<a class="anchor" href="#welcome-unit"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h3><section><h4 id="reading-and-thinking">Reading and Thinking<a class="anchor" href="#reading-and-thinking"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><section><h5 id="笔记小测">笔记小测<a class="anchor" href="#笔记小测"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h5><ol>
+<li>奉献的专注的	dedicated</li>
+<li>认真的真诚的	earnest</li>
+<li>及时的/地	timely</li>
+<li>注意的/集中精力地	attentively</li>
+<li>陪伴	accompany</li>
+<li>The Mid-Autumn Festival falls ( 发生) on the 15th of the eighth month of our Chinese lunar calendar(农历).</li>
+<li>受欢迎	enjoying great popularity</li>
+<li>除…之外	 in addition to</li>
+<li>一系列	a wide range of</li>
+<li>垃圾分类政策	garbage sorting policy</li>
+<li>未能做某事	fail to do sth</li>
+<li>因某事罚款某…	fine sb sth for (doing) sth</li>
+<li>被迫做某事	be forced to do sth</li>
+<li>下定决心做某事	make up one’s mind(s) to do sth</li>
+<li>在…上努力	work hard at sth</li>
+<li>取得很大进步	make much progress</li>
+<li>因某事表扬某人		praise sb for (doing) sth</li>
+<li>给某人关…的建议	give sb some advice on..</li>
+</ol></section><section><h5 id="课外阅读">课外阅读<a class="anchor" href="#课外阅读"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h5><p><strong>Chinese green tea: A mouthful of cool summer</strong></p><p>As costume(戏服/服装) drama A Dream of Splendor attracted many audiences this summer, the way the heroine Zhao Pan’er makes tea also drew much attention.
+China, home of most of the world’s tea, also has <strong>a series of</strong> customs <strong>concerning</strong> tea making and tea choice according to the season. In the summer, the most <strong>recommended</strong> one is green tea, for its character is “cold” in traditional Chinese medical theories, suitable to smooth the <strong>restlessness</strong> caused by hot summer.
+Since the Southern Song Dynasty (1127-1279), loose leaf green tea has been popular in China. Emperor Qianlong from the Qing Dynasty (1644-1911) was a tea lover and often enjoyed Longjing, the most well-known Chinese green tea, in summer.
+<strong>Apart from</strong> Longjing, Chinese green tea has many family members with beautiful and poetic names, such as Yunwu . Below are just some examples of these poetic teas</p></section><section><h5 id="words-and-expressions">words and expressions<a class="anchor" href="#words-and-expressions"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h5><p><img src="https://pic.imgdb.cn/item/6323103516f2c2beb151afae.png" alt="image-20220915181423822"><img src="https://pic.imgdb.cn/item/6323103616f2c2beb151aff1.png" alt="image-20220915181441385"></p><p><img src="https://pic.imgdb.cn/item/6323103616f2c2beb151b099.png" alt="image-20220915181453534"></p><p><img src="https://pic.imgdb.cn/item/6323103616f2c2beb151b0bf.png" alt="image-20220915181512364"></p></section><section><h5 id="step-1lead-in">Step 1.Lead-in<a class="anchor" href="#step-1lead-in"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h5><p>How do you feel on your first day of the Senior Highschool?
+Tell your classmates about your feeling.</p><p><img src="https://pic.imgdb.cn/item/6323103516f2c2beb151af77.png" alt="image-20220915191537577"></p><p>I felt very <strong>excited</strong>, but also <strong>anxious</strong> on my first day of senior high school. It was the beginning of a new part of my life and everything seemed so <strong>new</strong> and <strong>interesting</strong>. On the other hand, I was <strong>worried</strong> thatI would not be able to make friends and that the schoolwork would be too <strong>hard</strong>.</p></section><section><h5 id="step-2-pre-reading">Step 2. Pre-Reading<a class="anchor" href="#step-2-pre-reading"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h5><ol>
+<li>
+<p>Where is the passage from?</p>
+<p><strong>A student’s cellphone.</strong></p>
+</li>
+<li>
+<p>What’s the topic of the passage?</p>
+</li>
+</ol><p><strong>Han Jing’s first impressions on her new school.</strong></p><ol start="3">
+<li>In what order is the passage organised?</li>
+</ol><p><strong>In time order.</strong></p><p><img src="https://pic.imgdb.cn/item/6323106a16f2c2beb152240b.png" alt="image-20220915191858037"></p></section><section><h5 id="step-3-while-reading">Step 3. While-Reading<a class="anchor" href="#step-3-while-reading"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h5><ol>
+<li><strong>Match the main ideas with each paragrah</strong></li>
+</ol><p><img src="https://pic.imgdb.cn/item/6323106b16f2c2beb15224da.png" alt="image-20220915191935797"></p><ol start="2">
+<li><strong>Skim the reading passage and fill in the chart.</strong></li>
+</ol><p><img src="https://pic.imgdb.cn/item/6323106b16f2c2beb152256e.png" alt="image-20220915192035996"></p><ol start="3">
+<li>
+<p>Read the text again and discuss the questions.</p>
+<ol>
+<li>
+<p>Why did Han Jing feel anxious before school?</p>
+<p><strong>She is not outgoing.</strong></p>
+</li>
+<li>
+<p>What’s her math teacher like? and how was her first math class?</p>
+<p><strong>She was kind and friendly, but the class was difficult.</strong></p>
+</li>
+<li>
+<p>What happened in the chemistry class? What would you do if this happened to you?</p>
+<p><strong>The guy next to Han Jing tried to talk to her the whole time.</strong></p>
+</li>
+<li>
+<p>What did Han Jing learn from her first day at senior</p>
+<p>I feel much more confident andI think that tomorrow will be a great day.</p>
+</li>
+</ol>
+</li>
+</ol></section><section><h5 id="step-4-post-reading">Step 4. Post-Reading<a class="anchor" href="#step-4-post-reading"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h5><p><img src="https://pic.imgdb.cn/item/6323106a16f2c2beb15223a3.png" alt="image-20220915192317991"></p></section><section><h5 id="step-5-exercises">Step 5. Exercises<a class="anchor" href="#step-5-exercises"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h5><p><img src="https://pic.imgdb.cn/item/6323106a16f2c2beb15223d4.png" alt="image-20220915192353576"></p><hr></section></section></section></section><section><h2 id="数学">数学<a class="anchor" href="#数学"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h2><section><h3 id="集合的概念一">集合的概念（一）<a class="anchor" href="#集合的概念一"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h3><p><strong>我们已经接触过一些集合：</strong>
+1.将下列数字填入相应的集合：
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.1</mn><mtext>、</mtext><mfrac><mn>3</mn><mn>4</mn></mfrac><mtext>、</mtext><msqrt><mn>5</mn></msqrt><mtext>、</mtext><mn>0</mn><mtext>、</mtext><mi>π</mi><mtext>、</mtext><mo>−</mo><mn>2</mn><mtext>、</mtext><mn>3.14</mn><mtext>、</mtext><mn>7</mn></mrow><annotation encoding="application/x-tex">1.1、{3\over 4}、\sqrt{5}、0、π、-2、3.14、7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2522em;vertical-align:-0.345em;"></span><span class="mord">1.1</span><span class="mord cjk_fallback">、</span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span><span class="mord cjk_fallback">、</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9072em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">5</span></span></span><span style="top:-2.8672em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1328em;"><span></span></span></span></span></span><span class="mord cjk_fallback">、</span><span class="mord">0</span><span class="mord cjk_fallback">、</span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord cjk_fallback">、</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">2</span><span class="mord cjk_fallback">、</span><span class="mord">3.14</span><span class="mord cjk_fallback">、</span><span class="mord">7</span></span></span></span>
+自然数集合、有理数集合
+2.圆的定义：平面内到定点的距离等于定长的点的集合.</p><section><h4 id="集合的定义">集合的定义<a class="anchor" href="#集合的定义"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p>集合定义的理解</p><ol>
+<li>是一定范围内的确定的对象；</li>
+<li>是不同的对象；</li>
+<li>是这些对象的全体.</li>
+</ol><p><strong>归纳总结</strong>
+一般地， 我们把研究对象统称为<u><strong>元素.</strong></u>
+通常用小写拉丁字母a,b,c,…来表示.
+我们把一些元素组成的总体叫做<u><strong>集合</strong></u>(简称为集).
+通常用大写拉丁字母A,B,C,…来表示.
+<strong>问题：组成集合的元素一定是数吗？</strong>
+组成集合的元素可以是物、数、图、点等，它具备怎样的性质呢？</p></section><section><h4 id="集合中元素的性质">集合中元素的性质<a class="anchor" href="#集合中元素的性质"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><ol>
+<li>
+<p>所有的“帅哥”能否构成一个集合？由此说明什么？</p>
+<p>不能. 其中的元素不确定</p>
+</li>
+</ol><blockquote>
+<p>集合中的元素是确定的</p>
+</blockquote><p>​	 “帅”是一个含糊不清的概念，具有相对性，多么“帅”才算“帅”？没有明确的标准，也就是说，是一些不能够确定的对象．因此，不能构成集合．</p><ol start="2">
+<li>
+<p>由1,3,0,5,︱-3 ︳这些数组成的一个集合中有5个元素，这种说法正确吗？</p>
+<p>不正确.集合中只有4个不同元素1，3，0，5 .</p>
+<blockquote>
+<p>集合中的元素是互异的</p>
+</blockquote>
+</li>
+<li>
+<p>高一（5）班的全体同学组成一个集合，调整座位后这个集合有没有变化？</p>
+<p>集合没有变化</p>
+<blockquote>
+<p>集合中的元素是没有顺序的</p>
+</blockquote>
+<p><strong>两个集合中，元素完全一样，则称两集合相等.</strong></p>
+</li>
+</ol><p>通过以上的学习你能给出集合中元素的特性吗？
+<strong>确定性、互异性、无序性</strong></p></section><section><h4 id="元素和集合的关系">元素和集合的关系<a class="anchor" href="#元素和集合的关系"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p>已知下面的两个实例：
+（1）用A表示高一(3)班全体学生组成的集合.
+（2）用a表示高一(3)班的一位同学，b表示高一(4)班的一位同学.</p><p><strong>思考：那么a，b与集合A分别有什么关系?</strong>
+a是集合A中的元素,
+b不是集合A中的元素</p><p><strong>归纳总结</strong></p><p>元素a与集合A的关系
+如果a是集合A的元素，就说a<strong>属于</strong>集合A，记作<strong>a∈A</strong> ；
+如果a不是集合A中的元素，就说a<strong>不属于</strong>集合A，记作<strong>a∉A</strong>.
+<strong>属于符号和不属于符号具有方向性，左边是元素右边是集合。</strong></p><p>学习集合与元素的概念后，为了方便书写，数学中规定了一些常用数集及其记法：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>常用的数集</th><th>自然数集</th><th>正整数集</th><th>整数集</th><th>有理数集</th><th>实数集</th></tr></thead><tbody><tr><td>记法</td><td>N</td><td>N*或N＋</td><td>Z</td><td>Q</td><td>R</td></tr></tbody></table></section><section><h4 id="集合的表示方法">集合的表示方法<a class="anchor" href="#集合的表示方法"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><section><h5 id="列举法">列举法<a class="anchor" href="#列举法"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h5><p>**思考1：**地球上的四大洋 组成的集合如何表示？
+**【提示】**可以这样表示：
+{太平洋，大西洋，印度洋，北冰洋}.</p><blockquote>
+<p>列举法</p>
+</blockquote><p><strong>思考2:</strong> 方程（x+1)(x+2)=0的所有根组成的集合 又如何用列举法表示呢？
+<strong>【提示】</strong>  {-1,-2}</p><p><strong>归纳总结</strong></p><p><strong>通过思考以上问题大家能总结归纳出列举法的概念吗？</strong>
+把集合的元素<strong>一一列举</strong>出来，并用花括号“{   }” 括起来表示集合的方法叫做<strong>列举法</strong>.
+大括号不能缺失
+**注意：**元素确定 无序 互异
+<strong>元素间要用逗号隔开.</strong></p><p>a与{a}有什么区别？
+a是一个元素
+{a}是一个集合</p><p><strong>归纳升华</strong></p><p>【总结提升】由于元素完全相同的两个集合相等，而与列举的顺序无关，因此集合可以有不同的列举方法.例如，例1（1）可以表示为A={9,8,7,6,5,4,3,2,1,0}</p><p><strong>描述法</strong>
+<strong>思考深化</strong></p><p>由于小于10的实数有无穷多个，而且无法一一列举出来，
+因此这个集合不能用列举法表示．
+但是可以看出，这个集合中的元素满足性质：
+（1） 集合中的元素都小于10.
+（2） 集合中的元素都是实数．
+这个集合可以通过描述其元素性质的方法来表示，
+写作: {x∈R|x&#x3C;10}
+我们可以把奇数集合表示为{x|x=2k+1,x∈Z}
+还可以把奇数集合表示为{x|x=2k-1,x∈Z}
+又如所有偶数的集合怎样表示？
+{x∈Z|x=2k,k∈Z}</p><p>描述法：<strong>用这个集合所含元素的共同特征表示集合的方法．</strong></p><p><img src="https://pic.imgdb.cn/item/6323108f16f2c2beb1527361.png" alt="image-20220914210908875"></p><p>注意：如果从上下文的关系来看， x∈R ，x∈Z是明确的，那么x∈R ，x∈Z 可以省略，只写元素x.
+例如 { x∈R | x&#x3C;10 }= { x | x&#x3C;10 }
+{ x∈Z | x=2k, k∈Z} = { x | x=2k, k∈Z}</p><p><strong>归纳升华</strong></p><p>**思考：**你能说出列举法和描述法的优缺点吗？</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>优点</th><th>缺点</th></tr></thead><tbody><tr><td>列举法</td><td>直观、明了</td><td>不易看出元素所具有的属性，且有些集合不能用列举法表示</td></tr><tr><td>描述法</td><td>把集合中元素所具有的性质描述出来，具有抽象性、概括性、普遍性的特点</td><td>不易看出集合的具体元素</td></tr></tbody></table></section></section></section><section><h3 id="课堂小结">课堂小结<a class="anchor" href="#课堂小结"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h3><ol>
+<li>集合的概念;</li>
+<li>集合元素的性质:<strong>确定性，互异性， 无序性</strong></li>
+<li>数集及有关符号</li>
+<li>集合的<strong>表示方法</strong></li>
+<li>元素与集合的<strong>关系</strong></li>
+</ol></section><section><h3 id="集合的概念二">集合的概念（二）<a class="anchor" href="#集合的概念二"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h3><p><strong>数学学科素养</strong></p><ol>
+<li>数学抽象：集合概念的理解，描述法表示集合的方法；</li>
+<li>逻辑推理：集合的互异性的辨析与应用；</li>
+<li>数学运算：集合相等时的参数计算，集合的描述法转化为列举法时的运算；</li>
+<li>数据分析：元素在集合中对应的参数满足的条件；</li>
+<li>数学建模：用集合思想对实际生活中的对象进行判断与归类</li>
+</ol><section><h4 id="题型一----集合的含义">题型一    集合的含义<a class="anchor" href="#题型一----集合的含义"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p><strong>解题方法（判断一组对象能否组成集合的标准）</strong></p><p>判断一组对象能否组成集合，关键看该组对象是否满足确定性，如果此组对象满足确定性，就可以组成集合；否则，不能组成集合．同时还要注意集合中元素的互异性、无序性．</p></section><section><h4 id="题型二----元素与集合的关系">题型二    元素与集合的关系<a class="anchor" href="#题型二----元素与集合的关系"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p><strong>解题方法（判断元素与集合关系的两种方法）</strong></p><p>(1)直接法:如果集合中的元素是直接给出，只要判断该元素在已知集合中是否出现即可.
+(2)推理法:对于一些没有直接表示的集合，只要判断该元素是否满足集合中元素所具有的特征即可，此时应首先明确已知集合中的元素具有什么特征.</p></section><section><h4 id="题型三----集合中元素的特性及应用">题型三    集合中元素的特性及应用<a class="anchor" href="#题型三----集合中元素的特性及应用"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p><strong>解题方法（根据集合中元素的特性求解字母取值(范围)的3个步骤）</strong></p><p><img src="https://pic.imgdb.cn/item/6323109f16f2c2beb15294b5.png" alt="image-20220914211524256"></p></section><section><h4 id="题型四----用列举法表示集合">题型四    用列举法表示集合<a class="anchor" href="#题型四----用列举法表示集合"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p><strong>解题方法（用列举法表示集合的三个步骤）</strong></p><ol>
+<li>求出集合的元素；</li>
+<li>把元素一一列举出来，且相同元素只能列举一次；</li>
+<li>用花括号括起来。</li>
+</ol></section><section><h4 id="题型五----用描述法表示集合">题型五    用描述法表示集合<a class="anchor" href="#题型五----用描述法表示集合"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p><strong>解题方法（描述法表示集合的2个步骤）</strong></p><p><img src="https://pic.imgdb.cn/item/6323109f16f2c2beb15294c8.png" alt="image-20220914211646033"></p></section><section><h4 id="题型六----集合表示法的综合应用">题型六    集合表示法的综合应用<a class="anchor" href="#题型六----集合表示法的综合应用"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p><strong>解题方法(集合表示法中元素与集合的关系)</strong></p><ol>
+<li>若已知集合是用描述法表示的，理解集合的代表元素和集合属性是关键；</li>
+<li>若已知集合是用列举法表示的，把握元素的共同特征是关键；</li>
+</ol></section><section><h4 id="题型七----集合含义的拓展">题型七    集合含义的拓展<a class="anchor" href="#题型七----集合含义的拓展"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p><strong>解题方法（认识集合含义的2个步骤）</strong></p><p>(1)一看代表元素:例如{x|p (x) }表示数集，{(x, y)|y=p(x)}表示点集.
+(2)二看条件:即看代表元素满足什么条件(公共特性).</p><hr></section></section></section><section><h2 id="化学">化学<a class="anchor" href="#化学"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h2><section><h3 id="电解质">电解质<a class="anchor" href="#电解质"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h3><section><h4 id="1电解质">1.电解质<a class="anchor" href="#1电解质"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p>在水溶液<strong>或</strong>熔融态下能够导电的<strong>化合物</strong></p><p><img src="https://pic.imgdb.cn/item/632310b316f2c2beb152c422.png" alt="image-20220914154555294"></p></section><section><h4 id="2电解质导电的条件">2.电解质导电的条件<a class="anchor" href="#2电解质导电的条件"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p>（1）一般来说，对于NaOH、KCl等可溶性的碱和盐，在<u>水溶液</u>和<u>熔融状态</u>都可以导电；
+（2）对于难溶性的碱、盐、金属氧化物，如Mg(OH)2、BaSO4、Fe2O3，因为这些物质难溶于水，所以它们只能在<u>熔融状态</u>才可以导电；
+（3）像HCl、H2SO4等酸只能在<u>水溶液</u>才可以导电。</p><p><strong>注意</strong>
+电解质与导电性之间没有必然关系：
+（1）电解质不一定都能导电：如NaCl固体、HCl气体；
+（2）能导电的物质不一定是电解质：如石墨、金属单质、溶液。</p></section><section><h4 id="3非电解质">3.非电解质<a class="anchor" href="#3非电解质"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p>在水溶液<strong>和</strong>熔融态下均不导电的<strong>化合物</strong></p><p><img src="https://pic.imgdb.cn/item/632310b316f2c2beb152c42d.png" alt="image-20220914154952132"></p><p>注意
+（1）电解质在“水溶液”里或“熔融状态”下能导电，二者具备其一即可；
+（2）非电解质在“水溶液”里和“熔融状态”下不能导电，二者需同时满足；
+（3）电解质和非电解质都是化合物，单质和混合物既不是电解质，也不是非电解质；
+（4）电解质与非电解质的本质区别是看化合物自身在熔融状态下或在水溶液中能否发生电离，而溶液的导电只是一个表面现象。
+<img src="https://pic.imgdb.cn/item/632310b316f2c2beb152c448.png" alt="image-20220914155033569">
+（5）AgCl、BaSO4等难溶盐在水中的溶解度极小，不能导电，但这些物质在熔融状态下能导电，在水中溶解的部分也能完全电离，故属于电解质。
+（6 )溶液导电性与自由移动的离子浓度有关，离子浓度越大，导电能力越强。</p><p><strong>思考与交流</strong></p><p>（1）金属Cu、稀盐酸都能导电，请问金属Cu、稀盐酸属于电解质吗？
+<strong>都不属于，因为金属Cu是单质，稀盐酸是混合物，两者都不是化合物。</strong>
+（2）判断盐酸、硫酸、稀硝酸、烧碱溶液是否为电解质或非电解质？
+<strong>盐酸、稀硝酸、烧碱溶液为混合物，既不是电解质，也不是非电解质；硫酸为电解质。</strong>
+（3）CO2、NH3的水溶液能导电，那么CO2、NH3属于电解质吗？
+<strong>都不属于，因为电解质必须是自身能电离成自由移动离子的化合物。</strong>
+（4）“一个物质如果不是电解质，就是非电解质”这种说法是否正确？
+<strong>错误，如单质和混合物既不是电解质也不是非电解质</strong>。</p><p>若给出一个物质（我们不知道它溶于水或熔融状态下能否导电），怎么判断其是否为电解质？</p><p><strong>通过物质类别判断</strong></p></section></section><section><h3 id="电解质的电离">电解质的电离<a class="anchor" href="#电解质的电离"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h3><section><h4 id="1电离">1.电离<a class="anchor" href="#1电离"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p>电解质溶于水或受热融化时形成自由移动离子的过程。</p><p>电解质溶于水时是由于<strong>水分子</strong>的作用而<strong>电离</strong>熔融状态下是由于<strong>热能破坏化学键</strong>而<strong>电离</strong>成<strong>自由移动的离子都不是因为通电而电离</strong></p><blockquote>
+<p>电离<strong>不需要</strong>通电</p>
+</blockquote></section><section><h4 id="2电离方程式">2.电离方程式<a class="anchor" href="#2电离方程式"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p><strong>电解质</strong>的<strong>电离</strong>可以用<strong>电离方程式</strong>表示</p><p>为简便起见，用<strong>离子符号</strong>表示<strong>水合离子</strong></p><p><img src="https://pic.imgdb.cn/item/632310b316f2c2beb152c45c.png" alt="image-20220914155748620"></p><p>原子团<strong>不能拆开写</strong>
+遵循<strong>质量</strong>守恒和<strong>电荷</strong>守恒</p><p><img src="https://pic.imgdb.cn/item/632310b316f2c2beb152c487.png" alt="image-20220914155951976"></p><p><strong>酸：电离时生成的阳离子全部是氢离子（H+）的化合物</strong></p><p>氢原子失去电子后，剩余1个质子构成的核，即<strong>氢离子</strong>。氢离子是“裸露”的<strong>质子</strong>，半径很小，易与水分子细合成水合氢离子，通常用H3O+表示。为了简便，也常把<strong>H3O+写作H+</strong>。</p><p><img src="https://pic.imgdb.cn/item/632310df16f2c2beb1532a84.png" alt="image-20220914160140724"></p><p><strong>碱：电离时生成的阴离子全部是氢氧根离子（OH-）的化合物</strong></p><p><img src="https://pic.imgdb.cn/item/632310df16f2c2beb1532a91.png" alt="image-20220914160219720"></p><p><strong>碱：电离时生成的金属阳离子（或氨根离子）和酸根离子（或非金属离子）的化合物</strong></p></section></section><section><h3 id="课堂小结-1">课堂小结<a class="anchor" href="#课堂小结-1"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h3><p><img src="https://pic.imgdb.cn/item/632310df16f2c2beb1532aa1.png" alt="image-20220914160300839"></p><hr></section></section><section><h2 id="历史">历史<a class="anchor" href="#历史"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h2><p><strong>宏观印象：三国两晋南北朝是一个怎样的时代</strong></p><p><img src="https://pic.imgdb.cn/item/632310f916f2c2beb153737e.png" alt="image-20220914214659208"></p><section><h3 id="大一统秩序的重生之路">“大一统秩序”的重生之路<a class="anchor" href="#大一统秩序的重生之路"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h3><section><h4 id="一大一统秩序的崩溃">一、“大一统秩序”的崩溃<a class="anchor" href="#一大一统秩序的崩溃"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p>思考：学者认为“西晋是低质量的统一”，结合教材和地图找出论据。</p><p><img src="https://pic.imgdb.cn/item/632310f916f2c2beb15373ad.png" alt="image-20220914215201032"></p><p><img src="https://pic.imgdb.cn/item/632310f916f2c2beb1537395.png" alt="image-20220914215007927"></p><p><strong>宗室争夺中央权力、少数民族内迁、北民流亡南迁</strong>导致<strong>政治动荡,秩序大乱</strong></p><p><img src="https://pic.imgdb.cn/item/632310f916f2c2beb15373c1.png" alt="image-20220914215238713"></p><blockquote>
+<p>尽管<strong>分裂</strong>是这个时期的整体特点，但是社会并没有停滞不前，还表现出<strong>发展的趋势</strong>。
+——《新编中国史》</p>
+</blockquote></section><section><h4 id="二大一统秩序的再造">二、“大一统秩序”的再造<a class="anchor" href="#二大一统秩序的再造"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p>（一）经济格局的重整：<strong>区域开发</strong>
+观察对比：汉代至魏晋南北朝的经济有什么变化？</p><p><strong>南方经济有了明显发展</strong></p><p><img src="https://pic.imgdb.cn/item/632310f916f2c2beb15373f9.png" alt="image-20220914215547534"></p><p>思考：南方经济得到开发的原因和成就？</p><p><strong>民族迁徙和交融的结果、南方发展条件优越、统治者的开发</strong>和经营导致<strong>农业、手工业发展迅速</strong></p><p>史料运用：利用<strong>考古资料</strong>，完善<strong>文献</strong>中对此时期经济特征的叙述。</p><p><img src="https://pic.imgdb.cn/item/6323112c16f2c2beb153e055.png" alt="image-20220914215804338"></p><p>（二）民族关系的发展：<strong>交融互鉴</strong></p><p>观察研读:这幅屏风里还隐藏了什么历史信息？</p><p><img src="https://pic.imgdb.cn/item/6323112c16f2c2beb153e082.png" alt="image-20220914215834358"></p><p>提示：①司马金龙是北逃的东晋皇族，娶鲜卑公主为妻。②胡服：遮耳长帽、窄袖长裤、短靴③汉服：冠冕、广袖长袍、厚履</p><p><strong>双向互动,胡汉互鉴</strong></p><p>思考:西晋至十六国、北朝的民族关系是如何发展的</p><p><img src="https://pic.imgdb.cn/item/6323112c16f2c2beb153e0a4.png" alt="image-20220914215947139"></p><p>思考：孝文帝的汉化改革有何作用?</p><blockquote>
+<p>材料3：晋宋以来，号洛阳为荒土…长江以北，尽是夷狄。…昨至洛阳，始知衣冠士族，并在中原。礼仪富盛，人物殷富。庆之因此羽仪服式悉如魏法，江表士庶竞相模楷。              ——《洛阳伽蓝记》</p>
+<p>材料4：孝文帝诏曰: “卿便至彼（南朝），勿存彼我。…不早当晚，会是朕物。——《魏书》</p>
+</blockquote><p><img src="https://pic.imgdb.cn/item/6323112b16f2c2beb153e033.png" alt="image-20220914220036779"></p><p>减小民族隔阂缓解民族矛盾、促进北魏经济发展和社会繁荣、为北方统一南方及隋唐盛世奠基</p><p><strong>彰显中华一统意识</strong></p><p><img src="https://pic.imgdb.cn/item/6323112c16f2c2beb153e045.png" alt="image-20220914220200289"></p><p>思考：两则材料中的矛盾之处说明了什么问题？</p><blockquote>
+<p>材料5：东魏、北齐出现了“鲜卑共轻中华朝士”的情况。西魏宇文泰不单恢复了胡族诸将的胡姓，还向汉人广赐胡姓。——叶炜《从王光、叱罗招男夫妇墓志论西魏北周二题》</p>
+</blockquote><p><img src="https://pic.imgdb.cn/item/6323115a16f2c2beb15447f8.png" alt="image-20220914220244255"></p><p>民族交融在曲折中发展、汉化改革顺应民族交往交流交融的历史趋势</p><p><strong>推动中华民族多元一体格局的发展</strong></p><p>（三）政治变态的回归：<strong>皇权政治的强化</strong></p><p>情境讨论：如果你是宋孝武帝，你会如何处理此事？</p><p><img src="https://pic.imgdb.cn/item/6323115a16f2c2beb1544827.png" alt="image-20220914220421223"></p><p>思考：十六国北朝政权发展呈现何种趋势？</p><blockquote>
+<p>材料8：后赵太子“使文武皆跪立”，成汉之主李寿“人有小过，辙杀以立威”。十六国北朝在“胡化”和“汉化”的交替之中，孕育出了强大的皇权。…北朝异族政权具有政治复兴更大动量，帝国以北朝为“出口”而走向隋唐盛世。——摘编自阎步克《波峰与波谷》</p>
+</blockquote><p>东晋士族专权皇帝垂拱</p><p>北方异族皇权强化、南朝士族衰落,皇权重振</p><p>隋唐大一统的皇权政治</p><p><img src="https://pic.imgdb.cn/item/6323115a16f2c2beb1544854.png" alt="image-20220914220642977"></p></section></section><section><h3 id="大一统秩序的重生之路-1">“大一统秩序”的重生之路<a class="anchor" href="#大一统秩序的重生之路-1"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h3><p><img src="https://pic.imgdb.cn/item/6323115a16f2c2beb1544872.png" alt="image-20220914220714940"></p><hr></section></section><section><h2 id="地理">地理<a class="anchor" href="#地理"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h2><section><h3 id="地球的形成与演化">地球的形成与演化<a class="anchor" href="#地球的形成与演化"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h3><p><img src="https://pic.imgdb.cn/item/6323115a16f2c2beb15447cd.png" alt="image-20220914221711800"></p><p><img src="https://pic.imgdb.cn/item/6323118316f2c2beb154aaf6.png" alt="image-20220914221745992"></p><section><h4 id="地球的形成与演化简史">地球的形成与演化简史<a class="anchor" href="#地球的形成与演化简史"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p><strong>距今4570百万年地球形成,逐步演化至今。</strong></p><p>原始地球的形成
+<strong>距今4570百万年，地球形成。</strong>
+<strong>46亿年以前</strong>，星云盘内<strong>物质</strong>经碰撞<strong>吸积</strong>，<strong>原始地球形成</strong>。</p><p>原始地表的形成
+距今4570百万年，地表随之形成。
+<strong>密度大</strong>的物质逐渐<strong>聚集</strong>到<strong>地球的中心</strong>，形成了<strong>地核</strong>，<strong>密度小</strong>的<strong>物质向上</strong>形成了<strong>地幔和地壳</strong>。</p><p>原始海洋的形成
+<strong>距今4150年，海洋形成</strong>
+广泛发生的<strong>火山喷发</strong>，<strong>释放</strong>出<strong>水蒸汽</strong>，<strong>二氧化碳等气体</strong>，构成了<strong>原始的大气层</strong>。 随地表<strong>温度降低</strong>水汽<strong>凝结降雨</strong>， <strong>汇聚</strong>到地面<strong>形成</strong>了原始海洋。</p><p>原始生物的形成
+<strong>距今3850百万年，地球生命出现。</strong>
+<strong>原始生命物质形成于大约距今38.5亿年前的原始海洋。距今约5.4亿年前地球出现生命大爆发。180万 年前人类诞生。</strong></p></section><section><h4 id="知识小结">知识小结<a class="anchor" href="#知识小结"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p><img src="https://pic.imgdb.cn/item/6323119116f2c2beb154cbf7.png" alt="image-20220915193240090"></p><p><img src="https://pic.imgdb.cn/item/6323119216f2c2beb154cc02.png" alt="image-20220915193250330"></p></section><section><h4 id="地球的演化过程">地球的演化过程<a class="anchor" href="#地球的演化过程"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p><strong>距今4570百万年</strong>地球形成，<strong>逐步演化</strong>至今。</p><p><img src="https://pic.imgdb.cn/item/6323119216f2c2beb154cc10.png" alt="image-20220915193403954"></p><p>生物演化(植物)
+地球生物演化经历了从<strong>低级到高级</strong>，从<strong>简单到复杂</strong>的过程。
+从<strong>空间分布</strong>来看，生物演化经历了<strong>由海洋向陆地扩 展</strong>的过程。</p><p><img src="https://pic.imgdb.cn/item/6323119116f2c2beb154cbd7.png" alt="image-20220915193444403"></p><p>生物演化(动物)
+地球生物演化经历了<strong>从低级到高级</strong>，<strong>从简单到复杂</strong>的过程。
+从<strong>空间分布</strong>来看，生物演化经历了<strong>由海洋向陆地扩 展</strong>的过程。</p><p><img src="https://pic.imgdb.cn/item/6323119116f2c2beb154cbe7.png" alt="image-20220915193531655"></p><p>生物演化
+在<strong>生物演化</strong>过程中，伴随着<strong>一些生物的衰退和灭亡</strong>，是<strong>另一些生物的出现和兴盛</strong>。<strong>如恐龙与哺乳动物</strong></p><p>海陆变迁
+地质历史上曾经发生过多次<strong>海陆变迁</strong>，大约<strong>3亿~2亿年前</strong>形成<strong>泛大陆</strong>。大约<strong>距今2亿年前</strong>。泛大陆分裂形成<strong>两个大陆(冈瓦纳大陆和劳亚大陆)</strong>，<strong>约6500万年前</strong>，七大洲和四大洋的<strong>轮廓初步显现</strong>，<strong>目前</strong>已形成<strong>七大洲，四大洋</strong>的海陆格局。</p><p><img src="https://pic.imgdb.cn/item/632311b916f2c2beb15521e8.png" alt="image-20220915193739115"></p><p>构造运动
+<strong>概念:由地球内部力量引起的地壳乃至岩石圈的变位、变形</strong>
+在地球历史上曾发生过多次<strong>构造运动</strong>，构造运动导致了<strong>地形和海陆的变迁</strong>，对<strong>气候</strong>的变化，<strong>生物</strong>的<strong>演化</strong>。以及一些<strong>矿物质的形成</strong>具有重要影响。
+<strong>发生在中生代的构造运动导致了泛大陆的解体;</strong>
+<strong>发生在晚新生代的构造运动导致了青藏高原和喜马拉雅山的形成。</strong></p><p><strong>青藏高原的形成及影响</strong></p><p><img src="https://pic.imgdb.cn/item/632311ba16f2c2beb155227d.png" alt="image-20220915193911955"></p><p><img src="https://pic.imgdb.cn/item/632311ba16f2c2beb15522d2.png" alt="image-20220915193922810"></p><p>矿产形成
+地质历史上出现了多个<strong>重要成矿期</strong>，如<strong>前寒武纪铁矿成矿期，古生代后期煤炭成矿期</strong>(重要成煤期)，<strong>中生代煤炭成矿期</strong>(主要成煤期)</p><p>矿产资源是经济和社会可持续发展的重要物质基础，是综合国力的重要组成部分。
+<strong>矿产</strong>，泛指一切<strong>埋藏在地下</strong>(或分布于地表的、或岩石风化的、或岩石沉积的)可供<strong>人类利用</strong>的天然矿物或岩石资源。矿产可分为金属、非金属、可燃有机等类别，是不可再生资源。<strong>那么，矿产资源是如何形成的呢？</strong></p><p>伴随着<strong>构造运动、海陆变迁、生物演化和气候变化</strong>，地质历史上出现了多
+个重要的成矿期，如
+<strong>前寒武纪铁矿成矿期</strong>（距今25亿至23亿年前后），
+大量的铁、金、镍、铬等矿藏出现在这一时期的地层中；
+<strong>古生代后期煤炭成矿期；</strong>
+<strong>中生代煤炭成矿期等。</strong></p><p><img src="https://pic.imgdb.cn/item/632311ba16f2c2beb1552326.png" alt="image-20220915194113343"></p><p>煤炭：暖湿的陆生环境    石油：温暖的浅海环境</p><p><img src="https://pic.imgdb.cn/item/632311ba16f2c2beb1552390.png" alt="image-20220915194126713"></p></section><section><h4 id="知识小结-1">知识小结<a class="anchor" href="#知识小结-1"><span class="anchor-icon" data-pagefind-ignore="">#</span></a></h4><p><img src="https://pic.imgdb.cn/item/632311dd16f2c2beb1557059.png" alt="image-20220915194217309"></p><hr><h1 style="font-size:20px">【今日网课结束】</h1>
+因设备原因导致此次更新以往日更新较晚，请大家多多包涵</section></section></section></section>  </div> <script type="module">document.addEventListener("click",function(s){const t=s.target;if(t&&t.classList.contains("copy-btn")){const c=t.closest("pre")?.querySelector("code"),i=Array.from(c?.querySelectorAll(".code:not(summary *)")??[]).map(e=>e.textContent).map(e=>e===`
+`?"":e).join(`
+`);navigator.clipboard.writeText(i);const o=t.getAttribute("data-timeout-id");o&&clearTimeout(parseInt(o)),t.classList.add("success");const n=setTimeout(()=>{t.classList.remove("success")},1e3);t.setAttribute("data-timeout-id",n.toString())}});</script> <!-- 文章反馈与编辑区域 --> <div class="mb-4 p-4 rounded-lg bg-[var(--license-block-bg)] border border-[var(--line-divider)] onload-animation"> <!-- 反馈区域 --> <div class="flex items-center justify-between mb-4"> <div class="flex items-center gap-3"> <div class="h-5 w-5 rounded bg-[var(--primary)] flex items-center justify-center"> <svg width="1em" height="1em" class="text-[0.75rem] text-white dark:text-black/70" data-icon="material-symbols:help-outline">   <symbol id="ai:material-symbols:help-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M11.95 18q.525 0 .888-.363t.362-.887t-.362-.888t-.888-.362t-.887.363t-.363.887t.363.888t.887.362m-.9-3.85h1.85q0-.825.188-1.3t1.062-1.3q.65-.65 1.025-1.238T15.55 8.9q0-1.4-1.025-2.15T12.1 6q-1.425 0-2.312.75T8.55 8.55l1.65.65q.125-.45.563-.975T12.1 7.7q.8 0 1.2.438t.4.962q0 .5-.3.938t-.75.812q-1.1.975-1.35 1.475t-.25 1.825M12 22q-2.075 0-3.9-.787t-3.175-2.138T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></symbol><use href="#ai:material-symbols:help-outline"></use>  </svg> </div> <p class="text-black/80 dark:text-white/80 text-sm">这篇文章是否对你有帮助？</p> </div> <div class="flex gap-2"> <a href="/posts/pin/" class="group flex items-center gap-1 px-3 py-1.5 rounded bg-[var(--btn-regular-bg)] hover:bg-[var(--btn-regular-bg-hover)] active:bg-[var(--btn-regular-bg-active)] text-[var(--btn-content)] text-xs font-medium transition-all active:scale-95"> <svg width="1em" height="1em" class="text-[0.875rem] group-hover:scale-110 transition-transform" data-icon="material-symbols:contact-mail-outline">   <symbol id="ai:material-symbols:contact-mail-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M14 11h7V6h-7zm3.5-1.25L15 8V7l2.5 1.75L20 7v1zM2 21q-.825 0-1.412-.587T0 19V5q0-.825.588-1.412T2 3h20q.825 0 1.413.588T24 5v14q0 .825-.587 1.413T22 21zm13.9-2H22V5H2v14h.1q1.05-1.875 2.9-2.937T9 15t4 1.063T15.9 19M9 14q1.25 0 2.125-.875T12 11t-.875-2.125T9 8t-2.125.875T6 11t.875 2.125T9 14m-4.45 5h8.9q-.85-.95-2.013-1.475T9 17t-2.425.525T4.55 19M9 12q-.425 0-.712-.288T8 11t.288-.712T9 10t.713.288T10 11t-.288.713T9 12m3 0"/></symbol><use href="#ai:material-symbols:contact-mail-outline"></use>  </svg>
+联系
+</a> <a href="/donate/" class="group flex items-center gap-1 px-3 py-1.5 rounded bg-[var(--primary)] hover:bg-[oklch(0.65_0.16_var(--hue))] active:bg-[oklch(0.60_0.18_var(--hue))] text-white dark:text-black/80 text-xs font-medium transition-all active:scale-95"> <svg width="1em" height="1em" class="text-[0.875rem] group-hover:scale-110 transition-transform" data-icon="material-symbols:favorite-outline">   <symbol id="ai:material-symbols:favorite-outline" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21l-1.45-1.3q-2.525-2.275-4.175-3.925T3.75 12.812T2.388 10.4T2 8.15Q2 5.8 3.575 4.225T7.5 2.65q1.3 0 2.475.55T12 4.75q.85-1 2.025-1.55t2.475-.55q2.35 0 3.925 1.575T22 8.15q0 1.15-.387 2.25t-1.363 2.412t-2.625 2.963T13.45 19.7zm0-2.7q2.4-2.15 3.95-3.687t2.45-2.675t1.25-2.026T20 8.15q0-1.5-1-2.5t-2.5-1q-1.175 0-2.175.662T12.95 7h-1.9q-.375-1.025-1.375-1.687T7.5 4.65q-1.5 0-2.5 1t-1 2.5q0 .875.35 1.763t1.25 2.025t2.45 2.675T12 18.3m0-6.825"/></symbol><use href="#ai:material-symbols:favorite-outline"></use>  </svg>
+赞助
+</a> </div> </div>   <div class="border-t border-[var(--line-divider)] my-3"></div>  <div class="flex items-start gap-3"> <div class="h-5 w-5 rounded bg-[var(--primary)] flex items-center justify-center"> <svg width="1em" height="1em" class="text-[0.875rem] text-white dark:text-black/70" data-icon="material-symbols:edit-outline">   <symbol id="ai:material-symbols:edit-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M5 19h1.425L16.2 9.225L14.775 7.8L5 17.575zm-2 2v-4.25L16.2 3.575q.3-.275.663-.425t.762-.15t.775.15t.65.45L20.425 5q.3.275.438.65T21 6.4q0 .4-.137.763t-.438.662L7.25 21zM19 6.4L17.6 5zm-3.525 2.125l-.7-.725L16.2 9.225z"/></symbol><use href="#ai:material-symbols:edit-outline"></use>  </svg> </div> <div class="flex-1"> <p class="text-black/80 dark:text-white/80 text-sm mb-1">发现错误或想要改进这篇文章？</p> <a href="https://github.com/chuzouX/fuwari/tree/main/src/content/posts/学习笔记丨网课第十一天.md" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[var(--primary)] hover:text-[oklch(0.65_0.16_var(--hue))] text-sm font-medium transition-colors"> <svg width="0.97em" height="1em" class="text-[0.875rem]" data-icon="fa6-brands:github">   <symbol id="ai:fa6-brands:github" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6c-3.3.3-5.6-1.3-5.6-3.6c0-2 2.3-3.6 5.2-3.6c3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9c2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9c.3 2 2.9 3.3 5.9 2.6c2.9-.7 4.9-2.6 4.6-4.6c-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2c12.8 2.3 17.3-5.6 17.3-12.1c0-6.2-.3-40.4-.3-61.4c0 0-70 15-84.7-29.8c0 0-11.4-29.1-27.8-36.6c0 0-22.9-15.7 1.6-15.4c0 0 24.9 2 38.6 25.8c21.9 38.6 58.6 27.5 72.9 20.9c2.3-16 8.8-27.1 16-33.7c-55.9-6.2-112.3-14.3-112.3-110.5c0-27.5 7.6-41.3 23.6-58.9c-2.6-6.5-11.1-33.3 2.6-67.9c20.9-6.5 69 27 69 27c20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27c13.7 34.7 5.2 61.4 2.6 67.9c16 17.7 25.8 31.5 25.8 58.9c0 96.5-58.9 104.2-114.8 110.5c9.2 7.9 17 22.9 17 46.4c0 33.7-.3 75.4-.3 83.6c0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252C496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2c1.6 1.6 3.9 2.3 5.2 1c1.3-1 1-3.3-.7-5.2c-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9c1.6 1 3.6.7 4.3-.7c.7-1.3-.3-2.9-2.3-3.9c-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2c2.3 2.3 5.2 2.6 6.5 1c1.3-1.3.7-4.3-1.3-6.2c-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2c-1.4-2.3-4-3.3-5.6-2"/></symbol><use href="#ai:fa6-brands:github"></use>  </svg>
+在 GitHub 上编辑此页
+<svg width="1em" height="1em" class="text-[0.75rem]" data-icon="material-symbols:open-in-new">   <symbol id="ai:material-symbols:open-in-new" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h14v-7h2v7q0 .825-.587 1.413T19 21zm4.7-5.3l-1.4-1.4L17.6 5H14V3h7v7h-2V6.4z"/></symbol><use href="#ai:material-symbols:open-in-new"></use>  </svg> </a> </div> </div>  </div> <div class="relative transition overflow-hidden bg-[var(--license-block-bg)] py-5 px-6 mb-6 rounded-xl license-container onload-animation"> <div class="transition font-bold text-black/75 dark:text-white/75"> 学习笔记丨网课第十一天 </div> <a href="https://blog.2b2x.cn/posts/学习笔记丨网课第十一天/" class="link text-[var(--primary)]"> https://blog.2b2x.cn/posts/学习笔记丨网课第十一天/ </a> <div class="flex gap-6 mt-2"> <div> <div class="transition text-black/30 dark:text-white/30 text-sm">作者</div> <div class="transition text-black/75 dark:text-white/75 line-clamp-2">chuzouX</div> </div> <div> <div class="transition text-black/30 dark:text-white/30 text-sm">发布于</div> <div class="transition text-black/75 dark:text-white/75 line-clamp-2">2022-09-14</div> </div> <div> <div class="transition text-black/30 dark:text-white/30 text-sm">许可协议</div> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" class="link text-[var(--primary)] line-clamp-2">CC BY-NC-SA 4.0</a> </div> </div> <svg width="0.97em" height="1em" class="transition text-[15rem] absolute pointer-events-none right-6 top-1/2 -translate-y-1/2 text-black/5 dark:text-white/5" data-icon="fa6-brands:creative-commons">   <symbol id="ai:fa6-brands:creative-commons" viewBox="0 0 496 512"><path fill="currentColor" d="m245.83 214.87l-33.22 17.28c-9.43-19.58-25.24-19.93-27.46-19.93c-22.13 0-33.22 14.61-33.22 43.84c0 23.57 9.21 43.84 33.22 43.84c14.47 0 24.65-7.09 30.57-21.26l30.55 15.5c-6.17 11.51-25.69 38.98-65.1 38.98c-22.6 0-73.96-10.32-73.96-77.05c0-58.69 43-77.06 72.63-77.06c30.72-.01 52.7 11.95 65.99 35.86m143.05 0l-32.78 17.28c-9.5-19.77-25.72-19.93-27.9-19.93c-22.14 0-33.22 14.61-33.22 43.84c0 23.55 9.23 43.84 33.22 43.84c14.45 0 24.65-7.09 30.54-21.26l31 15.5c-2.1 3.75-21.39 38.98-65.09 38.98c-22.69 0-73.96-9.87-73.96-77.05c0-58.67 42.97-77.06 72.63-77.06c30.71-.01 52.58 11.95 65.56 35.86M247.56 8.05C104.74 8.05 0 123.11 0 256.05c0 138.49 113.6 248 247.56 248c129.93 0 248.44-100.87 248.44-248c0-137.87-106.62-248-248.44-248m.87 450.81c-112.54 0-203.7-93.04-203.7-202.81c0-105.42 85.43-203.27 203.72-203.27c112.53 0 202.82 89.46 202.82 203.26c-.01 121.69-99.68 202.82-202.84 202.82"/></symbol><use href="#ai:fa6-brands:creative-commons"></use>  </svg> </div> <!-- Giscus 评论区 --> <!-- <script src="https://giscus.app/client.js"
+                    data-repo="chuzouX/chuzouX_blog_giscus"
+                    data-repo-id="R_kgDOPnFyCg"
+                    data-category="General"
+                    data-category-id="DIC_kwDOPnFyCs4Cux55"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="top"
+                    data-theme="noborder_gray"
+                    data-lang="zh-CN"
+                    data-loading="lazy"
+                    crossorigin="anonymous"
+                    async>
+            </script> --> <br> <div class="flex flex-col md:flex-row justify-between mb-4 gap-4 overflow-hidden w-full"> <a href="/posts/学习笔记丨网课第十二天/" class="w-full font-bold overflow-hidden active:scale-95"> <div class="btn-card rounded-2xl w-full h-[3.75rem] max-w-full px-4 flex items-center !justify-start gap-4"> <svg width="1em" height="1em" class="text-[2rem] text-[var(--primary)]" data-icon="material-symbols:chevron-left-rounded">   <symbol id="ai:material-symbols:chevron-left-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="m10.8 12l3.9 3.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-4.6-4.6q-.15-.15-.212-.325T8.425 12t.063-.375t.212-.325l4.6-4.6q.275-.275.7-.275t.7.275t.275.7t-.275.7z"/></symbol><use href="#ai:material-symbols:chevron-left-rounded"></use>  </svg> <div class="overflow-hidden transition overflow-ellipsis whitespace-nowrap max-w-[calc(100%_-_3rem)] text-black/75 dark:text-white/75"> 学习笔记丨网课第十二天 </div> </div> </a> <a href="/posts/学习笔记丨网课第十天/" class="w-full font-bold overflow-hidden active:scale-95"> <div class="btn-card rounded-2xl w-full h-[3.75rem] max-w-full px-4 flex items-center !justify-end gap-4"> <div class="overflow-hidden transition overflow-ellipsis whitespace-nowrap max-w-[calc(100%_-_3rem)] text-black/75 dark:text-white/75"> 学习笔记丨网课第十天 </div> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-[2rem] text-[var(--primary)]" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> </div> </a> </div> </div></div> <div class="footer col-span-2 onload-animation hidden lg:block"> <!--<div class="border-t border-[var(&#45;&#45;primary)] mx-16 border-dashed py-8 max-w-[var(&#45;&#45;page-width)] flex flex-col items-center justify-center px-6">--><div class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-32"></div> <!--<div class="transition bg-[oklch(92%_0.01_var(&#45;&#45;hue))] dark:bg-black rounded-2xl py-8 mt-4 mb-8 flex flex-col items-center justify-center px-6">--> <div class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6"> <div class="transition text-50 text-sm text-center">
+&copy; <span id="copyright-year">2024 - 2025</span> chuzouX，采用
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可。
+<br> <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="/rss.xml">RSS</a> /
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="/sitemap-index.xml">网站地图</a> <br> <!-- <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://icp.gov.moe/?keyword=20258833" target="_blank">萌ICP备20258833号</a>
+        <br> --> <a class="transition link text-[var(--primary)] font-medium inline-flex items-center" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"><img alt="" src="/favicon/foot-icp.png" class="h-4 mr-1">鲁ICP备2025189837号-1</a> <br>
+由
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://astro.build">Astro</a> 和
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a> 强力驱动
+<br>
+本网站代码
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/afoim/fuwari">已开源</a> </div> </div> </div> </div> </main> <div class="footer col-span-2 onload-animation block lg:hidden"> <!--<div class="border-t border-[var(&#45;&#45;primary)] mx-16 border-dashed py-8 max-w-[var(&#45;&#45;page-width)] flex flex-col items-center justify-center px-6">--><div class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-32"></div> <!--<div class="transition bg-[oklch(92%_0.01_var(&#45;&#45;hue))] dark:bg-black rounded-2xl py-8 mt-4 mb-8 flex flex-col items-center justify-center px-6">--> <div class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6"> <div class="transition text-50 text-sm text-center">
+&copy; <span id="copyright-year">2024 - 2025</span> chuzouX，采用
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可。
+<br> <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="/rss.xml">RSS</a> /
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="/sitemap-index.xml">网站地图</a> <br> <!-- <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://icp.gov.moe/?keyword=20258833" target="_blank">萌ICP备20258833号</a>
+        <br> --> <a class="transition link text-[var(--primary)] font-medium inline-flex items-center" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"><img alt="" src="/favicon/foot-icp.png" class="h-4 mr-1">鲁ICP备2025189837号-1</a> <br>
+由
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://astro.build">Astro</a> 和
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a> 强力驱动
+<br>
+本网站代码
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/afoim/fuwari">已开源</a> </div> </div> </div> </div> <!-- There can't be a filter on parent element, or it will break `fixed` --><div class="back-to-top-wrapper hidden lg:block" data-astro-cid-eymb5ayk> <div id="back-to-top-btn" class="back-to-top-btn hide flex items-center rounded-2xl overflow-hidden transition" onclick="backToTop()" data-astro-cid-eymb5ayk> <button aria-label="Back to Top" class="btn-card h-[3.75rem] w-[3.75rem]" data-astro-cid-eymb5ayk> <svg width="1em" height="1em" class="mx-auto" data-astro-cid-eymb5ayk="true" data-icon="material-symbols:keyboard-arrow-up-rounded">   <symbol id="ai:material-symbols:keyboard-arrow-up-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="m12 10.8l-3.9 3.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.6-4.6q.3-.3.7-.3t.7.3l4.6 4.6q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"/></symbol><use href="#ai:material-symbols:keyboard-arrow-up-rounded"></use>  </svg> </button> </div> </div>  <script>
+function backToTop() {
+    window.scroll({ top: 0, behavior: 'smooth' });
+}
+</script> </div> </div>  <div class="absolute w-full z-0 hidden 2xl:block"> <div class="relative max-w-[var(--page-width)] mx-auto"> <!-- TOC component --> <div id="toc-wrapper" class="hidden lg:block transition absolute top-0 -right-[var(--toc-width)] w-[var(--toc-width)] flex items-center"> <div id="toc-inner-wrapper" class="fixed top-14 w-[var(--toc-width)] h-[calc(100vh_-_20rem)] overflow-y-scroll overflow-x-hidden hide-scrollbar"> <div id="toc" class="w-full h-full transition-swup-fade "> <div class="h-8 w-full"></div> <table-of-contents class="group"><a href="#开学第十一课" class="px-2 flex gap-2 relative transition w-full min-h-9 rounded-xl
+        hover:bg-[var(--toc-btn-hover)] active:bg-[var(--toc-btn-active)] py-2
+    "><div class="transition w-5 h-5 shrink-0 rounded-lg text-xs flex items-center justify-center font-bold bg-[var(--toc-badge-bg)] text-[var(--btn-content)]">1</div><div class="transition text-sm text-50">开学第十一课</div></a><a href="#英语" class="px-2 flex gap-2 relative transition w-full min-h-9 rounded-xl
+        hover:bg-[var(--toc-btn-hover)] active:bg-[var(--toc-btn-active)] py-2
+    "><div class="transition w-5 h-5 shrink-0 rounded-lg text-xs flex items-center justify-center font-bold ml-4"><div class="transition w-2 h-2 rounded-[0.1875rem] bg-[var(--toc-badge-bg)]"></div></div><div class="transition text-sm text-50">英语</div></a><a href="#数学" class="px-2 flex gap-2 relative transition w-full min-h-9 rounded-xl
+        hover:bg-[var(--toc-btn-hover)] active:bg-[var(--toc-btn-active)] py-2
+    "><div class="transition w-5 h-5 shrink-0 rounded-lg text-xs flex items-center justify-center font-bold ml-4"><div class="transition w-2 h-2 rounded-[0.1875rem] bg-[var(--toc-badge-bg)]"></div></div><div class="transition text-sm text-50">数学</div></a><a href="#化学" class="px-2 flex gap-2 relative transition w-full min-h-9 rounded-xl
+        hover:bg-[var(--toc-btn-hover)] active:bg-[var(--toc-btn-active)] py-2
+    "><div class="transition w-5 h-5 shrink-0 rounded-lg text-xs flex items-center justify-center font-bold ml-4"><div class="transition w-2 h-2 rounded-[0.1875rem] bg-[var(--toc-badge-bg)]"></div></div><div class="transition text-sm text-50">化学</div></a><a href="#历史" class="px-2 flex gap-2 relative transition w-full min-h-9 rounded-xl
+        hover:bg-[var(--toc-btn-hover)] active:bg-[var(--toc-btn-active)] py-2
+    "><div class="transition w-5 h-5 shrink-0 rounded-lg text-xs flex items-center justify-center font-bold ml-4"><div class="transition w-2 h-2 rounded-[0.1875rem] bg-[var(--toc-badge-bg)]"></div></div><div class="transition text-sm text-50">历史</div></a><a href="#地理" class="px-2 flex gap-2 relative transition w-full min-h-9 rounded-xl
+        hover:bg-[var(--toc-btn-hover)] active:bg-[var(--toc-btn-active)] py-2
+    "><div class="transition w-5 h-5 shrink-0 rounded-lg text-xs flex items-center justify-center font-bold ml-4"><div class="transition w-2 h-2 rounded-[0.1875rem] bg-[var(--toc-badge-bg)]"></div></div><div class="transition text-sm text-50">地理</div></a><div id="active-indicator" class="-z-10 absolute bg-[var(--toc-btn-hover)] left-0 right-0 rounded-xl transition-all group-hover:bg-transparent border-2 border-[var(--toc-btn-hover)] group-hover:border-[var(--toc-btn-active)] border-dashed"></div></table-of-contents><script type="module">class l extends HTMLElement{tocEl=null;visibleClass="visible";observer;anchorNavTarget=null;headingIdxMap=new Map;headings=[];sections=[];tocEntries=[];active=[];activeIndicator=null;constructor(){super(),this.observer=new IntersectionObserver(this.markVisibleSection,{threshold:0})}markVisibleSection=t=>{if(t.forEach(e=>{const i=e.target.children[0]?.getAttribute("id"),s=i?this.headingIdxMap.get(i):void 0;s!=null&&(this.active[s]=e.isIntersecting),e.isIntersecting&&this.anchorNavTarget==e.target.firstChild&&(this.anchorNavTarget=null)}),!this.active.includes(!0)){this.activeIndicator?.setAttribute("style","display: none;"),this.fallback();return}this.update()};toggleActiveHeading=()=>{let t=this.active.length-1,e=this.active.length-1,i=0;for(;t>=0&&!this.active[t];)this.tocEntries[t].classList.remove(this.visibleClass),t--;for(;t>=0&&this.active[t];)this.tocEntries[t].classList.add(this.visibleClass),e=Math.min(e,t),i=Math.max(i,t),t--;for(;t>=0;)this.tocEntries[t].classList.remove(this.visibleClass),t--;let s=this.tocEl?.getBoundingClientRect().top||0,n=this.tocEl?.scrollTop||0,o=this.tocEntries[e].getBoundingClientRect().top-s+n,c=this.tocEntries[i].getBoundingClientRect().bottom-s+n;this.activeIndicator?.setAttribute("style",`display: block; top: ${o}px; height: ${c-o}px`)};scrollToActiveHeading=()=>{if(this.anchorNavTarget||!this.tocEl)return;const t=document.querySelectorAll(`#toc .${this.visibleClass}`);if(!t.length)return;const e=t[0],i=t[t.length-1],s=this.tocEl.clientHeight;let n;i.getBoundingClientRect().bottom-e.getBoundingClientRect().top<.9*s?n=e.offsetTop-32:n=i.offsetTop-s*.8,this.tocEl.scrollTo({top:n,left:0,behavior:"smooth"})};update=()=>{requestAnimationFrame(()=>{this.toggleActiveHeading(),this.scrollToActiveHeading()})};fallback=()=>{if(this.sections.length)for(let t=0;t<this.sections.length;t++){let e=this.sections[t].getBoundingClientRect().top,i=this.sections[t].getBoundingClientRect().bottom;if(this.isInRange(e,0,window.innerHeight)||this.isInRange(i,0,window.innerHeight)||e<0&&i>window.innerHeight)this.markActiveHeading(t);else if(e>window.innerHeight)break}};markActiveHeading=t=>{this.active[t]=!0};handleAnchorClick=t=>{const e=t.composedPath().find(i=>i instanceof HTMLAnchorElement);if(e){const i=decodeURIComponent(e.hash?.substring(1)),s=this.headingIdxMap.get(i);s!==void 0?this.anchorNavTarget=this.headings[s]:this.anchorNavTarget=null}};isInRange(t,e,i){return e<t&&t<i}connectedCallback(){const t=document.querySelector(".prose");t?t.addEventListener("animationend",()=>{this.init()},{once:!0}):console.debug("Animation element not found")}init(){if(this.tocEl=document.getElementById("toc-inner-wrapper"),!!this.tocEl&&(this.tocEl.addEventListener("click",this.handleAnchorClick,{capture:!0}),this.activeIndicator=document.getElementById("active-indicator"),this.tocEntries=Array.from(document.querySelectorAll("#toc a[href^='#']")),this.tocEntries.length!==0)){this.sections=new Array(this.tocEntries.length),this.headings=new Array(this.tocEntries.length);for(let t=0;t<this.tocEntries.length;t++){const e=decodeURIComponent(this.tocEntries[t].hash?.substring(1)),i=document.getElementById(e),s=i?.parentElement;i instanceof HTMLElement&&s instanceof HTMLElement&&(this.headings[t]=i,this.sections[t]=s,this.headingIdxMap.set(e,t))}this.active=new Array(this.tocEntries.length).fill(!1),this.sections.forEach(t=>this.observer.observe(t)),this.fallback(),this.update()}}disconnectedCallback(){this.sections.forEach(t=>this.observer.unobserve(t)),this.observer.disconnect(),this.tocEl?.removeEventListener("click",this.handleAnchorClick)}}customElements.get("table-of-contents")||customElements.define("table-of-contents",l);</script> <div class="h-8 w-full"></div> </div> </div> </div> <!-- #toc needs to exist for Swup to work normally -->  </div> </div>  <!-- increase the page height during page transition to prevent the scrolling animation from jumping --> <div id="page-height-extend" class="hidden h-[300vh]" data-astro-cid-sckkx6r4 style="--bannerOffset: 15vh;--banner-height-home: 65vh;--banner-height: 35vh;--configHue: 361;--page-width: 75rem;--bg-url: url(https://eopfapi.2b2x.cn/pic?img=ua);--bg-enable: 1;--bg-position: center;--bg-size: cover;--bg-repeat: no-repeat;--bg-attachment: fixed;--bg-opacity: 0.5;"></div> <!-- 域名检测脚本 --> <script>(function(){const officialSites = ["https://chuzoux.top"];
+
+			// 域名检测功能
+			function checkDomain() {
+				try {
+					// 获取当前访问的完整URL
+					const currentUrl = window.location.href;
+					// 获取当前域名
+					const currentDomain = window.location.hostname;
+					
+					// 获取所有官方域名
+					const officialDomains = officialSites.map(site => {
+						try {
+							return new URL(site).hostname;
+						} catch (e) {
+							return null;
+						}
+					}).filter(domain => domain !== null);
+					
+					// 检查当前域名是否为官方域名或本地开发环境
+					const isWWWOfficialDomain = currentDomain === 'www.chuzoux.top';
+					const isEOOfficialDomain = currentDomain === 'eo.chuzoux.top';
+					const isBLOGOfficialDomain = currentDomain === 'blog.chuzoux.top';
+					const isOfficialDomain = officialDomains.includes(currentDomain);
+					const isLocalDev = currentDomain === 'localhost' || currentDomain === '127.0.0.1';
+					
+					// 如果当前域名不是官方域名且不是本地开发环境
+					if (!isBLOGOfficialDomain && !isEOOfficialDomain && !isWWWOfficialDomain && !isOfficialDomain && !isLocalDev) {
+						// 创建警告弹窗
+						const shouldRedirect = confirm(
+							`⚠️ 域名安全警告\n\n` +
+							`您当前访问的域名：${currentDomain}\n` +
+							`官方域名：${officialDomains.join(', ')}\n\n` +
+							`您可能正在访问非官方网站，存在安全风险！\n\n` +
+							`点击"确定"跳转到官方网站\n` +
+							`点击"取消"继续访问当前网站（不推荐）`
+						);
+						
+						// 如果用户选择跳转到官方网站
+						if (shouldRedirect) {
+							// 构建官方网站的对应页面URL（使用第一个官方网站）
+							const currentPath = window.location.pathname + window.location.search + window.location.hash;
+							const officialPageUrl = officialSites[0] + currentPath;
+							// 跳转到官方网站
+							window.location.href = officialPageUrl;
+						}
+					}
+				} catch (error) {
+					// 如果检测过程中出现错误，静默处理，不影响正常访问
+					console.warn('域名检测失败:', error);
+				}
+			}
+			
+			// 页面加载完成后执行域名检测
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', checkDomain);
+			} else {
+				checkDomain();
+			}
+		})();</script> <vercel-analytics data-props="{&#34;data-astro-cid-sckkx6r4&#34;:true}" data-params="{&#34;slug&#34;:&#34;学习笔记丨网课第十一天&#34;}" data-pathname="/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%80%E5%A4%A9/"></vercel-analytics> <script type="module">var f="@vercel/analytics",l="1.5.0",w=()=>{window.va||(window.va=function(...r){(window.vaq=window.vaq||[]).push(r)})};function d(){return typeof window<"u"}function u(){try{const e="production"}catch{}return"production"}function v(e="auto"){if(e==="auto"){window.vam=u();return}window.vam=e}function m(){return(d()?window.vam:u())||"production"}function c(){return m()==="development"}function b(e,r){if(!e||!r)return e;let n=e;try{const t=Object.entries(r);for(const[a,i]of t)if(!Array.isArray(i)){const o=s(i);o.test(n)&&(n=n.replace(o,`/[${a}]`))}for(const[a,i]of t)if(Array.isArray(i)){const o=s(i.join("/"));o.test(n)&&(n=n.replace(o,`/[...${a}]`))}return n}catch{return e}}function s(e){return new RegExp(`/${h(e)}(?=[/?#]|$)`)}function h(e){return e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}function y(e){return e.scriptSrc?e.scriptSrc:c()?"https://va.vercel-scripts.com/v1/script.debug.js":e.basePath?`${e.basePath}/insights/script.js`:"/_vercel/insights/script.js"}function g(e={debug:!0}){var r;if(!d())return;v(e.mode),w(),e.beforeSend&&((r=window.va)==null||r.call(window,"beforeSend",e.beforeSend));const n=y(e);if(document.head.querySelector(`script[src*="${n}"]`))return;const t=document.createElement("script");t.src=n,t.defer=!0,t.dataset.sdkn=f+(e.framework?`/${e.framework}`:""),t.dataset.sdkv=l,e.disableAutoTrack&&(t.dataset.disableAutoTrack="1"),e.endpoint?t.dataset.endpoint=e.endpoint:e.basePath&&(t.dataset.endpoint=`${e.basePath}/insights`),e.dsn&&(t.dataset.dsn=e.dsn),t.onerror=()=>{const a=c()?"Please check if any ad blockers are enabled and try again.":"Be sure to enable Web Analytics for your project and deploy again. See https://vercel.com/docs/analytics/quickstart for more information.";console.log(`[Vercel Web Analytics] Failed to load script from ${n}. ${a}`)},c()&&e.debug===!1&&(t.dataset.debug="false"),document.head.appendChild(t)}function p({route:e,path:r}){var n;(n=window.va)==null||n.call(window,"pageview",{route:e,path:r})}function k(){try{return}catch{}}customElements.define("vercel-analytics",class extends HTMLElement{constructor(){super();try{const r=JSON.parse(this.dataset.props??"{}"),n=JSON.parse(this.dataset.params??"{}");g({...r,disableAutoTrack:!0,framework:"astro",basePath:k(),beforeSend:window.webAnalyticsBeforeSend});const t=this.dataset.pathname;p({route:b(t??"",n),path:t})}catch(r){throw new Error(`Failed to parse WebAnalytics properties: ${r}`)}}});</script>  <script type="module">window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a("js",new Date);a("config","G-X2JXDXE3TT");</script> <script type="module">(function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?a711df5fdcba870c1d556bdddb1a5d1e";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script></body></html>
