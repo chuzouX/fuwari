@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /_astro/
 
-Sitemap: https://blog.2b2x.cn/sitemap-index.xml
+Sitemap: https://www.chuzoux.top/sitemap-index.xml
