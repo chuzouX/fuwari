@@ -4,24 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "7f06a11af95175a9",
+        "id": "0dbba79e814924c3",
         "type": "tabs",
         "children": [
           {
-            "id": "96b79d1156396696",
+            "id": "f2692c5bd87399c0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/unknown-upload.md",
+                "file": "posts/LitCTF-2023.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "unknown-upload"
+              "title": "LitCTF-2023"
+            }
+          },
+          {
+            "id": "e2e972d9645c7cff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "posts/LitCTF-2023.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LitCTF-2023"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/obsidian.md",
+                "file": "posts/LitCTF-2023.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "obsidian 的反向链接列表"
+              "title": "LitCTF-2023 的反向链接列表"
             }
           },
           {
@@ -142,21 +157,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "posts/obsidian.md",
+                "file": "posts/LitCTF-2023.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "obsidian 的大纲"
+              "title": "LitCTF-2023 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -169,23 +184,36 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "96b79d1156396696",
+  "active": "e2e972d9645c7cff",
   "lastOpenFiles": [
-    "assets/images/unknown-upload-2.png",
-    "assets/images/unknown-upload-1.png",
-    "assets/images/unknown-upload.png",
+    "assets/images/未确认 206770.crdownload",
+    "assets/LitCTF-2023-16.png",
+    "posts/image.png",
+    "posts/miband7-fix.md",
+    "posts/miband7-ZeppOS.md",
+    "posts/software.md",
+    "posts/个人博客重建秽土转生！！.md",
+    "posts/个人博客正式建立.md",
+    "posts/IDM.md",
+    "posts/LitCTF-2023.md",
+    "assets/images/LitCTF-2023-65.png",
+    "assets/images/LitCTF-2023-64.png",
+    "assets/images/LitCTF-2023-63.png",
+    "assets/images/LitCTF-2023-62.png",
+    "assets/images/LitCTF-2023-61.png",
+    "assets/images/LitCTF-2023-60.png",
+    "assets/images/LitCTF-2023-59.png",
+    "assets/images/LitCTF-2023-58.png",
+    "posts/edgeone-setup.md",
+    "posts/学习笔记丨网课第十八天.md",
+    "spec/about.md",
+    "未命名 1.md",
+    "未命名.md",
+    "未命名",
     "posts/zte-f450-bridge.md",
     "posts/unknown-upload.md",
-    "assets/images/zte-f450-bridge-4.png",
-    "assets/images/zte-f450-bridge-3.png",
-    "assets/images/zte-f450-bridge-2.png",
-    "assets/images/zte-f450-bridge-1.png",
-    "assets/images/zte-f450-bridge.png",
     "posts/hook-steam-drm.md",
     "posts/163-free-domain-email.md",
-    "assets/images/VMWSQyHhF5.gif",
-    "assets/images/hook-steam-drm-6.png",
-    "assets/images/hook-steam-drm-5.png",
     "posts/index-tts2.md",
     "posts/rvc.md",
     "posts/replay.md",
@@ -194,16 +222,6 @@
     "posts/static-view.md",
     "posts/new-nas.md",
     "posts/manosaba-unzip.md",
-    "posts/mac-gal.md",
-    "posts/hugo.md",
-    "posts/mac.md",
-    "posts/obsidian.md",
-    "posts/oci.md",
-    "posts/acg-randompic-api.md",
-    "posts/未命名.md",
-    "未命名.md",
-    "posts/aicode-prompt.md",
-    "posts/fuwari.md",
-    "2025-04-30.md"
+    "posts/mac-gal.md"
   ]
 }

