@@ -33,13 +33,13 @@ export default defineConfig({
       image: {
     service: passthroughImageService()
   },
-    site: "https://www.chuzoux.top",
+    site: "https://chuzoux.top",
     base: "/",
     trailingSlash: "always",
     output: "static",
     redirects: {
       "/donate": "/sponsors",
-      "/donate/": "/sponsors/"
+      "/tit": "/posts/pin/",
     },
     integrations: [tailwind({
         nesting: true,
@@ -63,6 +63,8 @@ export default defineConfig({
             "fa6-regular": ["*"],
             "fa6-solid": ["*"],
             "simple-icons": ["*"],
+            "material-symbols-light": ["*"],
+            "material-symbols": ["*"],
         },
 		}), svelte(), sitemap(),
 	    expressiveCode({

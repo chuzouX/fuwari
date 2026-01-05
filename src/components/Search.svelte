@@ -195,5 +195,11 @@ top-20 left-4 md:left-[unset] right-4 shadow-2xl rounded-2xl p-2">
   .search-panel {
     max-height: calc(100vh - 100px);
     overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  .search-panel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
   }
 </style>

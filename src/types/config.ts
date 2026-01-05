@@ -38,6 +38,7 @@ export type SiteConfig = {
 	};
 
 	favicon: Favicon[];
+	officialSites?: (string | { url: string; alias: string })[];
 };
 
 export type Favicon = {
@@ -49,7 +50,6 @@ export type Favicon = {
 export enum LinkPreset {
 	Home = 0,
 	Archive = 1,
-	About = 2,
 }
 
 export type NavBarLink = {
@@ -91,6 +91,8 @@ export type UmamiConfig = {
 	shareId: string;
 	timezone: string;
 };
+
+
 
 export type LIGHT_DARK_MODE =
 	| typeof LIGHT_MODE

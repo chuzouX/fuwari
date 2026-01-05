@@ -83,9 +83,9 @@ const bannerOffset =
 ---
 
 <!DOCTYPE html>
-<html lang={siteLang} class="bg-[var(--page-bg)] transition text-[14px] md:text-[16px]"
-	  data-overlayscrollbars-initialize
->
+ <html lang={siteLang} class="bg-[var(--page-bg)] transition text-[12px] md:text-[16px]"  
+	  data-overlayscrollbars-initialize>  <!-- 手机端适配 -->
+
 	<head>
 
 		<title>{pageTitle}</title>
@@ -115,9 +115,12 @@ const bannerOffset =
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<script src="/js/umami-share.js" defer></script>
+		<script data-swup-ignore-script is:inline src="https://pic.acofork.com/random.js"></script>
+		
+		
 		
 		{/* <!-- Content Security Policy -->
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app https://hpic.072103.xyz https://umami.2x.nz https://hm.baidu.com https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://static.cloudflareinsights.com https://*.adtrafficquality.google; style-src 'self' 'unsafe-inline' https://giscus.app https://fonts.googleapis.com https://api.iconify.design; font-src 'self' https://fonts.gstatic.com https://api.iconify.design; img-src 'self' data: https: http:; connect-src 'self' https://umami.2x.nz https://hm.baidu.com https://www.google-analytics.com https://analytics.google.com https://api.iconify.design https://static.cloudflareinsights.com https://pic.2x.nz https://q2.qlogo.cn https://ep1.adtrafficquality.google https://googleads.g.doubleclick.net; frame-src 'self' https://giscus.app *.bilibili.com https://www.google.com https://googleads.g.doubleclick.net https://support.nodeget.com https://*.adtrafficquality.google; object-src 'none'; base-uri 'self'; form-action 'self';"> */}
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app https://hpic.072103.xyz https://umami.acofork.com https://hm.baidu.com https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://static.cloudflareinsights.com https://*.adtrafficquality.google; style-src 'self' 'unsafe-inline' https://giscus.app https://fonts.googleapis.com https://api.iconify.design; font-src 'self' https://fonts.gstatic.com https://api.iconify.design; img-src 'self' data: https: http:; connect-src 'self' https://umami.acofork.com https://hm.baidu.com https://www.google-analytics.com https://analytics.google.com https://api.iconify.design https://static.cloudflareinsights.com https://pic.2x.nz https://q2.qlogo.cn https://ep1.adtrafficquality.google https://googleads.g.doubleclick.net; frame-src 'self' https://giscus.app *.bilibili.com https://www.google.com https://googleads.g.doubleclick.net https://support.nodeget.com https://*.adtrafficquality.google; object-src 'none'; base-uri 'self'; form-action 'self';"> */}
 		{favicons.map(favicon => (
 			<link rel="icon"
 				  href={favicon.src.startsWith('/') ? url(favicon.src) : favicon.src}
@@ -134,7 +137,7 @@ const bannerOffset =
 				localStorage.setItem('theme', DARK_MODE);
 			} else {
 				// Load the theme from local storage
-				const theme = localStorage.getItem('theme') || DEFAULT_THEME;
+				const theme = localStorage.getItem('theme') || AUTO_MODE;
 				switch (theme) {
 					case LIGHT_MODE:
 						document.documentElement.classList.remove('dark');
@@ -159,28 +162,28 @@ const bannerOffset =
 			let offset = Math.floor(window.innerHeight * (BANNER_HEIGHT_EXTEND / 100));
 			offset = offset - offset % 4;
 			document.documentElement.style.setProperty('--banner-height-extend', `${offset}px`);
-
-			// Background image loading detection
-			const bgUrl = getComputedStyle(document.documentElement).getPropertyValue('--bg-url').trim();
-			const bgEnable = getComputedStyle(document.documentElement).getPropertyValue('--bg-enable').trim();
 			
-			if (bgUrl && bgUrl !== 'none' && bgEnable === '1') {
-				const img = new Image();
-				const urlMatch = bgUrl.match(/url\(["']?([^"')]+)["']?\)/);
-				if (urlMatch) {
-					img.onload = function() {
-						// 背景图片完全加载后，显示背景并启用卡片透明效果
-						document.body.classList.add('bg-loaded');
-						document.documentElement.style.setProperty('--card-bg', 'var(--card-bg-transparent)');
-						document.documentElement.style.setProperty('--float-panel-bg', 'var(--float-panel-bg-transparent)');
-					};
-					img.onerror = function() {
-						// Keep cards opaque if background image fails to load
-						console.warn('Background image failed to load, keeping cards opaque');
-					};
-					img.src = urlMatch[1];
-				}
-			}
+			// // Background image loading detection
+			// const bgUrl = getComputedStyle(document.documentElement).getPropertyValue('--bg-url').trim();
+			// const bgEnable = getComputedStyle(document.documentElement).getPropertyValue('--bg-enable').trim();
+			
+			// if (bgUrl && bgUrl !== 'none' && bgEnable === '1') {
+			// 	const img = new Image();
+			// 	const urlMatch = bgUrl.match(/url\(["']?([^"')]+)["']?\)/);
+			// 	if (urlMatch) {
+			// 		img.onload = function() {
+			// 			// 背景图片完全加载后，显示背景并启用卡片透明效果
+			// 			document.body.classList.add('bg-loaded');
+			// 			document.documentElement.style.setProperty('--card-bg', 'var(--card-bg-transparent)');
+			// 			document.documentElement.style.setProperty('--float-panel-bg', 'var(--float-panel-bg-transparent)');
+			// 		};
+			// 		img.onerror = function() {
+			// 			// Keep cards opaque if background image fails to load
+			// 			console.warn('Background image failed to load, keeping cards opaque');
+			// 		};
+			// 		img.src = urlMatch[1];
+			// 	}
+			// }
 		</script>
 		<style define:vars={{
 			configHue,
@@ -213,61 +216,57 @@ const bannerOffset =
 				--bg-attachment: var(--bg-attachment);
 				--bg-opacity: var(--bg-opacity);
 			}
-			
-			body::before {
-				content: '' !important;
-				position: fixed !important;
-				top: 0 !important;
-				left: 0 !important;
-				width: 100% !important;
-				height: 100% !important;
-				background-image: var(--bg-url) !important;
-				background-position: var(--bg-position) !important;
-				background-size: var(--bg-size) !important;
-				background-repeat: var(--bg-repeat) !important;
-				background-attachment: var(--bg-attachment) !important;
-				opacity: 0 !important;
-				pointer-events: none !important;
-				z-index: -1 !important;
-				display: block !important;
-				transition: opacity 0.3s ease-in-out !important;
+
+			#bg-box {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-position: var(--bg-position);
+				background-size: var(--bg-size);
+				background-repeat: var(--bg-repeat);
+				background-attachment: var(--bg-attachment);
+				opacity: 0;
+				pointer-events: none;
+				z-index: -1;
+				transition: opacity 0.3s ease-in-out;
 			}
 			
-			body.bg-loaded::before {
-				opacity: calc(var(--bg-opacity) * var(--bg-enable)) !important;
+			#bg-box.loaded {
+				opacity: calc(var(--bg-opacity) * var(--bg-enable));
 			}
-		</style>  <!-- defines global css variables. This will be applied to <html> <body> and some other elements idk why -->
+		</style>
 
 		<slot name="head"></slot>
 
+
 		<link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={`${Astro.site}rss.xml`}/>
-		{/* <!-- Umami分析（自建） -->
-		<script defer src="https://umami.2x.nz/script.js" data-website-id="4b4e430d-a12c-4a5c-8cf9-df48eb20fd6d"></script> */}
-		<!-- Umami分析（云-备用） -->
-		<script defer src="https://cloud.umami.is/script.js" data-website-id="57b6be0b-8d59-45b2-a1bc-fe73210b2c71"></script>
-		 <!-- 百度统计 -->
-		<script>
-		var _hmt = _hmt || [];
-		(function() {
-		var hm = document.createElement("script");
-		hm.src = "https://hm.baidu.com/hm.js?a711df5fdcba870c1d556bdddb1a5d1e";
-		var s = document.getElementsByTagName("script")[0]; 
-		s.parentNode.insertBefore(hm, s);
-		})();
-		</script>
+		<!-- Umami分析（自建） -->
+		<script defer src="https://umami.chuzoux.top/script.js" data-website-id="a18f07f6-88e5-4926-b16a-0cdf20da0c4b"></script>
+		<!-- 百度统计 -->
+<script data-swup-ignore-script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?a711df5fdcba870c1d556bdddb1a5d1e";
+var s = document.getElementsByTagName("script")[0]; 
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 <!-- clarity 分析 -->
-<script type="text/javascript">
+<script type="text/javascript" data-swup-ignore-script>
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "u2t1qd6p8q");
+    })(window, document, "clarity", "script", "t8f0gmcwtx");
 </script>
-{/* <!-- gad --> */}
-{/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1683686345039700"
-     crossorigin="anonymous"></script>
-<meta name="google-adsense-account" content="ca-pub-1683686345039700"> */}
+<!-- gad -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1683686345039700"
+     crossorigin="anonymous" data-swup-ignore-script></script>
+<meta name="google-adsense-account" content="ca-pub-1683686345039700">
 
 		<!-- 谷歌分析 -->
 		<!-- Google tag (gtag.js) -->
@@ -292,7 +291,7 @@ const bannerOffset =
 		<div id="page-height-extend" class="hidden h-[300vh]"></div>
 
 		<!-- 域名检测脚本 -->
-		<script is:inline define:vars={{officialSites: ["https://chuzoux.top"]}}>
+		<script is:inline define:vars={{officialSites: siteConfig.officialSites || []}}>
 			// 域名检测功能
 			function checkDomain() {
 				try {
@@ -304,21 +303,21 @@ const bannerOffset =
 					// 获取所有官方域名
 					const officialDomains = officialSites.map(site => {
 						try {
-							return new URL(site).hostname;
+                            const url = typeof site === 'string' ? site : site.url;
+							return new URL(url).hostname;
 						} catch (e) {
 							return null;
 						}
 					}).filter(domain => domain !== null);
 					
 					// 检查当前域名是否为官方域名或本地开发环境
-					const isWWWOfficialDomain = currentDomain === 'www.chuzoux.top';
-					const isEOOfficialDomain = currentDomain === 'eo.chuzoux.top';
-					const isBLOGOfficialDomain = currentDomain === 'blog.chuzoux.top';
-					const isOfficialDomain = officialDomains.includes(currentDomain);
+					const isOfficialDomain = officialDomains.some(officialDomain => 
+                        currentDomain === officialDomain || currentDomain.endsWith('.' + officialDomain)
+                    );
 					const isLocalDev = currentDomain === 'localhost' || currentDomain === '127.0.0.1';
 					
 					// 如果当前域名不是官方域名且不是本地开发环境
-					if (!isBLOGOfficialDomain && !isEOOfficialDomain && !isWWWOfficialDomain && !isOfficialDomain && !isLocalDev) {
+					if (!isOfficialDomain && !isLocalDev) {
 						// 创建警告弹窗
 						const shouldRedirect = confirm(
 							`⚠️ 域名安全警告\n\n` +
@@ -333,7 +332,9 @@ const bannerOffset =
 						if (shouldRedirect) {
 							// 构建官方网站的对应页面URL（使用第一个官方网站）
 							const currentPath = window.location.pathname + window.location.search + window.location.hash;
-							const officialPageUrl = officialSites[0] + currentPath;
+                            const firstSite = officialSites[0];
+                            const firstUrl = typeof firstSite === 'string' ? firstSite : firstSite.url;
+							const officialPageUrl = firstUrl + currentPath;
 							// 跳转到官方网站
 							window.location.href = officialPageUrl;
 						}
@@ -398,7 +399,7 @@ import {
 	// SizeObserverPlugin,
 	// ClickScrollPlugin
 } from 'overlayscrollbars';
-import {getHue, getStoredTheme, setHue, setTheme} from "../utils/setting-utils";
+import {getHue, getStoredTheme, setHue, setTheme, getBgBlur, setBgBlur} from "../utils/setting-utils";
 import {pathsEqual, url} from "../utils/url-utils";
 import {
 	BANNER_HEIGHT,
@@ -482,6 +483,10 @@ function loadHue() {
 	setHue(getHue())
 }
 
+function loadBgBlur() {
+	setBgBlur(getBgBlur())
+}
+
 function initCustomScrollbar() {
 	const bodyElement = document.querySelector('body');
 	if (!bodyElement) return;
@@ -528,6 +533,7 @@ function init() {
 	// disableAnimation()()		// TODO
 	loadTheme();
 	loadHue();
+    loadBgBlur();
 	initCustomScrollbar();
 	showBanner();
 }

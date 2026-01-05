@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>chuzouX Blog</title><description>技术分享与实践</description><link>https://www.chuzoux.top/</link><language>zh_CN</language><item><title>自用软件合集！</title><link>https://www.chuzoux.top/posts/software/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/software/</guid><description>常用软件使用教程及其安装包整理归档</description><pubDate>Mon, 01 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;自用软件/站点合集！（持续更新）&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>chuzouX Blog</title><description>技术分享与实践</description><link>https://chuzoux.top/</link><language>zh_CN</language><item><title>自用软件合集！</title><link>https://chuzoux.top/posts/software/</link><guid isPermaLink="true">https://chuzoux.top/posts/software/</guid><description>常用软件使用教程及其安装包整理归档</description><pubDate>Mon, 01 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;自用软件/站点合集！（持续更新）&lt;/h1&gt;
 &lt;h2&gt;免责声明&lt;/h2&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;本站所有的软件均来自网络，逆向教程仅用于学习和交流，请在软件下载24小时内删除&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;h2&gt;软件/站点目录&lt;/h2&gt;
@@ -33,17 +33,17 @@
 &lt;blockquote&gt;
 &lt;p&gt;e.hasActivated=&quot;true&quot;==&quot;true&quot;,&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250901193229349.BCw5knpV.png&quot; alt=&quot;image-20250901193229349&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250901193229349.BCw5knpV.png&quot; alt=&quot;image-20250901193229349&quot; /&gt;&lt;/p&gt;
 &lt;h4&gt;（三）、更改注册表&lt;/h4&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;如果忽略此步可能会导致软件闪退&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;p&gt;Win+R键输入&lt;strong&gt;regedit&lt;/strong&gt;打开注册表&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250901192912535.DicxBNEG.png&quot; alt=&quot;image-20250901192912535&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250901192912535.DicxBNEG.png&quot; alt=&quot;image-20250901192912535&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;输入或找到如下路径&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;计算机\HKEY_CURRENT_USER\Software\Typora&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;右键此项打开权限页面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250901193346921.BRCtR5kv.png&quot; alt=&quot;image-20250901193346921&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250901193346921.BRCtR5kv.png&quot; alt=&quot;image-20250901193346921&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;将Administrators右侧权限改为拒绝 保存并应用即可&lt;/p&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;此时打开软件已经变为已激活状态&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;h4&gt;（四）、关闭软件每次启动时的已激活弹窗&lt;/h4&gt;
@@ -77,7 +77,7 @@ setTimeout(function () {
 }, 360);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;插入到第一行注释和(this.xxxxxxxxxx)中间&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250901193808675.DyPW84RE.png&quot; alt=&quot;image-20250901193808675&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250901193808675.DyPW84RE.png&quot; alt=&quot;image-20250901193808675&quot; /&gt;&lt;/p&gt;
 &lt;h4&gt;（五）、去除软件左下角未激活提示&lt;/h4&gt;
 &lt;p&gt;打开编辑如下文件&lt;/p&gt;
 &lt;blockquote&gt;
@@ -106,26 +106,26 @@ setTimeout(function () {
 &lt;p&gt;下载链接：&lt;a href=&quot;https://www.internetdownloadmanager.com/download.html&quot;&gt;https://www.internetdownloadmanager.com/download.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;下载完安装包后 一路确定即可安装成功&lt;/p&gt;
 &lt;p&gt;打开关于我们发现版本显示&lt;strong&gt;未注册&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250922165817564.BE6ls14m.png&quot; alt=&quot;image-20250922165817564&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250922165817564.BE6ls14m.png&quot; alt=&quot;image-20250922165817564&quot; /&gt;&lt;/p&gt;
 &lt;h4&gt;（二）、下载破解脚本*&lt;/h4&gt;
 &lt;p&gt;下载链接：&lt;a href=&quot;https://github.com/lstprjct/IDM-Activation-Script/releases&quot;&gt;https://github.com/lstprjct/IDM-Activation-Script/releases&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;选择最新版本的补丁下载&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250922170143311.Dz-fmpJv.png&quot; alt=&quot;image-20250922170143311&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250922170143311.Dz-fmpJv.png&quot; alt=&quot;image-20250922170143311&quot; /&gt;&lt;/p&gt;
 &lt;h4&gt;（三）、使用破解补丁*&lt;/h4&gt;
 &lt;p&gt;将下载到的文件解压到文件根目录&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250922170626571.0LuVNUQV.png&quot; alt=&quot;image-20250922170626571&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250922170626571.0LuVNUQV.png&quot; alt=&quot;image-20250922170626571&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;运行&lt;strong&gt;IAS.cmd&lt;/strong&gt;脚本&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250922170732731.DcjSwTto.png&quot; alt=&quot;image-20250922170732731&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250922170732731.DcjSwTto.png&quot; alt=&quot;image-20250922170732731&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;输入1进入激活模式&lt;/strong&gt; 根据提示进行确定操作&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250922170844475.C0FTdTkf.png&quot; alt=&quot;image-20250922170844475&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250922170844475.C0FTdTkf.png&quot; alt=&quot;image-20250922170844475&quot; /&gt;&lt;/p&gt;
 &lt;h4&gt;（四）、检查IDM是否已被激活&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;再次打开关于页面 查看是否被激活&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250922171236178.Dmo1dHyn.png&quot; alt=&quot;image-20250922171236178&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250922171236178.Dmo1dHyn.png&quot; alt=&quot;image-20250922171236178&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;看到序列号就说明已经被完美激活&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;根据实测 此激活版本可正常更新 但非常不建议这么做&lt;/strong&gt;&lt;/p&gt;
 &lt;h2&gt;温馨提示&lt;/h2&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;没事别更新！没事别更新！没事别更新！&amp;lt;/font&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>个人博客重建秽土转生！！</title><link>https://www.chuzoux.top/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA%E7%A7%BD%E5%9C%9F%E8%BD%AC%E7%94%9F/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA%E7%A7%BD%E5%9C%9F%E8%BD%AC%E7%94%9F/</guid><description>关于个人博客复活的一则通知</description><pubDate>Sun, 31 Aug 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;个人博客重建复活&lt;/h1&gt;
+</content:encoded></item><item><title>个人博客重建秽土转生！！</title><link>https://chuzoux.top/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA%E7%A7%BD%E5%9C%9F%E8%BD%AC%E7%94%9F/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%87%8D%E5%BB%BA%E7%A7%BD%E5%9C%9F%E8%BD%AC%E7%94%9F/</guid><description>关于个人博客复活的一则通知</description><pubDate>Sun, 31 Aug 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;个人博客重建复活&lt;/h1&gt;
 &lt;h2&gt;关于博客&lt;/h2&gt;
 &lt;p&gt;本站于&lt;strong&gt;2025年08月31日&lt;/strong&gt;复活，与以前相比，本次复活将原本的&lt;a href=&quot;https://hexo.io/&quot;&gt;&lt;strong&gt;Hexo&lt;/strong&gt;&lt;/a&gt;更换为&lt;a href=&quot;https://astro.build&quot;&gt;&lt;strong&gt;astro&lt;/strong&gt;&lt;/a&gt;框架，并保留了原始数据（包括但不限于原本博客的文章），最近在逐步进行重建与修正，欢迎各位站长前来互换友链！！&lt;/p&gt;
 &lt;p&gt;这边说一下这两个框架的使用感受吧&lt;/p&gt;
@@ -145,7 +145,7 @@ setTimeout(function () {
 &lt;p&gt;&amp;lt;font color=grey&amp;gt;&lt;s&gt;目前在观察速度阶段，后续如果没有合适的cdn，可能会将此站迁移到vercel中部署&lt;/s&gt;&amp;lt;/font&amp;gt;&amp;lt;br&amp;gt;
 本站已迁移到vercel部署
 速度如下
-&lt;img src=&quot;https://www.chuzoux.top/_astro/43a3eafd5b1ee21d6fda920b228e46bd.lnmp7r1x.png&quot; alt=&quot;vercel itdog&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://chuzoux.top/_astro/43a3eafd5b1ee21d6fda920b228e46bd.lnmp7r1x.png&quot; alt=&quot;vercel itdog&quot; /&gt;&lt;/p&gt;
 &lt;h2&gt;一些问题与回答&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Q:为什么两年都没有更新文章&lt;/strong&gt;&amp;lt;br&amp;gt;
 A:在2023年高一结束后，我转学到了封闭式学校，无法进行博客的维护与更新&amp;lt;br&amp;gt;&lt;/p&gt;
@@ -161,7 +161,7 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 &lt;h2&gt;结语&lt;/h2&gt;
 &lt;p&gt;&amp;lt;font color=grey&amp;gt;&lt;s&gt;我重生了，重生在暑假的最后一天。上一世被主人丢弃被活活饿死，这一世一定要发挥出自己的作用，好好活下去&lt;/s&gt;&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;p&gt;新站开业，请多关照~&lt;/p&gt;
-</content:encoded></item><item><title>【易】【LitCTF-2023】Web题目 WriteUp 合集</title><link>https://www.chuzoux.top/posts/litctf-2023/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/litctf-2023/</guid><description>【LitCTF-2023】Web题目 的 WriteUp 总体题目简单 适合入门学习</description><pubDate>Fri, 14 Nov 2025 20:33:50 GMT</pubDate><content:encoded>&lt;h1&gt;【LitCTF-2023】Web题目 WriteUp 合集&lt;/h1&gt;
+</content:encoded></item><item><title>【易】【LitCTF-2023】Web题目 WriteUp 合集</title><link>https://chuzoux.top/posts/litctf-2023/</link><guid isPermaLink="true">https://chuzoux.top/posts/litctf-2023/</guid><description>【LitCTF-2023】Web题目 的 WriteUp 总体题目简单 适合入门学习</description><pubDate>Fri, 14 Nov 2025 20:33:50 GMT</pubDate><content:encoded>&lt;h1&gt;【LitCTF-2023】Web题目 WriteUp 合集&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;题目链接：&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.nssctf.cn/problem/3861&quot;&gt;[LitCTF 2023]我Flag呢？&lt;/a&gt;            &lt;a href=&quot;#litctf-2023%E6%88%91flag%E5%91%A2&quot;&gt;WriteUp&lt;/a&gt;&lt;/li&gt;
@@ -202,11 +202,11 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 &lt;p&gt;根据GitHub page的特点 可以很快找到作者github主页
 从而找到对应的github仓库&lt;/p&gt;
 &lt;p&gt;::github{repo=&quot;ProbiusOfficial/ProbiusOfficial.github.io&quot;}&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023.CVJwV7Jj.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023.CVJwV7Jj.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;在仓库的commits中可以找到历史推送
 经过查找 可以找到历史推送遗留的flag&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-1.DmDZx2wY.png&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-2.B7RRBfJc.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-1.DmDZx2wY.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-2.B7RRBfJc.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;FLAG&lt;/h3&gt;
 &lt;p&gt;NSSCTF{g1thub_c0mmit_1s_s0_us3ful}&lt;/p&gt;
 &lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
@@ -220,12 +220,12 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 &lt;p&gt;JS分析、信息收集、源码泄漏&lt;/p&gt;
 &lt;h3&gt;WP&lt;/h3&gt;
 &lt;p&gt;根据题目描述可知 我们可以分析js得出flag 也可以玩到第六关得出flag
-&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-3.CItFXv3Q.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-3.CItFXv3Q.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;方法一：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;玩到第六关，然后拿到flag&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;方法二：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;代码审计 我们可以发现有好几个 关于游戏类的js&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-4.UqD4olDv.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-4.UqD4olDv.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;我们可以根据名称大致筛选出更有可能藏有flag的js进行分析
 这里根据名称 猜测出藏在src/main.js src/game.js中&lt;/p&gt;
 &lt;p&gt;于是开始分析js文件&lt;/p&gt;
@@ -233,7 +233,7 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 思路：当我们玩到第六关的时候会弹出flag 所以我们可以猜测他有个变量存储关卡 然后判断变量值是否为6 同时 游戏一般以level来表示关卡数 我们便可以猜测变量名称与level相关&lt;/p&gt;
 &lt;p&gt;所以我们在js文件中检索&quot;if(xxxx === 6)&quot;类似的东西
 我这里直接在js文件中搜索6 很幸运的直接找到了flag&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-5.CWh_lYVj.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-5.CWh_lYVj.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;FLAG&lt;/h3&gt;
 &lt;p&gt;NSSCTF{y0u_w1n_th1s_!!!}&lt;/p&gt;
 &lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
@@ -246,13 +246,13 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 &lt;h3&gt;题目知识标签&lt;/h3&gt;
 &lt;p&gt;HTTP协议、POST注入、源码泄漏&lt;/p&gt;
 &lt;h3&gt;WP&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-7.BR-VFz23.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-7.BR-VFz23.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;我们发现按钮不能使用 打开开发者工具进行代码审计
 可以发现这个题就没打算让大家用按钮&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-8.vfPSX1cr.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-8.vfPSX1cr.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;不过我们可以直接对页面进行传参
 我们可以使用hackbar插件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-9.DNc_rUi1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-9.DNc_rUi1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;直接用hackbar进行post请求 同时传入get参数
 输入完之后直接EXECUTE 得到flag&lt;/p&gt;
 &lt;h3&gt;FLAG&lt;/h3&gt;
@@ -268,9 +268,9 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 &lt;h3&gt;题目知识标签&lt;/h3&gt;
 &lt;p&gt;RCE、前端绕过、Linux命令&lt;/p&gt;
 &lt;h3&gt;WP&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-10.CFqOnLBD.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-10.CFqOnLBD.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;我们尝试ping一下127.0.0.1&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-11.Bc0_NeOd.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-11.Bc0_NeOd.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;我们可以猜测到当我们输入“127.0.0.1”时 被拼接为“ping 127.0.0.1&quot;
 根据Linux的特点 我们可以使用命令连接符 然后运行我们想要的指令&lt;/p&gt;
 &lt;p&gt;关于&lt;strong&gt;linux命令连接符&lt;/strong&gt;：&lt;/p&gt;
@@ -285,20 +285,20 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 &lt;p&gt;我们可以使用“||”连接我们先要的命令&lt;/p&gt;
 &lt;p&gt;当我们传入&quot;127.0.0.1 || ls /&quot; 命令会被拼接为“ping 127.0.0.1 || ls /” 运行“ls /”命令
 于是进行尝试&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-12.B5BTIzlF.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-12.B5BTIzlF.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;这里可以了解到他进行了前端的验证
 不过我们可以通过修改数据包或禁用js脚本进行发送数据&lt;/p&gt;
 &lt;p&gt;这里使用burp suite&lt;/p&gt;
 &lt;p&gt;我们先输入正常ip绕过js验证 然后抓取数据包修改&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-13.COZeCVdr.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-13.COZeCVdr.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;抓取到数据包后 我们修改post里面的内容&lt;/p&gt;
 &lt;p&gt;将“127.0.0.1”改为“127.0.0.1 || ls /“&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-14.ChmKiwB9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-14.ChmKiwB9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;ok 我们这里发现命令运行成功而且正常回显
 我们发现目录根目录中有个flag文件
 使用cat命令读取&lt;/p&gt;
 &lt;p&gt;使用同样的方法将cat命令拼接进去“||cat /flag”&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-15.C6wj_EV9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-15.C6wj_EV9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;FLAG&lt;/h3&gt;
 &lt;p&gt;NSSCTF{f2166a2a-76f5-451c-8396-e2a445df2afe}&lt;/p&gt;
 &lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
@@ -314,12 +314,12 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 &lt;h3&gt;WP&lt;/h3&gt;
 &lt;p&gt;代码审计可以找到一个js
 分析js&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-17.BCRPTdKj.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-17.BCRPTdKj.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;找到了一个名为 /f@k3f1ag.php 的文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-18.f-5qqmiT.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-18.f-5qqmiT.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;（f@k3我还以为是fake 以为找错了 实际上是Fuck的意思 意为JSFuck编码）
 打开发现如下内容&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-19.CWAg-n__.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-19.CWAg-n__.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;全部是由[] + ! ()组成&lt;br /&gt;
 看似毫无意义 但flag却正在如此&lt;/p&gt;
 &lt;p&gt;由亲爱的百度先生可以了解到这是jsfuck编码&lt;br /&gt;
@@ -328,9 +328,9 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 &lt;p&gt;由csdn可知&lt;br /&gt;
 它不依赖于浏览器，因此可以在Node.js上运行。&lt;/p&gt;
 &lt;p&gt;方法一：直接在控制台运行
-&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-20.BKrJePF8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-20.BKrJePF8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;方法二：解码网站
-&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-21.DEsE_tsE.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-21.DEsE_tsE.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;FLAG&lt;/h3&gt;
 &lt;p&gt;NSSCTF{a07be3a8-e644-4683-bd14-57ff63c7e21e}&lt;/p&gt;
 &lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
@@ -346,14 +346,14 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 &lt;h3&gt;WP&lt;/h3&gt;
 &lt;p&gt;打开题目发现是登录页面
 代码审计可以发现账号密码&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-22.YTPx_n2C.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-22.YTPx_n2C.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;输入账号密码进行登录&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-23.CIAQH8Xc.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-23.CIAQH8Xc.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;在上传文件页面进行一句话木马上传
 上传成功之后使用蚁剑连接&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-24.5QQvr0Kv.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-24.5QQvr0Kv.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;在根目录可以找到flag文件得取flag&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-25.ndtc0vYZ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-25.ndtc0vYZ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;FLAG&lt;/h3&gt;
 &lt;p&gt;NSSCTF{b93762f3-5377-481f-85e1-54d696776843}&lt;/p&gt;
 &lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
@@ -369,12 +369,12 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 &lt;h3&gt;WP&lt;/h3&gt;
 &lt;p&gt;题目简介提示：Flag位于根目录
 思路就是找根目录里面的flag文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-26.iwFGLRtW.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-26.iwFGLRtW.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;根据页面提示 &lt;strong&gt;RUN CODE&lt;/strong&gt; 提示我们框内应为什么命令
 我们尝试运行php代码&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-27.C_drsf80.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-27.C_drsf80.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;发现可以运行 通过Linux命令 ls / 和cat来查看flag文件得到flag&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-28.mpFLGM9W.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-28.mpFLGM9W.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;FLAG&lt;/h3&gt;
 &lt;p&gt;NSSCTF{5c5b0c25-526d-4fb2-8fe8-82a44b59a673}&lt;/p&gt;
 &lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
@@ -388,21 +388,21 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 &lt;p&gt;vim泄漏、RCE、源码泄漏&lt;/p&gt;
 &lt;h3&gt;WP&lt;/h3&gt;
 &lt;p&gt;题目打开提示vim&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-29.CGQzZny7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-29.CGQzZny7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;这边可以猜测vim泄露 文件后缀为.swp 即index.php.swp
 如果我们不知道也可以用 &lt;strong&gt;dirsearch&lt;/strong&gt; 工具进行扫描&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-30.DF5DpjP8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-30.DF5DpjP8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;指令为 dirsearch -u {目标url}
 可以扫描出index.php.swp文件 这里尝试访问
 下载到目标文件 使用010 editor打开分析&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-31.8DmHImx2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-31.8DmHImx2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;分析代码得出payload&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-32.D_8N4ymK.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-32.D_8N4ymK.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;使用post请求 传参
 cmd={linux命令}&amp;amp;password=R2l2ZV9NZV9Zb3VyX0ZsYWc=
 使用ls / 找到根目录flag文件
 使用cat /flag 读取文件得到flag&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-33.CTpuaux_.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-33.CTpuaux_.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;FLAG&lt;/h3&gt;
 &lt;p&gt;NSSCTF{26723c05-e07b-44bd-a6c0-e9949452abcb}&lt;/p&gt;
 &lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
@@ -431,23 +431,23 @@ $result = $conn-&amp;gt;query($sql);
 而且可以由 SELECT &lt;strong&gt;username,password&lt;/strong&gt; FROM 得出字段长度为 2&lt;/p&gt;
 &lt;p&gt;接下来就要判断注释符&lt;/p&gt;
 &lt;p&gt;尝试 “--”：
-&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-34.Da7OTS-u.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-34.Da7OTS-u.png&quot; alt=&quot;&quot; /&gt;
 查询出错 注释符不是“--”&lt;/p&gt;
 &lt;p&gt;尝试“#”：
-&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-35.1jXDL2hF.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-35.1jXDL2hF.png&quot; alt=&quot;&quot; /&gt;
 查询成功 注释符是&quot;#&quot;&lt;/p&gt;
 &lt;p&gt;接下来就可以依次构建payload
 手动注入可以使用hackbar内预设语句&lt;/p&gt;
 &lt;p&gt;查库payload&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;?id=1)))))) union select 1,group_concat(schema_name) from information_schema.schemata %23
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-36.DcZ0gTDQ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-36.DcZ0gTDQ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;查库 长度和回显位置 这个题测试后发现1和2位置都能进行回显
 直接execute 发现查询失败 分析查询语句&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-37.Cwi2Hym0.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-37.Cwi2Hym0.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;我们可以发现 hackbar 中的 # 被忽略
 这边使用 # 的url编码即可&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-38.DEmZwRFs.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-38.DEmZwRFs.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;查询到以下数据库
 information_schema,mysql,ctftraining,performance_schema,test,ctf&lt;/p&gt;
 &lt;p&gt;然后就是常规的查表查列查数据 不进行过多解释了
@@ -455,38 +455,38 @@ information_schema,mysql,ctftraining,performance_schema,test,ctf&lt;/p&gt;
 &lt;p&gt;查表payload&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;?id=1)))))) union select 1,group_concat(table_name) from information_schema.tables where table_schema=&quot;ctftraining&quot; %23
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-39.DBUJC0wJ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-39.DBUJC0wJ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;找到了一个名为flag的表
 查列payload&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;?id=1)))))) union select 1,group_concat(column_name) from information_schema.columns where table_name=&apos;flag&apos; and table_schema=&apos;ctftraining&apos; %23
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-40.YPe4c-vp.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-40.YPe4c-vp.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;接下来直接查询数据即可
 查数据payload&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;?id=1)))))) union select 1,flag from ctftraining.flag %23
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-41.DGQL7uyX.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-41.DGQL7uyX.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;得出flag&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;方法二：sqlmap注入&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;直接查库&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;python sqlmap.py -u http://node5.anna.nssctf.cn:23615/?id=1 --dbs
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-42.CtgHy916.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-42.CtgHy916.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;查表&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;python sqlmap.py -u http://node5.anna.nssctf.cn:23615/?id=1 -D ctftraining --tables
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;（触发时间盲注 速度较慢）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-43.brCJH4q3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-43.brCJH4q3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;查列&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;python sqlmap.py -u http://node5.anna.nssctf.cn:23615/?id=1 -D ctftraining -T flag --columns
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;（触发时间盲注 速度较慢）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-44.FS9Kztej.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-44.FS9Kztej.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;查询数据&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;python sqlmap.py -u http://node5.anna.nssctf.cn:23615/?id=1 -D ctftraining -T flag -C flag --dump
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;（触发时间盲注 速度较慢）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-45.BAC4raan.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-45.BAC4raan.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;FLAG&lt;/h3&gt;
 &lt;p&gt;NSSCTF{24cbda17-c360-4112-9ba3-93cb9798dfea}&lt;/p&gt;
 &lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
@@ -503,39 +503,39 @@ information_schema,mysql,ctftraining,performance_schema,test,ctf&lt;/p&gt;
 &lt;h3&gt;WP&lt;/h3&gt;
 &lt;p&gt;打开随便输入个名字
 点击拿flag提示只有管理员才能拿flag&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-46.BMqlwnQe.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-46.BMqlwnQe.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;返回初始页面
 输入admin 提示你并非管理员&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-47.CK4FvuFP.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-47.CK4FvuFP.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;我们可以由此判断出管理员名称为admin
 我们输入任意值后 在拿flag分析数据包
 找到了cookie值中 存在session值
 &lt;code&gt;eyJuYW1lIjoiMSJ9.aRiRSQ.qRcMu-i6fQDODuj7-p9g4N4ZOM8&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;分析session值 进行base64解密&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-48.ChQTWQvm.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-48.ChQTWQvm.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;发现session是被加密过的base64数据 于是分析框架以做到session数据的处理
 我们可以猜测这个题应该是构造admin的session拿flag
 通过&lt;strong&gt;Wappalyzer&lt;/strong&gt;插件分析网站框架为&lt;strong&gt;Flask&lt;/strong&gt;
-&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-49.Cm70wPBM.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-49.Cm70wPBM.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;根据flask框架特点 我们可以发现他会创建一个密钥进行加密
 我们要爆破出密钥 这里使用&lt;strong&gt;flask-unsign&lt;/strong&gt;工具进行爆破&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;flask-unsign --unsign --cookie &quot;cookie&quot; -w &quot;wordlist file&quot; --no-literal-eval 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;发现我们使用常见的字典后无法破解&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-50.DBkWpxZ8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-50.DBkWpxZ8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;而题目也不会这么难
 于是我们根据题目相关信息进行密钥猜测&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-51.D_mzvAxY.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-51.D_mzvAxY.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;发现密钥就是&lt;strong&gt;LitCTF&lt;/strong&gt;
 根据此密钥 我们使用 &lt;strong&gt;flask-session-cookie-manager&lt;/strong&gt; 工具构造session&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;python flask_session_cookie_manager3.py encode -s &quot;LitCTF&quot; -t &quot;{&apos;name&apos;:&apos;admin&apos;}&quot;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-52.CgT6jFS_.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-52.CgT6jFS_.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;得到构造后的session为&lt;code&gt;eyJuYW1lIjoiYWRtaW4ifQ.aRiYLQ.1chaPrijlkgD2V9KFs1-yD-5lCY&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;我们使用 &lt;strong&gt;burp suite&lt;/strong&gt; 将所得的session值封装到数据包中&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-53.D7y2lm2F.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-53.D7y2lm2F.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;发送数据包拿到flag&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-54.C91EwoUS.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-54.C91EwoUS.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;FLAG&lt;/h3&gt;
 &lt;p&gt;NSSCTF{ee937afc-f3de-42c3-a86a-dfa71382429f}&lt;/p&gt;
 &lt;h3&gt;CTF所用工具总结&lt;/h3&gt;
@@ -554,30 +554,30 @@ information_schema,mysql,ctftraining,performance_schema,test,ctf&lt;/p&gt;
 &lt;h3&gt;WP&lt;/h3&gt;
 &lt;p&gt;题目提示：彩蛋分布于 我Flag呢 Follow me and hack me 作业管理系统 狠狠的注入 四个题目 中&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;part1&lt;/strong&gt;（我Flag呢）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-55.Dn2380q9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-55.Dn2380q9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;在控制台页面发现彩蛋提示
 输入对应提示指令&lt;code&gt;giveMeEgg()&lt;/code&gt;得到第一部分&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-56.gt0p48SQ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-56.gt0p48SQ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;LitCTF{First_t0_The_k3y!（1/?）&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;part2&lt;/strong&gt;（Follow me and hack me）&lt;/p&gt;
 &lt;p&gt;在我们完成这道题的时候 有一行绿的提示&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-57.BKNduEi4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-57.BKNduEi4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;于是我们测试备份文件名称 使用 &lt;strong&gt;dirsearch&lt;/strong&gt; 查询目录&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;python dirsearch.py -u http://node5.anna.nssctf.cn:28775/
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-58.DVUur4i8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-58.DVUur4i8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;下载目录中的 &lt;code&gt;www.zip&lt;/code&gt; 文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-59.DycapAz8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-59.DycapAz8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;分析文件
 我们可以在&lt;code&gt;index.php.bak&lt;/code&gt;文件中找到这一部分flag&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-60.CmhK6EEW.png&quot; alt=&quot;&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-60.CmhK6EEW.png&quot; alt=&quot;&quot; /&gt;
 _R3ady_Pl4yer_000ne_ (3/?)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;part3&lt;/strong&gt;（作业管理系统）&lt;/p&gt;
 &lt;p&gt;依旧登录系统
 在文件上传页面发现远程下载示例&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-61.Bo0GW37-.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-61.Bo0GW37-.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;打开示例链接 获得此部分flag&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-62.J0jQ0wbC.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-62.J0jQ0wbC.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;_S0_ne3t? (2/?)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;part4&lt;/strong&gt;（狠狠的注入）&lt;/p&gt;
 &lt;p&gt;在我们做这个题的时候 还有一个名为ctf的数据库
@@ -585,15 +585,15 @@ _R3ady_Pl4yer_000ne_ (3/?)&lt;/p&gt;
 &lt;p&gt;查表payload&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;?id=1)))))) union select 1,group_concat(table_name) from information_schema.tables where table_schema=&quot;ctf&quot; %23
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-63.B6tgOSgY.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-63.B6tgOSgY.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;查列payload&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;?id=1)))))) union select 1,group_concat(column_name) from information_schema.columns where table_name=&apos;users&apos; and table_schema=&apos;ctf&apos; %23
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-64.CnfCECnu.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-64.CnfCECnu.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;查数据payload&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;?id=1)))))) union select username,password from ctf.users %23
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/LitCTF-2023-65.CinUMCXZ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/LitCTF-2023-65.CinUMCXZ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;得到此部分flag （当然可以用&lt;strong&gt;sqlmap&lt;/strong&gt;）&lt;/p&gt;
 &lt;p&gt;F1rst_to_Th3_eggggggggg!} (4/4)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;合并四个部分flag&lt;/strong&gt;得到最后flag&lt;/p&gt;
@@ -611,7 +611,7 @@ _R3ady_Pl4yer_000ne_ (3/?)&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;总结&lt;/h2&gt;
 &lt;p&gt;这套题总体难度比较简单，而且还挺有趣的，适合Web新手入门，去多方位了解Web题的不同解题角度，题目的writeup可以当作思考路线，题目质量不错，值得一做~~&lt;/p&gt;
-</content:encoded></item><item><title>IDM 逆向开裂教程</title><link>https://www.chuzoux.top/posts/idm/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/idm/</guid><description>IDM 逆向开裂</description><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;IDM（Internet Download Manager）&lt;/h1&gt;
+</content:encoded></item><item><title>IDM 逆向开裂教程</title><link>https://chuzoux.top/posts/idm/</link><guid isPermaLink="true">https://chuzoux.top/posts/idm/</guid><description>IDM 逆向开裂</description><pubDate>Mon, 22 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;IDM（Internet Download Manager）&lt;/h1&gt;
 &lt;h2&gt;免责声明&lt;/h2&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;本站所有的软件均来自网络，逆向教程仅用于学习和交流，请在软件下载24小时内删除&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;h2&gt;介绍&lt;/h2&gt;
@@ -628,27 +628,27 @@ _R3ady_Pl4yer_000ne_ (3/?)&lt;/p&gt;
 &lt;p&gt;下载链接：&lt;a href=&quot;https://www.internetdownloadmanager.com/download.html&quot;&gt;https://www.internetdownloadmanager.com/download.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;下载完安装包后 一路确定即可安装成功&lt;/p&gt;
 &lt;p&gt;打开关于我们发现版本显示&lt;strong&gt;未注册&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250922165817564.BE6ls14m.png&quot; alt=&quot;image-20250922165817564&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250922165817564.BE6ls14m.png&quot; alt=&quot;image-20250922165817564&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;（二）、下载破解脚本*&lt;/h3&gt;
 &lt;p&gt;下载链接：&lt;a href=&quot;https://github.com/lstprjct/IDM-Activation-Script/releases&quot;&gt;https://github.com/lstprjct/IDM-Activation-Script/releases&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;选择最新版本的补丁下载&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250922170143311.Dz-fmpJv.png&quot; alt=&quot;image-20250922170143311&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250922170143311.Dz-fmpJv.png&quot; alt=&quot;image-20250922170143311&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;（三）、使用破解补丁*&lt;/h3&gt;
 &lt;p&gt;将下载到的文件解压到文件根目录&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250922170626571.0LuVNUQV.png&quot; alt=&quot;image-20250922170626571&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250922170626571.0LuVNUQV.png&quot; alt=&quot;image-20250922170626571&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;运行&lt;strong&gt;IAS.cmd&lt;/strong&gt;脚本&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250922170732731.DcjSwTto.png&quot; alt=&quot;image-20250922170732731&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250922170732731.DcjSwTto.png&quot; alt=&quot;image-20250922170732731&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;输入1进入激活模式&lt;/strong&gt; 根据提示进行确定操作&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250922170844475.C0FTdTkf.png&quot; alt=&quot;image-20250922170844475&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250922170844475.C0FTdTkf.png&quot; alt=&quot;image-20250922170844475&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;（四）、检查IDM是否已被激活&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;再次打开关于页面 查看是否被激活&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250922171236178.Dmo1dHyn.png&quot; alt=&quot;image-20250922171236178&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250922171236178.Dmo1dHyn.png&quot; alt=&quot;image-20250922171236178&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;看到序列号就说明已经被完美激活&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;根据实测 此激活版本可正常更新 但非常不建议这么做&lt;/strong&gt;&lt;/p&gt;
 &lt;h2&gt;温馨提示&lt;/h2&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;没事别更新！没事别更新！没事别更新！&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;p&gt;本篇文章已被收录至&lt;a href=&quot;https://chuzoux.top/posts/software/#IDM&quot;&gt;&amp;lt;font color=red&amp;gt;自用软件合集！&amp;lt;/font&amp;gt;&lt;/a&gt;中&lt;/p&gt;
-</content:encoded></item><item><title>小米手环7联动ZeppOS应用</title><link>https://www.chuzoux.top/posts/miband7-zeppos/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/miband7-zeppos/</guid><description>使用Zepp魔改版 使小米手环7联动ZeppOS应用</description><pubDate>Mon, 08 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;小米手环7联动ZeppOS应用&lt;/h1&gt;
+</content:encoded></item><item><title>小米手环7联动ZeppOS应用</title><link>https://chuzoux.top/posts/miband7-zeppos/</link><guid isPermaLink="true">https://chuzoux.top/posts/miband7-zeppos/</guid><description>使用Zepp魔改版 使小米手环7联动ZeppOS应用</description><pubDate>Mon, 08 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;小米手环7联动ZeppOS应用&lt;/h1&gt;
 &lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;ZeppOS小程序是一套可以通过ZeppApp与手机和云端进行联动的完整链条。&lt;/p&gt;
 &lt;p&gt;ZeppApp是&lt;strong&gt;华米&lt;/strong&gt;旗下的APP&lt;/p&gt;
@@ -689,7 +689,7 @@ _R3ady_Pl4yer_000ne_ (3/?)&lt;/p&gt;
 &lt;p&gt;生成二维码并扫描绑定&lt;/p&gt;
 &lt;p&gt;打开任意一个生成二维码的网站（例如：草料二维码），输入你修改蓝牙地址后的华米链接&lt;/p&gt;
 &lt;p&gt;生成二维码并使用Zepp绑定&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250907213654322.CFrUbSpy.png&quot; alt=&quot;image-20250907213654322&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250907213654322.CFrUbSpy.png&quot; alt=&quot;image-20250907213654322&quot; /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;打开开发者选项&lt;/p&gt;
@@ -697,7 +697,7 @@ _R3ady_Pl4yer_000ne_ (3/?)&lt;/p&gt;
 &lt;p&gt;连续五次点击Zepp图标 就有提示进入了开发者模式&lt;/p&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;原版官包也可以绑定，但是不能使用开发者模式，会提示“Bluetooth channel is not available. Please try again later.”&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;p&gt;打开绑定的手环 下滑看见开发者选项就可以了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250907221307996.CRd3kysb.png&quot; alt=&quot;image-20250907221307996&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250907221307996.CRd3kysb.png&quot; alt=&quot;image-20250907221307996&quot; /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;找到app-side应用安装二维码&lt;/p&gt;
@@ -709,7 +709,7 @@ _R3ady_Pl4yer_000ne_ (3/?)&lt;/p&gt;
 &lt;p&gt;我这边测试的版本是&lt;strong&gt;1.3.3&lt;/strong&gt;完美兼容 而这个网站上的&lt;strong&gt;1.9.4&lt;/strong&gt;会有图标显示问题&lt;/p&gt;
 &lt;p&gt;具体其他应用需要自己自行测试&lt;/p&gt;
 &lt;p&gt;这边提供一个&lt;strong&gt;1.3.3&lt;/strong&gt;的安装二维码&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250908074025071.14Az0S1w.png&quot; alt=&quot;image-20250908074025071&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250908074025071.14Az0S1w.png&quot; alt=&quot;image-20250908074025071&quot; /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;安装app-side应用&lt;/p&gt;
@@ -718,25 +718,25 @@ _R3ady_Pl4yer_000ne_ (3/?)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;使用截图&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250908081930137.Dza8N0hj.png&quot; alt=&quot;image-20250908081930137&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250908081939871.CSvGbcYr.png&quot; alt=&quot;image-20250908081939871&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250908081930137.Dza8N0hj.png&quot; alt=&quot;image-20250908081930137&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250908081939871.CSvGbcYr.png&quot; alt=&quot;image-20250908081939871&quot; /&gt;&lt;/p&gt;
 &lt;h2&gt;注意事项&lt;/h2&gt;
 &lt;p&gt;理论来讲 使用zepp的app-side服务可能需要有zepp在后台辅助&lt;/p&gt;
 &lt;p&gt;但zepp无法在手环中添加卡片 如出现类似不支持的问题请切换回zepp life或小米运动健康解决&lt;/p&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;若出现无法连接的问题 请使用Zepp life或小米运动健康对应链接形成的二维码进行新的绑定&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;参考文献 ：https://www.coolapk.com/feed/42561142&lt;/p&gt;
-</content:encoded></item><item><title>修复小米手环7 系统损坏进入rec后无法绑定手机</title><link>https://www.chuzoux.top/posts/miband7-fix/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/miband7-fix/</guid><description>解决小米手环7 系统损坏进入rec后无法绑定手机 的问题</description><pubDate>Fri, 05 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;修复小米手环7 系统损坏进入rec后无法绑定手机&lt;/h1&gt;
+</content:encoded></item><item><title>修复小米手环7 系统损坏进入rec后无法绑定手机</title><link>https://chuzoux.top/posts/miband7-fix/</link><guid isPermaLink="true">https://chuzoux.top/posts/miband7-fix/</guid><description>解决小米手环7 系统损坏进入rec后无法绑定手机 的问题</description><pubDate>Fri, 05 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;修复小米手环7 系统损坏进入rec后无法绑定手机&lt;/h1&gt;
 &lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;今年年初 本人高三在校生 为了使校园生活变的不再那么枯燥&lt;/p&gt;
 &lt;p&gt;我将大量的小说通过&lt;strong&gt;环间电子书&lt;/strong&gt;导入到了&lt;strong&gt;小米手环7&lt;/strong&gt;上 然后没过多久就出现了问题&lt;/p&gt;
 &lt;p&gt;我在打开小程序的同时 手环多次重启 进入了rec页面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250905223932353.CMpAvxk8.png&quot; alt=&quot;image-20250905223932353&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250905223932353.CMpAvxk8.png&quot; alt=&quot;image-20250905223932353&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;根据步骤来就进入了&lt;strong&gt;清除数据页面&lt;/strong&gt; 清除数据后 它会给你&lt;strong&gt;提供一个二维码&lt;/strong&gt; 让你绑定手机&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250905224134951.DmGWfvvI.png&quot; alt=&quot;image-20250905224134951&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250905224134951.DmGWfvvI.png&quot; alt=&quot;image-20250905224134951&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;当你扫码在绑定设备时 它会提示 &lt;strong&gt;“此设备已被另一个设备绑定 请先解绑”&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;但事实上&lt;strong&gt;当你解绑后也无法进行绑定&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250905224324608.DeopzsuB.png&quot; alt=&quot;image-20250905224324608&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250905224324608.DeopzsuB.png&quot; alt=&quot;image-20250905224324608&quot; /&gt;&lt;/p&gt;
 &lt;h2&gt;解决思路&lt;/h2&gt;
 &lt;h3&gt;连接手机思路&lt;/h3&gt;
 &lt;p&gt;我们在重置了系统后 出现了无法绑定的问题&lt;/p&gt;
@@ -766,30 +766,30 @@ _R3ady_Pl4yer_000ne_ (3/?)&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;用改版的zepp扫码绑定&lt;/p&gt;
 &lt;p&gt;直接用zepp APP扫描手环上的二维码&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250905230319604.CNWhJrnM.png&quot; alt=&quot;image-20250905230319604&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250905230330498.GcPk5M6R.png&quot; alt=&quot;image-20250905230330498&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250905230319604.CNWhJrnM.png&quot; alt=&quot;image-20250905230319604&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250905230330498.GcPk5M6R.png&quot; alt=&quot;image-20250905230330498&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;绑定后 在app内会显示如下内容&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250905230406816.CEu6Mk-Q.png&quot; alt=&quot;image-20250905230406816&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250905230406816.CEu6Mk-Q.png&quot; alt=&quot;image-20250905230406816&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;此时 我们可以发现&lt;strong&gt;Mi band 7被检测为了Amazfit band 7&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;然后我们直接点击&lt;strong&gt;解绑设备&lt;/strong&gt;即可&lt;/p&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;注意：此步会清除手环中的绑定信息&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;p&gt;绑定失败问题：&lt;/p&gt;
-&lt;p&gt;​	&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250905230207700.DQf98Ku-.png&quot; alt=&quot;image-20250905230207700&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;​	&lt;img src=&quot;https://chuzoux.top/_astro/image-20250905230207700.DQf98Ku-.png&quot; alt=&quot;image-20250905230207700&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;可能原因：未使用改版后的zepp&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;使用zepp life绑定&lt;/p&gt;
 &lt;p&gt;扫描手环上的二维码 我们可以发现此时手环可以被绑定了&lt;/p&gt;
 &lt;p&gt;同样是这个界面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250905230330498.GcPk5M6R.png&quot; alt=&quot;image-20250905230330498&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250905230330498.GcPk5M6R.png&quot; alt=&quot;image-20250905230330498&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;此时 手环还处于不可用状态&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;检查更新修复系统&lt;/p&gt;
 &lt;p&gt;找到检查更新界面 我们可以发现有一个新的更新（这个更新可能被rec后就有 不确定）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250905230801206.DgdyaXPo.png&quot; alt=&quot;image-20250905230801206&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250905230801206.DgdyaXPo.png&quot; alt=&quot;image-20250905230801206&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;我们直接进行更新 等待手机将固件推送到手环中&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250905230858498.Cgey88h1.png&quot; alt=&quot;image-20250905230858498&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250905230858498.Cgey88h1.png&quot; alt=&quot;image-20250905230858498&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;安静等待读条完成 就可以进入被重置后的新系统了！！！&lt;/p&gt;
 &lt;p&gt;enjoy~&lt;/p&gt;
 &lt;/li&gt;
@@ -798,7 +798,7 @@ _R3ady_Pl4yer_000ne_ (3/?)&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;参考文献 ：https://www.coolapk.com/feed/42561142 &amp;lt;br&amp;gt;
 https://www.bandbbs.cn/threads/12135/&lt;/p&gt;
-</content:encoded></item><item><title>不到50元拿下十年.xyz域名</title><link>https://www.chuzoux.top/posts/spaceship-xyz-50rmb/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/spaceship-xyz-50rmb/</guid><description>在spaceship低价拿下长期.xyz域名</description><pubDate>Wed, 03 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;不到50元拿下十年.xyz域名（银联卡即可）&lt;/h1&gt;
+</content:encoded></item><item><title>不到50元拿下十年.xyz域名</title><link>https://chuzoux.top/posts/spaceship-xyz-50rmb/</link><guid isPermaLink="true">https://chuzoux.top/posts/spaceship-xyz-50rmb/</guid><description>在spaceship低价拿下长期.xyz域名</description><pubDate>Wed, 03 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;不到50元拿下十年.xyz域名（银联卡即可）&lt;/h1&gt;
 &lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;25年7月底刷到了一篇关于spaceship域名低价的帖子，原文写到&lt;/p&gt;
 &lt;blockquote&gt;
@@ -829,53 +829,53 @@ https://www.bandbbs.cn/threads/12135/&lt;/p&gt;
 &lt;p&gt;国内建议直接尝试支付宝和银联卡&lt;/p&gt;
 &lt;p&gt;我支付宝不常用 于是尝试去绑定银联卡 但是提示&lt;strong&gt;拒绝服务&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;如果你也用同样的情况 可以尝试&lt;strong&gt;用PayPal绑定银联卡&lt;/strong&gt; 然后&lt;strong&gt;在网站上绑定PayPal&lt;/strong&gt;解决&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903152225282.D1RCJm5w.png&quot; alt=&quot;image-20250903152225282&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903152130940.Bob9D82p.png&quot; alt=&quot;image-20250903152130940&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903152225282.D1RCJm5w.png&quot; alt=&quot;image-20250903152225282&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903152130940.Bob9D82p.png&quot; alt=&quot;image-20250903152130940&quot; /&gt;&lt;/p&gt;
 &lt;h2&gt;域名挑选与购买&lt;/h2&gt;
 &lt;p&gt;打开&lt;a href=&quot;https://www.spaceship.com/&quot;&gt;spaceship官网&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;在 &lt;strong&gt;search for a domain name&lt;/strong&gt; 输入你想要的域名 &amp;lt;font color=red&amp;gt;一定是6-9位数字+.xyz&amp;lt;/font&amp;gt;&lt;/p&gt;
-&lt;p&gt;例如 我们搜索788455.xyz&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903152509684.DrQt9dVM.png&quot; alt=&quot;image-20250903152509684&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;例如 我们搜索788455.xyz&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903152509684.DrQt9dVM.png&quot; alt=&quot;image-20250903152509684&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;添加购物车 我们可以发现目前只能&lt;strong&gt;购买一年&lt;/strong&gt; 直接用你绑定的支付方式进行支付&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903153134714.ipOrxysI.png&quot; alt=&quot;image-20250903153134714&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903153655740.ZZ-hBRwC.png&quot; alt=&quot;image-20250903153655740&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903153134714.ipOrxysI.png&quot; alt=&quot;image-20250903153134714&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903153655740.ZZ-hBRwC.png&quot; alt=&quot;image-20250903153655740&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;成功扣款&lt;strong&gt;4.95&lt;/strong&gt; &amp;lt;font color=red&amp;gt;如果卡内余额过低，也有可能会提示余额不足扣款失败&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;p&gt;打开域名管理器就可以找到购买的域名了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903152711528.7VnP5nlr.png&quot; alt=&quot;image-20250903152711528&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903152711528.7VnP5nlr.png&quot; alt=&quot;image-20250903152711528&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;然后我们点击此域名 找到右侧延长订阅的地方 直接购买即可&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903152836679.BUCQyvTy.png&quot; alt=&quot;image-20250903152836679&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903152939289.Bctfsa4w.png&quot; alt=&quot;image-20250903152939289&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903152836679.BUCQyvTy.png&quot; alt=&quot;image-20250903152836679&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903152939289.Bctfsa4w.png&quot; alt=&quot;image-20250903152939289&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;这边最大延长时间是&lt;strong&gt;9年&lt;/strong&gt; 再加上我们刚开始注册域名的&lt;strong&gt;1年&lt;/strong&gt; 一共是&lt;strong&gt;10年&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;依旧直接用绑定付款方式进行付款&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903153914800.BPEAFtpZ.png&quot; alt=&quot;image-20250903153914800&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903154037699.vBPy7_Fe.png&quot; alt=&quot;image-20250903154037699&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903153914800.BPEAFtpZ.png&quot; alt=&quot;image-20250903153914800&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903154037699.vBPy7_Fe.png&quot; alt=&quot;image-20250903154037699&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;扣款成功 &lt;strong&gt;44.6&lt;/strong&gt; 人民币&lt;/p&gt;
 &lt;p&gt;总计价格 &lt;strong&gt;4.95 + 44.6 = 49.55 元 ≈ 0.67 + 6.03 = 6.7 美元&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903154307428.CV0kJ0l9.png&quot; alt=&quot;image-20250903154307428&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903154307428.CV0kJ0l9.png&quot; alt=&quot;image-20250903154307428&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;返回域名管理器就可以发现域名已经续费到&lt;strong&gt;10年&lt;/strong&gt;后了&lt;/p&gt;
 &lt;h2&gt;【问题】拒绝付款&lt;/h2&gt;
 &lt;p&gt;遇到拒付问题，可以登录你所用卡的APP或者支付APP，查看是否有信息推送&lt;/p&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;一般情况下，出现拒绝付款要么就是卡里没钱 要么就是未开通境外支付&amp;lt;/font&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903154842090.CaHELmJn.png&quot; alt=&quot;image-20250903154842090&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903154842090.CaHELmJn.png&quot; alt=&quot;image-20250903154842090&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;我们只需打开官方app 在消息中找到境外开通页面 按流程开通即可&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903155257407.l_O2HUV1.png&quot; alt=&quot;image-20250903155257407&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903155257407.l_O2HUV1.png&quot; alt=&quot;image-20250903155257407&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;我们再次付款就可以发现&lt;strong&gt;支付成功&lt;/strong&gt;了&lt;/p&gt;
 &lt;h2&gt;域名托管到cloudflare【可选】&lt;/h2&gt;
 &lt;p&gt;建议将域名统一托管到cloudflare平台 方便管理&lt;/p&gt;
 &lt;p&gt;打开cloudflare官网 添加现有域&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903155433334.CRgVW0mJ.png&quot; alt=&quot;image-20250903155433334&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903155433334.CRgVW0mJ.png&quot; alt=&quot;image-20250903155433334&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;选择&lt;strong&gt;免费计划&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903155521946.sYg2kciO.png&quot; alt=&quot;image-20250903155521946&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903155521946.sYg2kciO.png&quot; alt=&quot;image-20250903155521946&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;最后他会给你两个名称服务器&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903155656599.BU8FKJuR.png&quot; alt=&quot;image-20250903155656599&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903155656599.BU8FKJuR.png&quot; alt=&quot;image-20250903155656599&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;将这两个服务器填写到 域名管理→名称服务器和dns&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903155756276.DJqHKzsX.png&quot; alt=&quot;image-20250903155756276&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903155826578.Cq4XNB1O.png&quot; alt=&quot;image-20250903155826578&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903155756276.DJqHKzsX.png&quot; alt=&quot;image-20250903155756276&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903155826578.Cq4XNB1O.png&quot; alt=&quot;image-20250903155826578&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;将提供的两个服务器填入&lt;/p&gt;
 &lt;p&gt;返回&lt;strong&gt;cloudflare检测&lt;/strong&gt;即可&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250903155938069.C0UbPvTc.png&quot; alt=&quot;image-20250903155938069&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250903155938069.C0UbPvTc.png&quot; alt=&quot;image-20250903155938069&quot; /&gt;&lt;/p&gt;
 &lt;h2&gt;结语&lt;/h2&gt;
 &lt;p&gt;有什么关于本文章的任何问题 欢迎在文章最后评论&lt;/p&gt;
-</content:encoded></item><item><title>Typora 逆向开裂教程</title><link>https://www.chuzoux.top/posts/typora/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/typora/</guid><description>Typora v1.10.8逆向开裂</description><pubDate>Mon, 01 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Typora&lt;/h1&gt;
+</content:encoded></item><item><title>Typora 逆向开裂教程</title><link>https://chuzoux.top/posts/typora/</link><guid isPermaLink="true">https://chuzoux.top/posts/typora/</guid><description>Typora v1.10.8逆向开裂</description><pubDate>Mon, 01 Sep 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Typora&lt;/h1&gt;
 &lt;h2&gt;免责声明&lt;/h2&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;本站所有的软件均来自网络，逆向教程仅用于学习和交流，请在软件下载24小时内删除&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;h2&gt;介绍&lt;/h2&gt;
@@ -902,17 +902,17 @@ https://www.bandbbs.cn/threads/12135/&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;e.hasActivated=&quot;true&quot;==&quot;true&quot;,&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250901193229349.BCw5knpV.png&quot; alt=&quot;image-20250901193229349&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250901193229349.BCw5knpV.png&quot; alt=&quot;image-20250901193229349&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;（三）、更改注册表&lt;/h3&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;如果忽略此步可能会导致软件闪退&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;p&gt;Win+R键输入&lt;strong&gt;regedit&lt;/strong&gt;打开注册表&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250901192912535.DicxBNEG.png&quot; alt=&quot;image-20250901192912535&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250901192912535.DicxBNEG.png&quot; alt=&quot;image-20250901192912535&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;输入或找到如下路径&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;计算机\HKEY_CURRENT_USER\Software\Typora&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;右键此项打开权限页面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250901193346921.BRCtR5kv.png&quot; alt=&quot;image-20250901193346921&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250901193346921.BRCtR5kv.png&quot; alt=&quot;image-20250901193346921&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;将Administrators右侧权限改为拒绝 保存并应用即可&lt;/p&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;此时打开软件已经变为已激活状态&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;h3&gt;（四）、关闭软件每次启动时的已激活弹窗&lt;/h3&gt;
@@ -946,7 +946,7 @@ setTimeout(function () {
 }, 360);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;插入到第一行注释和(this.xxxxxxxxxx)中间&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.chuzoux.top/_astro/image-20250901193808675.DyPW84RE.png&quot; alt=&quot;image-20250901193808675&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/image-20250901193808675.DyPW84RE.png&quot; alt=&quot;image-20250901193808675&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;（五）、去除软件左下角未激活提示&lt;/h3&gt;
 &lt;p&gt;打开编辑如下文件&lt;/p&gt;
 &lt;blockquote&gt;
@@ -963,7 +963,7 @@ setTimeout(function () {
 &lt;h2&gt;温馨提示&lt;/h2&gt;
 &lt;p&gt;&amp;lt;font color=red&amp;gt;没事别更新！没事别更新！没事别更新！&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;p&gt;本篇文章已被收录至&lt;a href=&quot;https://chuzoux.top/posts/software/#typora&quot;&gt;&amp;lt;font color=red&amp;gt;自用软件合集！&amp;lt;/font&amp;gt;&lt;/a&gt;中&lt;/p&gt;
-</content:encoded></item><item><title>爱的誓约，缘定一生</title><link>https://www.chuzoux.top/posts/%E7%88%B1%E7%9A%84%E8%AA%93%E7%BA%A6%E7%BC%98%E5%AE%9A%E4%B8%80%E7%94%9F/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E7%88%B1%E7%9A%84%E8%AA%93%E7%BA%A6%E7%BC%98%E5%AE%9A%E4%B8%80%E7%94%9F/</guid><description>祝贺哥哥与嫂嫂订婚快乐</description><pubDate>Thu, 27 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;爱的誓约，缘定一生 ——祝哥哥订婚快乐&lt;/h3&gt;
+</content:encoded></item><item><title>爱的誓约，缘定一生</title><link>https://chuzoux.top/posts/%E7%88%B1%E7%9A%84%E8%AA%93%E7%BA%A6%E7%BC%98%E5%AE%9A%E4%B8%80%E7%94%9F/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E7%88%B1%E7%9A%84%E8%AA%93%E7%BA%A6%E7%BC%98%E5%AE%9A%E4%B8%80%E7%94%9F/</guid><description>祝贺哥哥与嫂嫂订婚快乐</description><pubDate>Thu, 27 Jul 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;爱的誓约，缘定一生 ——祝哥哥订婚快乐&lt;/h3&gt;
 &lt;p&gt;踏入七彩时光，亲哥哥终将迎来缘定一生的美妙篇章。星月相伴，草木含翠，他遇见了心中那份倾心的爱意，决定与心上人相守终身。此刻，让我们共同祝福，用心灵的羽翼，书写这段幸福的传奇。&lt;/p&gt;
 &lt;p&gt;风起时，缱绻诗意绕指间。岁月的钟摆轻拂过，酝酿出一段美好的姻缘。愿你们的爱情，如春风拂面，温暖而不失深情;如夏日繁花，绚烂且持久;如秋叶飘零，静美而不凋零;如冬日暖阳，永远相伴温暖心房。&lt;/p&gt;
 &lt;p&gt;世间繁华，终究还是平凡的幸福最让人心驰神往。愿你们一同漫步在爱的花海，牵手走过岁月的长廊，笑看风花雪月。彼此是对方的天空，无论晴空或风雨，都愿意包容对方的一切。&lt;/p&gt;
@@ -978,7 +978,7 @@ setTimeout(function () {
 &lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/64c2800a1ddac507ccb68c55.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/64c2800b1ddac507ccb68d35.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/64c2800b1ddac507ccb68e5d.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-</content:encoded></item><item><title>大陆地区游玩Rizline指南[安卓]（能解决90%的问题）</title><link>https://www.chuzoux.top/posts/%E5%A4%A7%E9%99%86%E5%9C%B0%E5%8C%BA%E6%B8%B8%E7%8E%A9rizline%E6%8C%87%E5%8D%97-%E5%AE%89%E5%8D%93-%E8%83%BD%E8%A7%A3%E5%86%B390-%E7%9A%84%E9%97%AE%E9%A2%98/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%A4%A7%E9%99%86%E5%9C%B0%E5%8C%BA%E6%B8%B8%E7%8E%A9rizline%E6%8C%87%E5%8D%97-%E5%AE%89%E5%8D%93-%E8%83%BD%E8%A7%A3%E5%86%B390-%E7%9A%84%E9%97%AE%E9%A2%98/</guid><description>大陆地区游玩Rizline指南</description><pubDate>Sun, 18 Dec 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;大陆地区游玩Rizline指南[安卓]（能解决90%的问题）&lt;/h1&gt;
+</content:encoded></item><item><title>大陆地区游玩Rizline指南[安卓]（能解决90%的问题）</title><link>https://chuzoux.top/posts/%E5%A4%A7%E9%99%86%E5%9C%B0%E5%8C%BA%E6%B8%B8%E7%8E%A9rizline%E6%8C%87%E5%8D%97-%E5%AE%89%E5%8D%93-%E8%83%BD%E8%A7%A3%E5%86%B390-%E7%9A%84%E9%97%AE%E9%A2%98/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%A4%A7%E9%99%86%E5%9C%B0%E5%8C%BA%E6%B8%B8%E7%8E%A9rizline%E6%8C%87%E5%8D%97-%E5%AE%89%E5%8D%93-%E8%83%BD%E8%A7%A3%E5%86%B390-%E7%9A%84%E9%97%AE%E9%A2%98/</guid><description>大陆地区游玩Rizline指南</description><pubDate>Sun, 18 Dec 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;大陆地区游玩Rizline指南[安卓]（能解决90%的问题）&lt;/h1&gt;
 &lt;h2&gt;目录&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;前言&lt;/li&gt;
@@ -1031,7 +1031,7 @@ setTimeout(function () {
 &lt;p&gt;我不知道我自己有没有讲错的地方，如果有的话请及时联系我或者在下方留言
 希望Rizline可以越做越好
 （温馨提示：现在没有国服是因为国内版号没有批准下来，请各位说话之前先思考）&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第十八天[完结]</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%85%AB%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%85%AB%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Fri, 23 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十八课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第十八天[完结]</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%85%AB%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%85%AB%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Fri, 23 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十八课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;语文&lt;/h2&gt;
 &lt;h3&gt;百合花&lt;/h3&gt;
@@ -1550,7 +1550,7 @@ DNA的脱氧核苷酸排列顺序多种多样。&lt;/p&gt;
 (话说，真的有人会看到这里吗:eyes:)&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;目前网课笔记已经完结，实在没有时间写了，以后也不会去填坑了&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第十七天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%83%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%83%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Thu, 22 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十七天&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第十七天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%83%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%83%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Thu, 22 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十七天&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;英语&lt;/h2&gt;
 &lt;h3&gt;unit 1&lt;/h3&gt;
@@ -2069,7 +2069,7 @@ II.州设&lt;strong&gt;通判&lt;/strong&gt;，与知州互相制约&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/632f02e816f2c2beb1386f28.png&quot; alt=&quot;image-20220924210851660&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&apos;font-size: 20px&apos;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第十六天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%85%AD%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%85%AD%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Tue, 20 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十六课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第十六天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%85%AD%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%85%AD%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Tue, 20 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十六课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;英语&lt;/h2&gt;
 &lt;p&gt;【本节课为单元综合练习，详情请查看回放】&lt;/p&gt;
@@ -2363,7 +2363,7 @@ $$
 &lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/632db11316f2c2beb1cc3e0d.png&quot; alt=&quot;image-20220923205914879&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第十五天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%BA%94%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%BA%94%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Mon, 19 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十五课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第十五天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%BA%94%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%BA%94%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Mon, 19 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十五课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;语文&lt;/h2&gt;
 &lt;h3&gt;声声慢&lt;/h3&gt;
@@ -2806,7 +2806,7 @@ c.一般认为蛋白质的变性作用，主要是蛋白质的空间结构发生
 &lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/632c01d616f2c2beb1111f72.png&quot; alt=&quot;image-20220922142512935&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第十四天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Sun, 18 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十四课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第十四天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Sun, 18 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十四课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;英语&lt;/h2&gt;
 &lt;h3&gt;welcome unit&lt;/h3&gt;
@@ -3453,7 +3453,7 @@ b)下午: 按逆时针，沿时针与12点刻度线之间所成夹角的角平�
 对于北半球来说，太阳能集光板一般朝南，而且&lt;strong&gt;纬度越高，集光板与水平面的夹角越大&lt;/strong&gt;。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第十三天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Fri, 16 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十三天&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第十三天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Fri, 16 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十三天&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;英语&lt;/h2&gt;
 &lt;h3&gt;Welcome Unit&lt;/h3&gt;
@@ -3902,7 +3902,7 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/63296e8916f2c2beb1b1d873.png&quot; alt=&quot;image-20220920152646465&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第十二天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Thu, 15 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十二课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第十二天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Thu, 15 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十二课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;语文&lt;/h2&gt;
 &lt;h3&gt;理解性默写&lt;/h3&gt;
@@ -4172,7 +4172,7 @@ C、H、0、N(S)&lt;/p&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第十一天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%80%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%80%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Wed, 14 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十一课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第十一天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%80%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E4%B8%80%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Wed, 14 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十一课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;英语&lt;/h2&gt;
 &lt;h3&gt;welcome unit&lt;/h3&gt;
@@ -4643,7 +4643,7 @@ a是一个元素
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;
 因设备原因导致此次更新以往日更新较晚，请大家多多包涵&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第十天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Tue, 13 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第十天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%8D%81%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Tue, 13 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第十课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;语文&lt;/h2&gt;
 &lt;h3&gt;易错字填空&lt;/h3&gt;
@@ -5149,7 +5149,7 @@ MA为弦长的一半，根据勾股定理，&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/63207d2416f2c2beb1bb2661.png&quot; alt=&quot;image-20220913203025821&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第九天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B9%9D%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B9%9D%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Mon, 12 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第九课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第九天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B9%9D%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B9%9D%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Mon, 12 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第九课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;英语&lt;/h2&gt;
 &lt;p&gt;Thanks for Miss Luan&apos; dedicated teaching and your earnest learning during the first period.
@@ -5583,7 +5583,7 @@ NaCl&lt;strong&gt;在熔融状态能够导电&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
 &lt;p&gt;今天的网课笔记有点少，而且上传时间比较晚，请大家见谅
 本来笔记在七点之前就可以做好的，但是在下午最后一节课之前，我的电脑因为性能问题突然关机，导致我整个下午的笔记全部消失，听回放也没有记很全（比如老师说的重点的地方之类的）&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第八天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%85%AB%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%85%AB%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Sun, 11 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第八课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第八天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%85%AB%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%85%AB%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Sun, 11 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第八课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;语文&lt;/h2&gt;
 &lt;h3&gt;琵琶行&lt;/h3&gt;
@@ -6086,7 +6086,7 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/631dc20e16f2c2beb13d61e5.png&quot; alt=&quot;image-20220911173324562&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第七天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B8%83%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B8%83%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Fri, 09 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第七课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第七天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B8%83%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B8%83%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Fri, 09 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第七课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;语文&lt;/h2&gt;
 &lt;h3&gt;梦游天姥吟留别&lt;/h3&gt;
@@ -6761,7 +6761,7 @@ B液: 0. 01g/mL的CuS0,溶液
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第六天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%85%AD%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%85%AD%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Thu, 08 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第六课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第六天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%85%AD%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%85%AD%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Thu, 08 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第六课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;英语&lt;/h2&gt;
 &lt;h3&gt;句子分类&lt;/h3&gt;
@@ -7546,7 +7546,7 @@ $$
 &lt;p&gt;&lt;strong&gt;地球在太阳系中的位置，具备生命物质的条件是重点&lt;/strong&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第五天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%BA%94%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%BA%94%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Wed, 07 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第五课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第五天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%BA%94%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%BA%94%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Wed, 07 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第五课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;语文&lt;/h2&gt;
 &lt;h3&gt;听写部分&lt;/h3&gt;
@@ -8234,7 +8234,7 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/631877fe16f2c2beb1118026.png&quot; alt=&quot;image-20220907171820405&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第四天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%9B%9B%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%9B%9B%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Tue, 06 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第四课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第四天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%9B%9B%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E5%9B%9B%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Tue, 06 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第四课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;英语&lt;/h2&gt;
 &lt;h3&gt;句子成分&lt;/h3&gt;
@@ -8895,7 +8895,7 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://pic.imgdb.cn/item/6317215416f2c2beb1cfd7d5.png&quot; alt=&quot;image-20220906173319829&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第三天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B8%89%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B8%89%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Mon, 05 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第三课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第三天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B8%89%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B8%89%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Mon, 05 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第三课&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2&gt;语文&lt;/h2&gt;
 &lt;h3&gt;短歌行&lt;/h3&gt;
@@ -9457,12 +9457,12 @@ c. 图线&lt;strong&gt;向下走&lt;/strong&gt;代表物体向负方向运动&lt
 第二天上网课的时候，家里停网了，而电脑是台式机且并不具备无线网卡
 所以第二天的网课全程是用手机听的，并没有写笔记
 但是第二天的笔记我会抽出放假的时间补上，敬请期待！&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第二天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%BA%8C%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%BA%8C%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Sun, 04 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;稍微解释一下为什么没有第二天的笔记
+</content:encoded></item><item><title>学习笔记丨网课第二天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%BA%8C%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%BA%8C%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Sun, 04 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;稍微解释一下为什么没有第二天的笔记
 第二天上网课的时候，家里停网了，而电脑是台式机且并不具备无线网卡
 所以第二天的网课全程是用手机听的，并没有写笔记
 但是第二天的笔记我会抽出放假的时间补上，敬请期待！
 【暂空】&lt;/p&gt;
-</content:encoded></item><item><title>学习笔记丨网课第一天</title><link>https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B8%80%E5%A4%A9/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B8%80%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Sat, 03 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第一课&lt;/h1&gt;
+</content:encoded></item><item><title>学习笔记丨网课第一天</title><link>https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B8%80%E5%A4%A9/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%A8%E7%BD%91%E8%AF%BE%E7%AC%AC%E4%B8%80%E5%A4%A9/</guid><description>学习笔记</description><pubDate>Sat, 03 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;开学第一课&lt;/h1&gt;
 &lt;h2&gt;语文&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;什么是语文&lt;/li&gt;
@@ -10018,7 +10018,7 @@ c. 图线&lt;strong&gt;向下走&lt;/strong&gt;代表物体向负方向运动&lt
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;h1 style=&quot;font-size:20px&quot;&amp;gt;【今日网课结束】&amp;lt;/h1&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>如何搭建一个属于自己的QQ机器人[真寻机器人]</title><link>https://www.chuzoux.top/posts/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84qq%E6%9C%BA%E5%99%A8%E4%BA%BA-%E7%9C%9F%E5%AF%BB%E6%9C%BA%E5%99%A8%E4%BA%BA/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84qq%E6%9C%BA%E5%99%A8%E4%BA%BA-%E7%9C%9F%E5%AF%BB%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid><description>QQ机器人[真寻机器人]搭建教程</description><pubDate>Thu, 01 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;如何搭建一个QQ机器人【真寻机器人】&lt;/h1&gt;
+</content:encoded></item><item><title>如何搭建一个属于自己的QQ机器人[真寻机器人]</title><link>https://chuzoux.top/posts/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84qq%E6%9C%BA%E5%99%A8%E4%BA%BA-%E7%9C%9F%E5%AF%BB%E6%9C%BA%E5%99%A8%E4%BA%BA/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84qq%E6%9C%BA%E5%99%A8%E4%BA%BA-%E7%9C%9F%E5%AF%BB%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid><description>QQ机器人[真寻机器人]搭建教程</description><pubDate>Thu, 01 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;如何搭建一个QQ机器人【真寻机器人】&lt;/h1&gt;
 &lt;h2&gt;目录&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#go-cqhttp&quot;&gt;安装go-cqhttp&lt;/a&gt;&lt;/li&gt;
@@ -10297,7 +10297,7 @@ or&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&amp;lt;font style=&quot;color: red&quot;&amp;gt;本文章是对原项目文档的补充和说明，有很多部分是转载的原文档，并非纯原创&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;p&gt;原文档地址：&lt;a href=&quot;https://hibikier.github.io/zhenxun_bot/docs/installation_doc/&quot;&gt;https://hibikier.github.io/zhenxun_bot/docs/installation_doc/&lt;/a&gt;&lt;/p&gt;
-</content:encoded></item><item><title>日记|祝包蛋生日快乐！</title><link>https://www.chuzoux.top/posts/%E6%97%A5%E8%AE%B0-%E7%A5%9D%E5%8C%85%E8%9B%8B%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E6%97%A5%E8%AE%B0-%E7%A5%9D%E5%8C%85%E8%9B%8B%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90/</guid><description>祝贺包同学生日快乐</description><pubDate>Sat, 09 Jul 2022 17:59:14 GMT</pubDate><content:encoded>&lt;h3&gt;更新&lt;/h3&gt;
+</content:encoded></item><item><title>日记|祝包蛋生日快乐！</title><link>https://chuzoux.top/posts/%E6%97%A5%E8%AE%B0-%E7%A5%9D%E5%8C%85%E8%9B%8B%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E6%97%A5%E8%AE%B0-%E7%A5%9D%E5%8C%85%E8%9B%8B%E7%94%9F%E6%97%A5%E5%BF%AB%E4%B9%90/</guid><description>祝贺包同学生日快乐</description><pubDate>Sat, 09 Jul 2022 17:59:14 GMT</pubDate><content:encoded>&lt;h3&gt;更新&lt;/h3&gt;
 &lt;p&gt;创建博客这么长时间了，但是文章数却一直停留在个位数，并且博客的评论与留言系统仍然未解决，我在这里表示歉意。&lt;/p&gt;
 &lt;p&gt;我没更新文章的最主要原因就是感觉并没有话题，所以我打算开设一个&lt;strong&gt;日记&lt;/strong&gt;专题时不时更新一些在我生活中平淡又非常有意义的事。&lt;/p&gt;
 &lt;hr /&gt;
@@ -10325,7 +10325,7 @@ or&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;[^1]: 这里指山东济宁地区的中考，满分为610分，语数英三门满分100分，物理和政治满分60分，化学和历史满分50分，操作实验满分10分，信息技术满分20分，体育满分60分，2022年受疫情原因未进行操作实验，信息技术与体育考试，所有考生文化课成绩加90分计入总分。［2022年泗水普高分数线 泗水一中439 泗水二中399 泗水实验中学373］
 [^2]: 本人目前左眼75度，右眼125度。&lt;/p&gt;
-</content:encoded></item><item><title>个人博客正式建立</title><link>https://www.chuzoux.top/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E5%BB%BA%E7%AB%8B/</link><guid isPermaLink="true">https://www.chuzoux.top/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E5%BB%BA%E7%AB%8B/</guid><description>关于建站初期的碎碎念</description><pubDate>Tue, 21 Jun 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;h3&amp;gt;个人博客正式建立&amp;lt;/h3&amp;gt;&lt;/p&gt;
+</content:encoded></item><item><title>个人博客正式建立</title><link>https://chuzoux.top/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E5%BB%BA%E7%AB%8B/</link><guid isPermaLink="true">https://chuzoux.top/posts/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E5%BB%BA%E7%AB%8B/</guid><description>关于建站初期的碎碎念</description><pubDate>Tue, 21 Jun 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&amp;lt;h3&amp;gt;个人博客正式建立&amp;lt;/h3&amp;gt;&lt;/p&gt;
 &lt;p&gt;chuzouX个人博客正式建立，此博客采用hexo框架＋butterfly主题制作，这个其实是我改的别人的源码（友链里有）。我将会在这里进行持续的更新（虽然文笔不好），不仅可以发表自己的意见或看法，还可以提升我的语文写作水平（确信）。当然并不会将所有的事情都写下来，日常的小事就会放在说说里，感谢大家的支持！！！&lt;/p&gt;
 &lt;p&gt;&amp;lt;h3&amp;gt;我为什么会建一个博客？&amp;lt;/h3&amp;gt;&lt;/p&gt;
 &lt;p&gt;其实博客这种东西，在我很早之前就想做了，但是由于学习与生活的关系导致博客的建设拖到了现在。对于这个问题吧，我认为博客可以分享自己的任何东西，无论是生活中的点点滴滴也好，等到自己长大之后，再去翻看那些东西，就会有满满的成就感与回忆。&lt;/p&gt;

@@ -16,12 +16,21 @@ export const siteConfig: SiteConfig = {
 	description:
 		"分享网络技术、服务器部署、内网穿透、静态网站搭建、CDN优化、容器化部署等技术教程与日常生活的个人技术博客，作者为chuzouX/一只离开出走世界",
 
-	keywords: [],
+	keywords: [
+		"chuzouX",
+		"一只离开出走世界",
+		"网络技术",
+		"网络安全",
+		"CTF",
+		"静态网站搭建",
+		"博客",
+		"技术"
+	],
 	lang: "zh_CN", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
 		hue: 361, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
-		fixed: true, // Hide the theme color picker for visitors
-		forceDarkMode: true, // Force dark mode and hide theme switcher
+		fixed: false, // Hide the theme color picker for visitors
+		forceDarkMode: false, // Force dark mode and hide theme switcher
 	},
 	banner: {
 		enable: false,
@@ -37,12 +46,12 @@ export const siteConfig: SiteConfig = {
 	},
 	background: {
 		enable: true, // Enable background image
-		src: "https://eopfapi.2b2x.cn/pic?img=ua", // Background image URL (supports HTTPS)
+		src: "https://eopfapi.acofork.com/pic?img=ua", // Background image URL (supports HTTPS)
 		position: "center", // Background position: 'top', 'center', 'bottom'
 		size: "cover", // Background size: 'cover', 'contain', 'auto'
 		repeat: "no-repeat", // Background repeat: 'no-repeat', 'repeat', 'repeat-x', 'repeat-y'
 		attachment: "fixed", // Background attachment: 'fixed', 'scroll', 'local'
-		opacity: 0.5, // Background opacity (0-1)
+		opacity: 1, // Background opacity (0-1)
 	},
 	toc: {
 		enable: true, // Display the table of contents on the right side of the post
@@ -56,13 +65,16 @@ export const siteConfig: SiteConfig = {
 			//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
 		},
 	],
+	officialSites: [
+		{ url: "https://www.chuzoux.top", alias: "EdgeOne CN" },
+		{ url: "https://chuzoux.top", alias: "EdgeOne CN" },
+	],
 };
 
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
 		LinkPreset.Archive,
-		LinkPreset.About,
 		{
 			name: "友链",
 			url: "/friends/", // Internal links should not include the base path, as it is automatically added
@@ -75,17 +87,12 @@ export const navBarConfig: NavBarConfig = {
 		},
 		{
 			name: "统计",
-			url: "https://cloud.umami.is/analytics/us/share/F6AVMTwKHSx6YnN4", // Internal links should not include the base path, as it is automatically added
+			url: "https://umami.chuzoux.top/share/dwd7XrCgMkCylMju", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
 		},
 		{
-			name: "状态",
-			url: "https://status.funxlink.fun/status/main", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
-		},
-		{
-			name: "Bilibili",
-			url: "https://space.bilibili.com/491761768", // Internal links should not include the base path, as it is automatically added
+			name: "EdgeOne数据",
+			url: "https://eo-monitor.chuzoux.top/", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
 		},
 	],
@@ -131,14 +138,14 @@ export const licenseConfig: LicenseConfig = {
 
 export const imageFallbackConfig: ImageFallbackConfig = {
 	enable: true,
-	originalDomain: "eo-r2.2x.nz",
-	fallbackDomain: "pub-d433ca7edaa74994b3d7c40a7fd7d9ac.r2.dev",
+	originalDomain: "https://eopfapi.acofork.com/pic?img=ua",
+	fallbackDomain: "https://eopfapi.acofork.com/pic?img=ua",
 };
 
 export const umamiConfig: UmamiConfig = {
-	enable: true,
-	baseUrl: "cloud.umami.is",
-	shareId: "F6AVMTwKHSx6YnN4",
+	enable: false,
+	baseUrl: "umami.chuzoux.top",
+	shareId: "dwd7XrCgMkCylMju",
 	timezone: "Asia/Shanghai",
 };
 
@@ -148,14 +155,7 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 
 export const gitHubEditConfig: GitHubEditConfig = {
 	enable: true,
-	baseUrl: "https://github.com/chuzouX/fuwari/tree/main/src/content/posts",
+	baseUrl: "https://github.com/chuzouX/fuwari/blob/main/src/content/posts",
 };
 
-
-export const statsConfig = {
-	viewsText: "浏览",
-	visitsText: "访客",
-	loadingText: "统计加载中...",
-	unavailableText: "统计不可用",
-	getStatsText: (pageViews: number, visits: number) => `${statsConfig.viewsText} ${pageViews} · ${statsConfig.visitsText} ${visits}`,
-};
+// todoConfig removed from here

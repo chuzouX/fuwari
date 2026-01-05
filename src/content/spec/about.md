@@ -116,7 +116,7 @@
 *本隐私政策旨在透明地说明我们的数据处理实践。我们建议您定期查看本政策以了解任何更新。*
 
 <!-- Giscus 评论区 -->
-<!-- <script src="https://giscus.app/client.js"
+<script src="https://giscus.app/client.js"
         data-repo="chuzouX/chuzouX_blog_giscus"
         data-repo-id="R_kgDOPnFyCg"
         data-category="Show and tell"
@@ -131,4 +131,4 @@
         data-loading="lazy"
         crossorigin="anonymous"
         async>
-</script> -->
+</script>

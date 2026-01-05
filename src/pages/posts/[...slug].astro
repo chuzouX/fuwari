@@ -31,10 +31,9 @@ const jsonLd = {
 	"@type": "BlogPosting",
 	headline: entry.data.title,
 	description: entry.data.description || entry.data.title,
-	keywords: entry.data.tags,
-	author: {
-		"@type": "Person",
-		name: profileConfig.name,
+    author: {
+      "@type": "Person",
+      name: profileConfig.name,
 		url: Astro.site,
 	},
 	datePublished: formatDateToYYYYMMDD(entry.data.published),
@@ -47,7 +46,7 @@ const jsonLd = {
 <MainGridLayout banner={entry.data.image} title={entry.data.title} description={entry.data.description} lang={entry.data.lang} setOGTypeArticle={true} headings={headings}>
     <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative mb-4">
-        <div id="post-container" class:list={["card-base z-10 px-6 md:px-9 pt-6 pb-4 relative w-full ",
+        <div id="post-container" class:list={["card-base z-10 px-6 md:px-9 pt-6 pb-4 relative w-full border border-black/10 dark:border-white/10 ",
             {}
         ]}>
             <!-- word count and reading time -->
@@ -75,11 +74,7 @@ const jsonLd = {
                     md:before:w-1 before:h-5 before:rounded-md before:bg-[var(--primary)]
                     before:absolute before:top-[0.75rem] before:left-[-1.125rem]
                 ">
-                    {entry.data.pinned && (
-                        <span class="inline-flex items-center mr-3 px-2.5 py-1 text-sm font-medium bg-[oklch(95%_0.2_var(--hue))] dark:bg-[oklch(25%_0.2_var(--hue))] text-[oklch(55%_0.2_var(--hue))] dark:text-[oklch(85%_0.2_var(--hue))] rounded">
-                            <Icon name="material-symbols:push-pin" class="mr-1.5 text-base" /> 置顶
-                        </span>
-                    )}
+
                     <span>{entry.data.title}</span>
                 </div>
             </div>
@@ -171,22 +166,22 @@ const jsonLd = {
 
             
             <!-- Giscus 评论区 -->
-            <!-- <script src="https://giscus.app/client.js"
-                    data-repo="chuzouX/chuzouX_blog_giscus"
-                    data-repo-id="R_kgDOPnFyCg"
-                    data-category="General"
-                    data-category-id="DIC_kwDOPnFyCs4Cux55"
+            <script src="https://giscus.app/client.js"
+                    data-repo="afoim/giscus-fuwari"
+                    data-repo-id="R_kgDOOi8quw"
+                    data-category="Announcements"
+                    data-category-id="DIC_kwDOOi8qu84CprDV"
                     data-mapping="pathname"
                     data-strict="0"
                     data-reactions-enabled="1"
                     data-emit-metadata="0"
                     data-input-position="top"
-                    data-theme="noborder_gray"
+                    data-theme="preferred_color_scheme"
                     data-lang="zh-CN"
                     data-loading="lazy"
                     crossorigin="anonymous"
                     async>
-            </script> -->
+            </script>
     <br>
 
     <div class="flex flex-col md:flex-row justify-between mb-4 gap-4 overflow-hidden w-full">
@@ -202,7 +197,7 @@ const jsonLd = {
 
         <a href={entry.data.prevSlug ? getPostUrlBySlug(entry.data.prevSlug) : "#"}
            class:list={["w-full font-bold overflow-hidden active:scale-95", {"pointer-events-none": !entry.data.prevSlug}]}>
-            {entry.data.prevSlug && <div class="btn-card rounded-2xl w-full h-[3.75rem] max-w-full px-4 flex items-center !justify-end gap-4">
+            {entry.data.prevSlug && <div class="btn-card rounded-2xl w-full h-[3.75rem] max-w-full px-4 flex items-center !justify-end gap-4" >
                 <div class="overflow-hidden transition overflow-ellipsis whitespace-nowrap max-w-[calc(100%_-_3rem)] text-black/75 dark:text-white/75">
                     {entry.data.prevTitle}
                 </div>
@@ -212,3 +207,93 @@ const jsonLd = {
     </div>
 
 </MainGridLayout>
+
+<style>
+    .post-container :global(img) {
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+    }
+    .post-container :global(img.loaded) {
+        opacity: 1;
+    }
+</style>
+
+<script define:vars={{ siteConfig }}>
+    // 图片加载动画处理
+    function setupImageLoading() {
+        const markdownContent = document.querySelector('.markdown-content');
+        if (!markdownContent) return;
+
+        const images = markdownContent.querySelectorAll('img');
+        
+        images.forEach(img => {
+            // 跳过已经处理过的图片
+            if (img.parentElement.classList.contains('image-loading-wrapper')) return;
+
+            // 创建包裹容器
+            const wrapper = document.createElement('div');
+            wrapper.className = 'relative image-loading-wrapper rounded-xl overflow-hidden my-4';
+            wrapper.style.setProperty('--theme-hue', siteConfig.themeColor.hue);
+            
+            // 创建加载条
+            const loadingBar = document.createElement('div');
+            loadingBar.className = 'loading-bar absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-1 bg-gray-200 dark:bg-gray-700 z-10 rounded-full overflow-hidden';
+            loadingBar.innerHTML = `<div class="loading-progress h-full w-8 bg-[oklch(0.70_0.14_var(--theme-hue))] animate-loading-progress rounded-full"></div>`;
+            
+            // 插入DOM
+            img.parentNode.insertBefore(wrapper, img);
+            wrapper.appendChild(loadingBar);
+            wrapper.appendChild(img);
+
+            // 设置图片初始状态
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.5s ease-out';
+            loadingBar.style.transition = 'opacity 0.5s ease-out';
+
+            // 处理加载完成
+            const handleLoad = () => {
+                img.style.opacity = '1';
+                loadingBar.style.opacity = '0';
+                setTimeout(() => {
+                    loadingBar.remove();
+                }, 500);
+            };
+
+            if (img.complete) {
+                handleLoad();
+            } else {
+                img.onload = handleLoad;
+                img.onerror = () => {
+                    loadingBar.remove();
+                    img.style.opacity = '1';
+                };
+            }
+        });
+    }
+
+    // 初始化
+    setupImageLoading();
+    
+    // 支持 Swup 页面切换
+    document.addEventListener('swup:contentReplaced', setupImageLoading);
+</script>
+
+<style is:global>
+    @keyframes loading-progress {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(400%);
+        }
+    }
+
+    .animate-loading-progress {
+        animation: loading-progress 1.5s ease-in-out infinite;
+    }
+    
+    /* 确保包裹容器继承原图的圆角等样式 */
+    .markdown-content img {
+        margin: 0 !important; /* 让wrapper来控制margin */
+    }
+</style>
