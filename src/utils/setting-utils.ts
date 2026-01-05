@@ -101,3 +101,20 @@ export function setTheme(theme: LIGHT_DARK_MODE): void {
 export function getStoredTheme(): LIGHT_DARK_MODE {
 	return (localStorage.getItem("theme") as LIGHT_DARK_MODE) || DEFAULT_THEME;
 }
+
+export function getHideBg(): boolean {
+	const stored = localStorage.getItem("hide-bg");
+	return stored === "true";
+}
+
+export function setHideBg(hide: boolean): void {
+	localStorage.setItem("hide-bg", String(hide));
+	const bgBox = document.getElementById("bg-box");
+	if (bgBox) {
+		if (hide) {
+			bgBox.style.display = "none";
+		} else {
+			bgBox.style.display = "";
+		}
+	}
+}

@@ -1,5 +1,5 @@
 ---
-import Analytics from '@vercel/analytics/astro'
+import Analytics from "@vercel/analytics/astro";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
@@ -115,12 +115,12 @@ const bannerOffset =
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<script src="/js/umami-share.js" defer></script>
-		<script data-swup-ignore-script is:inline src="https://pic.acofork.com/random.js"></script>
+		<script data-swup-ignore-script is:inline src="https://pic.2x.nz/random.js"></script>
 		
 		
 		
 		{/* <!-- Content Security Policy -->
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app https://hpic.072103.xyz https://umami.acofork.com https://hm.baidu.com https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://static.cloudflareinsights.com https://*.adtrafficquality.google; style-src 'self' 'unsafe-inline' https://giscus.app https://fonts.googleapis.com https://api.iconify.design; font-src 'self' https://fonts.gstatic.com https://api.iconify.design; img-src 'self' data: https: http:; connect-src 'self' https://umami.acofork.com https://hm.baidu.com https://www.google-analytics.com https://analytics.google.com https://api.iconify.design https://static.cloudflareinsights.com https://pic.2x.nz https://q2.qlogo.cn https://ep1.adtrafficquality.google https://googleads.g.doubleclick.net; frame-src 'self' https://giscus.app *.bilibili.com https://www.google.com https://googleads.g.doubleclick.net https://support.nodeget.com https://*.adtrafficquality.google; object-src 'none'; base-uri 'self'; form-action 'self';"> */}
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://giscus.app https://hpic.072103.xyz https://umami.2x.nz https://hm.baidu.com https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://static.cloudflareinsights.com https://*.adtrafficquality.google; style-src 'self' 'unsafe-inline' https://giscus.app https://fonts.googleapis.com https://api.iconify.design; font-src 'self' https://fonts.gstatic.com https://api.iconify.design; img-src 'self' data: https: http:; connect-src 'self' https://umami.2x.nz https://hm.baidu.com https://www.google-analytics.com https://analytics.google.com https://api.iconify.design https://static.cloudflareinsights.com https://pic.2x.nz https://q2.qlogo.cn https://ep1.adtrafficquality.google https://googleads.g.doubleclick.net; frame-src 'self' https://giscus.app *.bilibili.com https://www.google.com https://googleads.g.doubleclick.net https://support.nodeget.com https://*.adtrafficquality.google; object-src 'none'; base-uri 'self'; form-action 'self';"> */}
 		{favicons.map(favicon => (
 			<link rel="icon"
 				  href={favicon.src.startsWith('/') ? url(favicon.src) : favicon.src}
@@ -242,16 +242,18 @@ const bannerOffset =
 
 
 		<link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={`${Astro.site}rss.xml`}/>
-		<!-- Umami分析（自建） -->
-		<script defer src="https://umami.chuzoux.top/script.js" data-website-id="a18f07f6-88e5-4926-b16a-0cdf20da0c4b"></script>
+		{/* - Umami分析（云-备用） 
+		<script defer src="https://cloud.umami.is/script.js" data-website-id="5d710dbd-3a2e-43e3-a553-97b415090c63" data-swup-ignore-script></script> */}
+		<!-- 超级吊的Umami eop -->
+		<script defer src="https://umami.chuzoux.top/script.js" data-website-id="a18f07f6-88e5-4926-b16a-0cdf20da0c4b" data-swup-ignore-script></script>
 		<!-- 百度统计 -->
 <script data-swup-ignore-script>
 var _hmt = _hmt || [];
 (function() {
-var hm = document.createElement("script");
-hm.src = "https://hm.baidu.com/hm.js?a711df5fdcba870c1d556bdddb1a5d1e";
-var s = document.getElementsByTagName("script")[0]; 
-s.parentNode.insertBefore(hm, s);
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b219eaad631b87d273cfe72148b2138b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
 })();
 </script>
 
@@ -263,27 +265,23 @@ s.parentNode.insertBefore(hm, s);
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "t8f0gmcwtx");
 </script>
-<!-- gad -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1683686345039700"
-     crossorigin="anonymous" data-swup-ignore-script></script>
-<meta name="google-adsense-account" content="ca-pub-1683686345039700">
 
 		<!-- 谷歌分析 -->
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-X2JXDXE3TT"></script>
-		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Z4LT4H8KH" data-swup-ignore-script></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-		gtag('config', 'G-X2JXDXE3TT');
-		</script>
+  gtag('config', 'G-9Z4LT4H8KH');
+</script>
 
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "504ba9e0828e492e85cdadc1a4b082c3"}'></script><!-- End Cloudflare Web Analytics --><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "15fe148e91b34f10a15652e1a74ab26c"}' data-swup-ignore-script></script><!-- End Cloudflare Web Analytics -->
 	</head>
 	<body class=" min-h-screen transition " class:list={[{"lg:is-home": isHomePage, "enable-banner": enableBanner}]}
 		  data-overlayscrollbars-initialize
 	>
+		<div id="bg-box"></div>
 		<ConfigCarrier></ConfigCarrier>
 		<slot />
 
@@ -399,7 +397,7 @@ import {
 	// SizeObserverPlugin,
 	// ClickScrollPlugin
 } from 'overlayscrollbars';
-import {getHue, getStoredTheme, setHue, setTheme, getBgBlur, setBgBlur} from "../utils/setting-utils";
+import {getHue, getStoredTheme, setHue, setTheme, getBgBlur, setBgBlur, getHideBg, setHideBg} from "../utils/setting-utils";
 import {pathsEqual, url} from "../utils/url-utils";
 import {
 	BANNER_HEIGHT,
@@ -485,6 +483,7 @@ function loadHue() {
 
 function loadBgBlur() {
 	setBgBlur(getBgBlur())
+    setHideBg(getHideBg())
 }
 
 function initCustomScrollbar() {
@@ -725,3 +724,12 @@ if (window.swup) {
 	document.addEventListener("swup:enable", setup)
 }
 </script>
+
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+  <defs>
+    <filter id="liquid-glass">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+</svg>

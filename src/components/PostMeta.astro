@@ -50,16 +50,16 @@ const className = Astro.props.class;
         <>
             <div class="flex items-center">
                 <div class="meta-icon">
-                    <Icon name="material-symbols:visibility-outline-rounded" class="text-xl"></Icon>
+                    <Icon name="material-symbols:visibility-outline" class="text-base"></Icon>
                 </div>
-                <span class="text-50 text-sm font-medium" id={`page-views-${slug}`}>-</span>
+                <span class="text-50 text-sm font-medium">阅读量  <span class="text-50 text-sm font-medium" id={`page-views-${slug}`}>-</span></span>
             </div>
-            <div class="flex items-center">
+            <!-- <div class="flex items-center">
                 <div class="meta-icon">
                     <Icon name="material-symbols:person" class="text-xl"></Icon>
                 </div>
                 <span class="text-50 text-sm font-medium" id={`page-visitors-${slug}`}>-</span>
-            </div>
+            </div> -->
         </>
     )}
 </div>

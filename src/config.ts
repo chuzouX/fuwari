@@ -44,8 +44,17 @@ export const siteConfig: SiteConfig = {
 			url: "https://www.pixiv.net/artworks/122782209", // (Optional) URL link to the original artwork or artist's page
 		},
 	},
+	// background: {
+	// 	enable: true, // Enable background image
+	// 	src: "https://eopfapi.acofork.com/pic?img=ua", // Background image URL (supports HTTPS)
+	// 	position: "center", // Background position: 'top', 'center', 'bottom'
+	// 	size: "cover", // Background size: 'cover', 'contain', 'auto'
+	// 	repeat: "no-repeat", // Background repeat: 'no-repeat', 'repeat', 'repeat-x', 'repeat-y'
+	// 	attachment: "fixed", // Background attachment: 'fixed', 'scroll', 'local'
+	// 	opacity: 1, // Background opacity (0-1)
+	// },
 	background: {
-		enable: false, // Enable background image
+		enable: true, // Enable background image
 		src: "https://eopfapi.acofork.com/pic?img=ua", // Background image URL (supports HTTPS)
 		position: "center", // Background position: 'top', 'center', 'bottom'
 		size: "cover", // Background size: 'cover', 'contain', 'auto'
@@ -143,8 +152,8 @@ export const imageFallbackConfig: ImageFallbackConfig = {
 };
 
 export const umamiConfig: UmamiConfig = {
-	enable: false,
-	baseUrl: "umami.chuzoux.top",
+	enable: true,
+	baseUrl: "https://umami.chuzoux.top",
 	shareId: "dwd7XrCgMkCylMju",
 	timezone: "Asia/Shanghai",
 };
