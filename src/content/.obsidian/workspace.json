@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/LitCTF-2023.md",
+                "file": "posts/2025-CCB-CISCN-Quals.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LitCTF-2023"
+              "title": "2025-CCB-CISCN-Quals"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "assets/images/0cfff651-0590-4700-81f4-79c9e576c38d.webp",
+                "file": "posts/2025-CCB-CISCN-Quals.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "0cfff651-0590-4700-81f4-79c9e576c38d 的大纲"
+              "title": "2025-CCB-CISCN-Quals 的大纲"
             }
           }
         ],
@@ -169,27 +169,30 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "7be4ba729d2aae5a",
+  "active": "f2692c5bd87399c0",
   "lastOpenFiles": [
-    "assets/images/0c47e9a6-1544-4410-94d4-d319ea12ca70.webp",
-    "assets/images/2bb58f42-4d8d-4429-a412-ff256b41087d.webp",
-    "assets/images/2a104c9e-195b-4f16-b080-ee76c763a80a.webp",
-    "assets/images/1ef05530-10fd-4301-af4e-21ddadf18605.webp",
+    "assets/images/2025-CCB-CISCN-Quals-9.png",
+    "assets/images/2025-CCB-CISCN-Quals-8.png",
+    "assets/images/2025-CCB-CISCN-Quals-7.png",
+    "assets/images/2025-CCB-CISCN-Quals-6.png",
+    "assets/images/2025-CCB-CISCN-Quals-5.png",
+    "assets/images/2025-CCB-CISCN-Quals-4.png",
+    "assets/images/2025-CCB-CISCN-Quals-3.png",
+    "assets/images/2025-CCB-CISCN-Quals-2.png",
+    "assets/images/2025-CCB-CISCN-Quals-1.png",
+    "assets/images/2025-CCB-CISCN-Quals.png",
+    "assets/images/23429f108fe58f5d28c86406f6f66212.png",
+    "posts/个人博客重建秽土转生！！.md",
+    "posts/个人博客正式建立.md",
+    "posts/2025-CCB-CISCN-Quals.md",
+    "posts/大陆地区游玩Rizline指南-安卓-（能解决90-的问题）.md",
+    "posts/爱的誓约，缘定一生.md",
     "posts/LitCTF-2023.md",
     "assets/images/未确认 206770.crdownload",
-    "assets/LitCTF-2023-16.png",
-    "posts/image.png",
     "posts/miband7-fix.md",
     "posts/miband7-ZeppOS.md",
     "posts/software.md",
-    "posts/个人博客重建秽土转生！！.md",
-    "posts/个人博客正式建立.md",
     "posts/IDM.md",
-    "assets/images/LitCTF-2023-65.png",
-    "assets/images/LitCTF-2023-64.png",
-    "assets/images/LitCTF-2023-63.png",
-    "assets/images/LitCTF-2023-62.png",
-    "assets/images/LitCTF-2023-61.png",
     "posts/edgeone-setup.md",
     "posts/学习笔记丨网课第十八天.md",
     "spec/about.md",
@@ -205,9 +208,6 @@
     "posts/replay.md",
     "posts/first-pc.md",
     "posts/pin.md",
-    "posts/static-view.md",
-    "posts/new-nas.md",
-    "posts/manosaba-unzip.md",
-    "posts/mac-gal.md"
+    "posts/static-view.md"
   ]
 }
