@@ -2,7 +2,7 @@
 title: 'Typora 逆向开裂教程'
 draft: false
 description: 'Typora v1.10.8逆向开裂'
-category: 科技
+category: 软件
 image: '../assets/images/2f2b42f7320c39a3cbb6b021cf8c6ab10ba1206d.jpeg'
 tags: 
 - 软件

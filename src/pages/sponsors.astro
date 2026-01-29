@@ -198,13 +198,3 @@ const sponsors = Object.values(import.meta.glob<Sponsor>("@/data/sponsors/*.json
 }
 </style>
 
-<script>
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(function() {
-        // 可以添加复制成功的提示
-        alert('已复制到剪贴板');
-    }, function(err) {
-        console.error('复制失败: ', err);
-    });
-}
-</script>

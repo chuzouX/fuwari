@@ -139,6 +139,12 @@ export default defineConfig({
                     },
                 },
             ],
+            [rehypeKatex, {
+                // 'ignore' 表示忽略错误，尝试渲染
+                // 'warn' 表示并在控制台显示警告（默认）
+                // 'error' 表示遇到不兼容输入直接报错停止构建
+                strict: 'ignore' 
+            }],
 			[
 				rehypeExternalLinks,
 				{

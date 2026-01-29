@@ -2,7 +2,7 @@
 .astro/
 
 # generated pages
-dist/
+dist/*
 
 # dependencies
 node_modules/

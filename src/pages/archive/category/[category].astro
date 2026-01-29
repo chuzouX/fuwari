@@ -1,0 +1,32 @@
+---
+import ArchivePanel from "@components/ArchivePanel.astro";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { getSortedPosts } from "@utils/content-utils";
+
+export async function getStaticPaths() {
+	const posts = await getSortedPosts();
+
+	const allCategories = posts.reduce<Set<string>>((acc, post) => {
+		if (post.data.category) {
+            acc.add(post.data.category);
+        } else {
+            acc.add("Uncategorized");
+        }
+		return acc;
+	}, new Set());
+
+	const allCategoriesArray = Array.from(allCategories);
+
+	return allCategoriesArray.map((category) => ({
+		params: {
+			category: category,
+		},
+	}));
+}
+
+const { category } = Astro.params;
+---
+
+<MainGridLayout title={`${category} - 分类`} description={`归档 - ${category}`}>
+    <ArchivePanel categories={[category]}></ArchivePanel>
+</MainGridLayout>

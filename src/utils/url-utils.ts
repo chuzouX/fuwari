@@ -13,6 +13,15 @@ export function getPostUrlBySlug(slug: string): string {
 	return url(`/posts/${slug}/`);
 }
 
+export function getCategoryUrl(category: string | null): string {
+	if (
+		!category ||
+		category.trim() === "" ||
+		category.trim().toLowerCase() === "uncategorized"
+	)
+		return url("/archive/category/Uncategorized/");
+	return url(`/archive/category/${category.trim()}/`);
+}
 
 
 export function getDir(path: string): string {

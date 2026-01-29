@@ -2,7 +2,7 @@
 title: 'IDM 逆向开裂教程'
 draft: false
 description: 'IDM 逆向开裂'
-category: 科技
+category: 软件
 image: '../assets/images/OIP-C.webp'
 tags: 
 - 软件

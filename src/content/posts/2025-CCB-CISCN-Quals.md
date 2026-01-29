@@ -2,7 +2,7 @@
 title: 【难】【2025-CCB-CISCN-初赛】部分题目 WriteUp
 published: 2026-01-06T15:06:19
 description: 第十九届全国大学生信息安全竞赛（创新实践能力赛）暨第三届“长城杯”网数智安全大赛（防护赛）初赛题目部分writeup 是我能做出来的几个题的writeup 我是彩笔
-category: 科技
+category: CTF
 image: ../assets/images/2025-CCB-CISCN-Quals-9.png
 draft: false
 tags:

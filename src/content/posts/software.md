@@ -2,7 +2,7 @@
 title: '自用软件合集！'
 draft: false
 description: '常用软件使用教程及其安装包整理归档'
-category: 科技
+category: 软件
 pinned: true
 image: '../assets/images/d2953201ebb73d7d5e945ee9546f393e.jpg'
 tags: 

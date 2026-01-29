@@ -2,7 +2,7 @@
 title: '如何搭建一个属于自己的QQ机器人[真寻机器人]'
 draft: false
 description: 'QQ机器人[真寻机器人]搭建教程'
-category: 科技
+category: 机器人
 image: 'https://pic.imgdb.cn/item/631188f416f2c2beb1d683cb.jpg'
 tags:
 - 科技
