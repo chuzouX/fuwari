@@ -50,6 +50,7 @@ export type Favicon = {
 export enum LinkPreset {
 	Home = 0,
 	Archive = 1,
+	About = 2,
 }
 
 export type NavBarLink = {
@@ -78,6 +79,13 @@ export type LicenseConfig = {
 	name: string;
 	url: string;
 };
+
+export type NoticeConfig = {
+    enable: boolean;
+    level: "info" | "note" | "tip" | "caution" | "warning" | "important";
+    content: string;
+};
+
 
 export type ImageFallbackConfig = {
 	enable: boolean;

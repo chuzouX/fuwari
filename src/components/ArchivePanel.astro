@@ -5,9 +5,19 @@ import { getPostUrlBySlug } from "../utils/url-utils";
 
 interface Props {
 	keyword?: string;
+    tags?: string[];
 }
+const { tags } = Astro.props;
 
 let posts = await getSortedPosts();
+
+if (Array.isArray(tags) && tags.length > 0) {
+	posts = posts.filter(
+		(post) =>
+			Array.isArray(post.data.tags) &&
+			post.data.tags.some((tag) => tags.includes(tag)),
+	);
+}
 
 const groups: { year: number; posts: typeof posts }[] = (() => {
 	const groupedPosts = posts.reduce(
@@ -32,6 +42,10 @@ const groups: { year: number; posts: typeof posts }[] = (() => {
 	groupedPostsArray.sort((a, b) => b.year - a.year);
 	return groupedPostsArray;
 })();
+
+function formatTag(tag: string[]) {
+	return tag.map((t) => `#${t}`).join(" ");
+}
 
 function formatDate(date: Date) {
 	const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -83,7 +97,7 @@ function formatDate(date: Date) {
                             <div class="hidden md:block md:w-[15%] text-left text-sm transition
                             whitespace-nowrap overflow-ellipsis overflow-hidden
                             text-30"
-                            ></div>
+                            >{formatTag(post.data.tags)}</div>
                         </div>
                     </a>
                 ))}

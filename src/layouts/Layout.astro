@@ -114,6 +114,8 @@ const bannerOffset =
 
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://pic1.acofork.com" />
+        <link rel="preconnect" href="https://umami.chuzoux.top" />
 		<script src="/js/umami-share.js" defer></script>
 		<script data-swup-ignore-script is:inline src="https://pic.2x.nz/random.js"></script>
 		
@@ -231,6 +233,9 @@ const bannerOffset =
 				pointer-events: none;
 				z-index: -1;
 				transition: opacity 0.3s ease-in-out;
+				/* Prevent background jump on mobile browsers with dynamic URL bars */
+                will-change: transform;
+                transform: translateZ(0);
 			}
 			
 			#bg-box.loaded {
@@ -563,6 +568,12 @@ const setup = () => {
 		}
 		let threshold = window.innerHeight * (BANNER_HEIGHT / 100) - 72 - 16
 		let navbar = document.getElementById('navbar-wrapper')
+		function refreshControlRefs() {
+			backToTopBtn = document.getElementById('back-to-top-btn');
+			goToCommentsBtn = document.getElementById('go-to-comments-btn');
+			toc = document.getElementById('toc-wrapper');
+			navbar = document.getElementById('navbar-wrapper')
+		}
 		if (!navbar || !document.body.classList.contains('lg:is-home')) {
 			return
 		}
@@ -585,7 +596,7 @@ const setup = () => {
 		if (heightExtend) {
 			heightExtend.classList.remove('hidden')
 		}
-
+		
 		// Hide the TOC while scrolling back to top
 		let toc = document.getElementById('toc-wrapper');
 		if (toc) {
@@ -598,6 +609,7 @@ const setup = () => {
 		if (heightExtend) {
 			heightExtend.classList.remove('hidden')
 		}
+		scrollFunction()
 	});
 	window.swup.hooks.on('visit:end', (_visit: {to: {url: string}}) => {
 		setTimeout(() => {
@@ -660,6 +672,11 @@ function scrollFunction() {
 	}
 }
 window.onscroll = scrollFunction
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', scrollFunction)
+} else {
+	scrollFunction()
+}
 
 window.onresize = () => {
 	// calculate the --banner-height-extend, which needs to be a multiple of 4 to avoid blurry text

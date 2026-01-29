@@ -31,9 +31,10 @@ const jsonLd = {
 	"@type": "BlogPosting",
 	headline: entry.data.title,
 	description: entry.data.description || entry.data.title,
-    author: {
-      "@type": "Person",
-      name: profileConfig.name,
+	keywords: entry.data.tags,
+	author: {
+		"@type": "Person",
+		name: profileConfig.name,
 		url: Astro.site,
 	},
 	datePublished: formatDateToYYYYMMDD(entry.data.published),
@@ -74,7 +75,11 @@ const jsonLd = {
                     md:before:w-1 before:h-5 before:rounded-md before:bg-[var(--primary)]
                     before:absolute before:top-[0.75rem] before:left-[-1.125rem]
                 ">
-
+                {entry.data.pinned && (
+                        <span class="inline-flex items-center mr-3 px-2.5 py-1 text-sm font-medium bg-[oklch(95%_0.2_var(--hue))] dark:bg-[oklch(25%_0.2_var(--hue))] text-[oklch(55%_0.2_var(--hue))] dark:text-[oklch(85%_0.2_var(--hue))] rounded">
+                            <Icon name="material-symbols:push-pin" class="mr-1.5 text-base" /> 置顶
+                        </span>
+                    )}
                     <span>{entry.data.title}</span>
                 </div>
             </div>
@@ -164,23 +169,67 @@ const jsonLd = {
             {licenseConfig.enable && <License title={entry.data.title} slug={entry.slug} pubDate={entry.data.published} class="mb-6 rounded-xl license-container onload-animation"></License>}
             
 
-            <script src="https://giscus.app/client.js"
-                    data-repo="chuzouX/chuzouX_blog_giscus"
-                    data-repo-id="R_kgDOPnFyCg"
-                    data-category="Show and tell"
-                    data-category-id="DIC_kwDOPnFyCs4Cux58"
-                    data-mapping="pathname"
-                    data-strict="0"
-                    data-reactions-enabled="1"
-                    data-emit-metadata="0"
-                    data-input-position="top"
-                    data-theme="noborder_gray"
-                    data-lang="zh-CN"
-                    data-loading="lazy"
-                    crossorigin="anonymous"
-                    async>
-            </script>
             <!-- Giscus 评论区 -->
+            <div id="giscus-container"></div>
+            <script is:inline>
+            function loadGiscus() {
+                    const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+                    
+                    const script = document.createElement('script');
+                    script.src = "https://giscus.app/client.js";
+                    script.setAttribute("data-repo", "chuzouX/chuzouX_blog_giscus");
+                    script.setAttribute("data-repo-id", "R_kgDOPnFyCg");
+                    script.setAttribute("data-category", "Show and tell");
+                    script.setAttribute("data-category-id", "DIC_kwDOPnFyCs4Cux58");
+                    script.setAttribute("data-mapping", "pathname");
+                    script.setAttribute("data-strict", "1");
+                    script.setAttribute("data-reactions-enabled", "1");
+                    script.setAttribute("data-emit-metadata", "0");
+                    script.setAttribute("data-input-position", "top");
+                    script.setAttribute("data-theme", theme);
+                    script.setAttribute("data-lang", "zh-CN");
+                    script.setAttribute("data-loading", "lazy");
+                    script.setAttribute("crossorigin", "anonymous");
+                    script.async = true;
+                    
+                    const container = document.getElementById('giscus-container');
+                    if (container) {
+                    container.innerHTML = '';
+                    container.appendChild(script);
+                    }
+            }
+
+            // 监听主题变化
+            const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                            const iframe = document.querySelector('iframe.giscus-frame');
+                            if (iframe) {
+                            const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+                            iframe.contentWindow.postMessage({
+                                    giscus: {
+                                    setConfig: {
+                                            theme: theme
+                                    }
+                                    }
+                            }, 'https://giscus.app');
+                            }
+                    }
+                    });
+            });
+
+            observer.observe(document.documentElement, {
+                    attributes: true,
+                    attributeFilter: ['class']
+            });
+
+            // 初始加载
+            loadGiscus();
+
+            // 支持 Swup 页面切换
+            document.addEventListener('swup:contentReplaced', loadGiscus);
+            </script>
+
     <br>
 
     <div class="flex flex-col md:flex-row justify-between mb-4 gap-4 overflow-hidden w-full">

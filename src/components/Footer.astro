@@ -3,14 +3,35 @@
 import { profileConfig } from "../config";
 import { url } from "../utils/url-utils";
 const currentYear = new Date().getFullYear();
+let commitHash = "unknown";
+let buildDate = "unknown";
+import { execSync } from "node:child_process";
+
+try {
+    commitHash = execSync('git rev-parse --short=7 HEAD').toString().trim();
+    
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    const seconds = date.getSeconds().toString().padStart(2, '0');
+    buildDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+} catch (e) {
+    console.warn("Failed to get git info", e);
+}
+
 ---
 
   
 <!--<div class="border-t border-[var(&#45;&#45;primary)] mx-16 border-dashed py-8 max-w-[var(&#45;&#45;page-width)] flex flex-col items-center justify-center px-6">-->
 <div class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-32"></div>
 <!--<div class="transition bg-[oklch(92%_0.01_var(&#45;&#45;hue))] dark:bg-black rounded-2xl py-8 mt-4 mb-8 flex flex-col items-center justify-center px-6">-->
-<div class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6">
-    <div class="transition text-50 text-sm text-center">
+<!-- <div class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6">
+    <div class="transition text-50 text-sm text-center"> -->
+<div class="card-base w-fit mx-auto rounded-xl mt-4 mb-4">
+    <div class="transition text-50 text-sm text-center p-6">
         &copy; <span id="copyright-year">2022 - {currentYear}</span> {profileConfig.name}，采用
         <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可。
         <br>
@@ -25,6 +46,7 @@ const currentYear = new Date().getFullYear();
         <br>
         本网站代码
         <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/chuzouX/fuwari">已开源</a>
+        <a class="transition link text-black/30 dark:text-white/30 hover:text-[var(--primary)] text-xs ml-1" target="_blank" href={`https://github.com/chuzouX/fuwari/commit/${commitHash}`}>({commitHash} @ {buildDate})</a>
         <br>
         <a class="transition link text-[var(--primary)] font-medium inline-flex items-center" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"><img alt="" src="/favicon/foot-icp.png" class="h-4 mr-1">鲁ICP备2025189837号-1</a>
         <br>

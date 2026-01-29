@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon/components";
+import { noticeConfig } from "@/config";
+
+const { enable, level, content } = noticeConfig;
+
+const iconMap = {
+    info: "material-symbols:info-outline-rounded",
+    note: "material-symbols:info-outline-rounded", // Admonition note uses circle info (like info)
+    tip: "material-symbols:lightbulb-outline-rounded",
+    caution: "material-symbols:report-problem-outline-rounded", // Admonition caution uses octagon alert
+    warning: "material-symbols:warning-outline-rounded", // Admonition warning uses triangle warning
+    important: "material-symbols:campaign-outline-rounded",
+};
+
+const colorMap = {
+    info: "var(--admonitions-color-note)", // Fallback to note color
+    note: "var(--admonitions-color-note)",
+    tip: "var(--admonitions-color-tip)",
+    caution: "var(--admonitions-color-caution)",
+    warning: "var(--admonitions-color-warning)",
+    important: "var(--admonitions-color-caution)", // Fallback to caution color
+};
+
+const currentIcon = iconMap[level] || iconMap.info;
+const currentColor = colorMap[level] || colorMap.info;
+---
+
+{enable && (
+    <div class="notice-card mb-4 relative transition-all duration-300 hover:shadow-lg onload-animation">
+        <div class="notice-content flex items-center p-4 rounded-xl bg-[var(--card-bg)] border transition-colors" style={{ borderColor: currentColor, color: currentColor }}>
+            <div class="icon-wrapper mr-4 flex items-center justify-center shrink-0">
+                <Icon name={currentIcon} class="text-2xl" />
+            </div>
+            <div class="text-wrapper grow">
+                <div class="notice-text text-sm md:text-base font-bold" set:html={content}></div>
+            </div>
+        </div>
+        <div class="absolute inset-0 rounded-xl pointer-events-none border-2 opacity-10" style={{ borderColor: currentColor }}></div>
+    </div>
+)}
+
+<style>
+/* Remove local animation definition to use global .onload-animation */
+</style>

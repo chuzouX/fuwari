@@ -20,6 +20,7 @@ const postsCollection = defineCollection({
 	}),
 });
 
+
 const specCollection = defineCollection({
 	schema: z.object({
 		title: z.string().optional(),
@@ -29,16 +30,16 @@ const specCollection = defineCollection({
 	}),
 });
 
-const assetsCollection = defineCollection({
-	type: 'data',
-	schema: z.object({
-		title: z.string().optional(),
-		description: z.string().optional(),
-	}),
-});
+// const assetsCollection = defineCollection({
+// 	type: 'data',
+// 	schema: z.object({
+// 		title: z.string().optional(),
+// 		description: z.string().optional(),
+// 	}),
+// });
 
 export const collections = {
 	posts: postsCollection,
 	spec: specCollection,
-	assets: assetsCollection,
+	// assets: assetsCollection,
 };

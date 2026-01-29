@@ -15,8 +15,9 @@ const interval = 50;
         <PostCard
                 entry={entry}
                 title={entry.data.title}
+                tags={entry.data.tags}
                 published={entry.data.published}
-                updated={entry.data.updated}
+                updated={entry.data.updated} 
                 url={getPostUrlBySlug(entry.slug)}
                 image={entry.data.image}
                 description={entry.data.description}

@@ -19,7 +19,7 @@
 
 目前本网站已开源，魔改作者二叉树树
 
-::github{repo="afoim/fuwari"}
+::github{repo="chuzouX/fuwari"}
 
 ## 网站性质
 
@@ -115,20 +115,65 @@
 
 *本隐私政策旨在透明地说明我们的数据处理实践。我们建议您定期查看本政策以了解任何更新。*
 
+<div id="giscus-container"></div>
+
 <!-- Giscus 评论区 -->
-<script src="https://giscus.app/client.js"
-        data-repo="chuzouX/chuzouX_blog_giscus"
-        data-repo-id="R_kgDOPnFyCg"
-        data-category="Show and tell"
-        data-category-id="DIC_kwDOPnFyCs4Cux58"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="noborder_gray"
-        data-lang="zh-CN"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
+
+<script is:inline>
+function loadGiscus() {
+        const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+        
+        const script = document.createElement('script');
+        script.src = "https://giscus.app/client.js";
+        script.setAttribute("data-repo", "chuzouX/chuzouX_blog_giscus");
+        script.setAttribute("data-repo-id", "R_kgDOPnFyCg");
+        script.setAttribute("data-category", "Show and tell");
+        script.setAttribute("data-category-id", "DIC_kwDOPnFyCs4Cux58");
+        script.setAttribute("data-mapping", "pathname");
+        script.setAttribute("data-strict", "1");
+        script.setAttribute("data-reactions-enabled", "1");
+        script.setAttribute("data-emit-metadata", "0");
+        script.setAttribute("data-input-position", "top");
+        script.setAttribute("data-theme", theme);
+        script.setAttribute("data-lang", "zh-CN");
+        script.setAttribute("data-loading", "lazy");
+        script.setAttribute("crossorigin", "anonymous");
+        script.async = true;
+        
+        const container = document.getElementById('giscus-container');
+        if (container) {
+        container.innerHTML = '';
+        container.appendChild(script);
+        }
+}
+
+// 监听主题变化
+const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                const iframe = document.querySelector('iframe.giscus-frame');
+                if (iframe) {
+                const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+                iframe.contentWindow.postMessage({
+                        giscus: {
+                        setConfig: {
+                                theme: theme
+                        }
+                        }
+                }, 'https://giscus.app');
+                }
+        }
+        });
+});
+
+observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class']
+});
+
+// 初始加载
+loadGiscus();
+
+// 支持 Swup 页面切换
+document.addEventListener('swup:contentReplaced', loadGiscus);
 </script>

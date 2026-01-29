@@ -357,7 +357,9 @@ app.error_handler_spec[None][code][exc_class]=lambda error: backdoor_handler()
 4. Zlib 解压 (decompress)：将解码后的二进制数据进行解压，得到原始代码。
 ```
 
-:::[这里提供一个大佬写的脚本]
+:::note[这里提供一个大佬写的脚本]
+
+<br>
 
 ```python
 import base64

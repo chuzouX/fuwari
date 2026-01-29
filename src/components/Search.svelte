@@ -178,7 +178,7 @@ top-20 left-4 md:left-[unset] right-4 shadow-2xl rounded-2xl p-2">
             <div class="transition text-90 inline-flex font-bold group-hover:text-[var(--primary)]">
                 {item.meta.title}<Icon icon="fa6-solid:chevron-right" class="transition text-[0.75rem] translate-x-1 my-auto text-[var(--primary)]"></Icon>
             </div>
-            <div class="transition text-xs text-white mb-1 font-mono">
+            <div class="transition text-xs text-black/50 dark:text-white/50 mb-1 font-mono">
                 {item.urlPath}
             </div>
             <div class="transition text-sm text-50">

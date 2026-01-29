@@ -7,8 +7,16 @@ import type {
 	ProfileConfig,
 	SiteConfig,
 	UmamiConfig,
+	NoticeConfig,
 } from "./types/config";
 import { LinkPreset } from "./types/config";
+
+export const noticeConfig: NoticeConfig = {
+    enable: true,
+    level: "important",
+    content: "由于博客服务商更换，本站近期已完成新的icp备案！",
+};
+
 
 export const siteConfig: SiteConfig = {
 	title: "chuzouX Blog",
@@ -84,6 +92,7 @@ export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
 		LinkPreset.Archive,
+		LinkPreset.About,
 		{
 			name: "友链",
 			url: "/friends/", // Internal links should not include the base path, as it is automatically added
@@ -100,7 +109,7 @@ export const navBarConfig: NavBarConfig = {
 			external: true, // Show an external link icon and will open in a new tab
 		},
 		{
-			name: "EdgeOne数据",
+			name: "EO数据",
 			url: "https://eo-monitor.chuzoux.top/", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
 		},

@@ -10,12 +10,16 @@ interface Props {
 	published: Date;
 	updated?: Date;
 	hideUpdateDate?: boolean;
+    tags: string[];
+	hideTagsForMobile?: boolean;
 	hidePublishedDate?: boolean;
 	slug?: string;
 }
 const {
 	published,
 	updated,
+    tags,
+	hideTagsForMobile = false,
 	hideUpdateDate = false,
 	hidePublishedDate = false,
 	slug,
@@ -44,6 +48,32 @@ const className = Astro.props.class;
             <span class="text-50 text-sm font-medium">{formatDateToYYYYMMDD(updated)}</span>
         </div>
     )}
+
+    <div class:list={["items-center", {"flex": !hideTagsForMobile, "hidden md:flex": hideTagsForMobile}]}>
+        <div class="meta-icon">
+            <Icon name="material-symbols:tag-rounded" class="text-xl"></Icon>
+        </div>
+        <div class="flex flex-row flex-nowrap items-center">
+            {/* 修改点：添加 .slice(0, 3) 限制数组长度 */}
+            {(tags && tags.length > 0) && tags.slice(0, 3).map((tag, i) => (
+                <>
+                    <div class:list={[{"hidden": i == 0}, "mx-1.5 text-[var(--meta-divider)] text-sm"]}>/</div>
+                    <a href={url(`/archive/tag/${tag}/`)} aria-label=`View all posts with the ${tag} tag`
+                    class="link-lg transition text-50 text-sm font-medium
+                            hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap">
+                        {tag}
+                    </a>
+                </>
+            ))}
+            
+            {/* 可选优化：如果标签超过3个，显示省略号或剩余数量 */}
+            {(tags && tags.length > 3) && (
+                <div class="mx-1.5 text-[var(--meta-divider)] text-sm">/ ...</div>
+            )}
+
+            {!(tags && tags.length > 0) && <div class="transition text-50 text-sm font-medium">无标签</div>}
+        </div>
+    </div>
 
     <!-- page views & visitors -->
     {slug && (

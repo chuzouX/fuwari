@@ -178,22 +178,7 @@ const sponsors = Object.values(import.meta.glob<Sponsor>("@/data/sponsors/*.json
 .sponsor-card {
     @apply transition-all duration-200 hover:shadow-md hover:scale-105;
 }
-.crypto-info {
-    @apply space-y-3;
-}
 
-.wallet-address, .bybit-uid {
-    @apply text-center;
-}
-
-.copy-btn {
-    @apply transition-colors duration-200;
-}
-
-.copy-btn:hover {
-    color: var(--primary);
-    opacity: 0.8;
-}
 
 .loading-bar {
     transition: opacity 0.5s ease-out;
