@@ -28,6 +28,11 @@ import { expressiveCodeConfig } from "./src/config.ts";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
 import { defineConfig, passthroughImageService } from 'astro/config';
 
+
+
+import { defineConfig } from 'astro/config';
+
+
 // https://astro.build/config
 export default defineConfig({
       image: {

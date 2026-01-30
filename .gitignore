@@ -1,8 +1,7 @@
+dist/
+
 # generated types
 .astro/
-
-# generated pages
-dist/*
 
 # dependencies
 node_modules/

