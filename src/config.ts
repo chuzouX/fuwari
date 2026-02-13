@@ -14,7 +14,7 @@ import { LinkPreset } from "./types/config";
 export const noticeConfig: NoticeConfig = {
     enable: true,
     level: "important",
-    content: "由于博客服务商更换，本站近期已完成新的icp备案！",
+    content: "恭喜本站入列2026年十年之约行列🎉🎉🎉，感谢大家一直以来的支持！",
 };
 
 
