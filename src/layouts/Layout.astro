@@ -113,10 +113,8 @@ const bannerOffset =
 
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://pic1.acofork.com" />
         <link rel="preconnect" href="https://umami.chuzoux.top" />
 		<script src="/js/umami-share.js" defer></script>
-		<script data-swup-ignore-script is:inline src="https://p.2x.nz/random.js"></script>
 		
 		
 		
@@ -164,27 +162,47 @@ const bannerOffset =
 			offset = offset - offset % 4;
 			document.documentElement.style.setProperty('--banner-height-extend', `${offset}px`);
 			
-			// // Background image loading detection
-			// const bgUrl = getComputedStyle(document.documentElement).getPropertyValue('--bg-url').trim();
-			// const bgEnable = getComputedStyle(document.documentElement).getPropertyValue('--bg-enable').trim();
+			// Background image loading detection
+			function initBg() {
+				const bgUrl = getComputedStyle(document.documentElement).getPropertyValue('--bg-url').trim();
+				const bgEnable = getComputedStyle(document.documentElement).getPropertyValue('--bg-enable').trim();
+	
+				if (bgUrl && bgUrl !== 'none' && bgEnable === '1') {
+					const img = new Image();
+					const urlMatch = bgUrl.match(/url\(["']?([^"')]+)["']?\)/);
+					if (urlMatch) {
+						img.onload = function() {
+							// 背景图片完全加载后，显示背景并启用卡片透明效果
+							const bgBox = document.getElementById('bg-box');
+							if (bgBox) {
+								bgBox.classList.add('loaded');
+							}
+							document.documentElement.style.setProperty('--card-bg', 'var(--card-bg-transparent)');
+							document.documentElement.style.setProperty('--float-panel-bg', 'var(--float-panel-bg-transparent)');
+						};
+						img.onerror = function() {
+							// Keep cards opaque if background image fails to load
+							console.warn('Background image failed to load, keeping cards opaque');
+						};
+						img.src = urlMatch[1];
+					}
+				}
+			}
+			initBg();
 			
-			// if (bgUrl && bgUrl !== 'none' && bgEnable === '1') {
-			// 	const img = new Image();
-			// 	const urlMatch = bgUrl.match(/url\(["']?([^"')]+)["']?\)/);
-			// 	if (urlMatch) {
-			// 		img.onload = function() {
-			// 			// 背景图片完全加载后，显示背景并启用卡片透明效果
-			// 			document.body.classList.add('bg-loaded');
-			// 			document.documentElement.style.setProperty('--card-bg', 'var(--card-bg-transparent)');
-			// 			document.documentElement.style.setProperty('--float-panel-bg', 'var(--float-panel-bg-transparent)');
-			// 		};
-			// 		img.onerror = function() {
-			// 			// Keep cards opaque if background image fails to load
-			// 			console.warn('Background image failed to load, keeping cards opaque');
-			// 		};
-			// 		img.src = urlMatch[1];
-			// 	}
-			// }
+			// Re-run on Swup content replace
+			document.addEventListener('swup:contentReplaced', initBg);
+
+			const setupSwupBg = () => {
+				if (window.swup && window.swup.hooks) {
+					window.swup.hooks.on('content:replace', initBg);
+				}
+			};
+			if (window.swup) {
+				setupSwupBg();
+			} else {
+				document.addEventListener('swup:enable', setupSwupBg);
+			}
 		</script>
 		<style define:vars={{
 			configHue,
@@ -224,6 +242,7 @@ const bannerOffset =
 				left: 0;
 				width: 100%;
 				height: 100%;
+				background-image: var(--bg-url);
 				background-position: var(--bg-position);
 				background-size: var(--bg-size);
 				background-repeat: var(--bg-repeat);

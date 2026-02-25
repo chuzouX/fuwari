@@ -60,7 +60,8 @@ category: CTF
 
 直接代码审计F12或CTRL+U查看源代码
 
-![](../assets/images/【LitCTF-2023】Web题目%20WriteUp%20合集-1.png)
+![](../assets/images/LitCTF-2023-66.png)
+
 在代码注释找到flag
 ### FLAG
 
@@ -81,7 +82,7 @@ NSSCTF{91737e4e-5797-4afb-80de-e6ec1c8f0177}
 
 ### WP
 
-![](../assets/images/【LitCTF-2023】Web题目%20WriteUp%20合集-2.png)
+![](../assets/images/LitCTF-2023-67.png)
 
 在题目描述页面可以发现一个GitHub page
 根据下面的描述可以了解到作者不小心（并非）将flag推送到了仓库 但后来又重新部署 可以猜测到flag存在于仓库的历史版本
