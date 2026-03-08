@@ -130,9 +130,9 @@ GenP社区的官方运作平台是Lemmy和Stoat，GenP Wiki是唯一可信的下
 
 Adobe Creative Cloud下载链接
 
-🔗 **[Creative Cloud (CC)](https://www.adobe.com/download/creative-cloud)** - Adob​​e 下载 -_请始终优先使用此版本_
-🔗 **[Creative Cloud (CC)](https://helpx.adobe.com/download-install/apps/download-install-apps/creative-cloud-apps/download-creative-cloud-desktop-app-using-direct-links.html)** - Adob​​e 替代下载 -_如果您在使用 Adob​​e 下载时遇到问题，请使用此下载方式_
-🔗 **[Creative Cloud (CC)](https://www.mediafire.com/file/jfpyan2768pmxdb/Creative_Cloud_Set-Up.exe/file)** - 备份下载 -_仅当您上述两个 Adob​​e 下载都出现问题时才使用。_
+🔗 **[Creative Cloud (CC)](https://www.adobe.com/download/creative-cloud)** - Adob​​e 下载 -_请始终优先使用此版本_<br>
+🔗 **[Creative Cloud (CC)](https://helpx.adobe.com/download-install/apps/download-install-apps/creative-cloud-apps/download-creative-cloud-desktop-app-using-direct-links.html)** - Adob​​e 替代下载 -_如果您在使用 Adob​​e 下载时遇到问题，请使用此下载方式_<br>
+🔗 **[Creative Cloud (CC)](https://www.mediafire.com/file/jfpyan2768pmxdb/Creative_Cloud_Set-Up.exe/file)** - 备份下载 -_仅当您上述两个 Adob​​e 下载都出现问题时才使用。_<br>
 
 然后正常根据引导下一步即可（直接登录自己的Adobe账号）
 
