@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/CVE-2021-44228.md",
+                "file": "spec/about.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CVE-2021-44228"
-            }
-          },
-          {
-            "id": "e8242ef3719517c9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "posts/CVE-2021-44228.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "CVE-2021-44228"
+              "title": "about"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -185,31 +170,31 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "e8242ef3719517c9",
+  "active": "d2074d5e611eb8a2",
   "lastOpenFiles": [
     "posts/adobe-genp.md",
+    "assets/images/{5EEDDD0C-5326-45AE-B1C3-7F499382F75A}.png",
+    "assets/images/{184060C0-0C40-45F3-A747-A32AEF6D56B4}.png",
+    "assets/images/{DC387A6F-20E8-497C-A2C7-06259B0E75C0}.png",
+    "assets/images/{FBAE4CB9-A3A1-47B7-BC85-2C4AD7D1B4D1}.png",
+    "assets/images/2f2b42f7320c39a3cbb6b021cf8c6ab10ba1206d.jpeg",
     "posts/CVE-2021-44228.md",
+    "assets/images/LitCTF-2023-30.png",
+    "assets/images/LitCTF-2023-29.png",
+    "assets/images/LitCTF-2023-28.png",
+    "assets/images/LitCTF-2023-26.png",
     "posts/LitCTF-2023.md",
     "posts/IDM.md",
     "assets/images/adobe-genp-1.png",
-    "assets/images/adobe-genp.png",
     "posts/Typora.md",
-    "assets/images/【LitCTF-2023】Web题目 WriteUp 合集.png",
-    "assets/images/LitCTF-2023-67.png",
-    "assets/images/LitCTF-2023-66.png",
-    "assets/images/【LitCTF-2023】Web题目 WriteUp 合集-1.png",
-    "assets/images/【LitCTF-2023】Web题目 WriteUp 合集-2.png",
     "posts/如何搭建一个属于自己的QQ机器人-真寻机器人.md",
     "posts/爱的誓约，缘定一生.md",
     "posts/2025-CCB-CISCN-Quals.md",
-    "assets/images/2f2b42f7320c39a3cbb6b021cf8c6ab10ba1206d.jpeg",
     "posts/CVE-2021-44228.mdx",
     "posts/miband7-fix.md",
     "posts/miband7-ZeppOS.md",
     "posts/software.md",
     "posts/spaceship-xyz-50rmb.md",
-    "assets/images/CVE-2021-44228-15.png",
-    "assets/images/CVE-2021-44228-14.png",
     "spec/about.md",
     "posts/个人博客重建秽土转生！！.md",
     "posts/个人博客正式建立.md",
