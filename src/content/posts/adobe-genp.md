@@ -13,7 +13,7 @@ tags:
 
 ## 前言
 
-之前装过一个离线的Photoshop 2023版本，不过后来用的时候提示
+之前装过一个离线的Photoshop 2023版本，不过后来用的时候提示<br>
 `# This unlicensed Adobe app is not genuine and will be disable`
 
 ![](../assets/images/adobe-genp.png)类似于这样的一个页面
