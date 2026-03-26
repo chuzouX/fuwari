@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/adobe-genp.md",
+                "file": "posts/dnslog.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "adobe-genp"
+              "title": "dnslog"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "posts/adobe-genp.md",
+                "file": "posts/dnslog.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "adobe-genp 的大纲"
+              "title": "dnslog 的大纲"
             }
           }
         ],
@@ -171,7 +171,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -186,23 +187,25 @@
   },
   "active": "225a191221d819ca",
   "lastOpenFiles": [
-    "assets/images/adobe-genp-13.png",
-    "assets/images/adobe-genp-13.png",
+    "assets/images/dnslog-5.png",
+    "assets/images/dnslog-4.png",
+    "assets/images/dnslog-3.png",
+    "assets/images/dnslog-2.png",
+    "assets/images/dnslog-1.png",
+    "assets/images/dnslog.png",
     "posts/IDM.md",
+    "posts/dnslog.md",
+    "posts/2025-CCB-CISCN-Quals.md",
     "posts/adobe-genp.md",
+    "posts/学习笔记丨网课第一天.md",
+    "assets/images/adobe-genp-13.png",
+    "assets/images/adobe-genp-13.png",
     "posts/CVE-2021-44228.md",
     "posts/software.md",
     "posts/爱的誓约，缘定一生.md",
-    "posts/2025-CCB-CISCN-Quals.md",
     "assets/images/adobe-genp-12.png",
     "assets/images/adobe-genp-11.png",
     "assets/images/adobe-genp-10.png",
-    "assets/images/adobe-genp-9.png",
-    "assets/images/adobe-genp-10.png",
-    "assets/images/adobe-genp-8.png",
-    "assets/images/adobe-genp-7.png",
-    "assets/images/adobe-genp-7.png",
-    "assets/images/adobe-genp-7.png",
     "spec/about.md",
     "posts/LitCTF-2023.md",
     "posts/Typora.md",
@@ -222,8 +225,6 @@
     "未命名",
     "posts/zte-f450-bridge.md",
     "posts/unknown-upload.md",
-    "posts/hook-steam-drm.md",
-    "posts/163-free-domain-email.md",
-    "posts/index-tts2.md"
+    "posts/hook-steam-drm.md"
   ]
 }
