@@ -1,0 +1,69 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div
+    class="card-base flex flex-col w-full rounded-[var(--radius-large)] overflow-hidden relative p-6 mb-4 onload-animation"
+    style="animation-delay: var(--content-delay);"
+>
+    <div class="flex items-start gap-4">
+        <!-- 左侧图标 -->
+        <div
+            class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--primary)]/20 to-[var(--primary)]/5 flex items-center justify-center"
+        >
+            <Icon
+                name="material-symbols:calendar-month-outline"
+                class="text-[var(--primary)] text-3xl"
+            />
+        </div>
+
+        <!-- 中间内容 -->
+        <div class="flex-1 min-w-0">
+            <h3
+                class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mb-1"
+            >
+                你好，这是我课表，请在我没课的时候找我
+            </h3>
+            <p
+                class="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-1"
+            >
+                看看chuzouX在上什么课喵
+            </p>
+        </div>
+
+        <!-- 右侧按钮 -->
+        <a href="/schedule/" class="flex-shrink-0 hidden sm:flex">
+            <button
+                class="btn-regular px-5 h-10 rounded-xl bg-[var(--primary)] text-white font-medium
+                hover:bg-[var(--primary)]/90 active:scale-95 transition-all flex items-center gap-2"
+            >
+                <span>查看课表</span>
+                <Icon
+                    name="material-symbols:arrow-forward-rounded"
+                    class="text-lg"
+                />
+            </button>
+        </a>
+    </div>
+
+    <!-- 移动端按钮 -->
+    <a href="/schedule/" class="sm:hidden mt-4">
+        <button
+            class="w-full btn-regular h-10 rounded-xl bg-[var(--primary)] text-white font-medium
+            hover:bg-[var(--primary)]/90 active:scale-95 transition-all flex items-center justify-center gap-2"
+        >
+            <span>查看课表</span>
+            <Icon
+                name="material-symbols:arrow-forward-rounded"
+                class="text-lg"
+            />
+        </button>
+    </a>
+</div>
+
+<style>
+    .card-base {
+        background-color: var(--card-bg);
+        box-shadow: var(--card-shadow);
+    }
+</style>

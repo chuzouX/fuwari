@@ -1,0 +1,264 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div id="schedule-status" class="card-base p-3 border border-black/10 dark:border-white/10">
+    <div class="flex items-center gap-2 mb-2">
+        <div class="w-6 h-6 rounded-md bg-[var(--primary)] flex items-center justify-center">
+            <Icon name="material-symbols:school-outline" class="text-white text-sm"></Icon>
+        </div>
+        <span class="font-bold text-sm text-neutral-800 dark:text-neutral-200">上课状态</span>
+    </div>
+    
+    <div id="schedule-content" class="min-h-[4rem]">
+        <div class="flex items-center justify-center py-3">
+            <div class="animate-spin rounded-full h-5 w-5 border-2 border-primary border-t-transparent"></div>
+        </div>
+    </div>
+    
+    <a href="/schedule/" class="block mt-2 pt-2 border-t border-neutral-200 dark:border-neutral-700 text-center text-xs text-neutral-500 hover:text-[var(--primary)] transition">
+        查看完整课表 →
+    </a>
+</div>
+
+<style>
+    .card-base {
+        background-color: var(--card-bg);
+        box-shadow: var(--card-shadow);
+    }
+    
+    .progress-bar {
+        background: linear-gradient(90deg, var(--primary) var(--progress), transparent var(--progress));
+    }
+</style>
+
+<script>
+    interface TimeSlot {
+        node: number;
+        startTime: string;
+        endTime: string;
+    }
+
+    interface CourseSource {
+        id: number;
+        courseName: string;
+        color: string;
+    }
+
+    interface ScheduleItem {
+        id: number;
+        day: number;
+        startWeek: number;
+        endWeek: number;
+        startNode: number;
+        step: number;
+        room: string;
+        teacher: string;
+    }
+
+    interface ScheduleData {
+        config: { startDate: string; maxWeek: number; tableName: string };
+        timeSlots: TimeSlot[];
+        sources: CourseSource[];
+        schedules: ScheduleItem[];
+    }
+
+    let scheduleData: ScheduleData | null = null;
+    let updateInterval: ReturnType<typeof setInterval>;
+
+    function getCurrentWeekAndDay(): { week: number; day: number } {
+        if (!scheduleData) return { week: 1, day: 1 };
+        
+        const now = new Date();
+        const semesterStart = new Date(scheduleData.config.startDate.replace(/-/g, '/'));
+        const diffTime = now.getTime() - semesterStart.getTime();
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        
+        let week = Math.floor(diffDays / 7) + 1;
+        if (week < 1) week = 1;
+        if (week > scheduleData.config.maxWeek) week = scheduleData.config.maxWeek;
+        
+        const day = (now.getDay() + 6) % 7 + 1;
+        
+        return { week, day };
+    }
+
+    function getTimeSlot(node: number): TimeSlot | undefined {
+        return scheduleData?.timeSlots.find(t => t.node === node);
+    }
+
+    function getCourseTimeRange(schedule: ScheduleItem): { start: number; end: number; startStr: string; endStr: string } {
+        const startSlot = getTimeSlot(schedule.startNode);
+        const endSlot = getTimeSlot(schedule.startNode + schedule.step - 1);
+        
+        if (!startSlot || !endSlot) return { start: 0, end: 0, startStr: '', endStr: '' };
+        
+        const [startHour, startMin] = startSlot.startTime.split(':').map(Number);
+        const [endHour, endMin] = endSlot.endTime.split(':').map(Number);
+        
+        return {
+            start: startHour * 60 + startMin,
+            end: endHour * 60 + endMin,
+            startStr: startSlot.startTime,
+            endStr: endSlot.endTime
+        };
+    }
+
+    function parseCourseName(name: string): string {
+        return name.replace(/[（(][^）)]+[）)]/g, '').trim();
+    }
+
+    function updateStatus() {
+        if (!scheduleData) return;
+        
+        const container = document.getElementById('schedule-content');
+        if (!container) return;
+        
+        const now = new Date();
+        const currentMinutes = now.getHours() * 60 + now.getMinutes();
+        const { week, day } = getCurrentWeekAndDay();
+        
+        const todayCourses = scheduleData.schedules
+            .filter(s => s.day === day && week >= s.startWeek && week <= s.endWeek)
+            .map(s => {
+                const course = scheduleData!.sources.find(c => c.id === s.id);
+                const time = getCourseTimeRange(s);
+                return { schedule: s, course, time };
+            })
+            .filter(c => c.course && c.time.end > 0)
+            .sort((a, b) => a.time.start - b.time.start);
+        
+        let currentCourse = null;
+        let nextCourse = null;
+        
+        for (let i = 0; i < todayCourses.length; i++) {
+            const c = todayCourses[i];
+            if (currentMinutes >= c.time.start && currentMinutes < c.time.end) {
+                currentCourse = c;
+                if (i + 1 < todayCourses.length) {
+                    nextCourse = todayCourses[i + 1];
+                }
+                break;
+            }
+            if (currentMinutes < c.time.start) {
+                nextCourse = c;
+                break;
+            }
+        }
+        
+        if (currentCourse) {
+            const remaining = currentCourse.time.end - currentMinutes;
+            const total = currentCourse.time.end - currentCourse.time.start;
+            const progress = Math.round(((total - remaining) / total) * 100);
+            const remainingMin = remaining;
+            
+            let nextCourseHtml = '';
+            if (nextCourse) {
+                const waitMinutes = nextCourse.time.start - currentMinutes;
+                const isStartingSoon = waitMinutes <= 10;
+                nextCourseHtml = `
+                    <div class="mt-3 pt-2 border-t border-neutral-200 dark:border-neutral-700">
+                        <div class="flex items-center gap-1.5 mb-1">
+                            <span class="px-1.5 py-0.5 rounded text-[10px] font-medium ${isStartingSoon ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400' : 'bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-400'}">${isStartingSoon ? '即将开始' : '下一节'}</span>
+                            <span class="text-xs text-neutral-500">${nextCourse.time.startStr}</span>
+                        </div>
+                        <div class="text-xs font-medium text-neutral-700 dark:text-neutral-300 truncate">
+                            ${parseCourseName(nextCourse.course!.courseName)}
+                        </div>
+                        <div class="text-[10px] text-neutral-500 truncate">
+                            ${nextCourse.schedule.room}${nextCourse.schedule.room && nextCourse.schedule.teacher ? ' · ' : ''}${nextCourse.schedule.teacher}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = `
+                <div class="space-y-2">
+                    <div class="flex items-center gap-1.5">
+                        <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-[var(--primary)] text-white">进行中</span>
+                        <span class="text-xs text-neutral-500">${currentCourse.time.startStr}-${currentCourse.time.endStr}</span>
+                    </div>
+                    <div class="font-bold text-sm text-neutral-800 dark:text-neutral-200 truncate">
+                        ${parseCourseName(currentCourse.course!.courseName)}
+                    </div>
+                    <div class="text-xs text-neutral-500 truncate">
+                        ${currentCourse.schedule.room}${currentCourse.schedule.room && currentCourse.schedule.teacher ? ' · ' : ''}${currentCourse.schedule.teacher}
+                    </div>
+                    <div class="relative h-1.5 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden">
+                        <div class="absolute inset-y-0 left-0 bg-[var(--primary)] rounded-full transition-all" style="width: ${progress}%"></div>
+                    </div>
+                    <div class="text-xs text-neutral-500">
+                        剩余 <span class="font-bold text-[var(--primary)]">${Math.floor(remainingMin / 60)}</span> 小时 <span class="font-bold text-[var(--primary)]">${remainingMin % 60}</span> 分钟
+                    </div>
+                    ${nextCourseHtml}
+                </div>
+            `;
+        } else if (nextCourse) {
+            const waitMinutes = nextCourse.time.start - currentMinutes;
+            const waitHours = Math.floor(waitMinutes / 60);
+            const waitMins = waitMinutes % 60;
+            const isStartingSoon = waitMinutes <= 10;
+            
+            container.innerHTML = `
+                <div class="space-y-2">
+                    <div class="flex items-center gap-1.5">
+                        <span class="px-1.5 py-0.5 rounded text-[10px] font-medium ${isStartingSoon ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400' : 'bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-400'}">${isStartingSoon ? '即将开始' : '待开始'}</span>
+                        <span class="text-xs text-neutral-500">${nextCourse.time.startStr}-${nextCourse.time.endStr}</span>
+                    </div>
+                    <div class="font-bold text-sm text-neutral-800 dark:text-neutral-200 truncate">
+                        ${parseCourseName(nextCourse.course!.courseName)}
+                    </div>
+                    <div class="text-xs text-neutral-500 truncate">
+                        ${nextCourse.schedule.room}${nextCourse.schedule.room && nextCourse.schedule.teacher ? ' · ' : ''}${nextCourse.schedule.teacher}
+                    </div>
+                    <div class="text-xs text-neutral-500">
+                        还有 ${waitHours > 0 ? `<span class="font-bold text-[var(--primary)]">${waitHours}</span> 小时 ` : ''}<span class="font-bold text-[var(--primary)]">${waitMins}</span> 分钟开始
+                    </div>
+                </div>
+            `;
+        } else {
+            container.innerHTML = `
+                <div class="text-center py-2">
+                    <div class="text-2xl mb-1">🎉</div>
+                    <div class="text-sm font-medium text-neutral-600 dark:text-neutral-400">今天没课啦</div>
+                    <div class="text-xs text-neutral-500 mt-1">好好休息吧~</div>
+                </div>
+            `;
+        }
+    }
+
+    async function loadScheduleData() {
+        try {
+            const [configRes, timeRes, sourcesRes, mainRes] = await Promise.all([
+                fetch('/schedule/schedule_config.json'),
+                fetch('/schedule/schedule_time.json'),
+                fetch('/schedule/schedule_sources.json'),
+                fetch('/schedule/schedule_main.json')
+            ]);
+
+            const [config, timeSlots, sources, schedules] = await Promise.all([
+                configRes.json(),
+                timeRes.json(),
+                sourcesRes.json(),
+                mainRes.json()
+            ]);
+
+            scheduleData = { config, timeSlots, sources, schedules };
+            updateStatus();
+            
+            updateInterval = setInterval(updateStatus, 60000);
+        } catch (error) {
+            console.error('Failed to load schedule data:', error);
+            const container = document.getElementById('schedule-content');
+            if (container) {
+                container.innerHTML = `
+                    <div class="text-center py-2 text-neutral-500 text-xs">
+                        加载失败
+                    </div>
+                `;
+            }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadScheduleData);
+</script>

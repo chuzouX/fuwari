@@ -4,6 +4,7 @@ import type { MarkdownHeading } from "astro";
 import Categories from "./Categories.astro";
 import Profile from "./Profile.astro";
 import Tag from "./Tags.astro";
+import ScheduleStatus from "./ScheduleStatus.astro";
 
 interface Props {
 	class?: string;
@@ -15,16 +16,12 @@ const className = Astro.props.class;
 <div id="sidebar" class:list={[className, "w-full"]}>
     <div class="flex flex-col w-full gap-4 mb-4">
         <Profile></Profile>
+        <ScheduleStatus></ScheduleStatus>
     </div>
     <div id="sidebar-sticky" class="transition-all duration-700 flex flex-col w-full gap-4 top-4 top-4">
         <Categories class="transition-all duration-700 flex flex-col w-full gap-4 top-4 top-4" style="animation-delay: 150ms"></Categories>
         <Tag class="transition-all duration-700 flex flex-col w-full gap-4 top-4 top-4" style="animation-delay: 200ms"></Tag>
     </div>
-    <!-- sticky -->
-    
-    <!-- <div id="sidebar-sticky" class="transition-all duration-700 flex flex-col w-full gap-4 top-4 sticky top-4">-->
-        <!-- 赞助标 -->
-    <!-- </div> -->
 </div>
 
 

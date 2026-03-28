@@ -2,12 +2,14 @@
 import type { CollectionEntry } from "astro:content";
 import { getPostUrlBySlug } from "@utils/url-utils";
 import PostCard from "./PostCard.astro";
+import ScheduleCard from "./ScheduleCard.astro";
 
 const { page } = Astro.props;
 
 let delay = 0;
 const interval = 50;
 ---
+<ScheduleCard />
 
 <div class="transition flex flex-col rounded-[var(--radius-large)] bg-transparent gap-4 mb-4">
 

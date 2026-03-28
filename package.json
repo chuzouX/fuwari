@@ -41,6 +41,7 @@
 		"astro-icon": "^1.1.5",
 		"glob": "^11.0.3",
 		"hastscript": "^9.0.1",
+		"jszip": "^3.10.1",
 		"katex": "^0.16.22",
 		"markdown-it": "^14.1.0",
 		"mdast-util-to-string": "^4.0.0",

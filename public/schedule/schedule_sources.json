@@ -1,0 +1,98 @@
+[
+  {
+    "color": "#ffff1744",
+    "courseName": "大学物理B",
+    "credit": 0,
+    "id": 0,
+    "note": "",
+    "tableId": 1
+  },
+  {
+    "color": "#fffa6278",
+    "courseName": "高等数学A(二)",
+    "credit": 0,
+    "id": 1,
+    "note": "",
+    "tableId": 1
+  },
+  {
+    "color": "#ff2979ff",
+    "courseName": "线性代数",
+    "credit": 0,
+    "id": 2,
+    "note": "",
+    "tableId": 1
+  },
+  {
+    "color": "#ff1de9b6",
+    "courseName": "人工智能导论",
+    "credit": 0,
+    "id": 3,
+    "note": "",
+    "tableId": 1
+  },
+  {
+    "color": "#ffa375ff",
+    "courseName": "离散数学",
+    "credit": 0,
+    "id": 4,
+    "note": "",
+    "tableId": 1
+  },
+  {
+    "color": "#ffff9100",
+    "courseName": "大学英语（二）",
+    "credit": 0,
+    "id": 5,
+    "note": "",
+    "tableId": 1
+  },
+  {
+    "color": "#ffff3d00",
+    "courseName": "中国近现代史纲要",
+    "credit": 0,
+    "id": 6,
+    "note": "",
+    "tableId": 1
+  },
+  {
+    "color": "#ff2196f3",
+    "courseName": "大学物理实验B",
+    "credit": 0,
+    "id": 7,
+    "note": "",
+    "tableId": 1
+  },
+  {
+    "color": "#ff005caf",
+    "courseName": "体育（二）(95班)",
+    "credit": 0,
+    "id": 8,
+    "note": "",
+    "tableId": 1
+  },
+  {
+    "color": "#ffff1744",
+    "courseName": "形势与政策（2）",
+    "credit": 0,
+    "id": 9,
+    "note": "",
+    "tableId": 1
+  },
+  {
+    "color": "#fffa6278",
+    "courseName": "Linux操作系统从入门到实战",
+    "credit": 0,
+    "id": 10,
+    "note": "",
+    "tableId": 1
+  },
+  {
+    "color": "#ff2979ff",
+    "courseName": "劳动教育与实践",
+    "credit": 0,
+    "id": 11,
+    "note": "",
+    "tableId": 1
+  }
+]

@@ -1,0 +1,23 @@
+---
+import ScheduleViewer from "../components/ScheduleViewer.svelte";
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+import { umamiConfig } from "../config";
+---
+
+<MainGridLayout title="课程表" description="chuzouX的神秘小课表">
+    <script is:inline src="/js/umami-share.js" slot="head"></script>
+    <div
+        class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32"
+    >
+        <div class="card-base z-10 p-6 md:p-8 relative w-full">
+            <ScheduleViewer client:load umamiConfig={umamiConfig} />
+        </div>
+    </div>
+</MainGridLayout>
+
+<style>
+    .card-base {
+        background-color: var(--card-bg);
+        box-shadow: var(--card-shadow);
+    }
+</style>

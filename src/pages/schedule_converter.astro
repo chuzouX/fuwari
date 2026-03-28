@@ -1,0 +1,433 @@
+---
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+---
+
+<MainGridLayout 
+    title={"课程表格式转换工具"} 
+    description={"通过分享口令获取课程表数据并下载为标准格式"}
+>
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+        <div class="card-base z-10 p-6 md:p-8 relative w-full">
+            <div class="max-w-2xl mx-auto">
+                <!-- 标题 -->
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold text-black/90 dark:text-white/90 mb-2">
+                        {"课程表格式转换工具"}
+                    </h1>
+                    <p class="text-black/60 dark:text-white/60">
+                        {"通过分享口令获取课程表数据并下载为标准格式"}
+                    </p>
+                </div>
+
+                <!-- 步骤一：获取 JSON -->
+                <div class="mb-8 p-5 rounded-xl bg-[var(--btn-plain-bg-hover)] border border-black/10 dark:border-white/10">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[var(--primary)] text-white text-sm font-bold">1</span>
+                        <h2 class="text-lg font-bold text-black/80 dark:text-white/80">获取原始数据</h2>
+                    </div>
+                    <p class="text-sm text-black/60 dark:text-white/60 mb-4">
+                        输入 WakeUp 课程表的分享口令，点击获取按钮下载原始 JSON 文件。
+                    </p>
+                    <div class="flex gap-2">
+                        <input
+                            type="text"
+                            id="shareKeyInput"
+                            placeholder="请输入分享口令，例如：bf7eba98391145d69d2565d470ef3115"
+                            class="flex-1 px-4 py-2.5 rounded-lg border border-black/10 dark:border-white/10 bg-[var(--card-bg)] text-black/90 dark:text-white/90 placeholder-black/40 dark:placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] transition-all text-sm"
+                        />
+                        <button
+                            id="getJsonBtn"
+                            class="px-4 py-2.5 rounded-lg bg-[var(--primary)] text-white font-medium hover:opacity-90 active:scale-95 transition-all flex items-center gap-2 whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+                            disabled
+                        >
+                            <span class="iconify" data-icon="material-symbols:download"></span>
+                            <span>获取 JSON</span>
+                        </button>
+                    </div>
+                    <p class="text-xs text-black/40 dark:text-white/40 mt-2">
+                        提示：输入分享口令后点击按钮，会在新标签页打开 API 链接，请右键 → 另存为，保存为 schedule.json
+                    </p>
+                </div>
+
+                <!-- 步骤二：转换格式 -->
+                <div class="p-5 rounded-xl bg-[var(--btn-plain-bg-hover)] border border-black/10 dark:border-white/10">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-[var(--primary)] text-white text-sm font-bold">2</span>
+                        <h2 class="text-lg font-bold text-black/80 dark:text-white/80">转换为课程表格式</h2>
+                    </div>
+                    <p class="text-sm text-black/60 dark:text-white/60 mb-4">
+                        上传或粘贴刚才下载的 JSON 文件内容，转换为标准课程表格式。
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <!-- 文件上传 -->
+                        <div class="relative">
+                            <label class="block text-sm font-medium text-black/70 dark:text-white/70 mb-2">
+                                方式一：上传 JSON 文件
+                            </label>
+                            <input
+                                type="file"
+                                id="fileInput"
+                                accept=".json"
+                                class="w-full px-4 py-3 rounded-lg border border-black/10 dark:border-white/10 bg-[var(--card-bg)] text-black/90 dark:text-white/90 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-[var(--primary)] file:text-white file:font-medium hover:file:opacity-90 transition-all"
+                            />
+                        </div>
+
+                        <div class="relative flex items-center">
+                            <div class="flex-grow border-t border-black/10 dark:border-white/10"></div>
+                            <span class="mx-4 text-sm text-black/50 dark:text-white/50">或</span>
+                            <div class="flex-grow border-t border-black/10 dark:border-white/10"></div>
+                        </div>
+
+                        <!-- 文本粘贴 -->
+                        <div class="relative">
+                            <label class="block text-sm font-medium text-black/70 dark:text-white/70 mb-2">
+                                方式二：粘贴 JSON 内容
+                            </label>
+                            <textarea
+                                id="jsonInput"
+                                rows="6"
+                                placeholder="将下载的 JSON 文件内容粘贴到这里...（支持完整的API响应或data字段内容）"
+                                class="w-full px-4 py-3 rounded-lg border border-black/10 dark:border-white/10 bg-[var(--card-bg)] text-black/90 dark:text-white/90 placeholder-black/40 dark:placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] transition-all resize-y font-mono text-sm"
+                            ></textarea>
+                        </div>
+                        
+                        <button
+                            id="convertBtn"
+                            class="w-full py-3 px-6 rounded-lg bg-[var(--primary)] text-white font-medium hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                        >
+                            <span class="iconify" data-icon="material-symbols:folder-zip"></span>
+                            <span>转换为 ZIP 格式</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 状态提示 -->
+                <div id="statusMessage" class="mt-4 text-center hidden">
+                    <div class="error-msg hidden text-[var(--primary)]"></div>
+                    <div class="loading-msg hidden text-black/60 dark:text-white/60">
+                        <span class="iconify inline-block animate-spin" data-icon="material-symbols:sync"></span>
+                        <span>处理中...</span>
+                    </div>
+                    <div class="success-msg hidden text-[var(--primary)]"></div>
+                </div>
+
+                <!-- 格式说明 -->
+                <div class="mt-8 p-4 rounded-lg bg-[var(--btn-plain-bg-hover)] border border-black/10 dark:border-white/10">
+                    <h3 class="text-sm font-semibold text-black/80 dark:text-white/80 mb-2">
+                        <span class="iconify inline-block mr-1" data-icon="material-symbols:description"></span>
+                        输出格式说明
+                    </h3>
+                    <ul class="text-sm text-black/60 dark:text-white/60 space-y-1 list-disc list-inside">
+                        <li><code class="bg-[var(--card-bg)] px-1 rounded">schedule_config.json</code> - 课程表配置信息</li>
+                        <li><code class="bg-[var(--card-bg)] px-1 rounded">schedule_time.json</code> - 上课时间安排</li>
+                        <li><code class="bg-[var(--card-bg)] px-1 rounded">schedule_sources.json</code> - 课程列表</li>
+                        <li><code class="bg-[var(--card-bg)] px-1 rounded">schedule_main.json</code> - 课程详细安排</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</MainGridLayout>
+
+<script>
+    import JSZip from 'jszip';
+
+    interface TimetableConfig {
+        courseLen: number;
+        id: number;
+        name: string;
+        sameBreakLen: boolean;
+        sameLen: boolean;
+        theBreakLen: number;
+    }
+
+    interface TimeSlot {
+        endTime: string;
+        node: number;
+        startTime: string;
+        timeTable: number;
+    }
+
+    interface TableConfig {
+        background: string;
+        courseTextColor: number;
+        id: number;
+        itemAlpha: number;
+        itemHeight: number;
+        itemTextSize: number;
+        maxWeek: number;
+        nodes: number;
+        school: string;
+        showOtherWeekCourse: boolean;
+        showSat: boolean;
+        showSun: boolean;
+        showTime: boolean;
+        startDate: string;
+        strokeColor: number;
+        sundayFirst: boolean;
+        tableName: string;
+        textColor: number;
+        tid: string;
+        timeTable: number;
+        type: number;
+        updateTime: number;
+        widgetCourseTextColor: number;
+        widgetItemAlpha: number;
+        widgetItemHeight: number;
+        widgetItemTextSize: number;
+        widgetStrokeColor: number;
+        widgetTextColor: number;
+    }
+
+    interface Course {
+        color: string;
+        courseName: string;
+        credit: number;
+        id: number;
+        note: string;
+        tableId: number;
+    }
+
+    interface ScheduleItem {
+        day: number;
+        endTime: string;
+        endWeek: number;
+        id: number;
+        level: number;
+        ownTime: boolean;
+        room: string;
+        startNode: number;
+        startTime: string;
+        startWeek: number;
+        step: number;
+        tableId: number;
+        teacher: string;
+        type: number;
+    }
+
+    const shareKeyInput = document.getElementById('shareKeyInput') as HTMLInputElement;
+    const getJsonBtn = document.getElementById('getJsonBtn') as HTMLAnchorElement;
+    const fileInput = document.getElementById('fileInput') as HTMLInputElement;
+    const jsonInput = document.getElementById('jsonInput') as HTMLTextAreaElement;
+    const convertBtn = document.getElementById('convertBtn') as HTMLButtonElement;
+    const statusMessage = document.getElementById('statusMessage') as HTMLDivElement;
+    const errorMsg = statusMessage.querySelector('.error-msg') as HTMLDivElement;
+    const loadingMsg = statusMessage.querySelector('.loading-msg') as HTMLDivElement;
+    const successMsg = statusMessage.querySelector('.success-msg') as HTMLDivElement;
+
+    function showStatus(type: 'error' | 'loading' | 'success', message?: string) {
+        statusMessage.classList.remove('hidden');
+        errorMsg.classList.add('hidden');
+        loadingMsg.classList.add('hidden');
+        successMsg.classList.add('hidden');
+
+        if (type === 'error') {
+            errorMsg.classList.remove('hidden');
+            errorMsg.textContent = message || '处理失败';
+        } else if (type === 'loading') {
+            loadingMsg.classList.remove('hidden');
+        } else if (type === 'success') {
+            successMsg.classList.remove('hidden');
+            successMsg.textContent = message || '下载成功！';
+        }
+    }
+
+    function hideStatus() {
+        statusMessage.classList.add('hidden');
+    }
+
+    // 提取分享口令的正则表达式（32位十六进制字符串）
+    function extractShareKey(text: string): string | null {
+        // 匹配 「」内的内容
+        const bracketMatch = text.match(/「([a-f0-9]{32})」/);
+        if (bracketMatch) {
+            return bracketMatch[1];
+        }
+        // 匹配 "分享口令为" 后面的内容
+        const prefixMatch = text.match(/分享口令为[「"']?([a-f0-9]{32})[」"']?/);
+        if (prefixMatch) {
+            return prefixMatch[1];
+        }
+        // 直接匹配32位十六进制字符串
+        const hexMatch = text.match(/\b([a-f0-9]{32})\b/);
+        if (hexMatch) {
+            return hexMatch[1];
+        }
+        return null;
+    }
+
+    // 处理粘贴事件
+    shareKeyInput.addEventListener('paste', (e) => {
+        // 使用 setTimeout 让粘贴内容先进入输入框
+        setTimeout(() => {
+            const text = shareKeyInput.value.trim();
+            const extractedKey = extractShareKey(text);
+            if (extractedKey) {
+                shareKeyInput.value = extractedKey;
+            }
+            // 更新按钮状态
+            getJsonBtn.disabled = !shareKeyInput.value.trim();
+        }, 0);
+    });
+
+    // 更新获取 JSON 按钮状态
+    shareKeyInput.addEventListener('input', () => {
+        const key = shareKeyInput.value.trim();
+        getJsonBtn.disabled = !key;
+    });
+
+    // 点击按钮打开 API 链接
+    getJsonBtn.addEventListener('click', () => {
+        const key = shareKeyInput.value.trim();
+        if (key) {
+            window.open(`https://i.wakeup.fun/share_schedule/get?key=${encodeURIComponent(key)}`, '_blank');
+        }
+    });
+
+    // 文件上传处理
+    fileInput.addEventListener('change', async (e) => {
+        const file = (e.target as HTMLInputElement).files?.[0];
+        if (!file) return;
+
+        try {
+            const text = await file.text();
+            jsonInput.value = text;
+            showStatus('success', '文件已加载，点击转换按钮开始处理');
+            setTimeout(hideStatus, 3000);
+        } catch (error) {
+            showStatus('error', '读取文件失败');
+        }
+    });
+
+    function parseScheduleData(rawData: string) {
+        let dataContent: string;
+        
+        // 尝试解析为完整的API响应格式
+        try {
+            const apiResponse = JSON.parse(rawData);
+            if (apiResponse.status === 1 && apiResponse.data && typeof apiResponse.data === 'string') {
+                // 这是完整的API响应，提取data字段
+                dataContent = apiResponse.data;
+            } else {
+                // 可能是直接的data内容，尝试使用原数据
+                dataContent = rawData;
+            }
+        } catch {
+            // 解析失败，假设是直接的data内容
+            dataContent = rawData;
+        }
+        
+        const lines = dataContent.trim().split('\n');
+        
+        if (lines.length < 5) {
+            throw new Error('数据格式不正确，需要至少5行数据');
+        }
+
+        // 第一行：时间表配置（timetableConfig）- 不需要保存
+        const timetableConfig: TimetableConfig = JSON.parse(lines[0]);
+        
+        // 第二行：时间节点（time slots）-> schedule_time.json
+        const timeSlots: TimeSlot[] = JSON.parse(lines[1]);
+        
+        // 第三行：课程表配置（tableConfig）-> schedule_config.json
+        const tableConfig: TableConfig = JSON.parse(lines[2]);
+        
+        // 第四行：课程列表（courses）-> schedule_sources.json
+        const courses: Course[] = JSON.parse(lines[3]);
+        
+        // 第五行：课程安排（schedule items）-> schedule_main.json
+        const scheduleItems: ScheduleItem[] = JSON.parse(lines[4]);
+
+        return {
+            timetableConfig,
+            timeSlots,
+            tableConfig,
+            courses,
+            scheduleItems
+        };
+    }
+
+    async function createZipFile(data: {
+        timeSlots: TimeSlot[];
+        tableConfig: TableConfig;
+        courses: Course[];
+        scheduleItems: ScheduleItem[];
+    }) {
+        const zip = new JSZip();
+        
+        // 创建 schedule 文件夹
+        const scheduleFolder = zip.folder('schedule');
+        if (!scheduleFolder) {
+            throw new Error('Failed to create folder');
+        }
+
+        // 添加文件到 zip
+        scheduleFolder.file('schedule_config.json', JSON.stringify(data.tableConfig, null, 2));
+        scheduleFolder.file('schedule_time.json', JSON.stringify(data.timeSlots, null, 2));
+        scheduleFolder.file('schedule_sources.json', JSON.stringify(data.courses, null, 2));
+        scheduleFolder.file('schedule_main.json', JSON.stringify(data.scheduleItems, null, 2));
+
+        // 生成 zip 文件
+        const content = await zip.generateAsync({ type: 'blob' });
+        return content;
+    }
+
+    convertBtn.addEventListener('click', async () => {
+        const content = jsonInput.value.trim();
+        
+        if (!content) {
+            showStatus('error', '请先上传文件或粘贴 JSON 内容');
+            return;
+        }
+
+        showStatus('loading');
+        convertBtn.disabled = true;
+
+        try {
+            // 解析数据
+            const parsedData = parseScheduleData(content);
+            
+            // 创建 ZIP 文件
+            const zipBlob = await createZipFile(parsedData);
+            
+            // 下载文件
+            const fileName = `schedule_${parsedData.tableConfig.tableName || 'export'}_${new Date().toISOString().split('T')[0]}.zip`;
+            const url = URL.createObjectURL(zipBlob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showStatus('success', `已下载: ${fileName}`);
+        } catch (error) {
+            console.error('Error:', error);
+            showStatus('error', error instanceof Error ? error.message : '处理失败，请检查数据格式');
+        } finally {
+            convertBtn.disabled = false;
+        }
+    });
+</script>
+
+<style>
+    .card-base {
+        background-color: var(--card-bg);
+        box-shadow: var(--card-shadow);
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animate-spin {
+        animation: spin 1s linear infinite;
+    }
+</style>
