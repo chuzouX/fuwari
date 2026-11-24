@@ -408,6 +408,65 @@ import { monitorConfig } from "../../config";
 		`;
 	}
 
+	const REQUEST_TIMEOUT_MS = 8000;
+	const CACHE_KEY = "device_status_cache_v1";
+
+	interface CachedDeviceState {
+		updatedAt: number;
+		results: DeviceFetchResult[];
+	}
+
+	async function fetchWithTimeout(url: string, timeoutMs: number): Promise<Response> {
+		const controller = new AbortController();
+		const timer = setTimeout(() => controller.abort(), timeoutMs);
+		try {
+			return await fetch(url, {
+				cache: "no-store",
+				signal: controller.signal,
+			});
+		} finally {
+			clearTimeout(timer);
+		}
+	}
+
+	function readCache(): CachedDeviceState | null {
+		try {
+			const raw = sessionStorage.getItem(CACHE_KEY);
+			if (!raw) return null;
+			const parsed = JSON.parse(raw) as CachedDeviceState;
+			if (!parsed || !Array.isArray(parsed.results)) return null;
+			return parsed;
+		} catch {
+			return null;
+		}
+	}
+
+	function writeCache(state: CachedDeviceState) {
+		try {
+			sessionStorage.setItem(CACHE_KEY, JSON.stringify(state));
+		} catch {
+			// Ignore storage quota or privacy mode errors
+		}
+	}
+
+	function renderLoadingCard(deviceConfig: MonitorDeviceConfig): string {
+		const iconSvg = deviceConfig.type === "phone" ? ICONS.phone : ICONS.pc;
+		return `
+			<div class="rounded-lg p-2 bg-black/[0.03] dark:bg-white/[0.04] border border-black/[0.05] dark:border-white/[0.06]">
+				<div class="flex items-center justify-between gap-2">
+					<div class="flex items-center gap-1.5 text-neutral-700 dark:text-neutral-300 font-medium text-xs min-w-0">
+						<span class="text-neutral-400 dark:text-neutral-500">${iconSvg}</span>
+						<span class="truncate">${escapeHtml(deviceConfig.name)}</span>
+					</div>
+					<span class="inline-flex items-center gap-1 text-[10px] text-neutral-400 shrink-0">
+						<span class="w-1.5 h-1.5 rounded-full bg-neutral-300 dark:bg-neutral-600 animate-pulse"></span>
+						获取中
+					</span>
+				</div>
+			</div>
+		`;
+	}
+
 	function initDeviceStatus() {
 		const root = document.getElementById("device-status");
 		if (!root || root.dataset.initialized === "true") return;
@@ -433,6 +492,64 @@ import { monitorConfig } from "../../config";
 
 		let isFetching = false;
 		let timerId: ReturnType<typeof setInterval> | null = null;
+		const latestResults: Array<DeviceFetchResult | null> = config.devices.map(() => null);
+
+		function renderAll(updatedAt?: number) {
+			if (!contentEl) return;
+
+			const loadedResults = latestResults.filter((r): r is DeviceFetchResult => r !== null);
+			const anyOnline = loadedResults.some(
+				(r) => !r.error && isDeviceOnline(r.data?.last_seen, config.offlineThreshold),
+			);
+			const allLoaded = loadedResults.length === config.devices.length;
+			const allFailed = allLoaded && loadedResults.every((r) => r.error);
+
+			if (badgeEl && loadedResults.length > 0) {
+				if (allFailed) {
+					badgeEl.className =
+						"inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400";
+					badgeEl.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-neutral-400"></span>离线`;
+				} else if (anyOnline) {
+					badgeEl.className =
+						"inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400";
+					badgeEl.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>在线`;
+				} else if (allLoaded) {
+					badgeEl.className =
+						"inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-400";
+					badgeEl.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-neutral-400"></span>离线`;
+				}
+			}
+
+			contentEl.innerHTML = `
+				<div class="space-y-2">
+					${config.devices
+						.map((deviceConfig, idx) => {
+							const res = latestResults[idx];
+							return res
+								? renderDeviceCard(res, config.offlineThreshold)
+								: renderLoadingCard(deviceConfig);
+						})
+						.join("")}
+				</div>
+			`;
+
+			if (updatedEl && updatedAt) {
+				updatedEl.textContent = `更新于 ${formatClockTime(new Date(updatedAt))}`;
+			}
+		}
+
+		// Hydrate immediately from recent sessionStorage cache if available
+		const cached = readCache();
+		if (cached && cached.results.length === config.devices.length) {
+			cached.results.forEach((item, idx) => {
+				if (item && item.config?.id === config.devices[idx].id) {
+					latestResults[idx] = { ...item, config: config.devices[idx] };
+				}
+			});
+			renderAll(cached.updatedAt);
+		} else {
+			renderAll();
+		}
 
 		async function fetchAllDevices() {
 			if (isFetching || !contentEl) return;
@@ -440,52 +557,29 @@ import { monitorConfig } from "../../config";
 			refreshIcon?.classList.add("device-refresh-spinning");
 
 			try {
-				const results: DeviceFetchResult[] = await Promise.all(
-					config.devices.map(async (deviceConfig) => {
+				await Promise.all(
+					config.devices.map(async (deviceConfig, idx) => {
+						let result: DeviceFetchResult;
 						try {
-							const res = await fetch(deviceConfig.apiUrl, {
-								cache: "no-store",
-							});
+							const res = await fetchWithTimeout(deviceConfig.apiUrl, REQUEST_TIMEOUT_MS);
 							if (!res.ok) {
-								return { config: deviceConfig, data: null, error: true };
+								result = { config: deviceConfig, data: null, error: true };
+							} else {
+								const json = (await res.json()) as StatusResponse;
+								result = { config: deviceConfig, data: json, error: false };
 							}
-							const json = (await res.json()) as StatusResponse;
-							return { config: deviceConfig, data: json, error: false };
 						} catch {
-							return { config: deviceConfig, data: null, error: true };
+							result = { config: deviceConfig, data: null, error: true };
 						}
+						latestResults[idx] = result;
+						renderAll(Date.now());
 					}),
 				);
 
-				const anyOnline = results.some(
-					(r) => !r.error && isDeviceOnline(r.data?.last_seen, config.offlineThreshold),
-				);
-				const allFailed = results.every((r) => r.error);
-
-				if (badgeEl) {
-					if (allFailed) {
-						badgeEl.className =
-							"inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400";
-						badgeEl.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-neutral-400"></span>离线`;
-					} else if (anyOnline) {
-						badgeEl.className =
-							"inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400";
-						badgeEl.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>在线`;
-					} else {
-						badgeEl.className =
-							"inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-400";
-						badgeEl.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-neutral-400"></span>离线`;
-					}
-				}
-
-				contentEl.innerHTML = `
-					<div class="space-y-2">
-						${results.map((r) => renderDeviceCard(r, config.offlineThreshold)).join("")}
-					</div>
-				`;
-
-				if (updatedEl) {
-					updatedEl.textContent = `更新于 ${formatClockTime(new Date())}`;
+				const now = Date.now();
+				const completed = latestResults.filter((r): r is DeviceFetchResult => r !== null);
+				if (completed.length === config.devices.length && completed.some((r) => !r.error)) {
+					writeCache({ updatedAt: now, results: completed });
 				}
 			} finally {
 				isFetching = false;
@@ -502,6 +596,18 @@ import { monitorConfig } from "../../config";
 			}, config.refreshInterval);
 		}
 
+		function scheduleInitialFetch() {
+			const run = () => {
+				fetchAllDevices();
+				startPolling();
+			};
+			if ("requestIdleCallback" in window) {
+				window.requestIdleCallback(run, { timeout: 2000 });
+			} else {
+				setTimeout(run, 200);
+			}
+		}
+
 		refreshBtn?.addEventListener("click", () => {
 			fetchAllDevices();
 		});
@@ -512,8 +618,12 @@ import { monitorConfig } from "../../config";
 			}
 		});
 
-		fetchAllDevices();
-		startPolling();
+		// Defer API requests until after the page finishes loading so initial load is never blocked
+		if (document.readyState === "complete") {
+			scheduleInitialFetch();
+		} else {
+			window.addEventListener("load", scheduleInitialFetch, { once: true });
+		}
 	}
 
 	if (document.readyState === "loading") {
