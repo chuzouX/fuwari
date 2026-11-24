@@ -2,6 +2,7 @@
 import type { MarkdownHeading } from "astro";
 
 import Categories from "./Categories.astro";
+import DeviceStatus from "./DeviceStatus.astro";
 import Profile from "./Profile.astro";
 import Tag from "./Tags.astro";
 import ScheduleStatus from "./ScheduleStatus.astro";
@@ -16,6 +17,7 @@ const className = Astro.props.class;
 <div id="sidebar" class:list={[className, "w-full"]}>
     <div class="flex flex-col w-full gap-4 mb-4">
         <Profile></Profile>
+        <DeviceStatus></DeviceStatus>
         <ScheduleStatus></ScheduleStatus>
     </div>
     <div id="sidebar-sticky" class="transition-all duration-700 flex flex-col w-full gap-4 top-4 top-4">

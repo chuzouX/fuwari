@@ -130,3 +130,18 @@ export type GitHubEditConfig = {
 	enable: boolean;
 	baseUrl: string;
 };
+
+export type MonitorDeviceConfig = {
+	id: string;
+	name: string;
+	type: "pc" | "phone";
+	apiUrl: string;
+};
+
+export type MonitorConfig = {
+	enable: boolean;
+	title: string;
+	refreshInterval: number;
+	offlineThreshold: number;
+	devices: MonitorDeviceConfig[];
+};

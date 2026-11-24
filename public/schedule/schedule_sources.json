@@ -1,7 +1,7 @@
 [
   {
     "color": "#ffff1744",
-    "courseName": "大学物理B",
+    "courseName": "人工智能数学基础",
     "credit": 0,
     "id": 0,
     "note": "",
@@ -9,7 +9,7 @@
   },
   {
     "color": "#fffa6278",
-    "courseName": "高等数学A(二)",
+    "courseName": "大学英语（三）",
     "credit": 0,
     "id": 1,
     "note": "",
@@ -17,7 +17,7 @@
   },
   {
     "color": "#ff2979ff",
-    "courseName": "线性代数",
+    "courseName": "计算机组成原理",
     "credit": 0,
     "id": 2,
     "note": "",
@@ -25,7 +25,7 @@
   },
   {
     "color": "#ff1de9b6",
-    "courseName": "人工智能导论",
+    "courseName": "Python程序设计",
     "credit": 0,
     "id": 3,
     "note": "",
@@ -33,7 +33,7 @@
   },
   {
     "color": "#ffa375ff",
-    "courseName": "离散数学",
+    "courseName": "概率论与数理统计",
     "credit": 0,
     "id": 4,
     "note": "",
@@ -41,7 +41,7 @@
   },
   {
     "color": "#ffff9100",
-    "courseName": "大学英语（二）",
+    "courseName": "毛泽东思想和中国特色社会主义理论体系概论",
     "credit": 0,
     "id": 5,
     "note": "",
@@ -49,7 +49,7 @@
   },
   {
     "color": "#ffff3d00",
-    "courseName": "中国近现代史纲要",
+    "courseName": "马克思主义基本原理",
     "credit": 0,
     "id": 6,
     "note": "",
@@ -57,41 +57,25 @@
   },
   {
     "color": "#ff2196f3",
-    "courseName": "大学物理实验B",
+    "courseName": "数据结构",
     "credit": 0,
     "id": 7,
-    "note": "",
+    "note": "数据结构课程设计 李耀明,郑建军 17-18周",
     "tableId": 1
   },
   {
     "color": "#ff005caf",
-    "courseName": "体育（二）(95班)",
+    "courseName": "体育（三）(排球10)",
     "credit": 0,
     "id": 8,
     "note": "",
     "tableId": 1
   },
   {
-    "color": "#ffff1744",
-    "courseName": "形势与政策（2）",
+    "color": "#ff00c853",
+    "courseName": "形势与政策（3）",
     "credit": 0,
     "id": 9,
-    "note": "",
-    "tableId": 1
-  },
-  {
-    "color": "#fffa6278",
-    "courseName": "Linux操作系统从入门到实战",
-    "credit": 0,
-    "id": 10,
-    "note": "",
-    "tableId": 1
-  },
-  {
-    "color": "#ff2979ff",
-    "courseName": "劳动教育与实践",
-    "credit": 0,
-    "id": 11,
     "note": "",
     "tableId": 1
   }

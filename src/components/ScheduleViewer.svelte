@@ -243,7 +243,7 @@
           
           const isToday = day === currentDay;
           const isCurrent = isToday && currentTimeMinutes >= start && currentTimeMinutes < end;
-          const isCompleted = isToday && currentTimeMinutes >= end;
+          const isCompleted = day < currentDay || (isToday && currentTimeMinutes >= end);
           
           let progress = 0;
           if (isCurrent) {
@@ -268,23 +268,13 @@
       // 按开始节次排序
       dayCourses.sort((a, b) => a.schedule.startNode - b.schedule.startNode);
       
-      // 如果不是今天或者开启了显示已完成课程，不过滤
-      if (day !== currentDay || showCompletedCourses) {
-        weekDays.push({
-          day,
-          dayName: DAY_NAMES[day - 1],
-          isToday: day === currentDay,
-          courses: dayCourses
-        });
-      } else {
-        // 今天是当前天，且隐藏已完成课程
-        weekDays.push({
-          day,
-          dayName: DAY_NAMES[day - 1],
-          isToday: day === currentDay,
-          courses: dayCourses.filter(c => !c.isCompleted)
-        });
-      }
+      // 本周课程视图始终展示全部课程，不受“隐藏已上”开关影响
+      weekDays.push({
+        day,
+        dayName: DAY_NAMES[day - 1],
+        isToday: day === currentDay,
+        courses: dayCourses
+      });
     }
     
     return weekDays;

@@ -3,6 +3,7 @@ import type {
 	GitHubEditConfig,
 	ImageFallbackConfig,
 	LicenseConfig,
+	MonitorConfig,
 	NavBarConfig,
 	ProfileConfig,
 	SiteConfig,
@@ -174,6 +175,27 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 export const gitHubEditConfig: GitHubEditConfig = {
 	enable: true,
 	baseUrl: "https://github.com/chuzouX/fuwari/blob/main/src/content/posts",
+};
+
+export const monitorConfig: MonitorConfig = {
+	enable: true,
+	title: "在线视奸",
+	refreshInterval: 30000, // 30 seconds
+	offlineThreshold: 300000, // 5 minutes
+	devices: [
+		{
+			id: "chuzouX-pc",
+			name: "电脑",
+			type: "pc",
+			apiUrl: "https://shijian.07210700.xyz/api/v2/status?machine=chuzouX-pc",
+		},
+		{
+			id: "chuzouX-nubia",
+			name: "手机",
+			type: "phone",
+			apiUrl: "https://shijian.07210700.xyz/api/v2/status?machine=chuzouX-nubia",
+		},
+	],
 };
 
 // todoConfig removed from here

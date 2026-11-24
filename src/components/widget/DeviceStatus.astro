@@ -1,0 +1,524 @@
+---
+import { Icon } from "astro-icon/components";
+import { monitorConfig } from "../../config";
+---
+
+{monitorConfig.enable && (
+	<div
+		id="device-status"
+		data-config={JSON.stringify(monitorConfig)}
+		class="card-base p-3 border border-black/10 dark:border-white/10"
+	>
+		<div class="flex items-center justify-between gap-2 mb-2">
+			<div class="flex items-center gap-2 min-w-0">
+				<div class="w-6 h-6 rounded-md bg-[var(--primary)] flex items-center justify-center shrink-0">
+					<Icon name="material-symbols:visibility-outline" class="text-white text-sm" />
+				</div>
+				<span class="font-bold text-sm text-neutral-800 dark:text-neutral-200 truncate">
+					{monitorConfig.title}
+				</span>
+			</div>
+			<div class="flex items-center gap-1.5 shrink-0">
+				<span
+					id="device-overall-badge"
+					class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300"
+				>
+					<span class="w-1.5 h-1.5 rounded-full bg-neutral-400"></span>
+					检测中
+				</span>
+				<button
+					id="device-refresh-btn"
+					type="button"
+					aria-label="刷新设备状态"
+					title="刷新设备状态"
+					class="w-6 h-6 rounded-md flex items-center justify-center text-neutral-500 hover:text-[var(--primary)] hover:bg-black/5 dark:hover:bg-white/10 transition active:scale-90"
+				>
+					<Icon name="material-symbols:refresh-rounded" class="text-sm device-refresh-icon" />
+				</button>
+			</div>
+		</div>
+
+		<div id="device-status-content" class="min-h-[4rem]">
+			<div class="flex items-center justify-center py-4">
+				<div class="animate-spin rounded-full h-5 w-5 border-2 border-[var(--primary)] border-t-transparent"></div>
+			</div>
+		</div>
+
+		<div class="mt-2 pt-2 border-t border-neutral-200 dark:border-neutral-700 flex items-center justify-between text-[11px] text-neutral-500 dark:text-neutral-400">
+			<span id="device-last-updated">正在获取状态...</span>
+			<span class="text-neutral-400 dark:text-neutral-500">每 {Math.round(monitorConfig.refreshInterval / 1000)}s 刷新</span>
+		</div>
+	</div>
+)}
+
+<style>
+	.device-refresh-spinning {
+		animation: device-spin 0.8s linear infinite;
+	}
+
+	@keyframes device-spin {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	:global(.device-eq-bars) {
+		display: inline-flex;
+		align-items: flex-end;
+		gap: 1.5px;
+		height: 10px;
+		width: 10px;
+		flex-shrink: 0;
+	}
+
+	:global(.device-eq-bars span) {
+		display: block;
+		width: 2px;
+		border-radius: 1px;
+		background-color: var(--primary);
+		animation: device-eq-bounce 1s ease-in-out infinite;
+	}
+
+	:global(.device-eq-bars span:nth-child(1)) {
+		height: 45%;
+		animation-delay: 0s;
+	}
+
+	:global(.device-eq-bars span:nth-child(2)) {
+		height: 100%;
+		animation-delay: 0.2s;
+	}
+
+	:global(.device-eq-bars span:nth-child(3)) {
+		height: 65%;
+		animation-delay: 0.4s;
+	}
+
+	@keyframes device-eq-bounce {
+		0%, 100% {
+			transform: scaleY(0.35);
+		}
+		50% {
+			transform: scaleY(1);
+		}
+	}
+</style>
+
+<script>
+	import type { MonitorConfig, MonitorDeviceConfig } from "../../types/config";
+
+	interface ActivityData {
+		app?: string;
+		app_name?: string;
+		title?: string;
+		process_id?: number;
+	}
+
+	interface ActivityPayload {
+		window_title?: string | null;
+		app?: string | null;
+		access_time?: string;
+		privacy_mode?: boolean;
+		data?: ActivityData | null;
+	}
+
+	interface MediaData {
+		title?: string;
+		artist?: string;
+		album?: string;
+		source?: string;
+		source_name?: string;
+		status?: string;
+	}
+
+	interface MediaPayload {
+		window_title?: string | null;
+		app?: string | null;
+		privacy_mode?: boolean;
+		data?: MediaData | null;
+	}
+
+	interface DevicePayload {
+		battery?: {
+			level?: number;
+			charging?: boolean;
+		} | null;
+		network?: {
+			wifi?: boolean;
+			type?: string;
+		} | null;
+		screen?: {
+			on?: boolean;
+		} | null;
+		os?: string;
+	}
+
+	interface StatusResponse {
+		machine?: string;
+		last_seen?: string;
+		activity?: ActivityPayload | null;
+		media?: MediaPayload | null;
+		device?: DevicePayload | null;
+	}
+
+	interface DeviceFetchResult {
+		config: MonitorDeviceConfig;
+		data: StatusResponse | null;
+		error: boolean;
+	}
+
+	const ICONS = {
+		pc: `<svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 18q-.825 0-1.412-.587T2 16V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v10q0 .825-.587 1.413T20 18h-5v2h2v2H7v-2h2v-2zm0-2h16V6H4zm0 0V6z"/></svg>`,
+		phone: `<svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 23q-.825 0-1.412-.587T5 21V3q0-.825.588-1.412T7 1h10q.825 0 1.413.588T19 3v18q0 .825-.587 1.413T17 23zm0-5v3h10v-3zm5 2.5q.425 0 .713-.288T13 19.5t-.288-.712T12 18.5t-.712.288T11 19.5t.288.713T12 20.5M7 16h10V6H7zM7 4h10V3H7z"/></svg>`,
+		battery: `<svg class="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 20H8q-.425 0-.712-.288T7 19V6q0-.425.288-.712T8 5h2V3h4v2h2q.425 0 .713.288T17 6v13q0 .425-.288.713T16 20m-7-2h6V7H9z"/></svg>`,
+		charging: `<svg class="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 21h-1l1-7H7.5q-.575 0-.825-.512t.05-.988L13 3h1l-1 7h3.5q.575 0 .825.513t-.05.987z"/></svg>`,
+		wifi: `<svg class="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21q-1.05 0-1.775-.725T9.5 18.5t.725-1.775T12 16t1.775.725t.725 1.775t-.725 1.775T12 21m-5.65-5.65l-2.1-2.15q1.475-1.475 3.463-2.337T12 10t4.288.875t3.462 2.375l-2.1 2.1q-1.05-1.05-2.487-1.7T12 13t-3.162.65t-2.488 1.7M2.1 11.1L0 9q2.3-2.35 5.375-3.675T12 4t6.625 1.325T24 9l-2.1 2.1q-1.925-1.925-4.462-3.012T12 7T6.563 8.088T2.1 11.1"/></svg>`,
+		signal: `<svg class="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 22V14h3v8zm5 0V10h3v12zm5 0V6h3v16zm5 0V2h3v20z"/></svg>`,
+	};
+
+	function escapeHtml(value: string): string {
+		return value
+			.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;")
+			.replace(/"/g, "&quot;")
+			.replace(/'/g, "&#39;");
+	}
+
+	function formatRelativeTime(isoString?: string): string {
+		if (!isoString) return "未知";
+		const timestamp = new Date(isoString).getTime();
+		if (Number.isNaN(timestamp)) return "未知";
+		const diffSec = Math.max(0, Math.floor((Date.now() - timestamp) / 1000));
+		if (diffSec < 60) return "刚刚";
+		const diffMin = Math.floor(diffSec / 60);
+		if (diffMin < 60) return `${diffMin}分钟前`;
+		const diffHour = Math.floor(diffMin / 60);
+		if (diffHour < 24) return `${diffHour}小时前`;
+		const diffDay = Math.floor(diffHour / 24);
+		return `${diffDay}天前`;
+	}
+
+	function formatClockTime(date: Date): string {
+		const hh = String(date.getHours()).padStart(2, "0");
+		const mm = String(date.getMinutes()).padStart(2, "0");
+		const ss = String(date.getSeconds()).padStart(2, "0");
+		return `${hh}:${mm}:${ss}`;
+	}
+
+	function formatNetworkLabel(network?: { wifi?: boolean; type?: string } | null): {
+		isWifi: boolean;
+		label: string;
+	} | null {
+		if (!network) return null;
+		if (network.wifi) {
+			return { isWifi: true, label: "Wi-Fi" };
+		}
+		const rawType = (network.type || "").trim();
+		if (!rawType) return { isWifi: false, label: "移动网络" };
+		if (rawType.toUpperCase().includes("VPN")) {
+			return { isWifi: false, label: "VPN" };
+		}
+		return { isWifi: false, label: rawType };
+	}
+
+	function isDeviceOnline(lastSeen: string | undefined, thresholdMs: number): boolean {
+		if (!lastSeen) return false;
+		const ts = new Date(lastSeen).getTime();
+		if (Number.isNaN(ts)) return false;
+		return Date.now() - ts <= thresholdMs;
+	}
+
+	function renderDeviceCard(result: DeviceFetchResult, offlineThreshold: number): string {
+		const { config, data, error } = result;
+		const iconSvg = config.type === "phone" ? ICONS.phone : ICONS.pc;
+
+		if (error || !data) {
+			return `
+				<div class="rounded-lg p-2 bg-black/[0.03] dark:bg-white/[0.04] border border-black/[0.05] dark:border-white/[0.06]">
+					<div class="flex items-center justify-between gap-2">
+						<div class="flex items-center gap-1.5 text-neutral-700 dark:text-neutral-300 font-medium text-xs min-w-0">
+							${iconSvg}
+							<span class="truncate">${escapeHtml(config.name)}</span>
+						</div>
+						<span class="inline-flex items-center gap-1 text-[10px] text-neutral-400 shrink-0">
+							<span class="w-1.5 h-1.5 rounded-full bg-neutral-400"></span>
+							获取失败
+						</span>
+					</div>
+				</div>
+			`;
+		}
+
+		const online = isDeviceOnline(data.last_seen, offlineThreshold);
+		const screenOff = online && data.device?.screen?.on === false;
+
+		let statusDotClass = "bg-neutral-400";
+		let statusTextClass = "text-neutral-500 dark:text-neutral-400";
+		let statusLabel = formatRelativeTime(data.last_seen);
+
+		if (online && !screenOff) {
+			statusDotClass = "bg-emerald-500 animate-pulse";
+			statusTextClass = "text-emerald-600 dark:text-emerald-400 font-medium";
+			statusLabel = "在线";
+		} else if (screenOff) {
+			statusDotClass = "bg-amber-500";
+			statusTextClass = "text-amber-600 dark:text-amber-400 font-medium";
+			statusLabel = "息屏";
+		}
+
+		const activity = data.activity;
+		let activityHtml = "";
+		if (activity?.privacy_mode) {
+			activityHtml = `
+				<div class="mt-1.5 text-xs text-neutral-500 dark:text-neutral-400 italic">
+					隐私模式中
+				</div>
+			`;
+		} else {
+			const appName = (
+				activity?.data?.app_name ||
+				activity?.data?.app ||
+				activity?.app ||
+				""
+			).trim();
+			const windowTitle = (
+				activity?.data?.title ||
+				activity?.window_title ||
+				""
+			).trim();
+			const showTitle = windowTitle && windowTitle !== appName;
+
+			if (appName || showTitle) {
+				activityHtml = `
+					<div class="mt-1.5 ${online ? "" : "opacity-65"}">
+						${
+							appName
+								? `<div class="text-xs font-medium text-neutral-800 dark:text-neutral-200 truncate" title="${escapeHtml(appName)}">${escapeHtml(appName)}</div>`
+								: ""
+						}
+						${
+							showTitle
+								? `<div class="text-[11px] text-neutral-500 dark:text-neutral-400 truncate mt-0.5" title="${escapeHtml(windowTitle)}">${escapeHtml(windowTitle)}</div>`
+								: ""
+						}
+					</div>
+				`;
+			} else {
+				activityHtml = `
+					<div class="mt-1.5 text-[11px] text-neutral-400 dark:text-neutral-500">
+						${online ? "空闲中" : "设备已离线"}
+					</div>
+				`;
+			}
+		}
+
+		let hardwareHtml = "";
+		if (data.device) {
+			const chips: string[] = [];
+			const battery = data.device.battery;
+			if (battery && typeof battery.level === "number") {
+				const isCharging = Boolean(battery.charging);
+				const isLow = !isCharging && battery.level <= 20;
+				const batteryColor = isCharging
+					? "text-emerald-600 dark:text-emerald-400"
+					: isLow
+						? "text-red-500 dark:text-red-400"
+						: "text-neutral-500 dark:text-neutral-400";
+				chips.push(`
+					<span class="inline-flex items-center gap-0.5 ${batteryColor}" title="${isCharging ? "充电中" : "电池电量"}">
+						${isCharging ? ICONS.charging : ICONS.battery}
+						<span>${battery.level}%</span>
+					</span>
+				`);
+			}
+
+			const net = formatNetworkLabel(data.device.network);
+			if (net) {
+				chips.push(`
+					<span class="inline-flex items-center gap-0.5 text-neutral-500 dark:text-neutral-400">
+						${net.isWifi ? ICONS.wifi : ICONS.signal}
+						<span>${escapeHtml(net.label)}</span>
+					</span>
+				`);
+			}
+
+			if (chips.length > 0) {
+				hardwareHtml = `
+					<div class="mt-1.5 flex items-center gap-2.5 text-[10px]">
+						${chips.join("")}
+					</div>
+				`;
+			}
+		}
+
+		let mediaHtml = "";
+		const media = data.media;
+		if (
+			online &&
+			media &&
+			!media.privacy_mode &&
+			media.data &&
+			media.data.status === "playing" &&
+			(media.data.title || media.window_title)
+		) {
+			const songTitle = (media.data.title || media.window_title || "").trim();
+			const artist = (media.data.artist || "").trim();
+			const sourceName = (media.data.source_name || "").trim();
+			const fullText = artist ? `${songTitle} - ${artist}` : songTitle;
+
+			mediaHtml = `
+				<div class="mt-2 pt-1.5 border-t border-black/[0.06] dark:border-white/[0.08] flex items-center gap-1.5 min-w-0">
+					<span class="device-eq-bars" aria-hidden="true">
+						<span></span><span></span><span></span>
+					</span>
+					<div class="min-w-0 flex-1">
+						<div class="text-[11px] font-medium text-neutral-700 dark:text-neutral-200 truncate" title="${escapeHtml(fullText)}">
+							${escapeHtml(songTitle)}
+						</div>
+						${
+							artist || sourceName
+								? `<div class="text-[10px] text-neutral-500 dark:text-neutral-400 truncate" title="${escapeHtml(fullText)}">${escapeHtml(artist)}${artist && sourceName ? " · " : ""}${escapeHtml(sourceName)}</div>`
+								: ""
+						}
+					</div>
+				</div>
+			`;
+		}
+
+		return `
+			<div class="rounded-lg p-2 bg-black/[0.03] dark:bg-white/[0.04] border border-black/[0.05] dark:border-white/[0.06] transition">
+				<div class="flex items-center justify-between gap-2">
+					<div class="flex items-center gap-1.5 text-neutral-700 dark:text-neutral-300 font-medium text-xs min-w-0">
+						<span class="${online ? "text-[var(--primary)]" : "text-neutral-400 dark:text-neutral-500"}">${iconSvg}</span>
+						<span class="truncate">${escapeHtml(config.name)}</span>
+					</div>
+					<span class="inline-flex items-center gap-1 text-[10px] shrink-0 ${statusTextClass}">
+						<span class="w-1.5 h-1.5 rounded-full ${statusDotClass}"></span>
+						${escapeHtml(statusLabel)}
+					</span>
+				</div>
+				${activityHtml}
+				${hardwareHtml}
+				${mediaHtml}
+			</div>
+		`;
+	}
+
+	function initDeviceStatus() {
+		const root = document.getElementById("device-status");
+		if (!root || root.dataset.initialized === "true") return;
+
+		const rawConfig = root.dataset.config;
+		if (!rawConfig) return;
+
+		let config: MonitorConfig;
+		try {
+			config = JSON.parse(rawConfig) as MonitorConfig;
+		} catch (e) {
+			console.error("Invalid monitorConfig:", e);
+			return;
+		}
+
+		root.dataset.initialized = "true";
+
+		const contentEl = document.getElementById("device-status-content");
+		const badgeEl = document.getElementById("device-overall-badge");
+		const updatedEl = document.getElementById("device-last-updated");
+		const refreshBtn = document.getElementById("device-refresh-btn");
+		const refreshIcon = refreshBtn?.querySelector(".device-refresh-icon");
+
+		let isFetching = false;
+		let timerId: ReturnType<typeof setInterval> | null = null;
+
+		async function fetchAllDevices() {
+			if (isFetching || !contentEl) return;
+			isFetching = true;
+			refreshIcon?.classList.add("device-refresh-spinning");
+
+			try {
+				const results: DeviceFetchResult[] = await Promise.all(
+					config.devices.map(async (deviceConfig) => {
+						try {
+							const res = await fetch(deviceConfig.apiUrl, {
+								cache: "no-store",
+							});
+							if (!res.ok) {
+								return { config: deviceConfig, data: null, error: true };
+							}
+							const json = (await res.json()) as StatusResponse;
+							return { config: deviceConfig, data: json, error: false };
+						} catch {
+							return { config: deviceConfig, data: null, error: true };
+						}
+					}),
+				);
+
+				const anyOnline = results.some(
+					(r) => !r.error && isDeviceOnline(r.data?.last_seen, config.offlineThreshold),
+				);
+				const allFailed = results.every((r) => r.error);
+
+				if (badgeEl) {
+					if (allFailed) {
+						badgeEl.className =
+							"inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400";
+						badgeEl.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-neutral-400"></span>离线`;
+					} else if (anyOnline) {
+						badgeEl.className =
+							"inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400";
+						badgeEl.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>在线`;
+					} else {
+						badgeEl.className =
+							"inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-400";
+						badgeEl.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-neutral-400"></span>离线`;
+					}
+				}
+
+				contentEl.innerHTML = `
+					<div class="space-y-2">
+						${results.map((r) => renderDeviceCard(r, config.offlineThreshold)).join("")}
+					</div>
+				`;
+
+				if (updatedEl) {
+					updatedEl.textContent = `更新于 ${formatClockTime(new Date())}`;
+				}
+			} finally {
+				isFetching = false;
+				refreshIcon?.classList.remove("device-refresh-spinning");
+			}
+		}
+
+		function startPolling() {
+			if (timerId) clearInterval(timerId);
+			timerId = setInterval(() => {
+				if (!document.hidden) {
+					fetchAllDevices();
+				}
+			}, config.refreshInterval);
+		}
+
+		refreshBtn?.addEventListener("click", () => {
+			fetchAllDevices();
+		});
+
+		document.addEventListener("visibilitychange", () => {
+			if (!document.hidden) {
+				fetchAllDevices();
+			}
+		});
+
+		fetchAllDevices();
+		startPolling();
+	}
+
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", initDeviceStatus);
+	} else {
+		initDeviceStatus();
+	}
+</script>
